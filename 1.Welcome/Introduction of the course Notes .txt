@@ -1,0 +1,7 @@
+1.Welcome &Asking Good question 
+Just introduction No important Notes 
+course content
+2.Why should I  learn React 
+We all have a limited amount of time to learn new skills and it seems like new tools and libraries are
+The first reason has to do with the react library itself.
+First up react has a small learning curve bla bla bla No Need for that Introduction just rewatch it after finishing the course 
