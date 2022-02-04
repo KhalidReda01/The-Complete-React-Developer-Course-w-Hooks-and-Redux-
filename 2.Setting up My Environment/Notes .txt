@@ -1,0 +1,8 @@
+1. Section Intro Setting up Your Environment
+2. Installing Visual Studio Code
+3. Installing Node.js & Yarn
+npm -v
+yarn -v
+node -v 
+node --version
+npm install -g yarn 
