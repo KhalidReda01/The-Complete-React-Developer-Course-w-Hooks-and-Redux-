@@ -6,7 +6,7 @@ console.log('App.js is running! ')
 // var template = React.createElement("h1", {
 //   id: "someid"
 // }, "Does this change!?");
-var template =<h1 id="someid">indecision app </h1>;
+var template =<h1 id="someid">indecision app </h1>; 
 
 var appRoot = document.getElementById('app')
 ReactDOM.render(template, appRoot)
