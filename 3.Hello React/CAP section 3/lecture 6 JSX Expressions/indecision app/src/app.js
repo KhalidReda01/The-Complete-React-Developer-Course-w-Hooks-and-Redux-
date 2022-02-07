@@ -13,14 +13,18 @@ console.log('App.js is running! ')
 //     </ol>
 //   </div>
 // );
+// Here we want to get the the data dynamically so we we use variables and put it js expression
+
 // var appObject = {
 //   title: "App",
 //   subtitle:"information about the App"
 // }
+// I think I understand it so well I don't have to take notes or write comments but as you said keep going 
 var appObject = {
   title: "Indecision App",
   subtitle:"Put your life in the hands of a computer"
 }
+// This is the old template but after we add unpdates and used the object 
 var template =(
 <div>
   <h1>{appObject.title} </h1>
@@ -31,11 +35,14 @@ var template =(
     </ol>
   </div>
 );
+
+// Get the  user data dynamically 
 var user = {
   name: 'Khalid Reda',
   age: 23,
   location:'Mansura'
 }
+// test geting data jsx and put it in {}
 // var userName = "Youssef Reda";
 // var userAge = "10";
 // var userLocation='Cairo'
