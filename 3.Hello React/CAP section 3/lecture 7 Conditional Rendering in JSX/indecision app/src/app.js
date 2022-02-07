@@ -10,10 +10,15 @@ console.log('App.js is running! ')
 // Challenge time
 // only render  the subtile (and p tag) if subtitle exist - logical and opeator 
 // render new p tag - if options.length >0 "Here are your options " "No Options " - ternary operator
+// var appObject = {
+//   title: "Indecision App",
+//   subtitle: "Put your life in the hands of a computer",
+//   options:['one','two']
+// }
 var appObject = {
   title: "Indecision App",
-  subtitle: "Put your life in the hands of a computer",
-  options:['one','two']
+  // subtitle: "Put your life in the hands of a computer",
+  options:[]
 }
 // {appObject.options.length > 0 && <p>{appObject.subtitle}</p>/**Here you used the logical and operator  */} 
 
@@ -23,7 +28,7 @@ var template =(
     
     {/* <p>{appObject.subtitle }</p> */}
     {appObject.subtitle&& <p>{appObject.subtitle}</p>/**Here you used the logical and operator  */} 
-    {appObject.options.length>0?"Here are your options":"No Options"}
+    <p>{appObject.options.length>0?"Here are your options":"No Options"}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>
