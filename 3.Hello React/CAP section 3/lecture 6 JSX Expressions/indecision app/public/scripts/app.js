@@ -1,70 +1,95 @@
-'use strict';
+"use strict";
 
 console.log('App.js is running! ');
 
 // JSX - JavaScript XML
 // Exploring JSX
-// Extenstions bable es6 path intellisense
 
+// var template =(
+// <div>
+//   <h1>indecision app </h1>
+//     <p>This is some info</p>
+//     <ol>
+//       <li>Item one</li>
+//       <li>Item two</li>
+//     </ol>
+//   </div>
+// );
+// var appObject = {
+//   title: "App",
+//   subtitle:"information about the App"
+// }
+var appObject = {
+  title: "Indecision App",
+  subtitle: "Put your life in the hands of a computer"
+};
 var template = React.createElement(
-  'div',
+  "div",
   null,
   React.createElement(
-    'h1',
+    "h1",
     null,
-    'indecision app '
+    appObject.title,
+    " "
   ),
   React.createElement(
-    'p',
+    "p",
     null,
-    'This is some info'
+    appObject.subtitle
   ),
   React.createElement(
-    'ol',
+    "ol",
     null,
     React.createElement(
-      'li',
+      "li",
       null,
-      'Item one'
+      "Item one"
     ),
     React.createElement(
-      'li',
+      "li",
       null,
-      'Item two'
+      "Item two"
     )
   )
 );
-// single route element so var template = <h1 id="someid">indecision app </h1><p>This is some info</p> is wrong
-// the right way is put them in a div container wrapper div
-/**
- * Lecture Notes for challenge time 01
- * Create your own template
- * Create a templateTWo var JSX expression 
- * root div  inside h1 -> Your name Khalid Reda 
- * p -> Age: your age 23
- * p -> Location:Mansura
- * Render templateTwo instead of template 
- */
-
-var templateTwo = React.createElement(
-  'div',
+var user = {
+  name: 'Khalid Reda',
+  age: 23,
+  location: 'Mansura'
+  // var userName = "Youssef Reda";
+  // var userAge = "10";
+  // var userLocation='Cairo'
+  // var templateTwo = (
+  //   <div>
+  //     <h1>{userName}</h1>
+  //     <p>Age:{userAge}</p>
+  //     <p>Location:{userLocation}</p>
+  //   </div>
+  // )
+};var templateTwo = React.createElement(
+  "div",
   null,
   React.createElement(
-    'h1',
+    "h1",
     null,
-    'Khalid Reda'
+    user.name
   ),
   React.createElement(
-    'p',
+    "p",
     null,
-    'Age:23'
+    "Age:",
+    user.age
   ),
   React.createElement(
-    'p',
+    "p",
     null,
-    'Location:Mansura'
+    "Location:",
+    user.age
   )
 );
+// Challenge time
+// create app object title /sutitles
+// use title/subtitle  in the template 
+// render template
 var appRoot = document.getElementById('app');
-// ReactDOM.render(template, appRoot)
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
