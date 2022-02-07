@@ -18,15 +18,11 @@ console.log(add(55, 1,1001));
 const user = {
   name: 'Khalid',
   citites: ["cairo", "mansura", "portsaid"],
-  printPlacesLived: function () {
-    console.log(this.citites)
-    console.log(this.name)
-    const that = this;
-    this.citites.forEach((city) =>{
-      console.log(this.name + 'has lived in ' + city)
-     /**Uncaught TypeError: Cannot read properties of undefined (reading 'name')
-    This is not accessible down here solved by using that */
-    })
+  printPlacesLived() {
+    return this.citites.map((city) => this.name + ' has lived in ' + city);
+    
+    
+    
   }
 }
-user.printPlacesLived()
+console.log(user.printPlacesLived())
