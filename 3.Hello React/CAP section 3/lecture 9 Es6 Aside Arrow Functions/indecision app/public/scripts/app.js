@@ -23,15 +23,27 @@
 // getFirstName
 // create regular arrow function 
 // create arrow function using shorthand syntax
+/**
+ * 
+ * my solution 
+ * const fullName = "Yousefss  Reda";
+let firstName
 
-var fullName = "Yousefss  Reda";
-var firstName = void 0;
+const getFirstName = () => {
+return  firstName = fullName.split(' ')[0];
+}
+const getFirstNameSS = () =>firstName = fullName.split(' ')[0] ;
+const reslut = getFirstNameSS()
+console.log(reslut)
+ */
 
-var getFirstName = function getFirstName() {
-  return firstName = fullName.split(' ')[0];
+// Andrea Solution
+var getFirstName = function getFirstName(fullName) {
+  return fullName.split(' ')[0];
 };
-var getFirstNameSS = function getFirstNameSS() {
-  return firstName = fullName.split(' ')[0];
+var getFirstNames = function getFirstNames(fullName) {
+  return fullName.split(' ')[0];
 };
-var reslut = getFirstNameSS();
-console.log(reslut);
+
+console.log(getFirstName("Mike Smith"));
+console.log(getFirstNames("khalidd Reda"));
