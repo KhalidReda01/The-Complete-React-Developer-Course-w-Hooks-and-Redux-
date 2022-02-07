@@ -4,16 +4,26 @@ console.log('App.js is running! ')
 // 7.Conditional Rendering in JSX
 // if statements done
 // ternary operators
-// logical and operator 
+// logical and operator
 
+
+// Challenge time
+// only render  the subtile (and p tag) if subtitle exist - logical and opeator 
+// render new p tag - if options.length >0 "Here are your options " "No Options " - ternary operator
 var appObject = {
   title: "Indecision App",
-  subtitle:"Put your life in the hands of a computer"
+  subtitle: "Put your life in the hands of a computer",
+  options:['one','two']
 }
+// {appObject.options.length > 0 && <p>{appObject.subtitle}</p>/**Here you used the logical and operator  */} 
+
 var template =(
 <div>
-  <h1>{appObject.title} </h1>
-    <p>{appObject.subtitle }</p>
+    <h1>{appObject.title} </h1>
+    
+    {/* <p>{appObject.subtitle }</p> */}
+    {appObject.subtitle&& <p>{appObject.subtitle}</p>/**Here you used the logical and operator  */} 
+    {appObject.options.length>0?"Here are your options":"No Options"}
     <ol>
       <li>Item one</li>
       <li>Item two</li>
@@ -49,5 +59,6 @@ var templateTwo = (
 )
 
 var appRoot = document.getElementById('app')
-ReactDOM.render(templateTwo, appRoot)
+// ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)
 
