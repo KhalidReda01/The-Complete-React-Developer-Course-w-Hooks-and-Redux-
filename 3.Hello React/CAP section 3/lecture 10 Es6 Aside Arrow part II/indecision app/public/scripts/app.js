@@ -29,3 +29,11 @@ var user = {
   }
 };
 console.log(user.printPlacesLived());
+// Challenge area
+
+var multipiler = {
+  // numbers - array of numbers
+  // myltiplyBy - single  number 
+  // mytiply -return a new array where the number have been multiplied 
+};
+console.log(multipiler.multiply()); //[1,2,3] 2 [2,4,6]
