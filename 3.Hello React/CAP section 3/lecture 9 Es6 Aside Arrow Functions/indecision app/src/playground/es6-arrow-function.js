@@ -2,17 +2,32 @@
 // const square = function (x) {
 //   return x * x;
 // }
-function square(x) {
-  return x * x;
-}
-
-// es6 arror function
-// All arrow functions are anonymous 
-// const squareArrow = (x) => {
+// function square(x) {
 //   return x * x;
-// };
+// }
 
-const squareArrow = (x) => x * x;
+// // es6 arror function
+// // All arrow functions are anonymous
+// // const squareArrow = (x) => {
+// //   return x * x;
+// // };
 
-console.log(square(8))
-console.log(squareArrow(8))
+// const squareArrow = (x) => x * x;
+
+// console.log(square(8))
+// console.log(squareArrow(8))
+
+// Challenge Time
+// getFirstName
+// create regular arrow function 
+// create arrow function using shorthand syntax
+
+const fullName = "Yousefss  Reda";
+let firstName
+
+const getFirstName = () => {
+return  firstName = fullName.split(' ')[0];
+}
+const getFirstNameSS = () =>firstName = fullName.split(' ')[0] ;
+const reslut = getFirstNameSS()
+console.log(reslut)
