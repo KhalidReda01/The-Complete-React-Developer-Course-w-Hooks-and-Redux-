@@ -23,7 +23,7 @@ var template =(
 
 var user = {
   name: 'Khalid Reda',
-  age: 23,
+  age: 19,
   // location:'Cairo'
 }
 function getLocation(location) {
@@ -38,8 +38,11 @@ function getLocation(location) {
 }
 var templateTwo = (
   <div>
-    <h1>{user.name ? user.name:'Anonymous'}</h1>
-    <p>Age:{user.age}</p>
+    {/* tenary opeator */}
+    <h1>{user.name ? user.name : false}</h1> 
+    {/**logical and operator  */}
+    {(user.age&&user.age>=18)&& <p>Age:{user.age}</p>}
+    {/* <p>Age:{user.age}</p> */}
     {/* <p>Location:{getLocation(user.location)}</p> */}
     {getLocation(user.location)}
   </div>
