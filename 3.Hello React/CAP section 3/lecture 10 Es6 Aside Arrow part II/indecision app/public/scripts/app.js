@@ -21,11 +21,13 @@ var user = {
   name: 'Khalid',
   citites: ["cairo", "mansura", "portsaid"],
   printPlacesLived: function printPlacesLived() {
+    var _this = this;
+
     console.log(this.citites);
     console.log(this.name);
     var that = this;
     this.citites.forEach(function (city) {
-      console.log(that.name + 'has lived in ' + city);
+      console.log(_this.name + 'has lived in ' + city);
       /**Uncaught TypeError: Cannot read properties of undefined (reading 'name')
       This is not accessible down here solved by using that */
     });

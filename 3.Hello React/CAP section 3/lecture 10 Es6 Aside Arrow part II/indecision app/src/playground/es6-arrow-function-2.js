@@ -22,8 +22,8 @@ const user = {
     console.log(this.citites)
     console.log(this.name)
     const that = this;
-    this.citites.forEach(function (city) {
-      console.log(that.name + 'has lived in ' + city)
+    this.citites.forEach((city) =>{
+      console.log(this.name + 'has lived in ' + city)
      /**Uncaught TypeError: Cannot read properties of undefined (reading 'name')
     This is not accessible down here solved by using that */
     })
