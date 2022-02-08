@@ -3,7 +3,7 @@
 console.log('App.js is running! ');
 
 // JSX - JavaScript XML
-// 11.Events and Attributes
+// 12-Manual Data Binding
 
 var appObject = {
   title: "Indecision App",
@@ -67,31 +67,36 @@ var minusOne = function minusOne() {
 var reset = function reset() {
   console.log('reset');
 };
-var templateTwo = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    "Count:",
-    count
-  ),
-  React.createElement(
-    "button",
-    { onClick: addOne, className: "button" },
-    "+1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: minusOne },
-    "-1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: reset },
-    "reset"
-  )
-);
-console.log(templateTwo);
+
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+
+// rerender cout to the screen
+var renderCounterApp = function renderCounterApp() {
+  var templateTwo = React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h1",
+      null,
+      "Count:",
+      count
+    ),
+    React.createElement(
+      "button",
+      { onClick: addOne, className: "button" },
+      "+1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: minusOne },
+      "-1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: reset },
+      "reset"
+    )
+  );
+  ReactDOM.render(templateTwo, appRoot);
+};
+renderCounterApp();

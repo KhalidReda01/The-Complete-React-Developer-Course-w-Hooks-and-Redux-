@@ -1,7 +1,7 @@
 console.log('App.js is running! ')
 
 // JSX - JavaScript XML
-// 11.Events and Attributes
+// 12-Manual Data Binding
 
 const appObject = {
   title: "Indecision App",
@@ -42,16 +42,20 @@ const minusOne = () => {
 const reset = () => {
   console.log('reset')
 }
-const templateTwo = (
+
+const appRoot = document.getElementById('app')
+
+
+// rerender cout to the screen
+const renderCounterApp = () => {
+  const templateTwo = (
   <div>
     <h1>Count:{count}</h1>
     <button onClick={addOne} className="button">+1</button>
     <button onClick={minusOne}>-1</button>
     <button onClick={reset}>reset</button>
-  {/* add the button here challenge Area */}
    </div>
-);
-console.log(templateTwo)
-const appRoot = document.getElementById('app')
-ReactDOM.render(templateTwo , appRoot)
-
+  );
+  ReactDOM.render(templateTwo , appRoot)
+}
+renderCounterApp();
