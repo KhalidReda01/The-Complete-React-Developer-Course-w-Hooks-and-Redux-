@@ -33,6 +33,7 @@ const template =(
 let count = 0;
 const addOne = () => {
   count++;
+  renderCounterApp();
   console.log("addOne",count)
 }
 // /// add th two funnction here challenge Area

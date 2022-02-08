@@ -58,6 +58,7 @@ react dom elements docs https://reactjs.org/docs/dom-elements.html
 var count = 0;
 var addOne = function addOne() {
   count++;
+  renderCounterApp();
   console.log("addOne", count);
 };
 // /// add th two funnction here challenge Area
