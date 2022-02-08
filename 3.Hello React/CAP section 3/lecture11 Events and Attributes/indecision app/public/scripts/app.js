@@ -49,10 +49,22 @@ var template = React.createElement(
 /* class called className at jsx 
 react dom elements docs https://reactjs.org/docs/dom-elements.html
 */
+// Challenge time 
+// create two new button and 2 new function that fire 
+/** Make button "-1" console.log("-1") setup minusOne funtion and register - log "minus one 
+ * Makeke Reset button  "reset" - setup function - log 'reset' -log 'reset'
+ * " */
 
 var count = 0;
-var addOne = function addOne() {
-  console.log("addOne");
+// const addOne = () => {
+//   console.log("addOne")
+// }
+// /// add th two funnction here challenge Area
+var minusOne = function minusOne() {
+  console.log("minusOne");
+};
+var reset = function reset() {
+  console.log('reset');
 };
 var templateTwo = React.createElement(
   "div",
@@ -65,8 +77,20 @@ var templateTwo = React.createElement(
   ),
   React.createElement(
     "button",
-    { onClick: addOne, className: "button" },
+    { onClick: function onClick() {
+        console.log('Some value here');
+      }, className: "button" },
     "+1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: minusOne },
+    "-1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: reset },
+    "reset"
   )
 );
 console.log(templateTwo);
