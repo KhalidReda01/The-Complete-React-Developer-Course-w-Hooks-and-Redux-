@@ -51,7 +51,9 @@ react dom elements docs https://reactjs.org/docs/dom-elements.html
 */
 
 var count = 0;
-var someId = "myidhere";
+var addOne = function addOne() {
+  console.log("addOne");
+};
 var templateTwo = React.createElement(
   "div",
   null,
@@ -63,7 +65,7 @@ var templateTwo = React.createElement(
   ),
   React.createElement(
     "button",
-    { id: someId, className: "button" },
+    { onClick: addOne, className: "button" },
     "+1"
   )
 );
