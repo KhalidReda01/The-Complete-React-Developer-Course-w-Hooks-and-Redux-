@@ -56,9 +56,10 @@ react dom elements docs https://reactjs.org/docs/dom-elements.html
  * " */
 
 var count = 0;
-// const addOne = () => {
-//   console.log("addOne")
-// }
+var addOne = function addOne() {
+  count++;
+  console.log("addOne", count);
+};
 // /// add th two funnction here challenge Area
 var minusOne = function minusOne() {
   console.log("minusOne");
@@ -77,9 +78,7 @@ var templateTwo = React.createElement(
   ),
   React.createElement(
     "button",
-    { onClick: function onClick() {
-        console.log('Some value here');
-      }, className: "button" },
+    { onClick: addOne, className: "button" },
     "+1"
   ),
   React.createElement(

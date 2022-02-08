@@ -31,9 +31,10 @@ const template =(
     * " */
 
 let count = 0;
-// const addOne = () => {
-//   console.log("addOne")
-// }
+const addOne = () => {
+  count++;
+  console.log("addOne",count)
+}
 // /// add th two funnction here challenge Area
 const minusOne = () => {
   console.log("minusOne")
@@ -44,9 +45,7 @@ const reset = () => {
 const templateTwo = (
   <div>
     <h1>Count:{count}</h1>
-    <button onClick={() => {
-      console.log('Some value here')
-    }} className="button">+1</button>
+    <button onClick={addOne} className="button">+1</button>
     <button onClick={minusOne}>-1</button>
     <button onClick={reset}>reset</button>
   {/* add the button here challenge Area */}
