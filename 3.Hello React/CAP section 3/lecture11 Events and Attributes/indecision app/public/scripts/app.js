@@ -63,9 +63,13 @@ var addOne = function addOne() {
 };
 // /// add th two funnction here challenge Area
 var minusOne = function minusOne() {
+  count--;
+  renderCounterApp();
   console.log("minusOne");
 };
 var reset = function reset() {
+  count = 0;
+  renderCounterApp();
   console.log('reset');
 };
 

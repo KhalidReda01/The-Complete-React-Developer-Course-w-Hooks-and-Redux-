@@ -38,9 +38,13 @@ const addOne = () => {
 }
 // /// add th two funnction here challenge Area
 const minusOne = () => {
+  count--;
+  renderCounterApp();
   console.log("minusOne")
 }
 const reset = () => {
+  count = 0;
+  renderCounterApp();
   console.log('reset')
 }
 
