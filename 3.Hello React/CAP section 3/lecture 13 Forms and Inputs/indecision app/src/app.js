@@ -1,7 +1,7 @@
 console.log('App.js is running! ')
 
 // JSX - JavaScript XML
-// 11.Events and Attributes
+// 12-Manual Data Binding
 
 const appObject = {
   title: "Indecision App",
@@ -21,38 +21,37 @@ const template =(
   </div>
 );
 
-    /* class called className at jsx 
-    react dom elements docs https://reactjs.org/docs/dom-elements.html
-    */
-   // Challenge time 
-   // create two new button and 2 new function that fire 
-   /** Make button "-1" console.log("-1") setup minusOne funtion and register - log "minus one 
-    * Makeke Reset button  "reset" - setup function - log 'reset' -log 'reset'
-    * " */
 
 let count = 0;
-// const addOne = () => {
-//   console.log("addOne")
-// }
-// /// add th two funnction here challenge Area
+const addOne = () => {
+  count++;
+  renderCounterApp();
+  console.log("addOne",count)
+}
 const minusOne = () => {
+  count--;
+  renderCounterApp();
   console.log("minusOne")
 }
 const reset = () => {
+  count = 0;
+  renderCounterApp();
   console.log('reset')
 }
-const templateTwo = (
+
+const appRoot = document.getElementById('app')
+
+
+// rerender cout to the screen
+const renderCounterApp = () => {
+  const templateTwo = (
   <div>
     <h1>Count:{count}</h1>
-    <button onClick={() => {
-      console.log('Some value here')
-    }} className="button">+1</button>
+    <button onClick={addOne} className="button">+1</button>
     <button onClick={minusOne}>-1</button>
     <button onClick={reset}>reset</button>
-  {/* add the button here challenge Area */}
    </div>
-);
-console.log(templateTwo)
-const appRoot = document.getElementById('app')
-ReactDOM.render(templateTwo , appRoot)
-
+  );
+  ReactDOM.render(templateTwo , appRoot)
+}
+renderCounterApp();
