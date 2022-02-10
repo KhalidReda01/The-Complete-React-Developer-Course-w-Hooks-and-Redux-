@@ -1,10 +1,11 @@
 "use strict";
 
-//  21/16 Build it Visibility Toggle CFSC3
-var visibility = true;
+// 21/16 Build it Visibility Toggle CFSC4
+var visibility = false;
 var toggleVisibility = function toggleVisibility() {
   visibility = !visibility;
   render();
+  console.log("test");
 };
 var render = function render() {
   var jsx = React.createElement(
@@ -18,7 +19,7 @@ var render = function render() {
     React.createElement(
       "button",
       { onClick: toggleVisibility },
-      visibility ? "Hide Details" : "Show details"
+      visibility ? "Hide detail" : "Show details"
     ),
     visibility && React.createElement(
       "div",
@@ -26,11 +27,10 @@ var render = function render() {
       React.createElement(
         "p",
         null,
-        "Hey . These are some details you can now see !"
+        "Hey these are som details you can see now"
       )
     )
   );
   ReactDOM.render(jsx, document.getElementById('app'));
 };
-
 render();
