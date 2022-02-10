@@ -43,7 +43,7 @@
 
 
 // render()
-
+// This idea is the closer to my mind actually
 // Andrea Solution
 var visibility = false;
 var toggleVisibility = function toggleVisibility() {

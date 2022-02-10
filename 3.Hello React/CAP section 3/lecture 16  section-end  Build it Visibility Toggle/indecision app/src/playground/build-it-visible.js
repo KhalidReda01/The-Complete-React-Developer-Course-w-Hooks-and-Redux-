@@ -41,7 +41,7 @@
 
 
 // render()
-
+// This idea is the closer to my mind actually
 // Andrea Solution
 let visibility = false;
 const toggleVisibility = () => {
