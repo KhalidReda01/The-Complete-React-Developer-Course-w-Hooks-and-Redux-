@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * 21/16 Build It Visibilty Toggle
  * create h1 tag visibility Toggle
@@ -41,4 +43,37 @@
 
 
 // render()
-"use strict";
+
+// Andrea Solution
+var visibility = false;
+var toggleVisibility = function toggleVisibility() {
+  visibility = !visibility;
+  render();
+};
+var render = function render() {
+  var jsx = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Visibilty Toggle'
+    ),
+    React.createElement(
+      'button',
+      { onClick: toggleVisibility },
+      visibility ? 'Hide detail' : 'Show details'
+    ),
+    visibility && React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'p',
+        null,
+        'Hey . These are some details you can now see!'
+      )
+    )
+  );
+  ReactDOM.render(jsx, document.getElementById('app'));
+};
+render();
