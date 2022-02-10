@@ -1,16 +1,11 @@
 console.log('App.js is running! ')
 
 /**
- * 18/13 Forms and Inputs
- * http://127.0.0.1:8080/?option=hello+
- * http://127.0.0.1:8080/?option=test
- * You have to repeat lectuers even if  you undrestand what is going on but for mastery okay so repat again and take notes a
- * after you code a long and practice with him 
- *  we don't want to use that old technqie  to do that we are setting up and event handler 
- * react dom events syntheticEvent React  https://reactjs.org/docs/events.html
- * working with arrays in jsx is a topic on its own
- * // Challenge time 
- */
+ * 19/14 Arrays in JSX
+ * 
+ * 
+ *  
+  */
 
 const app = {
   title: "Indecision App",
