@@ -13,6 +13,15 @@ console.log('App.js is running! ')
        Warning: Each child in an array or iterator should have a unique "key" prop.
 Check the top-level render call using <div>. See https://fb.me/react-warning-keys for more information.
     in p
+
+      {
+        [<p key="1">A</p>,<p key="2">B</p>,<p key="3">C</p>]
+      }
+      {
+        numbers.map((number) => {
+          return <p key={number}>Number:{number}</p>
+      })
+      }
  *  
   */
 
@@ -50,18 +59,15 @@ const renderOptionApp = () => {
     <p>{app.options.length>0?"Here are your options":"No Options"}</p>
       <p>{app.options.length}</p>
       <button onClick={removeAll}>Remove All</button>
-      {/* {
-        [<p key="1">A</p>,<p key="2">B</p>,<p key="3">C</p>]
-      } */}
-      {
-        numbers.map((number) => {
-          return <p key={number}>Number:{number}</p>
-      })
-      }
+     
+     
      
     <ol>
-      <li>Item one </li>
-      <li>Item two</li>
+    {
+        app.options.map((option) => {
+          return <li key={option}>{option}</li>
+      })
+      }
     </ol>
     <form onSubmit={onFormSubmit}>
       <input type="text" name="option" />
