@@ -30,7 +30,16 @@ var onFormSubmit = function onFormSubmit(e) {
     renderOptionApp();
   }
 };
-// Challenge Area 
+var appRoot = document.getElementById('app');
+
+// Challenge Area 1
+// Challenge Area 2
+// create "Remove All"button above list
+// on click -> wipe the array -> render  
+var removeAll = function removeAll() {
+  app.options = [];
+  renderOptionApp();
+};
 var renderOptionApp = function renderOptionApp() {
   var template = React.createElement(
     "div",
@@ -78,11 +87,20 @@ var renderOptionApp = function renderOptionApp() {
         "button",
         null,
         "Add Option"
+      ),
+      React.createElement(
+        "button",
+        { onClick: removeAll },
+        "Remove All"
       )
     )
   );
 
-  var appRoot = document.getElementById('app');
+  // const appRoot = document.getElementById('app')
   ReactDOM.render(template, appRoot);
 };
+// Create render function that renders the new jsx
+// call it right away
+// call it after options array is added to 
+
 renderOptionApp();

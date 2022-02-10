@@ -28,7 +28,17 @@ const onFormSubmit = (e) => {
     renderOptionApp() 
   }
 }
-// Challenge Area 
+const appRoot = document.getElementById('app')
+
+// Challenge Area 1
+// Challenge Area 2
+// create "Remove All"button above list
+// on click -> wipe the array -> render  
+const removeAll=() => {
+  app.options = [];
+  renderOptionApp() 
+
+}
 const renderOptionApp = () => {
   const template =(
 <div>
@@ -42,12 +52,17 @@ const renderOptionApp = () => {
     </ol>
     <form onSubmit={onFormSubmit}>
       <input type="text" name="option" />
-      <button>Add Option</button>
+        <button>Add Option</button>
+        <button onClick={removeAll}>Remove All</button>
     </form>
   </div>
 );
 
-const appRoot = document.getElementById('app')
+// const appRoot = document.getElementById('app')
 ReactDOM.render(template,appRoot)
 }
+// Create render function that renders the new jsx
+// call it right away
+// call it after options array is added to 
+
 renderOptionApp() 
