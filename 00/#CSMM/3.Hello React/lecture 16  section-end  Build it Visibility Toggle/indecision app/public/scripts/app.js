@@ -1,9 +1,9 @@
 "use strict";
 
-var visibilty = false;
-var toggleVisibilty = function toggleVisibilty() {
-  visibilty = !visibilty;
-  console.log(visibilty, !visibilty);
+//  21/16 Build it Visibility Toggle CFSC3
+var visibility = true;
+var toggleVisibility = function toggleVisibility() {
+  visibility = !visibility;
   render();
 };
 var render = function render() {
@@ -13,23 +13,24 @@ var render = function render() {
     React.createElement(
       "h1",
       null,
-      "visibilty Toggle"
+      "Visibility Toggle"
     ),
     React.createElement(
       "button",
-      { onClick: toggleVisibilty },
-      visibilty ? "Hide detail" : "Show details"
+      { onClick: toggleVisibility },
+      visibility ? "Hide Details" : "Show details"
     ),
-    visibilty && React.createElement(
+    visibility && React.createElement(
       "div",
       null,
       React.createElement(
         "p",
         null,
-        "Hey . These are some details you can now see!"
+        "Hey . These are some details you can now see !"
       )
     )
   );
   ReactDOM.render(jsx, document.getElementById('app'));
 };
+
 render();

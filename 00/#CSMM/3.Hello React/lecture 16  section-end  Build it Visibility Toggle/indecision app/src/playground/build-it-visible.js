@@ -1,23 +1,24 @@
-let visibilty = false;
-const toggleVisibilty = () => {
-  visibilty = !visibilty;
-  console.log(visibilty,!visibilty)
-  render()
-};
+//  21/16 Build it Visibility Toggle CFSC3
+let visibility = true;
+const toggleVisibility = () => {
+  visibility = !visibility;
+render()
+}
 const render = () => {
   const jsx = (
     <div>
-      <h1>visibilty Toggle</h1>
-      <button onClick={toggleVisibilty}>
-        {visibilty?"Hide detail":"Show details"}
+      <h1>Visibility Toggle</h1>
+      <button onClick={toggleVisibility}>
+        {visibility ? "Hide Details" : "Show details"}
       </button>
-      {visibilty && (
+      {visibility && (
         <div>
-          <p>Hey . These are some details you can now see!</p>
+          <p>Hey . These are some details you can now see !</p>
         </div>
       )}
     </div>
   )
-  ReactDOM.render(jsx,document.getElementById('app'))
+  ReactDOM.render(jsx, document.getElementById('app'))
 }
+
 render()
