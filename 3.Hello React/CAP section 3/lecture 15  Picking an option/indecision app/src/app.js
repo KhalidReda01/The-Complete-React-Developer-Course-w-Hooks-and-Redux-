@@ -1,29 +1,7 @@
 console.log('App.js is running! ')
-
 /**
- * 19/14 Arrays in JSX
- * 
- *  {
-        [99,98,97,"Khalid Reda",null,undefined,true]
-      }
-      { {99}{98}{97} }
-      { // we can render jsx inside of jsx
-      {<p>1</p>} }
-      // when we are usinx jsx in arrays we get erros react.development.js:171
-       Warning: Each child in an array or iterator should have a unique "key" prop.
-Check the top-level render call using <div>. See https://fb.me/react-warning-keys for more information.
-    in p
-
-      {
-        [<p key="1">A</p>,<p key="2">B</p>,<p key="3">C</p>]
-      }
-      {
-        numbers.map((number) => {
-          return <p key={number}>Number:{number}</p>
-      })
-      }
- *  
-  */
+ * 20/15 Picking an option 
+ */
 
 const app = {
   title: "Indecision App",
@@ -49,16 +27,22 @@ const removeAll=() => {
   renderOptionApp() 
 
 }
-const numbers = [55, 101, 100];
+// const numbers = [55, 101, 100];
+const onMakeDecision = () => {
+  const randomNum = Math.floor(Math.random() * app.options.length);
+  const option = app.options[randomNum];
+  alert(option);
+}
 
 const renderOptionApp = () => {
   const template =(
 <div>
     <h1>{app.title} </h1>    
     {app.subtitle&& <p>{app.subtitle}</p>} 
-    <p>{app.options.length>0?"Here are your options":"No Options"}</p>
-      <p>{app.options.length}</p>
+      <p>{app.options.length > 0 ? "Here are your options" : "No Options"}</p>
+      <button disabled={app.options.length===0} onClick={onMakeDecision}>What Should I do?</button>
       <button onClick={removeAll}>Remove All</button>
+
      
      
      
