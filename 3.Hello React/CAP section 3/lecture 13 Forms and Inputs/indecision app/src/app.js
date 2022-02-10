@@ -25,10 +25,12 @@ const onFormSubmit = (e) => {
   if (option) {
     app.options.push(option)
     e.target.elements.option.value = '';
-
+    renderOptionApp() 
   }
 }
-const template =(
+// Challenge Area 
+const renderOptionApp = () => {
+  const template =(
 <div>
     <h1>{app.title} </h1>    
     {app.subtitle&& <p>{app.subtitle}</p>} 
@@ -47,3 +49,5 @@ const template =(
 
 const appRoot = document.getElementById('app')
 ReactDOM.render(template,appRoot)
+}
+renderOptionApp() 

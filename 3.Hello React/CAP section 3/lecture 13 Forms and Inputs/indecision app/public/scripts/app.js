@@ -27,57 +27,62 @@ var onFormSubmit = function onFormSubmit(e) {
   if (option) {
     app.options.push(option);
     e.target.elements.option.value = '';
+    renderOptionApp();
   }
 };
-var template = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    app.title,
-    " "
-  ),
-  app.subtitle && React.createElement(
-    "p",
-    null,
-    app.subtitle
-  ),
-  React.createElement(
-    "p",
-    null,
-    app.options.length > 0 ? "Here are your options" : "No Options"
-  ),
-  React.createElement(
-    "p",
-    null,
-    app.options.length
-  ),
-  React.createElement(
-    "ol",
+// Challenge Area 
+var renderOptionApp = function renderOptionApp() {
+  var template = React.createElement(
+    "div",
     null,
     React.createElement(
-      "li",
+      "h1",
       null,
-      "Item one"
+      app.title,
+      " "
+    ),
+    app.subtitle && React.createElement(
+      "p",
+      null,
+      app.subtitle
     ),
     React.createElement(
-      "li",
+      "p",
       null,
-      "Item two"
-    )
-  ),
-  React.createElement(
-    "form",
-    { onSubmit: onFormSubmit },
-    React.createElement("input", { type: "text", name: "option" }),
+      app.options.length > 0 ? "Here are your options" : "No Options"
+    ),
     React.createElement(
-      "button",
+      "p",
       null,
-      "Add Option"
+      app.options.length
+    ),
+    React.createElement(
+      "ol",
+      null,
+      React.createElement(
+        "li",
+        null,
+        "Item one"
+      ),
+      React.createElement(
+        "li",
+        null,
+        "Item two"
+      )
+    ),
+    React.createElement(
+      "form",
+      { onSubmit: onFormSubmit },
+      React.createElement("input", { type: "text", name: "option" }),
+      React.createElement(
+        "button",
+        null,
+        "Add Option"
+      )
     )
-  )
-);
+  );
 
-var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+  var appRoot = document.getElementById('app');
+  ReactDOM.render(template, appRoot);
+};
+renderOptionApp();
