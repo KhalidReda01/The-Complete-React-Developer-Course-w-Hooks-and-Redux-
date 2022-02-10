@@ -5,7 +5,16 @@ console.log('App.js is running! ');
 /**
  * 19/14 Arrays in JSX
  * 
- * 
+ *  {
+        [99,98,97,"Khalid Reda",null,undefined,true]
+      }
+      { {99}{98}{97} }
+      { // we can render jsx inside of jsx
+      {<p>1</p>} }
+      // when we are usinx jsx in arrays we get erros react.development.js:171
+       Warning: Each child in an array or iterator should have a unique "key" prop.
+Check the top-level render call using <div>. See https://fb.me/react-warning-keys for more information.
+    in p
  *  
   */
 
@@ -27,14 +36,12 @@ var onFormSubmit = function onFormSubmit(e) {
 };
 var appRoot = document.getElementById('app');
 
-// Challenge Area 1
-// Challenge Area 2
-// create "Remove All"button above list
-// on click -> wipe the array -> render  
 var removeAll = function removeAll() {
   app.options = [];
   renderOptionApp();
 };
+var numbers = [55, 101, 100];
+
 var renderOptionApp = function renderOptionApp() {
   var template = React.createElement(
     "div",
@@ -61,6 +68,19 @@ var renderOptionApp = function renderOptionApp() {
       app.options.length
     ),
     React.createElement(
+      "button",
+      { onClick: removeAll },
+      "Remove All"
+    ),
+    numbers.map(function (number) {
+      return React.createElement(
+        "p",
+        { key: number },
+        "Number:",
+        number
+      );
+    }),
+    React.createElement(
       "ol",
       null,
       React.createElement(
@@ -82,11 +102,6 @@ var renderOptionApp = function renderOptionApp() {
         "button",
         null,
         "Add Option"
-      ),
-      React.createElement(
-        "button",
-        { onClick: removeAll },
-        "Remove All"
       )
     )
   );

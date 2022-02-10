@@ -3,7 +3,16 @@ console.log('App.js is running! ')
 /**
  * 19/14 Arrays in JSX
  * 
- * 
+ *  {
+        [99,98,97,"Khalid Reda",null,undefined,true]
+      }
+      { {99}{98}{97} }
+      { // we can render jsx inside of jsx
+      {<p>1</p>} }
+      // when we are usinx jsx in arrays we get erros react.development.js:171
+       Warning: Each child in an array or iterator should have a unique "key" prop.
+Check the top-level render call using <div>. See https://fb.me/react-warning-keys for more information.
+    in p
  *  
   */
 
@@ -25,22 +34,31 @@ const onFormSubmit = (e) => {
 }
 const appRoot = document.getElementById('app')
 
-// Challenge Area 1
-// Challenge Area 2
-// create "Remove All"button above list
-// on click -> wipe the array -> render  
+ 
 const removeAll=() => {
   app.options = [];
   renderOptionApp() 
 
 }
+const numbers = [55, 101, 100];
+
 const renderOptionApp = () => {
   const template =(
 <div>
     <h1>{app.title} </h1>    
     {app.subtitle&& <p>{app.subtitle}</p>} 
     <p>{app.options.length>0?"Here are your options":"No Options"}</p>
-    <p>{app.options.length}</p>
+      <p>{app.options.length}</p>
+      <button onClick={removeAll}>Remove All</button>
+      {/* {
+        [<p key="1">A</p>,<p key="2">B</p>,<p key="3">C</p>]
+      } */}
+      {
+        numbers.map((number) => {
+          return <p key={number}>Number:{number}</p>
+      })
+      }
+     
     <ol>
       <li>Item one </li>
       <li>Item two</li>
@@ -48,7 +66,7 @@ const renderOptionApp = () => {
     <form onSubmit={onFormSubmit}>
       <input type="text" name="option" />
         <button>Add Option</button>
-        <button onClick={removeAll}>Remove All</button>
+        
     </form>
   </div>
 );
