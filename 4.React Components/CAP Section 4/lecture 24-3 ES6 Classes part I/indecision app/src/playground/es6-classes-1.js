@@ -37,14 +37,21 @@ console.log(other2)
 // getDescription - Khalid Reda is 13 year(s) old .
 
 class Person {
-  constructor(name='Anonymous') {
+  constructor(name='Anonymous',age=0) {
     this.name = name;
+    this.age=age
   }
   getGreeting() {
     return `Hi . I am ${this.name} !`
   }
+  getDescription() {
+    return `${this.name} is ${this.age} years old .`
+  }
+
 }
-const me = new Person('Khalid Reda');
+const me = new Person('Khalid Reda',23);
 const other= new Person()
-console.log(me.getGreeting())
-console.log(other.getGreeting())
+// console.log(me.getGreeting())
+// console.log(other.getGreeting())
+console.log(me.getDescription())
+console.log(other.getDescription())
