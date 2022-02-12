@@ -1,17 +1,14 @@
-//  CFM lecture 24-3 ES6 classes part I
+//  CSFM lecture 24-3 ES6 classes part I
  
-class Person {
-  constructor(name="Anonmyous",age=0) {
-    this.name = name;
-    this.age = age;
+class Car {
+  constructor(make,model,vin) {
+    this.make = make;
+    this.model = model;
+    this.vin = vin;
   }
-  getGreeting() {
-  return `Hi. ${this.name}`
-  }
-  getDescrition() {
-    return `${this.name} is ${this.age} year(s) old `
+  getDescription() {
+    return `the car make is ${this.make} its model is ${this.model} and the vin is ${this.vin}`
   }
 }
-const me = new Person("khalid Reda",23)
-console.log(me.getGreeting())
-console.log(me.getDescrition())
+const Toyta = new Car("Toyta", 2020, "dfhdfds")
+console.log(Toyta.getDescription())
