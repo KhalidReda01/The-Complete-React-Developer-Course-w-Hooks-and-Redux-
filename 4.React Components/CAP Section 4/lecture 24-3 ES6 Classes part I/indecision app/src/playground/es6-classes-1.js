@@ -1,57 +1,23 @@
-// There was an Error when I create a es6-classes-1.js
-// but try to use babel give me an error because really the file doesn't exsit in the working directory
-// so make sure that your file really exist created it in VScode donesn't gaurante that
-/**
- * 24-3 ES6 Classes Part I
- * // Car
-// Make
-// Model
-// Vin
-// getDescription 
-
- */
-/**
- * constructor Function define it to get acces to khalid Reda 
- * the constructor function that get called them can make a new instance and it get called with of the arguments 
- * so if we wanted to do something with the name so you have to define the constructor function 
- * if we have to do that no but we lose acces to that data khalid reda 
- * class Person {
-  constructor(name='loda') {
-    this.name = name||'Test';
-}
-}
-const me = new Person('Khalid Reda');
-const other= new Person("Mohamed Reda ")
-const other2= new Person()
-console.log(me)
-console.log(other)
-console.log(other2)
-
-    // return "Hi. I am "+this.name+" !";
-    // template string back time old info I know that
-
-
- */
-// challenge time 
-// Setup contructor  to take name and age (defualt to 0)
-// getDescription - Khalid Reda is 13 year(s) old .
+//  CFSC lecture 24-3 ES6 classes part I
 
 class Person {
-  constructor(name='Anonymous',age=0) {
+  constructor(name="Anonymous",age= 0) {
     this.name = name;
-    this.age=age
+    this.age = age
   }
   getGreeting() {
-    return `Hi . I am ${this.name} !`
+    return `Hi . I am ${this.name}`
   }
   getDescription() {
-    return `${this.name} is ${this.age} years old .`
+    return `${this.name} is ${this.age} years(s) old .`
   }
-
 }
-const me = new Person('Khalid Reda',23);
-const other= new Person()
-// console.log(me.getGreeting())
-// console.log(other.getGreeting())
+const me = new Person("khalid Reda",23)
+const other = new Person();
+// console.log(me.name)
+// console.log(me.age)
+// console.log(other)
+console.log(me.getGreeting())
 console.log(me.getDescription())
+console.log(other.getGreeting())
 console.log(other.getDescription())
