@@ -36,17 +36,37 @@ class Student extends Person {
     return description
   }
 }
-// Challenge time 
+// Challenge time
 // Traveler -> Person
 // Add support for homeLocation
 // Override getGreeting
 //1.Hi I am Khalid Reda . I'm visiting from Mansura
 //2. Hi I am Khalid Reda 
+class Traveler extends Student {
+  constructor(name, age, major, homeLocation) {
+    super(name, age, major)
+    this.homeLocation=homeLocation
+  }
+  hasHomeLocation() {
+    return !!this.homeLocation
+   
+  }
+  getGretting() {
+        let greeting = super.getGretting()
+        if (this.hasHomeLocation()) {
+          greeting += `I'm visiting From Mansurra`
+        }
+      return greeting
+  }
+}
 
 
-const me = new Student('Khalid Reda', 26,"Computer Sciencce");
-const test = new Student('Khalid Reda', 26,"Computer Sciencce");
-console.log(me.getDescription());
+// const me = new Traveler('Mansura')
+// console.log(me)
+const me = new Traveler('Khalid Reda', 26,"Computer Sciencce","Mansura");
+// console.log(me.getDescription());
 
-const other = new Student();
-console.log(other.getDescription());
+const other = new Traveler();
+// console.log(other.getDescription());
+// const me2 = new Traveler('Mansura')
+console.log(me.getGretting())

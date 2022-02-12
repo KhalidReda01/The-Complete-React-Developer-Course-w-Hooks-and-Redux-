@@ -77,7 +77,7 @@ var Student = function (_Person) {
 
   return Student;
 }(Person);
-// Challenge time 
+// Challenge time
 // Traveler -> Person
 // Add support for homeLocation
 // Override getGreeting
@@ -85,9 +85,45 @@ var Student = function (_Person) {
 //2. Hi I am Khalid Reda 
 
 
-var me = new Student('Khalid Reda', 26, "Computer Sciencce");
-var test = new Student('Khalid Reda', 26, "Computer Sciencce");
-console.log(me.getDescription());
+var Traveler = function (_Student) {
+  _inherits(Traveler, _Student);
 
-var other = new Student();
-console.log(other.getDescription());
+  function Traveler(name, age, major, homeLocation) {
+    _classCallCheck(this, Traveler);
+
+    var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age, major));
+
+    _this2.homeLocation = homeLocation;
+    return _this2;
+  }
+
+  _createClass(Traveler, [{
+    key: 'hasHomeLocation',
+    value: function hasHomeLocation() {
+      return !!this.homeLocation;
+    }
+  }, {
+    key: 'getGretting',
+    value: function getGretting() {
+      var greeting = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), 'getGretting', this).call(this);
+      if (this.hasHomeLocation()) {
+        greeting += 'I\'m visiting From Mansurra';
+      }
+      return greeting;
+    }
+  }]);
+
+  return Traveler;
+}(Student);
+
+// const me = new Traveler('Mansura')
+// console.log(me)
+
+
+var me = new Traveler('Khalid Reda', 26, "Computer Sciencce", "Mansura");
+// console.log(me.getDescription());
+
+var other = new Traveler();
+// console.log(other.getDescription());
+// const me2 = new Traveler('Mansura')
+console.log(me.getGretting());
