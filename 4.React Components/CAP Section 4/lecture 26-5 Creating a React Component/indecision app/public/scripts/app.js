@@ -71,10 +71,76 @@ var Action = function (_React$Component2) {
 // options contains a list Options component here
 // AddOptions -> Add Option Component here
 
+
+var Options = function (_React$Component3) {
+  _inherits(Options, _React$Component3);
+
+  function Options() {
+    _classCallCheck(this, Options);
+
+    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
+  }
+
+  _createClass(Options, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'p',
+          null,
+          'Here are your options'
+        )
+      );
+    }
+  }]);
+
+  return Options;
+}(React.Component);
+
+var AddOptions = function (_React$Component4) {
+  _inherits(AddOptions, _React$Component4);
+
+  function AddOptions() {
+    _classCallCheck(this, AddOptions);
+
+    return _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).apply(this, arguments));
+  }
+
+  _createClass(AddOptions, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'ol',
+          null,
+          React.createElement(
+            'li',
+            null,
+            'option 1'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'option 2'
+          )
+        )
+      );
+    }
+  }]);
+
+  return AddOptions;
+}(React.Component);
+
 var jsx = React.createElement(
   'div',
   null,
   React.createElement(Header, null),
-  React.createElement(Action, null)
+  React.createElement(Action, null),
+  React.createElement(Options, null),
+  React.createElement(AddOptions, null)
 );
 ReactDOM.render(jsx, document.getElementById('app'));

@@ -20,12 +20,33 @@ class Action extends React.Component{
 // Challenge time
 // options contains a list Options component here
 // AddOptions -> Add Option Component here
-
+class Options extends React.Component{
+  render() {
+    return (
+      <div>
+       <p>Here are your options</p>
+      </div>
+    )
+  }
+}
+class AddOptions extends React.Component{
+  render() {
+    return (
+      <div>
+         <ol>
+          <li>option 1</li>
+          <li>option 2</li>
+        </ol>
+      </div>
+    )
+  }
+}
 const jsx = (
   <div>
     <Header/>
-    
-    <Action/>
+    <Action />
+    <Options />
+    <AddOptions />
   </div>
 )
 ReactDOM.render(jsx,document.getElementById('app'))
