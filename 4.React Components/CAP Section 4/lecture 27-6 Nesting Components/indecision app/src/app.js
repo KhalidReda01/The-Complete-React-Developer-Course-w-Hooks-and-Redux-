@@ -1,4 +1,16 @@
-// 26-5 Creating a React Component
+// 27-6 Nesting component
+class IndecisionApp extends React.Component{
+  render() {
+    return (
+         <div>
+      <Header />
+      <Action />
+      <AddOptions/>
+    </div>)
+  }
+    
+ 
+}
 class Header extends React.Component {
   render() {
     return (
@@ -17,9 +29,9 @@ class Action extends React.Component{
   }
  
 }
-// Challenge time
-// options contains a list Options component here
-// AddOptions -> Add Option Component here
+
+// Challenge time redner a new compent that render insdie of options
+//Option -> option Compoent here 
 class Options extends React.Component{
   render() {
     return (
@@ -41,12 +53,14 @@ class AddOptions extends React.Component{
     )
   }
 }
-const jsx = (
-  <div>
-    <Header/>
-    <Action />
-    <Options />
-    <AddOptions />
-  </div>
-)
-ReactDOM.render(jsx,document.getElementById('app'))
+
+// No longer been requried 
+// const jsx = (
+//   <div>
+//     <Header/>
+//     <Action />
+//     <Options />
+//     <AddOptions />
+//   </div>
+// )
+ReactDOM.render(<IndecisionApp/>,document.getElementById('app'))
