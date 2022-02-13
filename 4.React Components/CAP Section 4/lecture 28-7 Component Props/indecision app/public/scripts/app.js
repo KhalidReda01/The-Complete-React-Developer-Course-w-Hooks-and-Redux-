@@ -29,7 +29,7 @@ var IndecisionApp = function (_React$Component) {
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
-        React.createElement(Options, { option: options }),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOptions, null)
       );
     }
@@ -114,7 +114,7 @@ var Options = function (_React$Component4) {
   _createClass(Options, [{
     key: "render",
     value: function render() {
-      console.log(this.props.option[1]);
+      console.log(this.props.options[1]);
       return React.createElement(
         "div",
         null,
@@ -124,7 +124,7 @@ var Options = function (_React$Component4) {
           "Here are your options"
         ),
         React.createElement("p", null),
-        React.createElement(Option, { option: this.props.option })
+        React.createElement(Option, { option: this.props.options })
       );
     }
   }]);
@@ -147,6 +147,9 @@ var Option = function (_React$Component5) {
   _createClass(Option, [{
     key: "render",
     value: function render() {
+      //challenge two
+      // render new p tage for each option
+
       return React.createElement(
         "div",
         null,
@@ -164,18 +167,15 @@ var Option = function (_React$Component5) {
         React.createElement(
           "p",
           null,
-          this.props.option[0]
+          "Challenge Two"
         ),
-        React.createElement(
-          "p",
-          null,
-          this.props.option[1]
-        ),
-        React.createElement(
-          "p",
-          null,
-          this.props.option[2]
-        )
+        this.props.option.map(function (option) {
+          return React.createElement(
+            "p",
+            { key: option },
+            option
+          );
+        })
       );
     }
   }]);

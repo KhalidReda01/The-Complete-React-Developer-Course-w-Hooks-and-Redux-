@@ -8,7 +8,7 @@ class IndecisionApp extends React.Component{
          <div>
       <Header title={title} subtitle={subtitle} />
         <Action />
-        <Options option={options }/>
+        <Options options={options}/>
       <AddOptions />
     </div>)
   }
@@ -42,12 +42,12 @@ class Action extends React.Component{
 
 class Options extends React.Component{
   render() {
-    console.log(this.props.option[1])
+    console.log(this.props.options[1])
     return (
       <div>
         <p>Here are your options</p>
         <p></p>
-        <Option option={this.props.option }/>
+        <Option option={this.props.options }/>
       </div>
       
     )
@@ -57,13 +57,22 @@ class Options extends React.Component{
 //Option -> option Compoent here 
 class Option extends React.Component{
   render() {
+  //challenge two
+  // render new p tage for each option
+    
     return (
       <div>
         <p>Option Component Here </p> 
-        <p>Your Option length is {this.props.option.length }</p>
-        <p>{this.props.option[0] }</p>
+        <p>Your Option length is {this.props.option.length}</p>
+        <p>Challenge Two</p>
+        {
+      this.props.option.map((option) => {
+        return <p key={option}>{option}</p>
+    })
+    }
+        {/* <p>{this.props.option[0] }</p>
         <p>{this.props.option[1] }</p>
-        <p>{this.props.option[2] }</p>
+        <p>{this.props.option[2] }</p> */}
       </div>
     )
   }
