@@ -1,5 +1,18 @@
-// CFSC 26-5 Creating a React Component
+// CFSC 27-6 Nesting Components
 
+
+class IndecisionApp extends React.Component{
+  render() {
+    return (
+      <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOptions/>
+      </div>
+    )
+  }
+}
 class Header extends React.Component {
   render() {
     return (
@@ -24,6 +37,17 @@ class Options extends React.Component{
     return (
       <div>
         Options Component Here
+        <Option/>
+      </div>
+    )
+  }
+}
+// the challnge again
+class Option extends React.Component{
+  render() {
+    return (
+      <div>
+        New Option Component Here
       </div>
     )
   }
@@ -37,12 +61,13 @@ class AddOptions extends React.Component{
     )
   }
 }
-const jsx = (
-  <div>
-    <Header />
-    <Action />
-    <Options />
-    <AddOptions/>
-  </div>
-)
-ReactDOM.render(jsx,document.getElementById('app'))
+//delte this we don't need it more  but leave it to understand the big picture
+// const jsx = (
+//   <div>
+//     <Header />
+//     <Action />
+//     <Options />
+//     <AddOptions/>
+//   </div>
+// )
+ReactDOM.render(<IndecisionApp/>,document.getElementById('app'))
