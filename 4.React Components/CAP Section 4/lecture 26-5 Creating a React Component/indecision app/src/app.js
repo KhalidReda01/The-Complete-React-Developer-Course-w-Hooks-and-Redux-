@@ -1,72 +1,31 @@
-console.log('App.js is running! ')
-/**
- * 20/15 Picking an option 
- */
-
-const app = {
-  title: "Indecision App",
-  subtitle: "Put your life in the hands of a computer",
-  options:[]
+// 26-5 Creating a React Component
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Indecision</h1>
+        <h2>Put your Life in the hand of a computer</h2>
+      </div>
+      )
 }
-const onFormSubmit = (e) => {
-  e.preventDefault();
-  // console.log("Form Submitted!")
-  // console.log(e.target.elements)
-  const option = e.target.elements.option.value;
-  if (option) {
-    app.options.push(option)
-    e.target.elements.option.value = '';
-    renderOptionApp() 
+}
+class Action extends React.Component{
+  render() {
+    return (<div>
+       <button>What should I do ?</button>
+     </div>)
   }
-}
-const appRoot = document.getElementById('app')
-
  
-const removeAll=() => {
-  app.options = [];
-  renderOptionApp() 
-
 }
-// const numbers = [55, 101, 100];
-const onMakeDecision = () => {
-  const randomNum = Math.floor(Math.random() * app.options.length);
-  const option = app.options[randomNum];
-  alert(option);
-}
+// Challenge time
+// options contains a list Options component here
+// AddOptions -> Add Option Component here
 
-const renderOptionApp = () => {
-  const template =(
-<div>
-    <h1>{app.title} </h1>    
-    {app.subtitle&& <p>{app.subtitle}</p>} 
-      <p>{app.options.length > 0 ? "Here are your options" : "No Options"}</p>
-      <button disabled={app.options.length===0} onClick={onMakeDecision}>What Should I do?</button>
-      <button onClick={removeAll}>Remove All</button>
-
-     
-     
-     
-      <ol>
-        {/* Map over  app.options getting back and array of lis (set key and text ) */}
-    {
-        app.options.map((option) => {
-          return <li key={option}>{option}</li>
-      })
-      }
-    </ol>
-    <form onSubmit={onFormSubmit}>
-      <input type="text" name="option" />
-        <button>Add Option</button>
-        
-    </form>
+const jsx = (
+  <div>
+    <Header/>
+    
+    <Action/>
   </div>
-);
-
-// const appRoot = document.getElementById('app')
-ReactDOM.render(template,appRoot)
-}
-// Create render function that renders the new jsx
-// call it right away
-// call it after options array is added to 
-
-renderOptionApp() 
+)
+ReactDOM.render(jsx,document.getElementById('app'))
