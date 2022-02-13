@@ -26,6 +26,7 @@ var IndecisionApp = function (_React$Component) {
         null,
         React.createElement(Header, null),
         React.createElement(Action, null),
+        React.createElement(Options, null),
         React.createElement(AddOptions, null)
       );
     }
@@ -93,10 +94,6 @@ var Action = function (_React$Component3) {
   return Action;
 }(React.Component);
 
-// Challenge time redner a new compent that render insdie of options
-//Option -> option Compoent here 
-
-
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
@@ -116,16 +113,47 @@ var Options = function (_React$Component4) {
           'p',
           null,
           'Here are your options'
-        )
+        ),
+        React.createElement(Option, null)
       );
     }
   }]);
 
   return Options;
 }(React.Component);
+// Challenge time redner a new compent that render insdie of options
+//Option -> option Compoent here 
 
-var AddOptions = function (_React$Component5) {
-  _inherits(AddOptions, _React$Component5);
+
+var Option = function (_React$Component5) {
+  _inherits(Option, _React$Component5);
+
+  function Option() {
+    _classCallCheck(this, Option);
+
+    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
+  }
+
+  _createClass(Option, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'p',
+          null,
+          'Option Component Here '
+        )
+      );
+    }
+  }]);
+
+  return Option;
+}(React.Component);
+
+var AddOptions = function (_React$Component6) {
+  _inherits(AddOptions, _React$Component6);
 
   function AddOptions() {
     _classCallCheck(this, AddOptions);
@@ -139,6 +167,11 @@ var AddOptions = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
+        React.createElement(
+          'p',
+          null,
+          'Add option Component Here'
+        ),
         React.createElement(
           'ol',
           null,

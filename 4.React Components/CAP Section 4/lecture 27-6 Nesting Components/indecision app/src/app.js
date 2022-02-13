@@ -4,8 +4,9 @@ class IndecisionApp extends React.Component{
     return (
          <div>
       <Header />
-      <Action />
-      <AddOptions/>
+        <Action />
+        <Options/>
+      <AddOptions />
     </div>)
   }
     
@@ -30,13 +31,25 @@ class Action extends React.Component{
  
 }
 
-// Challenge time redner a new compent that render insdie of options
-//Option -> option Compoent here 
+
 class Options extends React.Component{
   render() {
     return (
       <div>
-       <p>Here are your options</p>
+        <p>Here are your options</p>
+        <Option/>
+      </div>
+      
+    )
+  }
+}
+// Challenge time redner a new compent that render insdie of options
+//Option -> option Compoent here 
+class Option extends React.Component{
+  render() {
+    return (
+      <div>
+       <p>Option Component Here </p> 
       </div>
     )
   }
@@ -45,6 +58,7 @@ class AddOptions extends React.Component{
   render() {
     return (
       <div>
+        <p>Add option Component Here</p>
          <ol>
           <li>option 1</li>
           <li>option 2</li>
