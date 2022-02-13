@@ -46,8 +46,11 @@ class Options extends React.Component{
     return (
       <div>
         <p>Here are your options</p>
-        <p></p>
-        <Option option={this.props.options }/>
+        {
+      this.props.options.map((option) => {
+        return <p key={option}>{option}</p>
+    })
+    }
       </div>
       
     )
@@ -63,13 +66,9 @@ class Option extends React.Component{
     return (
       <div>
         <p>Option Component Here </p> 
-        <p>Your Option length is {this.props.option.length}</p>
-        <p>Challenge Two</p>
-        {
-      this.props.option.map((option) => {
-        return <p key={option}>{option}</p>
-    })
-    }
+        {/* <p>Your Option length is {this.props.option.length}</p>
+        <p>Challenge Two</p> */}
+        
         {/* <p>{this.props.option[0] }</p>
         <p>{this.props.option[1] }</p>
         <p>{this.props.option[2] }</p> */}
