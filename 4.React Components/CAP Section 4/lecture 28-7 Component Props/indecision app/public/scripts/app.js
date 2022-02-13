@@ -29,7 +29,7 @@ var IndecisionApp = function (_React$Component) {
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { option: options }),
         React.createElement(AddOptions, null)
       );
     }
@@ -82,6 +82,7 @@ var Action = function (_React$Component3) {
   _createClass(Action, [{
     key: "render",
     value: function render() {
+      console.log(this);
       return React.createElement(
         "div",
         null,
@@ -113,6 +114,7 @@ var Options = function (_React$Component4) {
   _createClass(Options, [{
     key: "render",
     value: function render() {
+      console.log(this.props.option[1]);
       return React.createElement(
         "div",
         null,
@@ -121,7 +123,8 @@ var Options = function (_React$Component4) {
           null,
           "Here are your options"
         ),
-        React.createElement(Option, null)
+        React.createElement("p", null),
+        React.createElement(Option, { option: this.props.option })
       );
     }
   }]);
@@ -151,6 +154,27 @@ var Option = function (_React$Component5) {
           "p",
           null,
           "Option Component Here "
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Your Option length is ",
+          this.props.option.length
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.option[0]
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.option[1]
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.props.option[2]
         )
       );
     }
@@ -178,20 +202,6 @@ var AddOptions = function (_React$Component6) {
           "p",
           null,
           "Add option Component Here"
-        ),
-        React.createElement(
-          "ol",
-          null,
-          React.createElement(
-            "li",
-            null,
-            "option 1"
-          ),
-          React.createElement(
-            "li",
-            null,
-            "option 2"
-          )
         )
       );
     }

@@ -8,7 +8,7 @@ class IndecisionApp extends React.Component{
          <div>
       <Header title={title} subtitle={subtitle} />
         <Action />
-        <Options/>
+        <Options option={options }/>
       <AddOptions />
     </div>)
   }
@@ -27,7 +27,9 @@ class Header extends React.Component {
 }
 class Action extends React.Component{
   render() {
+    console.log(this)
     return (<div>
+    
        <button>What should I do ?</button>
      </div>)
   }
@@ -40,10 +42,12 @@ class Action extends React.Component{
 
 class Options extends React.Component{
   render() {
+    console.log(this.props.option[1])
     return (
       <div>
         <p>Here are your options</p>
-        <Option/>
+        <p></p>
+        <Option option={this.props.option }/>
       </div>
       
     )
@@ -55,7 +59,11 @@ class Option extends React.Component{
   render() {
     return (
       <div>
-       <p>Option Component Here </p> 
+        <p>Option Component Here </p> 
+        <p>Your Option length is {this.props.option.length }</p>
+        <p>{this.props.option[0] }</p>
+        <p>{this.props.option[1] }</p>
+        <p>{this.props.option[2] }</p>
       </div>
     )
   }
@@ -65,10 +73,10 @@ class AddOptions extends React.Component{
     return (
       <div>
         <p>Add option Component Here</p>
-         <ol>
+         {/* <ol>
           <li>option 1</li>
           <li>option 2</li>
-        </ol>
+        </ol> */}
       </div>
     )
   }
