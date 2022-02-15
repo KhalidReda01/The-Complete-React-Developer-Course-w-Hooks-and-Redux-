@@ -8,7 +8,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// 28-8 Events & Methods
+/**
+ * 30.9 Method Binding
+ * 
+ * 
+ */
+// this is the binding you need ASQ WCN
+// const obj = {
+//   name: 'Youssef',
+//   getName() {
+//     return this.name
+//   }
+// }
+
+// // const getName = obj.getName;
+// // const getName = obj.getName.bind(obj);
+// const getName = obj.getName.bind({name:"loda"});// print loda
+// console.log(getName())
+// // console.log(obj.getName());
+// //Uncaught TypeError: getName is not a function
+
+// // const func = function () {
+// //   console.log(this)
+// // }
+// // func() // undefined
+// //  to solve this we are goning to use the bind method available on fuciton in javascript
+// // SAQ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind MDN that's it even he recomend that but you just searced before he mention that so 
+// MDN is your resouces to js
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
@@ -102,25 +128,35 @@ var Action = function (_React$Component3) {
 
   return Action;
 }(React.Component);
-// Challenge Time Rancho
-// Add Remove All Button
-// setup handleRemoveAll  -> alert some message 
-// setup onClick to fire the method
-
 
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
-  function Options() {
+  // use this instead you have to repeat WTV WCN to funlly master 
+  function Options(props) {
     _classCallCheck(this, Options);
 
-    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
+    var _this4 = _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).call(this, props));
+
+    _this4.handleRemoveAll = _this4.handleRemoveAll.bind(_this4);
+    return _this4;
   }
+  /** NOw when we do that we are making sure that whatever we call hand to remove all the context is correct 
+   * and that also means that I just run this binding once when the component first get intialized
+   * so we have to ways to bind those event handlers 
+   * we can call bind in line and render but that's not efficient
+   * but what we're going to be doing is calling bind in the constructor method
+   * so Now ther 's no need to set up the bindings for the other tow components .
+   * but we are going to do in the next lecture is to take a look at how we can start setting up react components to render data  and have that real time binding 
+   * so when the data changes automatically render the UI that is in contrast to what we saw in jsx-indesion 
+  */
+
 
   _createClass(Options, [{
     key: "handleRemoveAll",
     value: function handleRemoveAll() {
       alert("This remove button works now");
+      console.log(this.props.options);
     }
   }, {
     key: "render",
@@ -148,9 +184,6 @@ var Options = function (_React$Component4) {
 
   return Options;
 }(React.Component);
-// Challenge time redner a new compent that render insdie of options
-//Option -> option Compoent here 
-
 
 var Option = function (_React$Component5) {
   _inherits(Option, _React$Component5);
@@ -164,8 +197,6 @@ var Option = function (_React$Component5) {
   _createClass(Option, [{
     key: "render",
     value: function render() {
-      //challenge two
-      // render new p tage for each option
 
       return React.createElement(
         "div",
@@ -182,12 +213,6 @@ var Option = function (_React$Component5) {
 
   return Option;
 }(React.Component);
-// Second Challenge
-// 1. setup th form with text input and submit button
-// 2. wire up onSubmit
-// 3.handleAddOption -> fetch the  value typed -> if value ,then alert 
-// the second Challenge is little hard 
-
 
 var AddOptions = function (_React$Component6) {
   _inherits(AddOptions, _React$Component6);
@@ -200,15 +225,6 @@ var AddOptions = function (_React$Component6) {
 
   _createClass(AddOptions, [{
     key: "handleAddOption",
-
-    // handleAddOption(e) {
-    //   e.preventDefault();
-    //   const option = e.target.elements.option.value.trim();
-    //   if (option) {
-    //     alert(option )
-    //   }
-
-    // }
     value: function handleAddOption(e) {
       e.preventDefault();
 
@@ -241,41 +257,5 @@ var AddOptions = function (_React$Component6) {
 
   return AddOptions;
 }(React.Component);
-/**
- * OMG the Error was this part  <form onSubmit={this.hanldeAddOption}> I 
- * mistyped the handleAddOption ahahah Focus 
- */
-// render() {
-//       return (
-//         <div>
-//           <form onSubmit={this.handleAddOption}>
-//             <input type="text" name="option" />
-//             <button>Add Option</button>
-//           </form>
-//         </div>
-//       )
-//     }
-//   }
-// class AddOptions extends React.Component {
-//   handleAddOption(e) {
-//     e.preventDefault();
-
-//     const option = e.target.elements.option.value.trim();
-
-//     if (option) {
-//       alert(option);
-//     }
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <form onSubmit={this.handleAddOption}>
-//           <input type="text" name="option" />
-//           <button>Add Option</button>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
