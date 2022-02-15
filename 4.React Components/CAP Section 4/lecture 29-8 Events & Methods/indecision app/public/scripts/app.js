@@ -182,6 +182,11 @@ var Option = function (_React$Component5) {
 
   return Option;
 }(React.Component);
+// Second Challenge
+// 1. setup th form with text input and submit button
+// 2. wire up onSubmit 
+// 3.handleAddOption -> fetch the  value typed -> if value ,then alert 
+
 
 var AddOptions = function (_React$Component6) {
   _inherits(AddOptions, _React$Component6);
