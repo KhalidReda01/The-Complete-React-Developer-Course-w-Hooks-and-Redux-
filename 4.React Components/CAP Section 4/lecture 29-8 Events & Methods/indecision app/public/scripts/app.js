@@ -8,7 +8,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// 27-6 Nesting component
+// 28-8 Events & Methods
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
@@ -80,6 +80,11 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
+    key: "handlePick",
+    value: function handlePick() {
+      alert('handle Pick');
+    }
+  }, {
     key: "render",
     value: function render() {
       console.log(this);
@@ -88,7 +93,7 @@ var Action = function (_React$Component3) {
         null,
         React.createElement(
           "button",
-          null,
+          { onClick: this.handlePick },
           "What should I do ?"
         )
       );
@@ -97,9 +102,10 @@ var Action = function (_React$Component3) {
 
   return Action;
 }(React.Component);
-// Challenge time
-// setup options prop for options component
-// Render the lenght of array 
+// Challenge Time Rancho
+// Add Remove All Button
+// setup handleRemoveAll  -> alert some message 
+// setup onClick to fire the method
 
 
 var Options = function (_React$Component4) {

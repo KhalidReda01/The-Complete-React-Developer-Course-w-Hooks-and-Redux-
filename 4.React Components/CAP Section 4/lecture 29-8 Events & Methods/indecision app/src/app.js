@@ -1,4 +1,4 @@
-// 27-6 Nesting component
+// 28-8 Events & Methods
 class IndecisionApp extends React.Component{
   render() {
     const title = "Indecision ";
@@ -26,20 +26,22 @@ class Header extends React.Component {
 }
 }
 class Action extends React.Component{
+  handlePick() {
+    alert('handle Pick')
+  }
   render() {
     console.log(this)
     return (<div>
     
-       <button>What should I do ?</button>
+       <button onClick={this.handlePick}>What should I do ?</button>
      </div>)
   }
  
 }
-// Challenge time
-// setup options prop for options component
-// Render the lenght of array 
-
-
+// Challenge Time Rancho
+// Add Remove All Button
+// setup handleRemoveAll  -> alert some message 
+// setup onClick to fire the method
 class Options extends React.Component{
   render() {
     console.log(this.props.options[1])
