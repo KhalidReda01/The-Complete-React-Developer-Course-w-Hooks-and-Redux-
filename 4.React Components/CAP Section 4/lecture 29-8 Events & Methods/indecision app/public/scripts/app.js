@@ -187,6 +187,29 @@ var Option = function (_React$Component5) {
 // 2. wire up onSubmit
 // 3.handleAddOption -> fetch the  value typed -> if value ,then alert 
 // the second Challenge is little hard 
+// class AddOptions extends React.Component{
+//   handleAddOption(e) {
+//     e.preventDefault();
+//     alert('test')
+//     const option = e.target.elements.option.value;
+//     if (option) {
+//       alert(option )
+//     }
+
+//   }
+//   render() {
+//     return (
+//       <div>
+
+//         <form onSubmit={this.hanldeAddOption}>
+//           <input type="text" name="option" />
+//           <button>Add Option </button>
+//         </form>
+
+//       </div>
+//     )
+//   }
+// }
 
 
 var AddOptions = function (_React$Component6) {
@@ -202,8 +225,9 @@ var AddOptions = function (_React$Component6) {
     key: "handleAddOption",
     value: function handleAddOption(e) {
       e.preventDefault();
-      alert('test');
-      var option = e.target.elements.option.value;
+
+      var option = e.target.elements.option.value.trim();
+
       if (option) {
         alert(option);
       }
@@ -216,12 +240,12 @@ var AddOptions = function (_React$Component6) {
         null,
         React.createElement(
           "form",
-          { onSubmit: this.hanldeAddOption },
+          { onSubmit: this.handleAddOption },
           React.createElement("input", { type: "text", name: "option" }),
           React.createElement(
             "button",
             null,
-            "Add Option "
+            "Add Option"
           )
         )
       );
