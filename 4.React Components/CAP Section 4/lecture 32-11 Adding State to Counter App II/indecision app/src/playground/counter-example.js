@@ -1,5 +1,23 @@
+/**
+ * 32/11 Adding state to Counter App : part I
+ * 
+ */
+class Counter  extends React.Component{
+  render() {
+    return (
+      <div>
+        <h1>Count:</h1>
+        <button>+1</button>
+        <button>-1</button>
+        <button>reset</button>
+    </div>
+  )
+}
+}
+// Create three methods : handleAddOne ,handleMinusOne,handleReset 
+// use console.log to print method name
 
-
+ReactDOM.render(<Counter/>,document.getElementById('app'))
 // let count = 0;
 // const addOne = () => {
 //   count++;
