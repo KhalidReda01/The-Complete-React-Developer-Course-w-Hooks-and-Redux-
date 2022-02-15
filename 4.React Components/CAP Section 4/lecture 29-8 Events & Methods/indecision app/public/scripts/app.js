@@ -184,8 +184,9 @@ var Option = function (_React$Component5) {
 }(React.Component);
 // Second Challenge
 // 1. setup th form with text input and submit button
-// 2. wire up onSubmit 
+// 2. wire up onSubmit
 // 3.handleAddOption -> fetch the  value typed -> if value ,then alert 
+// the second Challenge is little hard 
 
 
 var AddOptions = function (_React$Component6) {
@@ -198,15 +199,30 @@ var AddOptions = function (_React$Component6) {
   }
 
   _createClass(AddOptions, [{
+    key: "onFormSubmit",
+    value: function onFormSubmit(e) {
+      e.preventDefault();
+      var option = e.target.elements.option.value;
+      if (option) {
+        alert(option);
+      }
+      console.log(e);
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
         null,
         React.createElement(
-          "p",
-          null,
-          "Add option Component Here"
+          "form",
+          { onSubmit: onFormSubmit },
+          React.createElement("input", { type: "text", name: "option" }),
+          React.createElement(
+            "button",
+            null,
+            "Add Option "
+          )
         )
       );
     }
