@@ -98,30 +98,33 @@ class AddOptions extends React.Component{
       alert(option);
     }
   }
-//   render() {
-//     return (
-//       <div>
+  render() {
+    return (
+      <div>        
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" name="option" />
+          <button>Add Option </button>
+        </form>
         
-//         <form onSubmit={this.hanldeAddOption}>
-//           <input type="text" name="option" />
-//           <button>Add Option </button>
-//         </form>
-        
-//       </div>
-//     )
-//   }
-// }
-render() {
-      return (
-        <div>
-          <form onSubmit={this.handleAddOption}>
-            <input type="text" name="option" />
-            <button>Add Option</button>
-          </form>
-        </div>
-      );
-    }
+      </div>
+    )
   }
+}
+/**
+ * OMG the Error was this part  <form onSubmit={this.hanldeAddOption}> I 
+ * mistyped the handleAddOption ahahah Focus 
+ */
+// render() {
+//       return (
+//         <div>
+//           <form onSubmit={this.handleAddOption}>
+//             <input type="text" name="option" />
+//             <button>Add Option</button>
+//           </form>
+//         </div>
+//       )
+//     }
+//   }
 // class AddOptions extends React.Component {
 //   handleAddOption(e) {
 //     e.preventDefault();

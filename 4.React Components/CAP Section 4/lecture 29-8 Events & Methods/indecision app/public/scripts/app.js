@@ -218,20 +218,6 @@ var AddOptions = function (_React$Component6) {
         alert(option);
       }
     }
-    //   render() {
-    //     return (
-    //       <div>
-
-    //         <form onSubmit={this.hanldeAddOption}>
-    //           <input type="text" name="option" />
-    //           <button>Add Option </button>
-    //         </form>
-
-    //       </div>
-    //     )
-    //   }
-    // }
-
   }, {
     key: "render",
     value: function render() {
@@ -245,7 +231,7 @@ var AddOptions = function (_React$Component6) {
           React.createElement(
             "button",
             null,
-            "Add Option"
+            "Add Option "
           )
         )
       );
@@ -254,6 +240,21 @@ var AddOptions = function (_React$Component6) {
 
   return AddOptions;
 }(React.Component);
+/**
+ * OMG the Error was this part  <form onSubmit={this.hanldeAddOption}> I 
+ * mistyped the handleAddOption ahahah Focus 
+ */
+// render() {
+//       return (
+//         <div>
+//           <form onSubmit={this.handleAddOption}>
+//             <input type="text" name="option" />
+//             <button>Add Option</button>
+//           </form>
+//         </div>
+//       )
+//     }
+//   }
 // class AddOptions extends React.Component {
 //   handleAddOption(e) {
 //     e.preventDefault();
