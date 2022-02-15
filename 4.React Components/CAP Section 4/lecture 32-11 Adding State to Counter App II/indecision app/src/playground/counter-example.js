@@ -3,6 +3,13 @@
  * 
  */
 class Counter extends React.Component{
+  //I missed that part becaue it's working well without it the method  binding lecture CSMM
+  constructor(props) {
+    super(props);
+    this.handleAddOne = this.handleAddOne.bind(this);
+    this.handleMinusOne = this.handleAddOne.bind(this);
+    this.handlereset = this.handleReset.bind(this);
+  }
   handleAddOne() {
     console.log('hanldeAddOne')
   }
