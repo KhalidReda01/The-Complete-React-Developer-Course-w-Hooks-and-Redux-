@@ -199,14 +199,14 @@ var AddOptions = function (_React$Component6) {
   }
 
   _createClass(AddOptions, [{
-    key: "onFormSubmit",
-    value: function onFormSubmit(e) {
+    key: "handleAddOption",
+    value: function handleAddOption(e) {
       e.preventDefault();
+      alert('test');
       var option = e.target.elements.option.value;
       if (option) {
         alert(option);
       }
-      console.log(e);
     }
   }, {
     key: "render",
@@ -216,7 +216,7 @@ var AddOptions = function (_React$Component6) {
         null,
         React.createElement(
           "form",
-          { onSubmit: onFormSubmit },
+          { onSubmit: this.hanldeAddOption },
           React.createElement("input", { type: "text", name: "option" }),
           React.createElement(
             "button",
@@ -230,16 +230,5 @@ var AddOptions = function (_React$Component6) {
 
   return AddOptions;
 }(React.Component);
-
-// No longer been requried 
-// const jsx = (
-//   <div>
-//     <Header/>
-//     <Action />
-//     <Options />
-//     <AddOptions />
-//   </div>
-// )
-
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
