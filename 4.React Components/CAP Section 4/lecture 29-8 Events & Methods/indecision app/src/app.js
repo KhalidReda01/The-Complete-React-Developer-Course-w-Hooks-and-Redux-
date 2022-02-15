@@ -80,16 +80,24 @@ class Option extends React.Component{
 // 2. wire up onSubmit
 // 3.handleAddOption -> fetch the  value typed -> if value ,then alert 
 // the second Challenge is little hard 
-// class AddOptions extends React.Component{
-//   handleAddOption(e) {
-//     e.preventDefault();
-//     alert('test')
-//     const option = e.target.elements.option.value;
-//     if (option) {
-//       alert(option )
-//     }
+class AddOptions extends React.Component{
+  // handleAddOption(e) {
+  //   e.preventDefault();
+  //   const option = e.target.elements.option.value.trim();
+  //   if (option) {
+  //     alert(option )
+  //   }
 
-//   }
+  // }
+    handleAddOption(e) {
+    e.preventDefault();
+
+    const option = e.target.elements.option.value.trim();
+
+    if (option) {
+      alert(option);
+    }
+  }
 //   render() {
 //     return (
 //       <div>
@@ -103,26 +111,37 @@ class Option extends React.Component{
 //     )
 //   }
 // }
-class AddOptions extends React.Component {
-  handleAddOption(e) {
-    e.preventDefault();
-
-    const option = e.target.elements.option.value.trim();
-
-    if (option) {
-      alert(option);
+render() {
+      return (
+        <div>
+          <form onSubmit={this.handleAddOption}>
+            <input type="text" name="option" />
+            <button>Add Option</button>
+          </form>
+        </div>
+      );
     }
   }
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleAddOption}>
-          <input type="text" name="option" />
-          <button>Add Option</button>
-        </form>
-      </div>
-    );
-  }
-}
+// class AddOptions extends React.Component {
+//   handleAddOption(e) {
+//     e.preventDefault();
+
+//     const option = e.target.elements.option.value.trim();
+
+//     if (option) {
+//       alert(option);
+//     }
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <form onSubmit={this.handleAddOption}>
+//           <input type="text" name="option" />
+//           <button>Add Option</button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
 
 ReactDOM.render(<IndecisionApp/>,document.getElementById('app'))

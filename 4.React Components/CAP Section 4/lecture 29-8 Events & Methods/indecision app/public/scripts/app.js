@@ -187,29 +187,6 @@ var Option = function (_React$Component5) {
 // 2. wire up onSubmit
 // 3.handleAddOption -> fetch the  value typed -> if value ,then alert 
 // the second Challenge is little hard 
-// class AddOptions extends React.Component{
-//   handleAddOption(e) {
-//     e.preventDefault();
-//     alert('test')
-//     const option = e.target.elements.option.value;
-//     if (option) {
-//       alert(option )
-//     }
-
-//   }
-//   render() {
-//     return (
-//       <div>
-
-//         <form onSubmit={this.hanldeAddOption}>
-//           <input type="text" name="option" />
-//           <button>Add Option </button>
-//         </form>
-
-//       </div>
-//     )
-//   }
-// }
 
 
 var AddOptions = function (_React$Component6) {
@@ -223,6 +200,15 @@ var AddOptions = function (_React$Component6) {
 
   _createClass(AddOptions, [{
     key: "handleAddOption",
+
+    // handleAddOption(e) {
+    //   e.preventDefault();
+    //   const option = e.target.elements.option.value.trim();
+    //   if (option) {
+    //     alert(option )
+    //   }
+
+    // }
     value: function handleAddOption(e) {
       e.preventDefault();
 
@@ -232,6 +218,20 @@ var AddOptions = function (_React$Component6) {
         alert(option);
       }
     }
+    //   render() {
+    //     return (
+    //       <div>
+
+    //         <form onSubmit={this.hanldeAddOption}>
+    //           <input type="text" name="option" />
+    //           <button>Add Option </button>
+    //         </form>
+
+    //       </div>
+    //     )
+    //   }
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -254,5 +254,26 @@ var AddOptions = function (_React$Component6) {
 
   return AddOptions;
 }(React.Component);
+// class AddOptions extends React.Component {
+//   handleAddOption(e) {
+//     e.preventDefault();
+
+//     const option = e.target.elements.option.value.trim();
+
+//     if (option) {
+//       alert(option);
+//     }
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <form onSubmit={this.handleAddOption}>
+//           <input type="text" name="option" />
+//           <button>Add Option</button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
