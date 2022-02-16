@@ -9,7 +9,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
- * 32/11 Adding state to Counter App : part I
+ * 33/13 Adding state to Counter App : part II
+ * files.mead.io/2H3soy31222k
  * 
  */
 var Counter = function (_React$Component) {
@@ -24,17 +25,43 @@ var Counter = function (_React$Component) {
     _this.handleAddOne = _this.handleAddOne.bind(_this);
     _this.handleMinusOne = _this.handleAddOne.bind(_this);
     _this.handlereset = _this.handleReset.bind(_this);
+    _this.state = {
+      count: 0
+      //1-* name:'Khalid'
+    };
     return _this;
   }
 
   _createClass(Counter, [{
     key: "handleAddOne",
     value: function handleAddOne() {
-      console.log('hanldeAddOne');
+      // this.state.count = this.state.count + 1
+      // console.log(this.state)
+      /**
+       * when we are insdide our updater function this function right here we actally have access
+       * to the current state values via the first argument which is commoly called previous state 
+       * 
+       * 
+       * 1-if you have multiple pieces of state on your component you don't have to provide them all you only provide the one that you gonna change 
+       * ** so when we're defining the updates in our st state updater function we're not overriding the state
+       */
+      this.setState(function (prevState) {
+        // console.log(prevState)
+        return {
+          count: prevState.count + 1 // compare with the old way vanialla js 
+        };
+      });
     }
+    // Challenge Time
+    /**
+     * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
+     * the challenge is to call this setstate and you are goin to decrement the count by 1   
+     */
+
   }, {
     key: "handleMinusOne",
     value: function handleMinusOne() {
+      // call this.setState decrement the count by 1 
       console.log("handleMinusOne");
     }
   }, {
@@ -51,7 +78,8 @@ var Counter = function (_React$Component) {
         React.createElement(
           "h1",
           null,
-          "Count:"
+          "Count:",
+          this.state.count
         ),
         React.createElement(
           "button",

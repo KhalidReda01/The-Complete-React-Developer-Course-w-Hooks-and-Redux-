@@ -1,5 +1,6 @@
 /**
- * 32/11 Adding state to Counter App : part I
+ * 33/13 Adding state to Counter App : part II
+ * files.mead.io/2H3soy31222k
  * 
  */
 class Counter extends React.Component{
@@ -9,11 +10,37 @@ class Counter extends React.Component{
     this.handleAddOne = this.handleAddOne.bind(this);
     this.handleMinusOne = this.handleAddOne.bind(this);
     this.handlereset = this.handleReset.bind(this);
+    this.state = {
+      count: 0,
+      //1-* name:'Khalid'
+    }
   }
   handleAddOne() {
-    console.log('hanldeAddOne')
+    // this.state.count = this.state.count + 1
+    // console.log(this.state)
+    /**
+     * when we are insdide our updater function this function right here we actally have access
+     * to the current state values via the first argument which is commoly called previous state 
+     * 
+     * 
+     * 1-if you have multiple pieces of state on your component you don't have to provide them all you only provide the one that you gonna change 
+     * ** so when we're defining the updates in our st state updater function we're not overriding the state
+     */
+    this.setState((prevState) =>
+    {
+      // console.log(prevState)
+      return {
+        count: prevState.count+1// compare with the old way vanialla js 
+      }
+    })
   }
+  // Challenge Time
+  /**
+   * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
+   * the challenge is to call this setstate and you are goin to decrement the count by 1   
+   */
   handleMinusOne() {
+    // call this.setState decrement the count by 1 
     console.log("handleMinusOne")
   }
   handleReset() {
@@ -22,7 +49,8 @@ class Counter extends React.Component{
   render() {
     return (
       <div>
-        <h1>Count:</h1>
+        {/*e-1 {this.state.name} */}
+        <h1>Count:{this.state.count }</h1>
         <button onClick={this.handleAddOne}>+1</button>
         <button onClick={this.handleMinusOne}>-1</button>
         <button onClick={this.handleReset}>reset</button>
