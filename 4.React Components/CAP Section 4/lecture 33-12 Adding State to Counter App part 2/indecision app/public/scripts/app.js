@@ -24,144 +24,107 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * 1-if you have multiple pieces of state on your component you don't have to provide them all you only provide the one that you gonna change 
  * ** so when we're defining the updates in our st state updater function we're not overriding the state
  */
-var Counter = function (_React$Component) {
-  _inherits(Counter, _React$Component);
+// class Counter extends React.Component{
+//   //I missed that part becaue it's working well without it the method  binding lecture CSMM
+//   constructor(props) {
+//     super(props);
+//     this.handleAddOne = this.handleAddOne.bind(this);
+//     this.handleMinusOne = this.handleAddOne.bind(this);
+//     this.handlereset = this.handleReset.bind(this);
+//     this.state = {
+//       count:0
+//     }
+//   }
+//   handleAddOne() {
 
-  //I missed that part becaue it's working well without it the method  binding lecture CSMM
-  function Counter(props) {
-    _classCallCheck(this, Counter);
+//     this.setState((prevState) =>
+//     {
+//       // console.log(prevState)
+//       return {
+//         count: prevState.count + 1// compare with the old way vanialla js 
+//       }
+//     })
+//   }
 
-    var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+/**
+ * Now test with Souce code to see where is the problem exactly 
+ * OMG what is this even with the  souce code all the button is increment and reset is not working 
+ * hahah hhah What is going on I know that you will laugh later 
+ * Now try to use the full one 
+ *
+ */
+//  handleAddOne() {
+//   this.setState((prevState) => {
+//     return {
+//       count: prevState.count + 1
+//     };
+//   });
+// }
+// handleMinusOne() {
+//   this.setState((prevState) => {
+//     return {
+//       count: prevState.count - 1
+//     };
+//   });
+// }
+// handleReset() {
+//   this.setState(() => {
+//     return {
+//       count: 0
+//     };
+//   });
+// }
+// handleMinusOne() {
 
-    _this.handleAddOne = _this.handleAddOne.bind(_this);
-    _this.handleMinusOne = _this.handleAddOne.bind(_this);
-    _this.handlereset = _this.handleReset.bind(_this);
-    _this.state = {
-      count: 0
-    };
-    return _this;
-  }
+//   this.setState((prevState) =>
+//   {
+//     return {
+//       count: prevState.count +5// compare with the old way vanialla js 
+//     }
+//   })
+// }
+// // Challenge Time
+// /**
+//  * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
+//  * the challenge is to call this setstate and you are goin to decrement the count by 1   
+//  */
+// // handleMinusOne() {
+// //   // call this.setState decrement the count by 1
+// //   // console.log("handleMinusOne")
+// // this is hidden error here 
+// //   this.setState((prevState) => {
+// //     console.log(prevState.count)
+// //     return {
 
-  _createClass(Counter, [{
-    key: 'handleAddOne',
-    value: function handleAddOne() {
+// //     count:'test '
+// //     }
 
-      this.setState(function (prevState) {
-        // console.log(prevState)
-        return {
-          count: prevState.count + 1 // compare with the old way vanialla js 
-        };
-      });
-    }
+// //   })
 
-    /**
-     * Now test with Souce code to see where is the problem exactly 
-     * OMG what is this even with the  souce code all the button is increment and reset is not working 
-     * hahah hhah What is going on I know that you will laugh later 
-     * Now try to use the full one 
-     *
-     */
-
-  }, {
-    key: 'handleAddOne',
-    value: function handleAddOne() {
-      this.setState(function (prevState) {
-        return {
-          count: prevState.count + 1
-        };
-      });
-    }
-  }, {
-    key: 'handleMinusOne',
-    value: function handleMinusOne() {
-      this.setState(function (prevState) {
-        return {
-          count: prevState.count - 1
-        };
-      });
-    }
-  }, {
-    key: 'handleReset',
-    value: function handleReset() {
-      this.setState(function () {
-        return {
-          count: 0
-        };
-      });
-    }
-    // handleMinusOne() {
-
-    //   this.setState((prevState) =>
-    //   {
-    //     return {
-    //       count: prevState.count +5// compare with the old way vanialla js 
-    //     }
-    //   })
-    // }
-    // // Challenge Time
-    // /**
-    //  * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
-    //  * the challenge is to call this setstate and you are goin to decrement the count by 1   
-    //  */
-    // // handleMinusOne() {
-    // //   // call this.setState decrement the count by 1
-    // //   // console.log("handleMinusOne")
-    // // this is hidden error here 
-    // //   this.setState((prevState) => {
-    // //     console.log(prevState.count)
-    // //     return {
-
-    // //     count:'test '
-    // //     }
-
-    // //   })
-
-    // // }
-    // handleReset() {
-    //   this.setState(() => {
-    //     return {
-    //       count :0
-    //     }
-    //   })
-    // }
-
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'h1',
-          null,
-          'Count:',
-          this.state.count
-        ),
-        React.createElement(
-          'button',
-          { onClick: this.handleAddOne },
-          '+1'
-        ),
-        React.createElement(
-          'button',
-          { onClick: this.handleMinusOne },
-          '-1'
-        ),
-        React.createElement(
-          'button',
-          { onClick: this.handleReset },
-          'reset'
-        )
-      );
-    }
-  }]);
-
-  return Counter;
-}(React.Component);
+// // }
+// handleReset() {
+//   this.setState(() => {
+//     return {
+//       count :0
+//     }
+//   })
+// }
+//   render() {
+//     return (
+//       <div>
+//         {/*e-1 {this.state.name} */}
+//         <h1>Count:{this.state.count }</h1>
+//         <button onClick={this.handleAddOne}>+1</button>
+//         <button onClick={this.handleMinusOne}>-1</button>
+//         <button onClick={this.handleReset}>reset</button>
+//     </div>
+//   )
+// }
+// }
 // Create three methods : handleAddOne ,handleMinusOne,handleReset 
 // use console.log to print method name
 
-ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
+// ReactDOM.render(<Counter/>,document.getElementById('app'))
 // let count = 0;
 // const addOne = () => {
 //   count++;
@@ -195,3 +158,88 @@ ReactDOM.render(React.createElement(Counter, null), document.getElementById('app
 //   ReactDOM.render(templateTwo , appRoot)
 // }
 // renderCounterApp();
+
+
+/**
+ * Now test the code of the Instructor to really see where is the bug
+ * OMG this part Works 
+ */
+var Counter = function (_React$Component) {
+  _inherits(Counter, _React$Component);
+
+  function Counter(props) {
+    _classCallCheck(this, Counter);
+
+    var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
+
+    _this.handleAddOne = _this.handleAddOne.bind(_this);
+    _this.handleMinusOne = _this.handleMinusOne.bind(_this);
+    _this.handleReset = _this.handleReset.bind(_this);
+    _this.state = {
+      count: 0
+    };
+    return _this;
+  }
+
+  _createClass(Counter, [{
+    key: 'handleAddOne',
+    value: function handleAddOne() {
+      this.setState(function (prevState) {
+        return {
+          count: prevState.count + 1
+        };
+      });
+    }
+  }, {
+    key: 'handleMinusOne',
+    value: function handleMinusOne() {
+      this.setState(function (prevState) {
+        return {
+          count: prevState.count - 1
+        };
+      });
+    }
+  }, {
+    key: 'handleReset',
+    value: function handleReset() {
+      this.setState(function () {
+        return {
+          count: 0
+        };
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'h1',
+          null,
+          'Count: ',
+          this.state.count
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.handleAddOne },
+          '+1'
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.handleMinusOne },
+          '-1'
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.handleReset },
+          'reset'
+        )
+      );
+    }
+  }]);
+
+  return Counter;
+}(React.Component);
+
+ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));

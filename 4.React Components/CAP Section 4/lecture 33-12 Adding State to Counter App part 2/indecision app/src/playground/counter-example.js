@@ -14,27 +14,27 @@
      * 1-if you have multiple pieces of state on your component you don't have to provide them all you only provide the one that you gonna change 
      * ** so when we're defining the updates in our st state updater function we're not overriding the state
      */
-class Counter extends React.Component{
-  //I missed that part becaue it's working well without it the method  binding lecture CSMM
-  constructor(props) {
-    super(props);
-    this.handleAddOne = this.handleAddOne.bind(this);
-    this.handleMinusOne = this.handleAddOne.bind(this);
-    this.handlereset = this.handleReset.bind(this);
-    this.state = {
-      count:0
-    }
-  }
-  handleAddOne() {
+// class Counter extends React.Component{
+//   //I missed that part becaue it's working well without it the method  binding lecture CSMM
+//   constructor(props) {
+//     super(props);
+//     this.handleAddOne = this.handleAddOne.bind(this);
+//     this.handleMinusOne = this.handleAddOne.bind(this);
+//     this.handlereset = this.handleReset.bind(this);
+//     this.state = {
+//       count:0
+//     }
+//   }
+//   handleAddOne() {
   
-    this.setState((prevState) =>
-    {
-      // console.log(prevState)
-      return {
-        count: prevState.count + 1// compare with the old way vanialla js 
-      }
-    })
-  }
+//     this.setState((prevState) =>
+//     {
+//       // console.log(prevState)
+//       return {
+//         count: prevState.count + 1// compare with the old way vanialla js 
+//       }
+//     })
+//   }
 
   /**
    * Now test with Souce code to see where is the problem exactly 
@@ -43,27 +43,27 @@ class Counter extends React.Component{
    * Now try to use the full one 
    *
    */
-   handleAddOne() {
-    this.setState((prevState) => {
-      return {
-        count: prevState.count + 1
-      };
-    });
-  }
-  handleMinusOne() {
-    this.setState((prevState) => {
-      return {
-        count: prevState.count - 1
-      };
-    });
-  }
-  handleReset() {
-    this.setState(() => {
-      return {
-        count: 0
-      };
-    });
-  }
+  //  handleAddOne() {
+  //   this.setState((prevState) => {
+  //     return {
+  //       count: prevState.count + 1
+  //     };
+  //   });
+  // }
+  // handleMinusOne() {
+  //   this.setState((prevState) => {
+  //     return {
+  //       count: prevState.count - 1
+  //     };
+  //   });
+  // }
+  // handleReset() {
+  //   this.setState(() => {
+  //     return {
+  //       count: 0
+  //     };
+  //   });
+  // }
   // handleMinusOne() {
   
   //   this.setState((prevState) =>
@@ -99,22 +99,22 @@ class Counter extends React.Component{
   //     }
   //   })
   // }
-  render() {
-    return (
-      <div>
-        {/*e-1 {this.state.name} */}
-        <h1>Count:{this.state.count }</h1>
-        <button onClick={this.handleAddOne}>+1</button>
-        <button onClick={this.handleMinusOne}>-1</button>
-        <button onClick={this.handleReset}>reset</button>
-    </div>
-  )
-}
-}
+//   render() {
+//     return (
+//       <div>
+//         {/*e-1 {this.state.name} */}
+//         <h1>Count:{this.state.count }</h1>
+//         <button onClick={this.handleAddOne}>+1</button>
+//         <button onClick={this.handleMinusOne}>-1</button>
+//         <button onClick={this.handleReset}>reset</button>
+//     </div>
+//   )
+// }
+// }
 // Create three methods : handleAddOne ,handleMinusOne,handleReset 
 // use console.log to print method name
 
-ReactDOM.render(<Counter/>,document.getElementById('app'))
+// ReactDOM.render(<Counter/>,document.getElementById('app'))
 // let count = 0;
 // const addOne = () => {
 //   count++;
@@ -148,3 +148,54 @@ ReactDOM.render(<Counter/>,document.getElementById('app'))
 //   ReactDOM.render(templateTwo , appRoot)
 // }
 // renderCounterApp();
+
+
+
+/**
+ * Now test the code of the Instructor to really see where is the bug
+ * OMG this part Works 
+ */
+ class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleAddOne = this.handleAddOne.bind(this);
+    this.handleMinusOne = this.handleMinusOne.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+    this.state = {
+      count: 0
+    };
+  }
+  handleAddOne() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1
+      };
+    });
+  }
+  handleMinusOne() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count - 1
+      };
+    });
+  }
+  handleReset() {
+    this.setState(() => {
+      return {
+        count: 0
+      };
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1>Count: {this.state.count}</h1>
+        <button onClick={this.handleAddOne}>+1</button>
+        <button onClick={this.handleMinusOne}>-1</button>
+        <button onClick={this.handleReset}>reset</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Counter />, document.getElementById('app'));
