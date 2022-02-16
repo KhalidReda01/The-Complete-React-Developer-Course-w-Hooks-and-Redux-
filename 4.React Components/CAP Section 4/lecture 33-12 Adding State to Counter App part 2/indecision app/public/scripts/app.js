@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37,14 +37,13 @@ var Counter = function (_React$Component) {
     _this.handleMinusOne = _this.handleAddOne.bind(_this);
     _this.handlereset = _this.handleReset.bind(_this);
     _this.state = {
-      count: 10
-      //1-* name:'Khalid'
+      count: 0
     };
     return _this;
   }
 
   _createClass(Counter, [{
-    key: "handleAddOne",
+    key: 'handleAddOne',
     value: function handleAddOne() {
 
       this.setState(function (prevState) {
@@ -54,68 +53,104 @@ var Counter = function (_React$Component) {
         };
       });
     }
-  }, {
-    key: "handleMinusOne",
-    value: function handleMinusOne() {
 
+    /**
+     * Now test with Souce code to see where is the problem exactly 
+     * OMG what is this even with the  souce code all the button is increment and reset is not working 
+     * hahah hhah What is going on I know that you will laugh later 
+     * Now try to use the full one 
+     *
+     */
+
+  }, {
+    key: 'handleAddOne',
+    value: function handleAddOne() {
       this.setState(function (prevState) {
-        // console.log(prevState)
         return {
-          count: prevState.count - 1 // compare with the old way vanialla js 
+          count: prevState.count + 1
         };
       });
     }
-    // Challenge Time
-    /**
-     * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
-     * the challenge is to call this setstate and you are goin to decrement the count by 1   
-     */
+  }, {
+    key: 'handleMinusOne',
+    value: function handleMinusOne() {
+      this.setState(function (prevState) {
+        return {
+          count: prevState.count - 1
+        };
+      });
+    }
+  }, {
+    key: 'handleReset',
+    value: function handleReset() {
+      this.setState(function () {
+        return {
+          count: 0
+        };
+      });
+    }
     // handleMinusOne() {
-    //   // call this.setState decrement the count by 1
-    //   // console.log("handleMinusOne")
-    // this is hidden error here 
-    //   this.setState((prevState) => {
-    //     console.log(prevState.count)
+
+    //   this.setState((prevState) =>
+    //   {
     //     return {
-
-    //     count:'test '
+    //       count: prevState.count +5// compare with the old way vanialla js 
     //     }
-
     //   })
+    // }
+    // // Challenge Time
+    // /**
+    //  * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
+    //  * the challenge is to call this setstate and you are goin to decrement the count by 1   
+    //  */
+    // // handleMinusOne() {
+    // //   // call this.setState decrement the count by 1
+    // //   // console.log("handleMinusOne")
+    // // this is hidden error here 
+    // //   this.setState((prevState) => {
+    // //     console.log(prevState.count)
+    // //     return {
 
+    // //     count:'test '
+    // //     }
+
+    // //   })
+
+    // // }
+    // handleReset() {
+    //   this.setState(() => {
+    //     return {
+    //       count :0
+    //     }
+    //   })
     // }
 
   }, {
-    key: "handleReset",
-    value: function handleReset() {
-      console.log("handleReset");
-    }
-  }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "h1",
+          'h1',
           null,
-          "Count:",
+          'Count:',
           this.state.count
         ),
         React.createElement(
-          "button",
+          'button',
           { onClick: this.handleAddOne },
-          "+1"
+          '+1'
         ),
         React.createElement(
-          "button",
+          'button',
           { onClick: this.handleMinusOne },
-          "-1"
+          '-1'
         ),
         React.createElement(
-          "button",
+          'button',
           { onClick: this.handleReset },
-          "reset"
+          'reset'
         )
       );
     }

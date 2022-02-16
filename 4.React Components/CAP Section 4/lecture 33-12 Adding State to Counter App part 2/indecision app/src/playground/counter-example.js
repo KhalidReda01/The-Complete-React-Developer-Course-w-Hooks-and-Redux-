@@ -22,8 +22,7 @@ class Counter extends React.Component{
     this.handleMinusOne = this.handleAddOne.bind(this);
     this.handlereset = this.handleReset.bind(this);
     this.state = {
-      count: 10,
-      //1-* name:'Khalid'
+      count:0
     }
   }
   handleAddOne() {
@@ -36,38 +35,70 @@ class Counter extends React.Component{
       }
     })
   }
-  handleMinusOne() {
-  
-    this.setState((prevState) =>
-    {
-      // console.log(prevState)
-      return {
-        count: prevState.count - 1// compare with the old way vanialla js 
-      }
-    })
-  }
-  // Challenge Time
+
   /**
-   * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
-   * the challenge is to call this setstate and you are goin to decrement the count by 1   
+   * Now test with Souce code to see where is the problem exactly 
+   * OMG what is this even with the  souce code all the button is increment and reset is not working 
+   * hahah hhah What is going on I know that you will laugh later 
+   * Now try to use the full one 
+   *
    */
-  // handleMinusOne() {
-  //   // call this.setState decrement the count by 1
-  //   // console.log("handleMinusOne")
-  // this is hidden error here 
-  //   this.setState((prevState) => {
-  //     console.log(prevState.count)
-  //     return {
-        
-  //     count:'test '
-  //     }
-      
-  //   })
-      
-  // }
-  handleReset() {
-    console.log("handleReset")
+   handleAddOne() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1
+      };
+    });
   }
+  handleMinusOne() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count - 1
+      };
+    });
+  }
+  handleReset() {
+    this.setState(() => {
+      return {
+        count: 0
+      };
+    });
+  }
+  // handleMinusOne() {
+  
+  //   this.setState((prevState) =>
+  //   {
+  //     return {
+  //       count: prevState.count +5// compare with the old way vanialla js 
+  //     }
+  //   })
+  // }
+  // // Challenge Time
+  // /**
+  //  * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
+  //  * the challenge is to call this setstate and you are goin to decrement the count by 1   
+  //  */
+  // // handleMinusOne() {
+  // //   // call this.setState decrement the count by 1
+  // //   // console.log("handleMinusOne")
+  // // this is hidden error here 
+  // //   this.setState((prevState) => {
+  // //     console.log(prevState.count)
+  // //     return {
+        
+  // //     count:'test '
+  // //     }
+      
+  // //   })
+      
+  // // }
+  // handleReset() {
+  //   this.setState(() => {
+  //     return {
+  //       count :0
+  //     }
+  //   })
+  // }
   render() {
     return (
       <div>
