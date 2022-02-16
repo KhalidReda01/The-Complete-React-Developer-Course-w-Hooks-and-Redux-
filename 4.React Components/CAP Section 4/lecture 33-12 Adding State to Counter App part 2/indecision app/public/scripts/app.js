@@ -13,6 +13,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * files.mead.io/2H3soy31222k
  * 
  */
+
+// this.state.count = this.state.count + 1
+// console.log(this.state)
+/**
+ * when we are insdide our updater function this function right here we actally have access
+ * to the current state values via the first argument which is commoly called previous state 
+ * 
+ * 
+ * 1-if you have multiple pieces of state on your component you don't have to provide them all you only provide the one that you gonna change 
+ * ** so when we're defining the updates in our st state updater function we're not overriding the state
+ */
 var Counter = function (_React$Component) {
   _inherits(Counter, _React$Component);
 
@@ -26,7 +37,7 @@ var Counter = function (_React$Component) {
     _this.handleMinusOne = _this.handleAddOne.bind(_this);
     _this.handlereset = _this.handleReset.bind(_this);
     _this.state = {
-      count: 0
+      count: 10
       //1-* name:'Khalid'
     };
     return _this;
@@ -35,20 +46,22 @@ var Counter = function (_React$Component) {
   _createClass(Counter, [{
     key: "handleAddOne",
     value: function handleAddOne() {
-      // this.state.count = this.state.count + 1
-      // console.log(this.state)
-      /**
-       * when we are insdide our updater function this function right here we actally have access
-       * to the current state values via the first argument which is commoly called previous state 
-       * 
-       * 
-       * 1-if you have multiple pieces of state on your component you don't have to provide them all you only provide the one that you gonna change 
-       * ** so when we're defining the updates in our st state updater function we're not overriding the state
-       */
+
       this.setState(function (prevState) {
         // console.log(prevState)
         return {
           count: prevState.count + 1 // compare with the old way vanialla js 
+        };
+      });
+    }
+  }, {
+    key: "handleMinusOne",
+    value: function handleMinusOne() {
+
+      this.setState(function (prevState) {
+        // console.log(prevState)
+        return {
+          count: prevState.count - 1 // compare with the old way vanialla js 
         };
       });
     }
@@ -57,13 +70,21 @@ var Counter = function (_React$Component) {
      * my challenge for this video is to wire up handleMinusOne we're not going to worry about handle reset
      * the challenge is to call this setstate and you are goin to decrement the count by 1   
      */
+    // handleMinusOne() {
+    //   // call this.setState decrement the count by 1
+    //   // console.log("handleMinusOne")
+    // this is hidden error here 
+    //   this.setState((prevState) => {
+    //     console.log(prevState.count)
+    //     return {
 
-  }, {
-    key: "handleMinusOne",
-    value: function handleMinusOne() {
-      // call this.setState decrement the count by 1 
-      console.log("handleMinusOne");
-    }
+    //     count:'test '
+    //     }
+
+    //   })
+
+    // }
+
   }, {
     key: "handleReset",
     value: function handleReset() {
