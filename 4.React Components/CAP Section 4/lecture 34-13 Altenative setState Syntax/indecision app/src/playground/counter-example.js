@@ -180,12 +180,45 @@
     });
   }
   handleReset() {
-    this.setState(() => {
-      return {
-        count: 0
-      };
+    // this.setState(() => {
+    //   return {
+    //     count: 0
+    //   };
+    // });
+    this.setState({
+      count: 0
     });
-  }
+    this.setState((pre) => {
+      return {
+        // count:pre.count +1
+        count:0
+      }
+      
+      
+    // // })
+    // this.setState({
+    //   count:0
+    })
+   }
+  /**
+   * so what exactly is happening here 
+   * the first thing that we need to understand is that our calls to this setState are asnchronouns
+   * that means just  because we started this process of changing the count doesn't mean that count will be changed 
+   * on the very next line is why when we try to access this dot state here we are still getting thoe old value 
+   * we;ve started the process of getting the count to zero but it hasn't completed yet 
+   * so we grabbed the value we'are getting the old one which was 15 we're adding 1 to it and that's why we see 16 printin to the screen
+   * so why this.setState asnynchronous because ther's lot more going on behind the scenes than updating an an object
+   * React does emerge the old state object with the new one but then it goes ahead and it does all that sutff we talked about where it creates
+   * a virtual dom representaton of your component and it figure out what stuff need to change Then and only then is this state  brought up to speed 
+   * so because react is really efficent and in batches together are set state operation s allwoing it to rerender for less often
+   * we can get into really weird situation like this one where we're accessing stale and oudated data.
+   * In this case we are not getting the result we expect 
+   * The Solution is to always use this.setState with an update  function 
+   * It does not suffer from the same problems because we  never access this data state 
+   * Instead react passes in prevState and we'are going to see how that's going to affect this particular example
+   * 
+   *
+   */
   render() {
     return (
       <div>
