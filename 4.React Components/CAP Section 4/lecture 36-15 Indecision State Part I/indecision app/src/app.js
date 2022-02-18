@@ -29,7 +29,8 @@ Typing Error
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
-    this.handleDeleteOptions=this.handleDeleteOptions.bind(this)
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
+    this.handlePick=this.handlePick.bind(this)
     this.state = {
       options:['Thing One','Thing two','Thing three']
     }
@@ -42,6 +43,14 @@ class IndecisionApp extends React.Component{
       }
     })
   }
+  handlePick() {
+    this.setState(() => {
+      const randomNum = Math.floor(Math.random() * this.state.options.length);
+      const option = this.state.options[randomNum];
+      alert(option);
+    })
+    
+  }
 // handlePick - pass down to Action and setup OnClick - bind here
   // randomly pick and option alert it 
   render() {
@@ -53,7 +62,10 @@ class IndecisionApp extends React.Component{
         <Header title={title} subtitle={subtitle} />
         {/* Focus Typing Errror is the hardest 
         <Action hasOptions={this.state.lenght>0}/> */}
-        <Action hasOptions={this.state.options.length>0} />
+        <Action hasOptions={this.state.options.length > 0}
+        
+        handlePick={this.handlePick}
+        />
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
@@ -77,14 +89,14 @@ class Header extends React.Component {
 }
 class Action extends React.Component{
   // wd dont' need here now
-  handlePick() {
-    alert('handle Pick')
-  }
+  // handlePick() {
+  //   alert('handle Pick')
+  // }
   render() {
     console.log(this)
     return (<div>
     
-      <button onClick={this.handlePick}
+      <button onClick={this.props.handlePick}
       disabled={!this.props.hasOptions}
       >What should I do ?</button>
      </div>)
