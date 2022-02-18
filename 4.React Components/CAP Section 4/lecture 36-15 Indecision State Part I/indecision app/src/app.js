@@ -1,19 +1,50 @@
 /**
  * 36.Indecision State: Part I
  * I don't have internet connection but bery week one I think 10KB so I made a js files instead of waiting the unpkg to download 
- * but this doesn't work so you have to wait to dowload 
+ * but this doesn't work so you have to wait to dowload Okay now It's downloaded you can contiue study the section this lecture
+ * 
+ * 
+ */
+/**
+ * WVI Write Video Information You really need that  It make every thing clear more effort and time I know but this way  make it stick and you understand better this way even the instructor
+ * didn't say that but You have to do that don't skip that Okay
+ * 
+ */
+/***
+ * 5^
+ * 1
+
+Now that we have some real world experience using component state let's go ahead and integrate it into the indecision app.
+
+There's only a few videos left for this section and we're going to spend those finishing off the main functionality for the component version of indecision.
+make #WVI after you finish #WTV and #CAP after that try to WVI
+
+
+
+
+Typing Error 
+
  * 
  */
 class IndecisionApp extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      options:['Thing One','Thing two','Thing three']
+    }
+  }
   render() {
     const title = "Indecision ";
     const subtitle = "Put your Life in the hand of a computer"
-    const options=['Thing One','Thing two','Thing three']
+    // const options=['Thing One','Thing two','Thing three']
     return (
          <div>
-      <Header title={title} subtitle={subtitle} />
-        <Action />
-        <Options options={options}/>
+        <Header title={title} subtitle={subtitle} />
+        {/* Focus Typing Errror is the hardest 
+        <Action hasOptions={this.state.lenght>0}/> */}
+        <Action hasOptions={this.state.options.length>0} />
+        <Options options={this.state.options}/>
+        
       <AddOptions />
     </div>)
   }
@@ -38,7 +69,9 @@ class Action extends React.Component{
     console.log(this)
     return (<div>
     
-       <button onClick={this.handlePick}>What should I do ?</button>
+      <button onClick={this.handlePick}
+      disabled={!this.props.hasOptions}
+      >What should I do ?</button>
      </div>)
   }
  

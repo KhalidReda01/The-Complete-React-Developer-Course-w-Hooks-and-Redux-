@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11,30 +11,57 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * 36.Indecision State: Part I
  * I don't have internet connection but bery week one I think 10KB so I made a js files instead of waiting the unpkg to download 
- * but this doesn't work so you have to wait to dowload 
+ * but this doesn't work so you have to wait to dowload Okay now It's downloaded you can contiue study the section this lecture
+ * 
+ * 
+ */
+/**
+ * WVI Write Video Information You really need that  It make every thing clear more effort and time I know but this way  make it stick and you understand better this way even the instructor
+ * didn't say that but You have to do that don't skip that Okay
+ * 
+ */
+/***
+ * 5^
+ * 1
+
+Now that we have some real world experience using component state let's go ahead and integrate it into the indecision app.
+
+There's only a few videos left for this section and we're going to spend those finishing off the main functionality for the component version of indecision.
+make #WVI after you finish #WTV and #CAP after that try to WVI
+
+
+
+
+Typing Error 
+
  * 
  */
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
-  function IndecisionApp() {
+  function IndecisionApp(props) {
     _classCallCheck(this, IndecisionApp);
 
-    return _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
+
+    _this.state = {
+      options: ['Thing One', 'Thing two', 'Thing three']
+    };
+    return _this;
   }
 
   _createClass(IndecisionApp, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       var title = "Indecision ";
       var subtitle = "Put your Life in the hand of a computer";
-      var options = ['Thing One', 'Thing two', 'Thing three'];
+      // const options=['Thing One','Thing two','Thing three']
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(Header, { title: title, subtitle: subtitle }),
-        React.createElement(Action, null),
-        React.createElement(Options, { options: options }),
+        React.createElement(Action, { hasOptions: this.state.options.length > 0 }),
+        React.createElement(Options, { options: this.state.options }),
         React.createElement(AddOptions, null)
       );
     }
@@ -53,18 +80,18 @@ var Header = function (_React$Component2) {
   }
 
   _createClass(Header, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "h1",
+          'h1',
           null,
           this.props.title
         ),
         React.createElement(
-          "h2",
+          'h2',
           null,
           this.props.subtitle
         )
@@ -85,21 +112,23 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
-    key: "handlePick",
+    key: 'handlePick',
     value: function handlePick() {
       alert('handle Pick');
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       console.log(this);
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "button",
-          { onClick: this.handlePick },
-          "What should I do ?"
+          'button',
+          { onClick: this.handlePick,
+            disabled: !this.props.hasOptions
+          },
+          'What should I do ?'
         )
       );
     }
@@ -121,27 +150,27 @@ var Options = function (_React$Component4) {
   }
 
   _createClass(Options, [{
-    key: "handleRemoveAll",
+    key: 'handleRemoveAll',
     value: function handleRemoveAll() {
       alert("This remove button works now");
       console.log(this.props.options);
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       console.log(this.props.options[1]);
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "p",
+          'p',
           null,
-          "Here are your options"
+          'Here are your options'
         ),
         React.createElement(
-          "button",
+          'button',
           { onClick: this.handleRemoveAll },
-          "RemoveAll"
+          'RemoveAll'
         ),
         this.props.options.map(function (option) {
           return React.createElement(Option, { key: option, optionText: option });
@@ -163,16 +192,16 @@ var Option = function (_React$Component5) {
   }
 
   _createClass(Option, [{
-    key: "render",
+    key: 'render',
     value: function render() {
 
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "p",
+          'p',
           null,
-          "Option:",
+          'Option:',
           this.props.optionText
         )
       );
@@ -192,7 +221,7 @@ var AddOptions = function (_React$Component6) {
   }
 
   _createClass(AddOptions, [{
-    key: "handleAddOption",
+    key: 'handleAddOption',
     value: function handleAddOption(e) {
       e.preventDefault();
 
@@ -204,19 +233,19 @@ var AddOptions = function (_React$Component6) {
       }
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         null,
         React.createElement(
-          "form",
+          'form',
           { onSubmit: this.handleAddOption },
-          React.createElement("input", { type: "text", name: "option" }),
+          React.createElement('input', { type: 'text', name: 'option' }),
           React.createElement(
-            "button",
+            'button',
             null,
-            "Add Option "
+            'Add Option '
           )
         )
       );
