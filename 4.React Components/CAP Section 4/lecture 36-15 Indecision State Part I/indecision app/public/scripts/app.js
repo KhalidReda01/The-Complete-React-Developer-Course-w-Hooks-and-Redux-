@@ -62,6 +62,9 @@ var IndecisionApp = function (_React$Component) {
         };
       });
     }
+    // handlePick - pass down to Action and setup OnClick - bind here
+    // randomly pick and option alert it 
+
   }, {
     key: 'render',
     value: function render() {
@@ -128,6 +131,8 @@ var Action = function (_React$Component3) {
 
   _createClass(Action, [{
     key: 'handlePick',
+
+    // wd dont' need here now
     value: function handlePick() {
       alert('handle Pick');
     }

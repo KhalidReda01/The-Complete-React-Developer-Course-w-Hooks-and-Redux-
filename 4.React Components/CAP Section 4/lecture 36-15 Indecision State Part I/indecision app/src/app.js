@@ -42,7 +42,8 @@ class IndecisionApp extends React.Component{
       }
     })
   }
-
+// handlePick - pass down to Action and setup OnClick - bind here
+  // randomly pick and option alert it 
   render() {
     const title = "Indecision ";
     const subtitle = "Put your Life in the hand of a computer"
@@ -75,6 +76,7 @@ class Header extends React.Component {
 }
 }
 class Action extends React.Component{
+  // wd dont' need here now
   handlePick() {
     alert('handle Pick')
   }
