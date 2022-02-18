@@ -29,10 +29,20 @@ Typing Error
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
+    this.handleDeleteOptions=this.handleDeleteOptions.bind(this)
     this.state = {
       options:['Thing One','Thing two','Thing three']
     }
   }
+  // handleDeleteOptions
+  handleDeleteOptions() {
+    this.setState(() => {
+      return {
+        options:[]
+      }
+    })
+  }
+
   render() {
     const title = "Indecision ";
     const subtitle = "Put your Life in the hand of a computer"
@@ -43,7 +53,10 @@ class IndecisionApp extends React.Component{
         {/* Focus Typing Errror is the hardest 
         <Action hasOptions={this.state.lenght>0}/> */}
         <Action hasOptions={this.state.options.length>0} />
-        <Options options={this.state.options}/>
+        <Options
+          options={this.state.options}
+          handleDeleteOptions={this.handleDeleteOptions}
+        />
         
       <AddOptions />
     </div>)
@@ -78,22 +91,22 @@ class Action extends React.Component{
 }
 
 class Options extends React.Component{
-  constructor(props) {
-    super(props)
-    this.handleRemoveAll=this.handleRemoveAll.bind(this)
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.handleRemoveAll=this.handleRemoveAll.bind(this)
+  // }
   
-  handleRemoveAll() {
-  alert ("This remove button works now")
-    console.log(this.props.options)
-}
+//   handleRemoveAll() {
+//   alert ("This remove button works now")
+//     console.log(this.props.options)
+// }
   render() {
     console.log(this.props.options[1])
     return (
       <div>
         <p>Here are your options</p>
         
-        <button onClick={this.handleRemoveAll}>RemoveAll</button>
+        <button onClick={this.props.handleDeleteOptions}>RemoveAll</button>
         {
           this.props.options.map((option) => <Option key={option} optionText={option }/>
     )
