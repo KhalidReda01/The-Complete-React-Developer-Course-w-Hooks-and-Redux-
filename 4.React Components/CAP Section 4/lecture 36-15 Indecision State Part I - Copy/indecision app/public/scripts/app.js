@@ -8,34 +8,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/**
- * 36.Indecision State: Part I
- * I don't have internet connection but bery week one I think 10KB so I made a js files instead of waiting the unpkg to download 
- * but this doesn't work so you have to wait to dowload Okay now It's downloaded you can contiue study the section this lecture
- * 
- * 
- */
-/**
- * WVI Write Video Information You really need that  It make every thing clear more effort and time I know but this way  make it stick and you understand better this way even the instructor
- * didn't say that but You have to do that don't skip that Okay
- * 
- */
-/***
- * 5^
- * 1
-
-Now that we have some real world experience using component state let's go ahead and integrate it into the indecision app.
-
-There's only a few videos left for this section and we're going to spend those finishing off the main functionality for the component version of indecision.
-make #WVI after you finish #WTV and #CAP after that try to WVI
-
-
-
-
-Typing Error 
-
- * 
- */
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
@@ -46,6 +18,7 @@ var IndecisionApp = function (_React$Component) {
 
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
+    _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.state = {
       options: ['Thing One', 'Thing two', 'Thing three']
     };
@@ -75,15 +48,22 @@ var IndecisionApp = function (_React$Component) {
         alert(option);
       });
     }
-    // handlePick - pass down to Action and setup OnClick - bind here
-    // randomly pick and option alert it 
-
+  }, {
+    key: 'handleAddOption',
+    value: function handleAddOption(option) {
+      // console.log(option)
+      // prevState.options.push(option) // we gonna use array concat method 
+      this.setState(function (prevState) {
+        return {
+          Options: prevState.options.concat([option])
+        };
+      });
+    }
   }, {
     key: 'render',
     value: function render() {
       var title = "Indecision ";
       var subtitle = "Put your Life in the hand of a computer";
-      // const options=['Thing One','Thing two','Thing three']
       return React.createElement(
         'div',
         null,
@@ -96,7 +76,9 @@ var IndecisionApp = function (_React$Component) {
           options: this.state.options,
           handleDeleteOptions: this.handleDeleteOptions
         }),
-        React.createElement(AddOptions, null)
+        React.createElement(AddOptions, {
+          handleAddOption: this.handleAddOption
+        })
       );
     }
   }]);
@@ -147,11 +129,6 @@ var Action = function (_React$Component3) {
 
   _createClass(Action, [{
     key: 'render',
-
-    // wd dont' need here now
-    // handlePick() {
-    //   alert('handle Pick')
-    // }
     value: function render() {
       console.log(this);
       return React.createElement(
@@ -182,16 +159,6 @@ var Options = function (_React$Component4) {
 
   _createClass(Options, [{
     key: 'render',
-
-    // constructor(props) {
-    //   super(props)
-    //   this.handleRemoveAll=this.handleRemoveAll.bind(this)
-    // }
-
-    //   handleRemoveAll() {
-    //   alert ("This remove button works now")
-    //     console.log(this.props.options)
-    // }
     value: function render() {
       console.log(this.props.options[1]);
       return React.createElement(
@@ -249,10 +216,13 @@ var Option = function (_React$Component5) {
 var AddOptions = function (_React$Component6) {
   _inherits(AddOptions, _React$Component6);
 
-  function AddOptions() {
+  function AddOptions(props) {
     _classCallCheck(this, AddOptions);
 
-    return _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).apply(this, arguments));
+    var _this7 = _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).call(this, props));
+
+    _this7.handleAddOption = _this7.handleAddOption.bind(_this7);
+    return _this7;
   }
 
   _createClass(AddOptions, [{
@@ -261,10 +231,10 @@ var AddOptions = function (_React$Component6) {
       e.preventDefault();
 
       var option = e.target.elements.option.value.trim();
-      console.log(option);
+      // console.log(option)
 
       if (option) {
-        alert(option);
+        this.props.handleAddOption(option);
       }
     }
   }, {
