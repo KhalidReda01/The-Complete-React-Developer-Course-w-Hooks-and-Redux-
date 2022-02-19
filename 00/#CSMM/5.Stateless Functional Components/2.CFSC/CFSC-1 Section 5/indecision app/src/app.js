@@ -1,4 +1,4 @@
-
+//41/3 Default Prop Values CFSC
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
@@ -6,7 +6,8 @@ class IndecisionApp extends React.Component{
     this.handlePick = this.handlePick.bind(this)
     this.handleAddOption=this.handleAddOption.bind(this)
     this.state = {
-      options:[]
+      options:props.options
+      // options:[]
     }
   }
   handleDeleteOptions() {
@@ -47,7 +48,9 @@ class IndecisionApp extends React.Component{
     const subtitle = "Put your Life in the hand of a computer"
     return (
          <div>
-        <Header title={title} subtitle={subtitle} />
+        {/* <Header title={title} subtitle={subtitle} /> */}
+        {/* <Header  subtitle={subtitle} /> */}
+        <Header subtitle={subtitle} />
       
         <Action hasOptions={this.state.options.length > 0}
         
@@ -66,14 +69,26 @@ class IndecisionApp extends React.Component{
     
  
 }
+// Focus see this is why Practice is so so important you have to make your handy dirty
+// Fuck time Yes Fuck time but after that you will master that and will code from your mind
+// Options.defaultProps = {
+//   options:["hello1","hello2"]
+// }
+IndecisionApp.defaultProps = {
+  options:[]
+}
 
 const Header = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <h2>{props.subtitle }</h2>
+      {props.subtitle&&<h2>{props.subtitle }</h2> }
     </div>
     )
+}
+Header.defaultProps = {
+  title: "Some Default"
+ 
 }
 const Action = (props) => {
   return (<div>
@@ -147,14 +162,5 @@ class AddOptions extends React.Component{
   }
 }
 
-// const User = (props) => {
-//   return (
-//     <div>
-//       <p>Name:{props.name }</p>
-//       <p>Age:{props.age }</p>
-//     </div>
-//   )
-// }
-
-// ReactDOM.render(<User name="Yousef Reda" age="10"/>,document.getElementById('app'))
-ReactDOM.render(<IndecisionApp/>,document.getElementById('app'))
+// ReactDOM.render(<IndecisionApp options={ ["page 1","page 2"]}/>,document.getElementById('app'))
+ReactDOM.render(<IndecisionApp />,document.getElementById('app'))
