@@ -8,8 +8,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// use this as a refernce I made it clean now 
+// use this as a refernce I made it clean now
 // This is CFSC is so so so important dont' skip it again 
+// 41 Default Prop Values 
 var Counter = function (_React$Component) {
   _inherits(Counter, _React$Component);
 
@@ -22,7 +23,7 @@ var Counter = function (_React$Component) {
     _this.handleMinusOne = _this.handleMinusOne.bind(_this);
     _this.handleReset = _this.handleReset.bind(_this);
     _this.state = {
-      count: 0
+      count: props.count
     };
     return _this;
   }
@@ -93,4 +94,9 @@ var Counter = function (_React$Component) {
   return Counter;
 }(React.Component);
 
+Counter.defaultProps = {
+  count: 0
+};
+
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
+// ReactDOM.render(<Counter count={0} />, document.getElementById('app'));

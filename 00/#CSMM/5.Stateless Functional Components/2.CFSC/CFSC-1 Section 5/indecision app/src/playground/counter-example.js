@@ -1,5 +1,6 @@
-// use this as a refernce I made it clean now 
+// use this as a refernce I made it clean now
 // This is CFSC is so so so important dont' skip it again 
+// 41 Default Prop Values 
  class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -7,7 +8,7 @@
     this.handleMinusOne = this.handleMinusOne.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.state = {
-      count: 0
+      count: props.count
     };
   }
   handleAddOne() {
@@ -50,5 +51,9 @@
     );
   }
 }
+Counter.defaultProps = {
+  count:0
+}
 
 ReactDOM.render(<Counter />, document.getElementById('app'));
+// ReactDOM.render(<Counter count={0} />, document.getElementById('app'));
