@@ -129,38 +129,35 @@ var Header = function (_React$Component2) {
   return Header;
 }(React.Component);
 
-var Action = function (_React$Component3) {
-  _inherits(Action, _React$Component3);
+var Action = function Action(props) {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "button",
+      { onClick: props.handlePick,
+        disabled: !props.hasOptions
+      },
+      "What should I do ?"
+    )
+  );
+};
+// class Action extends React.Component{
 
-  function Action() {
-    _classCallCheck(this, Action);
+//   render() {
+//     console.log(this)
+//     return (<div>
 
-    return _possibleConstructorReturn(this, (Action.__proto__ || Object.getPrototypeOf(Action)).apply(this, arguments));
-  }
+//       <button onClick={this.props.handlePick}
+//       disabled={!this.props.hasOptions}
+//       >What should I do ?</button>
+//      </div>)
+//   }
 
-  _createClass(Action, [{
-    key: "render",
-    value: function render() {
-      console.log(this);
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "button",
-          { onClick: this.props.handlePick,
-            disabled: !this.props.hasOptions
-          },
-          "What should I do ?"
-        )
-      );
-    }
-  }]);
+// }
 
-  return Action;
-}(React.Component);
-
-var Options = function (_React$Component4) {
-  _inherits(Options, _React$Component4);
+var Options = function (_React$Component3) {
+  _inherits(Options, _React$Component3);
 
   function Options() {
     _classCallCheck(this, Options);
@@ -195,8 +192,8 @@ var Options = function (_React$Component4) {
   return Options;
 }(React.Component);
 
-var Option = function (_React$Component5) {
-  _inherits(Option, _React$Component5);
+var Option = function (_React$Component4) {
+  _inherits(Option, _React$Component4);
 
   function Option() {
     _classCallCheck(this, Option);
@@ -224,19 +221,19 @@ var Option = function (_React$Component5) {
   return Option;
 }(React.Component);
 
-var AddOptions = function (_React$Component6) {
-  _inherits(AddOptions, _React$Component6);
+var AddOptions = function (_React$Component5) {
+  _inherits(AddOptions, _React$Component5);
 
   function AddOptions(props) {
     _classCallCheck(this, AddOptions);
 
-    var _this7 = _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).call(this, props));
+    var _this6 = _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).call(this, props));
 
-    _this7.handleAddOption = _this7.handleAddOption.bind(_this7);
-    _this7.state = {
+    _this6.handleAddOption = _this6.handleAddOption.bind(_this6);
+    _this6.state = {
       error: undefined
     };
-    return _this7;
+    return _this6;
   }
 
   _createClass(AddOptions, [{
@@ -282,22 +279,15 @@ var AddOptions = function (_React$Component6) {
   return AddOptions;
 }(React.Component);
 
-var User = function User(props) {
-  return React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "p",
-      null,
-      "Name: ",
-      props.name
-    ),
-    React.createElement(
-      "p",
-      null,
-      "Age: ",
-      props.age
-    )
-  );
-};
-ReactDOM.render(React.createElement(User, { name: "khalid", age: "23" }), document.getElementById('app'));
+// const User = (props) => {
+//   return (
+//     <div>
+//       <p>Name: {props.name }</p>
+//       <p>Age: {props.age}</p>
+//     </div>
+//   )
+// }
+// ReactDOM.render(<User name="khalid" age="23"/>,document.getElementById('app'))
+
+
+ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
