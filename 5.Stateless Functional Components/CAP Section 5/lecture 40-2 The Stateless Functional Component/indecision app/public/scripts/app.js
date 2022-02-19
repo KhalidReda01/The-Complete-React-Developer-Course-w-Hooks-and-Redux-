@@ -96,39 +96,35 @@ var IndecisionApp = function (_React$Component) {
 
   return IndecisionApp;
 }(React.Component);
+// Challenge Solve convert the Header Class componet to a Functionl Component
 
-var Header = function (_React$Component2) {
-  _inherits(Header, _React$Component2);
 
-  function Header() {
-    _classCallCheck(this, Header);
-
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-  }
-
-  _createClass(Header, [{
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "h1",
-          null,
-          this.props.title
-        ),
-        React.createElement(
-          "h2",
-          null,
-          this.props.subtitle
-        )
-      );
-    }
-  }]);
-
-  return Header;
-}(React.Component);
-
+var Header = function Header(props) {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h1",
+      null,
+      props.title
+    ),
+    React.createElement(
+      "h2",
+      null,
+      props.subtitle
+    )
+  );
+};
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.props.title}</h1>
+//         <h2>{this.props.subtitle }</h2>
+//       </div>
+//       )
+// }
+// }
 var Action = function Action(props) {
   return React.createElement(
     "div",
@@ -142,6 +138,13 @@ var Action = function Action(props) {
     )
   );
 };
+/**
+ * Challenge Time 
+ * conver all three other class componet 
+ * Option
+ * Options 
+ * Header 
+ */
 // class Action extends React.Component{
 
 //   render() {
@@ -156,84 +159,85 @@ var Action = function Action(props) {
 
 // }
 
-var Options = function (_React$Component3) {
-  _inherits(Options, _React$Component3);
 
-  function Options() {
-    _classCallCheck(this, Options);
+// Challenge time Convert Option class compoent to a functioal one 
+var Options = function Options(props) {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "p",
+      null,
+      "Here are your options"
+    ),
+    React.createElement(
+      "button",
+      { onClick: props.handleDeleteOptions },
+      "RemoveAll"
+    ),
+    props.options.map(function (option) {
+      return React.createElement(Option, { key: option, optionText: option });
+    })
+  );
+};
+// class Options extends React.Component{
 
-    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
-  }
+//   render() {
+//     console.log(this.props.options[1])
+//     return (
+//       <div>
+//         <p>Here are your options</p>
 
-  _createClass(Options, [{
-    key: "render",
-    value: function render() {
-      console.log(this.props.options[1]);
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "p",
-          null,
-          "Here are your options"
-        ),
-        React.createElement(
-          "button",
-          { onClick: this.props.handleDeleteOptions },
-          "RemoveAll"
-        ),
-        this.props.options.map(function (option) {
-          return React.createElement(Option, { key: option, optionText: option });
-        })
-      );
-    }
-  }]);
+//         <button onClick={this.props.handleDeleteOptions}>RemoveAll</button>
+//         {
+//           this.props.options.map((option) => <Option key={option} optionText={option }/>
+//     )
+//     }
+//       </div>
 
-  return Options;
-}(React.Component);
+//     )
+//   }
+// }
 
-var Option = function (_React$Component4) {
-  _inherits(Option, _React$Component4);
 
-  function Option() {
-    _classCallCheck(this, Option);
+// and finally this is the last part of the Challenge convert the option class component to a functional one
+var Option = function Option(props) {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "p",
+      null,
+      "Option:",
+      props.optionText
+    )
+  );
+};
+// class Option extends React.Component{
+//   render() {
 
-    return _possibleConstructorReturn(this, (Option.__proto__ || Object.getPrototypeOf(Option)).apply(this, arguments));
-  }
 
-  _createClass(Option, [{
-    key: "render",
-    value: function render() {
+//     return (
+//       <div>
+//        <p>Option:{this.props.optionText}</p> 
+//       </div>
+//     )
+//   }
+// }
 
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "p",
-          null,
-          "Option:",
-          this.props.optionText
-        )
-      );
-    }
-  }]);
-
-  return Option;
-}(React.Component);
-
-var AddOptions = function (_React$Component5) {
-  _inherits(AddOptions, _React$Component5);
+var AddOptions = function (_React$Component2) {
+  _inherits(AddOptions, _React$Component2);
 
   function AddOptions(props) {
     _classCallCheck(this, AddOptions);
 
-    var _this6 = _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).call(this, props));
+    var _this3 = _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).call(this, props));
 
-    _this6.handleAddOption = _this6.handleAddOption.bind(_this6);
-    _this6.state = {
+    _this3.handleAddOption = _this3.handleAddOption.bind(_this3);
+    _this3.state = {
       error: undefined
     };
-    return _this6;
+    return _this3;
   }
 
   _createClass(AddOptions, [{

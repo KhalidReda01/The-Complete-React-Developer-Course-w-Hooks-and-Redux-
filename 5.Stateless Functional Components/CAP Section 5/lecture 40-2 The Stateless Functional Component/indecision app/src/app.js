@@ -72,16 +72,26 @@ class IndecisionApp extends React.Component{
     
  
 }
-class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>{this.props.title}</h1>
-        <h2>{this.props.subtitle }</h2>
-      </div>
-      )
+// Challenge Solve convert the Header Class componet to a Functionl Component
+const Header = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <h2>{props.subtitle }</h2>
+    </div>
+    )
 }
-} const Action = (props) => {
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.props.title}</h1>
+//         <h2>{this.props.subtitle }</h2>
+//       </div>
+//       )
+// }
+// }
+const Action = (props) => {
   return (<div>
     
     <button onClick={props.handlePick}
@@ -89,6 +99,13 @@ class Header extends React.Component {
     >What should I do ?</button>
    </div>)
 }
+/**
+ * Challenge Time 
+ * conver all three other class componet 
+ * Option
+ * Options 
+ * Header 
+ */
 // class Action extends React.Component{
  
 //   render() {
@@ -103,36 +120,61 @@ class Header extends React.Component {
  
 // }
 
-class Options extends React.Component{
- 
-  render() {
-    console.log(this.props.options[1])
-    return (
-      <div>
-        <p>Here are your options</p>
-        
-        <button onClick={this.props.handleDeleteOptions}>RemoveAll</button>
-        {
-          this.props.options.map((option) => <Option key={option} optionText={option }/>
-    )
-    }
-      </div>
-      
-    )
-  }
-}
 
-class Option extends React.Component{
-  render() {
+// Challenge time Convert Option class compoent to a functioal one 
+const Options = (props) => {
+  return (
+    <div>
+      <p>Here are your options</p>
+      
+      <button onClick={props.handleDeleteOptions}>RemoveAll</button>
+      {
+        props.options.map((option) => <Option key={option} optionText={option }/>
+  )
+  }
+    </div>
+    
+  )
+}
+// class Options extends React.Component{
+ 
+//   render() {
+//     console.log(this.props.options[1])
+//     return (
+//       <div>
+//         <p>Here are your options</p>
+        
+//         <button onClick={this.props.handleDeleteOptions}>RemoveAll</button>
+//         {
+//           this.props.options.map((option) => <Option key={option} optionText={option }/>
+//     )
+//     }
+//       </div>
+      
+//     )
+//   }
+// }
+
+
+// and finally this is the last part of the Challenge convert the option class component to a functional one
+const Option = (props) => {
+  return (
+    <div>
+     <p>Option:{props.optionText}</p> 
+    </div>
+  )
+}
+// class Option extends React.Component{
+//   render() {
   
     
-    return (
-      <div>
-       <p>Option:{this.props.optionText}</p> 
-      </div>
-    )
-  }
-}
+//     return (
+//       <div>
+//        <p>Option:{this.props.optionText}</p> 
+//       </div>
+//     )
+//   }
+// }
 
 class AddOptions extends React.Component{
   constructor(props) {
