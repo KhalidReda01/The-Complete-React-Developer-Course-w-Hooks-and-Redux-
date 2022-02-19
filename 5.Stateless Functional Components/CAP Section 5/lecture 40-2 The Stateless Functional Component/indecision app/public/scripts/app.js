@@ -23,7 +23,7 @@ var IndecisionApp = function (_React$Component) {
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.state = {
-      // options:['Thing One','Thing two','Thing three']
+
       options: []
     };
     return _this;
@@ -55,8 +55,7 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: "handleAddOption",
     value: function handleAddOption(option) {
-      // console.log(option)
-      // prevState.options.push(option) // we gonna use array concat method 
+
       if (!option) {
         return 'Enter Valid value to add item';
       } else if (this.state.options.indexOf(option) > -1) {
@@ -67,7 +66,6 @@ var IndecisionApp = function (_React$Component) {
       this.setState(function (prevState) {
         return {
 
-          // Options:prevState.options.concat([option])
           options: prevState.options.concat(option)
         };
       });
@@ -255,14 +253,6 @@ var AddOptions = function (_React$Component6) {
 
         };
       });
-
-      //   if (option) {
-      //     // console.log("test here", this.props.handleAddOption(option));
-      // console.log(this.props.handleAddOption(option)) // undefined  ;
-      //   }
-      //   else {
-      //   alert("bug Hidden Bug")
-      // }
     }
   }, {
     key: "render",
@@ -292,4 +282,22 @@ var AddOptions = function (_React$Component6) {
   return AddOptions;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+var User = function User(props) {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "p",
+      null,
+      "Name: ",
+      props.name
+    ),
+    React.createElement(
+      "p",
+      null,
+      "Age: ",
+      props.age
+    )
+  );
+};
+ReactDOM.render(React.createElement(User, { name: "khalid", age: "23" }), document.getElementById('app'));

@@ -9,7 +9,7 @@ class IndecisionApp extends React.Component{
     this.handlePick = this.handlePick.bind(this)
     this.handleAddOption=this.handleAddOption.bind(this)
     this.state = {
-      // options:['Thing One','Thing two','Thing three']
+    
       options:[]
     }
   }
@@ -31,8 +31,7 @@ class IndecisionApp extends React.Component{
     
   }
   handleAddOption(option) {
-    // console.log(option)
-    // prevState.options.push(option) // we gonna use array concat method 
+   
     if (!option) {
       return 'Enter Valid value to add item'
     } else if (this.state.options.indexOf(option) > -1) {
@@ -43,7 +42,7 @@ class IndecisionApp extends React.Component{
     this.setState((prevState) => {
       return {
         
-        // Options:prevState.options.concat([option])
+       
         options:prevState.options.concat(option)
       }
     })
@@ -149,13 +148,7 @@ class AddOptions extends React.Component{
         }
       })
 
-    //   if (option) {
-    //     // console.log("test here", this.props.handleAddOption(option));
-    // console.log(this.props.handleAddOption(option)) // undefined  ;
-    //   }
-    //   else {
-    //   alert("bug Hidden Bug")
-    // }
+  
   }
   render() {
     return (
@@ -171,5 +164,12 @@ class AddOptions extends React.Component{
   }
 }
 
-
-ReactDOM.render(<IndecisionApp/>,document.getElementById('app'))
+const User = (props) => {
+  return (
+    <div>
+      <p>Name: {props.name }</p>
+      <p>Age: {props.age}</p>
+    </div>
+  )
+}
+ReactDOM.render(<User name="khalid" age="23"/>,document.getElementById('app'))
