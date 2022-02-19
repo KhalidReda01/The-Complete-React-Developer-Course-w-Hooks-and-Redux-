@@ -29,9 +29,12 @@ class IndecisionApp extends React.Component{
   handleAddOption(option) {
     // console.log(option)
     // prevState.options.push(option) // we gonna use array concat method 
+    console.log("what is this ",option )
     this.setState((prevState) => {
       return {
-        Options:prevState.options.concat([option])
+        
+        // Options:prevState.options.concat([option])
+        options:prevState.options.concat(option)
       }
     })
   }
@@ -124,10 +127,13 @@ class AddOptions extends React.Component{
     e.preventDefault();
 
       const option = e.target.elements.option.value.trim();
-      // console.log(option)
+      console.log(option)
 
-    if (option) {
-      this.props.handleAddOption(option);
+      if (option) {
+        // console.log("test here", this.props.handleAddOption(option));
+    console.log(this.props.handleAddOption(option)) // undefined  ;
+    } else {
+      alert("bug Hidden Bug")
     }
   }
   render() {

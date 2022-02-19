@@ -53,9 +53,12 @@ var IndecisionApp = function (_React$Component) {
     value: function handleAddOption(option) {
       // console.log(option)
       // prevState.options.push(option) // we gonna use array concat method 
+      console.log("what is this ", option);
       this.setState(function (prevState) {
         return {
-          Options: prevState.options.concat([option])
+
+          // Options:prevState.options.concat([option])
+          options: prevState.options.concat(option)
         };
       });
     }
@@ -231,10 +234,13 @@ var AddOptions = function (_React$Component6) {
       e.preventDefault();
 
       var option = e.target.elements.option.value.trim();
-      // console.log(option)
+      console.log(option);
 
       if (option) {
-        this.props.handleAddOption(option);
+        // console.log("test here", this.props.handleAddOption(option));
+        console.log(this.props.handleAddOption(option)); // undefined  ;
+      } else {
+        alert("bug Hidden Bug");
       }
     }
   }, {
