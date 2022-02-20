@@ -136,12 +136,22 @@ const Options = (props) => {
     
   )
 }
-
+/**
+ * so instead of passing in props.handleDeleteOption just gonna defune an inline arrow function 
+ * {    <button onClick={props.handleDeleteOption}>remove</button>} 
+ *  
+ */
 const Option = (props) => {
   return (
     <div>
       <p>Option:{props.optionText}</p> 
-      <button onClick={props.handleDeleteOption}>remove</button>
+      <button
+        onClick={(e) => {
+          props.handleDeleteOption(props.optionText)
+        }}
+      >
+        remove
+      </button>
     </div>
   )
 }

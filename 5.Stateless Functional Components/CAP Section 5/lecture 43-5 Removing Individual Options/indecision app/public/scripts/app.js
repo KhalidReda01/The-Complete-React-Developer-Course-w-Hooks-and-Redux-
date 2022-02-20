@@ -180,7 +180,11 @@ var Options = function Options(props) {
     })
   );
 };
-
+/**
+ * so instead of passing in props.handleDeleteOption just gonna defune an inline arrow function 
+ * {    <button onClick={props.handleDeleteOption}>remove</button>} 
+ *  
+ */
 var Option = function Option(props) {
   return React.createElement(
     'div',
@@ -193,7 +197,11 @@ var Option = function Option(props) {
     ),
     React.createElement(
       'button',
-      { onClick: props.handleDeleteOption },
+      {
+        onClick: function onClick(e) {
+          props.handleDeleteOption(props.optionText);
+        }
+      },
       'remove'
     )
   );
