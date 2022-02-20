@@ -1,4 +1,7 @@
 //43/5 Removing Individual Options CFSC
+/**
+ * 1.he replaced all the setState with the shorthand one Ok do it  
+ */
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
@@ -9,12 +12,13 @@ class IndecisionApp extends React.Component{
       options:props.options
     }
   }
+  // first one 
   handleDeleteOptions() {
-    this.setState(() => {
-      return {
+    this.setState(() => ( {
         options:[]
-      }
-    })
+      })
+     
+    )
   }
   handlePick() {
     this.setState(() => {
@@ -32,14 +36,15 @@ class IndecisionApp extends React.Component{
       return "This Option already exists"
     }
 
-    console.log("what is this ",option )
-    this.setState((prevState) => {
-      return {
+    console.log("what is this ", option)
+    // second one
+    this.setState((prevState) => ({
         
        
         options:prevState.options.concat(option)
-      }
-    })
+      })
+      
+    )
   }
 
   render() {
@@ -133,12 +138,13 @@ class AddOptions extends React.Component{
       const option = e.target.elements.option.value.trim();
       console.log(option)
       const error = this.props.handleAddOption(option);
-      this.setState(() => {
-        return {
+      //third one 
+      this.setState(() => ({
           error: error
          
-        }
-      })
+        })
+         
+      )
 
     
   }
