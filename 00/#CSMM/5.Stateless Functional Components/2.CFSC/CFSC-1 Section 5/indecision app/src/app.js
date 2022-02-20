@@ -39,9 +39,9 @@ class IndecisionApp extends React.Component{
      The filter() method creates a new array with all elements that pass the test implemented by the provided function.
      */
     this.setState((prevState) => {
-      // options:prevState.options.filter((option)=> optionToRemove!==option)
+      options:prevState.options.filter((option)=> optionToRemove!==option)
       // options:prevState.options.filter((option)=> optionToRemove!==option) 
-      console.log("this is prevstate value",prevState)// 
+      // console.log("this is prevstate value",prevState)// 
       /**
        * it return an object 
        * an object of array I mean object conaain aray that's why you usd prevsate.option . access it I understand now
