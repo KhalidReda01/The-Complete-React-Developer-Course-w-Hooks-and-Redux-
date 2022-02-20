@@ -38,7 +38,7 @@ class IndecisionApp extends React.Component{
      * Array.prototype.filter()
      The filter() method creates a new array with all elements that pass the test implemented by the provided function.
      */
-    this.setState((prevState) => {
+    this.setState((prevState) => ({
       options:prevState.options.filter((option)=> optionToRemove!==option)
       // options:prevState.options.filter((option)=> optionToRemove!==option) 
       // console.log("this is prevstate value",prevState)// 
@@ -53,7 +53,7 @@ class IndecisionApp extends React.Component{
     ]
 }
        */
-    })
+    }))
   }
   handlePick() {
     this.setState(() => {
