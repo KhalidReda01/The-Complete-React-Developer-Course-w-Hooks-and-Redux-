@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -22,6 +22,8 @@ var IndecisionApp = function (_React$Component) {
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
+    // you missed this part It's very impornt to bind 
+    _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
     _this.state = {
 
       // options:[]
@@ -31,7 +33,7 @@ var IndecisionApp = function (_React$Component) {
   }
 
   _createClass(IndecisionApp, [{
-    key: 'handleDeleteOptions',
+    key: "handleDeleteOptions",
     value: function handleDeleteOptions() {
       // repalce this with a shortand
       // this.setState(() => {
@@ -53,20 +55,30 @@ var IndecisionApp = function (_React$Component) {
       }))
      *
      */
+    // handleDeleteOption(option) {
+    //   // console.log('hdo',option )
+    // //Uncaught TypeError: this.setState is not a function       console.log("DEES",option),
+
+    //   this.setState((prevState) => ({
+    //     options:['hello what is going on']
+
+    //   }))
+    // }
+    // CFSC
+    /**
+     * Even the souce code had the same  error 
+     * this.setState is not a function
+     * So now the problem wihhin hidden part 
+     * 
+     */
 
   }, {
-    key: 'handleDeleteOption',
+    key: "handleDeleteOption",
     value: function handleDeleteOption(option) {
-      console.log('hdo', option);
-      // this.setState((prevState) => ({
-      // options: prevState.options.filter((option) => {
-      //   return true
-      // })
-      // }));
       this.setState(function (prevState) {
         return {
           options: prevState.options.filter(function (option) {
-            return true;
+            return false;
           })
         };
       });
@@ -77,7 +89,7 @@ var IndecisionApp = function (_React$Component) {
      */
 
   }, {
-    key: 'handlePick',
+    key: "handlePick",
     value: function handlePick() {
       var _this2 = this;
 
@@ -88,7 +100,7 @@ var IndecisionApp = function (_React$Component) {
       });
     }
   }, {
-    key: 'handleAddOption',
+    key: "handleAddOption",
     value: function handleAddOption(option) {
 
       if (!option) {
@@ -113,12 +125,12 @@ var IndecisionApp = function (_React$Component) {
       });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       // const title = "Indecision ";
       var subtitle = "Put your Life in the hand of a computer";
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(Header, { subtitle: subtitle }),
         React.createElement(Action, { hasOptions: this.state.options.length > 0,
@@ -146,15 +158,15 @@ IndecisionApp.defaultProps = {
 
 var Header = function Header(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'h1',
+      "h1",
       null,
       props.title
     ),
     props.subtitle && React.createElement(
-      'h2',
+      "h2",
       null,
       props.subtitle
     )
@@ -167,31 +179,31 @@ Header.defaultProps = {
 
 var Action = function Action(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'button',
+      "button",
       { onClick: props.handlePick,
         disabled: !props.hasOptions
       },
-      'What should I do ?'
+      "What should I do ?"
     )
   );
 };
 
 var Options = function Options(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'p',
+      "p",
       null,
-      'Here are your options'
+      "Here are your options"
     ),
     React.createElement(
-      'button',
+      "button",
       { onClick: props.handleDeleteOptions },
-      'RemoveAll'
+      "RemoveAll"
     ),
     props.options.map(function (option) {
       return React.createElement(Option, {
@@ -209,22 +221,22 @@ var Options = function Options(props) {
  */
 var Option = function Option(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'p',
+      "p",
       null,
-      'Option:',
+      "Option:",
       props.optionText
     ),
     React.createElement(
-      'button',
+      "button",
       {
         onClick: function onClick(e) {
           props.handleDeleteOption(props.optionText);
         }
       },
-      'remove'
+      "remove"
     )
   );
 };
@@ -245,7 +257,7 @@ var AddOptions = function (_React$Component2) {
   }
 
   _createClass(AddOptions, [{
-    key: 'handleAddOption',
+    key: "handleAddOption",
     value: function handleAddOption(e) {
       e.preventDefault();
 
@@ -265,24 +277,24 @@ var AddOptions = function (_React$Component2) {
       });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         this.state.error && React.createElement(
-          'p',
+          "p",
           null,
           this.state.error
         ),
         React.createElement(
-          'form',
+          "form",
           { onSubmit: this.handleAddOption },
-          React.createElement('input', { type: 'text', name: 'option' }),
+          React.createElement("input", { type: "text", name: "option" }),
           React.createElement(
-            'button',
+            "button",
             null,
-            'Add Option '
+            "Add Option "
           )
         )
       );

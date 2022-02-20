@@ -7,7 +7,9 @@ class IndecisionApp extends React.Component{
     super(props);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
-    this.handleAddOption=this.handleAddOption.bind(this)
+    this.handleAddOption = this.handleAddOption.bind(this)
+    // you missed this part It's very impornt to bind 
+    this.handleDeleteOption=this.handleDeleteOption.bind(this)
     this.state = {
     
       // options:[]
@@ -33,18 +35,28 @@ class IndecisionApp extends React.Component{
     }))
    *
    */
+  // handleDeleteOption(option) {
+  //   // console.log('hdo',option )
+  // //Uncaught TypeError: this.setState is not a function       console.log("DEES",option),
+
+  //   this.setState((prevState) => ({
+  //     options:['hello what is going on']
+     
+  //   }))
+  // }
+  // CFSC
+  /**
+   * Even the souce code had the same  error 
+   * this.setState is not a function
+   * So now the problem wihhin hidden part 
+   * 
+   */
   handleDeleteOption(option) {
-    console.log('hdo',option )
-    // this.setState((prevState) => ({
-      // options: prevState.options.filter((option) => {
-      //   return true
-      // })
-    // }));
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => {
-      return true
+        return false
       })
-    }))
+    }));
   }
   /**
    * Challenge Time
