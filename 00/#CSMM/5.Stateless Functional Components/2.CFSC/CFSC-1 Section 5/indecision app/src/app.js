@@ -14,8 +14,8 @@ class IndecisionApp extends React.Component{
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
-    // this.handleDeleteOption=this.handleDeleteOption.bind(this)
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
+    this.handleDeleteOption=this.handleDeleteOption.bind(this)
+    // this.handleDeleteOption = this.handleDeleteOption.bind(this);// the CS
 
     this.state = {
       options:props.options
@@ -31,7 +31,7 @@ class IndecisionApp extends React.Component{
   }
   handleDeleteOption(option) {
 // yes this part isn't woring 
-    console.log("why this part is'nt workig ",option)
+    console.log("No way It's working now  ",option)
   }
   handlePick() {
     this.setState(() => {
@@ -75,8 +75,8 @@ class IndecisionApp extends React.Component{
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
-        //  handleDeleteOption={this.handleDeleteOption}
-        handleDeleteOption={this.handleDeleteOption}
+         handleDeleteOption={this.handleDeleteOption} 
+        // handleDeleteOption={this.handleDeleteOption} //the CS Uncaught TypeError: props.handleDeleteOption is not a function
           
         />
         
@@ -136,9 +136,10 @@ const Options = (props) => {
         props.options.map((option) => <Option
           key={option}
           optionText={option}
-          // handleDeleteOption={props.handleAddOption}
-          handleDeleteOption={props.handleDeleteOption}
-
+          handleDeleteOption={props.handleDeleteOption} // Finally Focus again make sure that you write right don't just typing Okay I  know that you type fast but It's not a race
+          //OMG handleDeleteOption={props.handleAddOption} //Deug one Yes that's why I said just be patient and never take course without you offer the source course for stupid mistakes like this Iron Focus 
+          // handleDeleteOptio={props.handleDeleteOption} // cs
+          
         />
   )
   }

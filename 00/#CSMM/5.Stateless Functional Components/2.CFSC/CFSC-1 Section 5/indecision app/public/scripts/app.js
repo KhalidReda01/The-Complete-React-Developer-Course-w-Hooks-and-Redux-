@@ -29,8 +29,8 @@ var IndecisionApp = function (_React$Component) {
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
-    // this.handleDeleteOption=this.handleDeleteOption.bind(this)
     _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
+    // this.handleDeleteOption = this.handleDeleteOption.bind(this);// the CS
 
     _this.state = {
       options: props.options
@@ -53,7 +53,7 @@ var IndecisionApp = function (_React$Component) {
     key: "handleDeleteOption",
     value: function handleDeleteOption(option) {
       // yes this part isn't woring 
-      console.log("why this part is'nt workig ", option);
+      console.log("No way It's working now  ", option);
     }
   }, {
     key: "handlePick",
@@ -100,9 +100,9 @@ var IndecisionApp = function (_React$Component) {
         }),
         React.createElement(Options, {
           options: this.state.options,
-          handleDeleteOptions: this.handleDeleteOptions
-          //  handleDeleteOption={this.handleDeleteOption}
-          , handleDeleteOption: this.handleDeleteOption
+          handleDeleteOptions: this.handleDeleteOptions,
+          handleDeleteOption: this.handleDeleteOption
+          // handleDeleteOption={this.handleDeleteOption} //the CS Uncaught TypeError: props.handleDeleteOption is not a function
 
         }),
         React.createElement(AddOptions, {
@@ -182,9 +182,10 @@ var Options = function Options(props) {
     props.options.map(function (option) {
       return React.createElement(Option, {
         key: option,
-        optionText: option
-        // handleDeleteOption={props.handleAddOption}
-        , handleDeleteOption: props.handleDeleteOption
+        optionText: option,
+        handleDeleteOption: props.handleDeleteOption // Finally Focus again make sure that you write right don't just typing Okay I  know that you type fast but It's not a race
+        //OMG handleDeleteOption={props.handleAddOption} //Deug one Yes that's why I said just be patient and never take course without you offer the source course for stupid mistakes like this Iron Focus 
+        // handleDeleteOptio={props.handleDeleteOption} // cs
 
       });
     })
