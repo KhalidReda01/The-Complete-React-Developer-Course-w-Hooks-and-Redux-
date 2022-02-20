@@ -45,14 +45,17 @@ class IndecisionApp extends React.Component{
     }
 
     console.log("what is this ", option)
-    // one state to convert 
-    this.setState((prevState) => {
-      return {
+    // one state to convert
+    // this.setState((prevState) => {
+    //   return {
         
        
-        options:prevState.options.concat(option)
-      }
-    })
+    //     options:prevState.options.concat(option)
+    //   }
+    // })
+    // prevState is not Defined you didn't put it as argument hahah 
+    // Okay the first part of the challenge NOW work so well
+    this.setState((prevState)=>({options:prevState.options.concat(option)}))
   }
 
   render() {
@@ -147,14 +150,15 @@ class AddOptions extends React.Component{
       const option = e.target.elements.option.value.trim();
       console.log(option)
       const error = this.props.handleAddOption(option);
-      // another one to convert 
-      this.setState(() => {
-        return {
-          error: error
+      // another one to convert
+      // this.setState(() => {
+      //   return {
+      //     error: error
          
-        }
-      })
-
+      //   }
+      // })
+      // this is the second part of the challenge test it now Okay it working 
+     this.setState(()=>({ error: error}))
   
   }
   render() {

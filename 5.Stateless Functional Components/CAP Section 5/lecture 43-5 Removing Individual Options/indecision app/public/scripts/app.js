@@ -71,12 +71,18 @@ var IndecisionApp = function (_React$Component) {
       }
 
       console.log("what is this ", option);
-      // one state to convert 
-      this.setState(function (prevState) {
-        return {
+      // one state to convert
+      // this.setState((prevState) => {
+      //   return {
 
-          options: prevState.options.concat(option)
-        };
+
+      //     options:prevState.options.concat(option)
+      //   }
+      // })
+      // prevState is not Defined you didn't put it as argument hahah 
+      // Okay the first part of the challenge NOW work so well
+      this.setState(function (prevState) {
+        return { options: prevState.options.concat(option) };
       });
     }
   }, {
@@ -201,12 +207,16 @@ var AddOptions = function (_React$Component2) {
       var option = e.target.elements.option.value.trim();
       console.log(option);
       var error = this.props.handleAddOption(option);
-      // another one to convert 
-      this.setState(function () {
-        return {
-          error: error
+      // another one to convert
+      // this.setState(() => {
+      //   return {
+      //     error: error
 
-        };
+      //   }
+      // })
+      // this is the second part of the challenge test it now Okay it working 
+      this.setState(function () {
+        return { error: error };
       });
     }
   }, {
