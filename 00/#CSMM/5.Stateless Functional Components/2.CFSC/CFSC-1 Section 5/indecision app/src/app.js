@@ -5,6 +5,8 @@
  * thiss is actualally going to be sligtly more complex than anything we've done before 
  * So go ahead and walk through this step by step 
  *   ********* going to create a new metod that going to be responsible for taking in an option the one that you want to delete and using setState to actually remove it 
+ * so now affter face this erro what I don't understand why I did exactly the same 
+ * OMG It's working now after I copid now compare 
  */
 class IndecisionApp extends React.Component{
   constructor(props) {
@@ -12,7 +14,9 @@ class IndecisionApp extends React.Component{
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
     this.handleAddOption = this.handleAddOption.bind(this)
-    this.handleDeleteOption=this.handleDeleteOption.bind(this)
+    // this.handleDeleteOption=this.handleDeleteOption.bind(this)
+    this.handleDeleteOption = this.handleDeleteOption.bind(this);
+
     this.state = {
       options:props.options
     }
@@ -71,7 +75,9 @@ class IndecisionApp extends React.Component{
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
-         handleDeleteOption={this.handleDeleteOption}
+        //  handleDeleteOption={this.handleDeleteOption}
+        handleDeleteOption={this.handleDeleteOption}
+          
         />
         
         <AddOptions
@@ -130,7 +136,9 @@ const Options = (props) => {
         props.options.map((option) => <Option
           key={option}
           optionText={option}
-          handleDeleteOption={props.handleAddOption}
+          // handleDeleteOption={props.handleAddOption}
+          handleDeleteOption={props.handleDeleteOption}
+
         />
   )
   }
@@ -145,7 +153,9 @@ const Option = (props) => {
     <div>
       <p>Option:{props.optionText}</p> 
       <button onClick={(e) => {
-        props.handleDeleteOption(props.optionText)
+        // props.handleDeleteOption(props.optionText)
+        props.handleDeleteOption(props.optionText);
+
       }}
       >remove</button>
     </div>

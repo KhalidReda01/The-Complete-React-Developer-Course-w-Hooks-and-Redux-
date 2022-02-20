@@ -15,6 +15,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * thiss is actualally going to be sligtly more complex than anything we've done before 
  * So go ahead and walk through this step by step 
  *   ********* going to create a new metod that going to be responsible for taking in an option the one that you want to delete and using setState to actually remove it 
+ * so now affter face this erro what I don't understand why I did exactly the same 
+ * OMG It's working now after I copid now compare 
  */
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
@@ -27,7 +29,9 @@ var IndecisionApp = function (_React$Component) {
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
+    // this.handleDeleteOption=this.handleDeleteOption.bind(this)
     _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
+
     _this.state = {
       options: props.options
     };
@@ -96,8 +100,10 @@ var IndecisionApp = function (_React$Component) {
         }),
         React.createElement(Options, {
           options: this.state.options,
-          handleDeleteOptions: this.handleDeleteOptions,
-          handleDeleteOption: this.handleDeleteOption
+          handleDeleteOptions: this.handleDeleteOptions
+          //  handleDeleteOption={this.handleDeleteOption}
+          , handleDeleteOption: this.handleDeleteOption
+
         }),
         React.createElement(AddOptions, {
           handleAddOption: this.handleAddOption
@@ -176,8 +182,10 @@ var Options = function Options(props) {
     props.options.map(function (option) {
       return React.createElement(Option, {
         key: option,
-        optionText: option,
-        handleDeleteOption: props.handleAddOption
+        optionText: option
+        // handleDeleteOption={props.handleAddOption}
+        , handleDeleteOption: props.handleDeleteOption
+
       });
     })
   );
@@ -196,6 +204,7 @@ var Option = function Option(props) {
     React.createElement(
       "button",
       { onClick: function onClick(e) {
+          // props.handleDeleteOption(props.optionText)
           props.handleDeleteOption(props.optionText);
         }
       },
