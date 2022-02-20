@@ -24,6 +24,9 @@ class IndecisionApp extends React.Component{
     
     this.setState(() => ({options:[] } ) )
   }
+  handleDeleteOption() {
+    console.log('hdo',option )
+  }
   /**
    * Challenge Time
    * Your Challenge  is going to be to convert the other to this data set state calls 
