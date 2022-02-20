@@ -1,4 +1,4 @@
-//41/3 Default Prop Values CFSC
+//43/5 Removing Individual Options CFSC
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
@@ -7,7 +7,6 @@ class IndecisionApp extends React.Component{
     this.handleAddOption=this.handleAddOption.bind(this)
     this.state = {
       options:props.options
-      // options:[]
     }
   }
   handleDeleteOptions() {
@@ -48,8 +47,7 @@ class IndecisionApp extends React.Component{
     const subtitle = "Put your Life in the hand of a computer"
     return (
          <div>
-        {/* <Header title={title} subtitle={subtitle} /> */}
-        {/* <Header  subtitle={subtitle} /> */}
+       
         <Header subtitle={subtitle} />
       
         <Action hasOptions={this.state.options.length > 0}
@@ -69,11 +67,7 @@ class IndecisionApp extends React.Component{
     
  
 }
-// Focus see this is why Practice is so so important you have to make your handy dirty
-// Fuck time Yes Fuck time but after that you will master that and will code from your mind
-// Options.defaultProps = {
-//   options:["hello1","hello2"]
-// }
+
 IndecisionApp.defaultProps = {
   options:[]
 }
@@ -162,5 +156,4 @@ class AddOptions extends React.Component{
   }
 }
 
-// ReactDOM.render(<IndecisionApp options={ ["page 1","page 2"]}/>,document.getElementById('app'))
 ReactDOM.render(<IndecisionApp />,document.getElementById('app'))
