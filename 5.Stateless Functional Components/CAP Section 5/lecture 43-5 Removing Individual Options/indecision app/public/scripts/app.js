@@ -105,7 +105,8 @@ var IndecisionApp = function (_React$Component) {
         }),
         React.createElement(Options, {
           options: this.state.options,
-          handleDeleteOptions: this.handleDeleteOptions
+          handleDeleteOptions: this.handleDeleteOptions,
+          handleDeleteOption: this.handleDeleteOption
         }),
         React.createElement(AddOptions, {
           handleAddOption: this.handleAddOption

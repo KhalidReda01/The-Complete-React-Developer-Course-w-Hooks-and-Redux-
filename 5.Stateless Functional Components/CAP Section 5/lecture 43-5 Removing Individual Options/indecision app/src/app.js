@@ -77,6 +77,7 @@ class IndecisionApp extends React.Component{
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
+          handleDeleteOption={this.handleDeleteOption}
         />
         
         <AddOptions
