@@ -33,10 +33,15 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: "handleDeleteOptions",
     value: function handleDeleteOptions() {
+      // repalce this with a shortand
+      // this.setState(() => {
+      //   return {
+      //     options:[]
+      //   }
+      // })
+
       this.setState(function () {
-        return {
-          options: []
-        };
+        return { options: [] };
       });
     }
   }, {
