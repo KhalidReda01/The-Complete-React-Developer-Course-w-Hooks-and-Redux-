@@ -46,7 +46,7 @@ var IndecisionApp = function (_React$Component) {
     }
   }, {
     key: 'handleDeleteOption',
-    value: function handleDeleteOption() {
+    value: function handleDeleteOption(option) {
       console.log('hdo', option);
     }
     /**
@@ -172,7 +172,11 @@ var Options = function Options(props) {
       'RemoveAll'
     ),
     props.options.map(function (option) {
-      return React.createElement(Option, { key: option, optionText: option });
+      return React.createElement(Option, {
+        key: option,
+        optionText: option,
+        handleDeleteOption: props.handleDeleteOption
+      });
     })
   );
 };
@@ -186,6 +190,11 @@ var Option = function Option(props) {
       null,
       'Option:',
       props.optionText
+    ),
+    React.createElement(
+      'button',
+      { onClick: props.handleDeleteOption },
+      'remove'
     )
   );
 };
