@@ -1,13 +1,18 @@
 //43/5 Removing Individual Options CFSC
 /**
  * 1.he replaced all the setState with the shorthand one Ok do it  
+ * Now you adjusted the setState syntax not go ahead and dive into the meat of the lecture which is add or remove buttons next to each individual item 
+ * thiss is actualally going to be sligtly more complex than anything we've done before 
+ * So go ahead and walk through this step by step 
+ *   ********* going to create a new metod that going to be responsible for taking in an option the one that you want to delete and using setState to actually remove it 
  */
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
-    this.handleAddOption=this.handleAddOption.bind(this)
+    this.handleAddOption = this.handleAddOption.bind(this)
+    this.handleDeleteOption=this.handleDeleteOption.bind(this)
     this.state = {
       options:props.options
     }
@@ -19,6 +24,9 @@ class IndecisionApp extends React.Component{
       })
      
     )
+  }
+  handleDeleteOption(option) {
+    console.log('hdo',option)
   }
   handlePick() {
     this.setState(() => {
