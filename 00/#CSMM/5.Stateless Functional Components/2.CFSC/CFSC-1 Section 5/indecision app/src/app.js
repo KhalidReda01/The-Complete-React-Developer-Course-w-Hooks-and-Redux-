@@ -23,6 +23,8 @@ class IndecisionApp extends React.Component{
   }
   // thid one
   // to see ths working ReactDOM.render(react.createElement('p'),document.getElementById('app'))
+  //ReactDOM.render(React.createElement('p'),document.getElementById('app'));
+
   
   componentWillUnmount() {
     console.log('ComponentWillUnmount')
