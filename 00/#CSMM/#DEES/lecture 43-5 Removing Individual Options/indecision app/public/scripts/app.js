@@ -10,6 +10,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 /**
  * 43.5 Remving Individual Options 
+ * DEES
+ * Debugging starts ff as a very6 slow and frustrating process but the only way to really get better is actually do it 
  */
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
@@ -24,7 +26,6 @@ var IndecisionApp = function (_React$Component) {
     _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.state = {
 
-      // options:[]
       options: props.options
     };
     return _this;
@@ -33,12 +34,6 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
-      // repalce this with a shortand
-      // this.setState(() => {
-      //   return {
-      //     options:[]`
-      //   }
-      // })
 
       this.setState(function () {
         return { options: [] };
@@ -67,11 +62,6 @@ var IndecisionApp = function (_React$Component) {
         };
       });
     }
-    /**
-     * Challenge Time
-     * Your Challenge  is going to be to convert the other to this data set state calls 
-     */
-
   }, {
     key: 'handlePick',
     value: function handlePick() {
@@ -94,16 +84,7 @@ var IndecisionApp = function (_React$Component) {
       }
 
       console.log("what is this ", option);
-      // one state to convert
-      // this.setState((prevState) => {
-      //   return {
 
-
-      //     options:prevState.options.concat(option)
-      //   }
-      // })
-      // prevState is not Defined you didn't put it as argument hahah 
-      // Okay the first part of the challenge NOW work so well
       this.setState(function (prevState) {
         return { options: prevState.options.concat(option) };
       });
@@ -111,7 +92,6 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      // const title = "Indecision ";
       var subtitle = "Put your Life in the hand of a computer";
       return React.createElement(
         'div',
@@ -198,11 +178,7 @@ var Options = function Options(props) {
     })
   );
 };
-/**
- * so instead of passing in props.handleDeleteOption just gonna defune an inline arrow function 
- * {    <button onClick={props.handleDeleteOption}>remove</button>} 
- *  
- */
+
 var Option = function Option(props) {
   return React.createElement(
     'div',
@@ -248,14 +224,7 @@ var AddOptions = function (_React$Component2) {
       var option = e.target.elements.option.value.trim();
       console.log(option);
       var error = this.props.handleAddOption(option);
-      // another one to convert
-      // this.setState(() => {
-      //   return {
-      //     error: error
 
-      //   }
-      // })
-      // this is the second part of the challenge test it now Okay it working 
       this.setState(function () {
         return { error: error };
       });
@@ -287,8 +256,5 @@ var AddOptions = function (_React$Component2) {
 
   return AddOptions;
 }(React.Component);
-
-// ReactDOM.render(<IndecisionApp options={["Devils den","Second District"] }/>,document.getElementById('app'))
-
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));

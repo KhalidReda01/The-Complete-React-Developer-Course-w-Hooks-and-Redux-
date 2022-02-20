@@ -1,6 +1,8 @@
 
 /**
  * 43.5 Remving Individual Options 
+ * DEES
+ * Debugging starts ff as a very6 slow and frustrating process but the only way to really get better is actually do it 
  */
 class IndecisionApp extends React.Component{
   constructor(props) {
@@ -10,17 +12,12 @@ class IndecisionApp extends React.Component{
     this.handleAddOption=this.handleAddOption.bind(this)
     this.state = {
     
-      // options:[]
+      
       options:props.options
     }
   }
   handleDeleteOptions() {
-    // repalce this with a shortand
-    // this.setState(() => {
-    //   return {
-    //     options:[]`
-    //   }
-    // })
+    
     
     this.setState(() => ({options:[] } ) )
   }
@@ -42,10 +39,7 @@ class IndecisionApp extends React.Component{
      
     }))
   }
-  /**
-   * Challenge Time
-   * Your Challenge  is going to be to convert the other to this data set state calls 
-   */
+  
   handlePick() {
     this.setState(() => {
       const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -63,27 +57,15 @@ class IndecisionApp extends React.Component{
     }
 
     console.log("what is this ", option)
-    // one state to convert
-    // this.setState((prevState) => {
-    //   return {
-        
-       
-    //     options:prevState.options.concat(option)
-    //   }
-    // })
-    // prevState is not Defined you didn't put it as argument hahah 
-    // Okay the first part of the challenge NOW work so well
+   
     this.setState((prevState)=>({options:prevState.options.concat(option)}))
   }
 
   render() {
-    // const title = "Indecision ";
     const subtitle = "Put your Life in the hand of a computer"
     return (
          <div>
-        {/* <Header    /> */}
         <Header subtitle={subtitle}   />
-        {/* <Header title={title}  subtitle={subtitle} /> */}
       
         <Action hasOptions={this.state.options.length > 0}
         
@@ -113,7 +95,6 @@ const Header = (props) => {
     <div>
       <h1>{props.title}</h1>
       {props.subtitle&&<h2>{props.subtitle}</h2>}
-     {/* <h2>{props.subtitle}</h2> */}
     </div>
     )
 }
@@ -151,11 +132,7 @@ const Options = (props) => {
     
   )
 }
-/**
- * so instead of passing in props.handleDeleteOption just gonna defune an inline arrow function 
- * {    <button onClick={props.handleDeleteOption}>remove</button>} 
- *  
- */
+
 const Option = (props) => {
   return (
     <div>
@@ -186,14 +163,7 @@ class AddOptions extends React.Component{
       const option = e.target.elements.option.value.trim();
       console.log(option)
       const error = this.props.handleAddOption(option);
-      // another one to convert
-      // this.setState(() => {
-      //   return {
-      //     error: error
-         
-      //   }
-      // })
-      // this is the second part of the challenge test it now Okay it working 
+     
      this.setState(()=>({ error: error}))
   
   }
@@ -212,5 +182,4 @@ class AddOptions extends React.Component{
 }
 
 
-// ReactDOM.render(<IndecisionApp options={["Devils den","Second District"] }/>,document.getElementById('app'))
 ReactDOM.render(<IndecisionApp />,document.getElementById('app'))
