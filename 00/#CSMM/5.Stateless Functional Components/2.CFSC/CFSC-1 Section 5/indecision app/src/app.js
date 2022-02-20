@@ -33,10 +33,27 @@ class IndecisionApp extends React.Component{
 // yes this part isn't woring
     // console.log("No way It's working now  ",option)
     // need to fully understand the filter method false false working and return the arry without the filtered one 
-    this.setState((prevState) => ({
+    // MDN array filter SAQ
+    /**
+     * Array.prototype.filter()
+     The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+     */
+    this.setState((prevState) => {
       // options:prevState.options.filter((option)=> optionToRemove!==option)
-      options:prevState.options.filter((option)=> optionToRemove!==option)
-    }))
+      // options:prevState.options.filter((option)=> optionToRemove!==option) 
+      console.log("this is prevstate value",prevState)// 
+      /**
+       * it return an object 
+       * an object of array I mean object conaain aray that's why you usd prevsate.option . access it I understand now
+       * {
+    "options": [
+        "Item 1",
+        "Item 2",
+        "Item 3"
+    ]
+}
+       */
+    })
   }
   handlePick() {
     this.setState(() => {
