@@ -1,13 +1,5 @@
-//43/5 Removing Individual Options CFSC
-/**
- * 1.he replaced all the setState with the shorthand one Ok do it  
- * Now you adjusted the setState syntax not go ahead and dive into the meat of the lecture which is add or remove buttons next to each individual item 
- * thiss is actualally going to be sligtly more complex than anything we've done before 
- * So go ahead and walk through this step by step 
- *   ********* going to create a new metod that going to be responsible for taking in an option the one that you want to delete and using setState to actually remove it 
- * so now affter face this erro what I don't understand why I did exactly the same 
- * OMG It's working now after I copid now compare 
- */
+//44/6 LifeCycle Methods  CFSC
+
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
@@ -20,6 +12,20 @@ class IndecisionApp extends React.Component{
     this.state = {
       options:props.options
     }
+  }
+  // first  life cycle method
+  componentDidMount() {
+    console.log('fetching data')
+  }
+  // second lifecycel method
+  componentDidUpdate() {
+    console.log('saving data')
+  }
+  // thid one
+  // to see ths working ReactDOM.render(react.createElement('p'),document.getElementById('app'))
+  
+  componentWillUnmount() {
+    console.log('ComponentWillUnmount')
   }
   // first one 
   handleDeleteOptions() {
