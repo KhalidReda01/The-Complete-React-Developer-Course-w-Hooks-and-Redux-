@@ -26,6 +26,7 @@ class IndecisionApp extends React.Component{
     )
   }
   handleDeleteOption(option) {
+
     console.log('hdo',option)
   }
   handlePick() {
@@ -70,6 +71,7 @@ class IndecisionApp extends React.Component{
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
+          handleDeleteOption={this.handleDeleteOption}
         />
         
         <AddOptions
@@ -94,7 +96,7 @@ const Header = (props) => {
     )
 }
 Header.defaultProps = {
-  title: "Some Default"
+  title: "Indecision"
  
 }
 const Action = (props) => {
@@ -106,6 +108,10 @@ const Action = (props) => {
    </div>)
 }
 
+// This part is little confusing don't negleectCSMM from now and during all the other section
+// It's so imporntant to know why you exactly did everthing and alwaya ask why 
+//because you will learn better this way Fuck time and deadline Time will pass any whether
+// you  finish the lecture in on hour or four no one will judge  you and if they will not probelem  It's my way Prove that It's work well 
 
 const Options = (props) => {
   return (
@@ -114,7 +120,11 @@ const Options = (props) => {
       
       <button onClick={props.handleDeleteOptions}>RemoveAll</button>
       {
-        props.options.map((option) => <Option key={option} optionText={option }/>
+        props.options.map((option) => <Option
+          key={option}
+          optionText={option}
+          handleDeleteOption={props.handleAddOption}
+        />
   )
   }
     </div>
@@ -126,7 +136,8 @@ const Options = (props) => {
 const Option = (props) => {
   return (
     <div>
-     <p>Option:{props.optionText}</p> 
+      <p>Option:{props.optionText}</p> 
+      <button onClick={props.handleDeleteOption}>remove</button>
     </div>
   )
 }

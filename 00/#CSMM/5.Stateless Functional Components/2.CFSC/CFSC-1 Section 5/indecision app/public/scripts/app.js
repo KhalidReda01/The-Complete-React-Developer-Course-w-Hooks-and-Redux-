@@ -48,6 +48,7 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: 'handleDeleteOption',
     value: function handleDeleteOption(option) {
+
       console.log('hdo', option);
     }
   }, {
@@ -95,7 +96,8 @@ var IndecisionApp = function (_React$Component) {
         }),
         React.createElement(Options, {
           options: this.state.options,
-          handleDeleteOptions: this.handleDeleteOptions
+          handleDeleteOptions: this.handleDeleteOptions,
+          handleDeleteOption: this.handleDeleteOption
         }),
         React.createElement(AddOptions, {
           handleAddOption: this.handleAddOption
@@ -128,7 +130,7 @@ var Header = function Header(props) {
   );
 };
 Header.defaultProps = {
-  title: "Some Default"
+  title: "Indecision"
 
 };
 var Action = function Action(props) {
@@ -145,6 +147,11 @@ var Action = function Action(props) {
   );
 };
 
+// This part is little confusing don't negleectCSMM from now and during all the other section
+// It's so imporntant to know why you exactly did everthing and alwaya ask why 
+//because you will learn better this way Fuck time and deadline Time will pass any whether
+// you  finish the lecture in on hour or four no one will judge  you and if they will not probelem  It's my way Prove that It's work well 
+
 var Options = function Options(props) {
   return React.createElement(
     'div',
@@ -160,7 +167,11 @@ var Options = function Options(props) {
       'RemoveAll'
     ),
     props.options.map(function (option) {
-      return React.createElement(Option, { key: option, optionText: option });
+      return React.createElement(Option, {
+        key: option,
+        optionText: option,
+        handleDeleteOption: props.handleAddOption
+      });
     })
   );
 };
@@ -174,6 +185,11 @@ var Option = function Option(props) {
       null,
       'Option:',
       props.optionText
+    ),
+    React.createElement(
+      'button',
+      { onClick: props.handleDeleteOption },
+      'remove'
     )
   );
 };
