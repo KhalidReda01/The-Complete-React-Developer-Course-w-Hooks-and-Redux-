@@ -9,7 +9,11 @@ class IndecisionApp extends React.Component{
     super(props);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
     this.handlePick = this.handlePick.bind(this)
-    this.handleAddOption=this.handleAddOption.bind(this)
+    this.handleAddOption = this.handleAddOption.bind(this)
+    this.handleDeleteOption=this.handleDeleteOption.bind(this)
+    //OMG I didn't bind this hanldeDeleteOption isn't binding OMG Focus  but I thought I wrote it OMG what's going on
+    // It's workign I bugged it now It's working so fine but why why why I wrote this "this.handleDeleteOption=this.handleDeleteOption.bind(this)" before
+    // yes you wrote it but on the paper WVI not CAP so Focus 
     this.state = {
     
       
@@ -138,7 +142,7 @@ const Option = (props) => {
     <div>
       <p>Option:{props.optionText}</p> 
       <button
-        onClick={(e) => {
+        onClick={() => {
           props.handleDeleteOption(props.optionText)
         }}
       >

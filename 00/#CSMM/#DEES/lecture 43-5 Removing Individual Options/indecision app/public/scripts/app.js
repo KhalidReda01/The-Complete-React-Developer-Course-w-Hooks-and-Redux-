@@ -24,6 +24,10 @@ var IndecisionApp = function (_React$Component) {
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
+    _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
+    //OMG I didn't bind this hanldeDeleteOption isn't binding OMG Focus  but I thought I wrote it OMG what's going on
+    // It's workign I bugged it now It's working so fine but why why why I wrote this "this.handleDeleteOption=this.handleDeleteOption.bind(this)" before
+    // yes you wrote it but on the paper WVI not CAP so Focus 
     _this.state = {
 
       options: props.options
@@ -192,7 +196,7 @@ var Option = function Option(props) {
     React.createElement(
       'button',
       {
-        onClick: function onClick(e) {
+        onClick: function onClick() {
           props.handleDeleteOption(props.optionText);
         }
       },
