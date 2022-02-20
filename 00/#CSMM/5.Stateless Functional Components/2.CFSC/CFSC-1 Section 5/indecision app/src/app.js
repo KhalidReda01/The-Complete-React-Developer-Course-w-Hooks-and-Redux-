@@ -26,8 +26,8 @@ class IndecisionApp extends React.Component{
     )
   }
   handleDeleteOption(option) {
-
-    console.log('hdo',option)
+// yes this part isn't woring 
+    console.log("why this part is'nt workig ",option)
   }
   handlePick() {
     this.setState(() => {
@@ -71,7 +71,7 @@ class IndecisionApp extends React.Component{
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOption={this.handleDeleteOption}
+         handleDeleteOption={this.handleDeleteOption}
         />
         
         <AddOptions
@@ -109,10 +109,17 @@ const Action = (props) => {
 }
 
 // This part is little confusing don't negleectCSMM from now and during all the other section
-// It's so imporntant to know why you exactly did everthing and alwaya ask why 
+// It's so imporntant to know why you exactly did everthing and alwaya ask why
 //because you will learn better this way Fuck time and deadline Time will pass any whether
-// you  finish the lecture in on hour or four no one will judge  you and if they will not probelem  It's my way Prove that It's work well 
+// you  finish the lecture in on hour or four no one will judge  you and if they will not probelem  It's my way Prove that It's work well
 
+
+/**
+ * yes I want errors to show up I don't want to just finish the course I want to understand I'm alone at this so now one gonna help you after you finish the course so practice practice practice 
+ * 
+ *  {app.js:192 Uncaught TypeError: props.handleDeleteOption is not a function} props 
+ * 
+ */
 const Options = (props) => {
   return (
     <div>
@@ -137,7 +144,10 @@ const Option = (props) => {
   return (
     <div>
       <p>Option:{props.optionText}</p> 
-      <button onClick={props.handleDeleteOption}>remove</button>
+      <button onClick={(e) => {
+        props.handleDeleteOption(props.optionText)
+      }}
+      >remove</button>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37,7 +37,7 @@ var IndecisionApp = function (_React$Component) {
 
 
   _createClass(IndecisionApp, [{
-    key: 'handleDeleteOptions',
+    key: "handleDeleteOptions",
     value: function handleDeleteOptions() {
       this.setState(function () {
         return {
@@ -46,13 +46,13 @@ var IndecisionApp = function (_React$Component) {
       });
     }
   }, {
-    key: 'handleDeleteOption',
+    key: "handleDeleteOption",
     value: function handleDeleteOption(option) {
-
-      console.log('hdo', option);
+      // yes this part isn't woring 
+      console.log("why this part is'nt workig ", option);
     }
   }, {
-    key: 'handlePick',
+    key: "handlePick",
     value: function handlePick() {
       var _this2 = this;
 
@@ -63,7 +63,7 @@ var IndecisionApp = function (_React$Component) {
       });
     }
   }, {
-    key: 'handleAddOption',
+    key: "handleAddOption",
     value: function handleAddOption(option) {
 
       if (!option) {
@@ -82,12 +82,12 @@ var IndecisionApp = function (_React$Component) {
       });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       var title = "Indecision ";
       var subtitle = "Put your Life in the hand of a computer";
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(Header, { subtitle: subtitle }),
         React.createElement(Action, { hasOptions: this.state.options.length > 0,
@@ -115,15 +115,15 @@ IndecisionApp.defaultProps = {
 
 var Header = function Header(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'h1',
+      "h1",
       null,
       props.title
     ),
     props.subtitle && React.createElement(
-      'h2',
+      "h2",
       null,
       props.subtitle
     )
@@ -135,36 +135,43 @@ Header.defaultProps = {
 };
 var Action = function Action(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'button',
+      "button",
       { onClick: props.handlePick,
         disabled: !props.hasOptions
       },
-      'What should I do ?'
+      "What should I do ?"
     )
   );
 };
 
 // This part is little confusing don't negleectCSMM from now and during all the other section
-// It's so imporntant to know why you exactly did everthing and alwaya ask why 
+// It's so imporntant to know why you exactly did everthing and alwaya ask why
 //because you will learn better this way Fuck time and deadline Time will pass any whether
-// you  finish the lecture in on hour or four no one will judge  you and if they will not probelem  It's my way Prove that It's work well 
+// you  finish the lecture in on hour or four no one will judge  you and if they will not probelem  It's my way Prove that It's work well
 
+
+/**
+ * yes I want errors to show up I don't want to just finish the course I want to understand I'm alone at this so now one gonna help you after you finish the course so practice practice practice 
+ * 
+ *  {app.js:192 Uncaught TypeError: props.handleDeleteOption is not a function} props 
+ * 
+ */
 var Options = function Options(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'p',
+      "p",
       null,
-      'Here are your options'
+      "Here are your options"
     ),
     React.createElement(
-      'button',
+      "button",
       { onClick: props.handleDeleteOptions },
-      'RemoveAll'
+      "RemoveAll"
     ),
     props.options.map(function (option) {
       return React.createElement(Option, {
@@ -178,18 +185,21 @@ var Options = function Options(props) {
 
 var Option = function Option(props) {
   return React.createElement(
-    'div',
+    "div",
     null,
     React.createElement(
-      'p',
+      "p",
       null,
-      'Option:',
+      "Option:",
       props.optionText
     ),
     React.createElement(
-      'button',
-      { onClick: props.handleDeleteOption },
-      'remove'
+      "button",
+      { onClick: function onClick(e) {
+          props.handleDeleteOption(props.optionText);
+        }
+      },
+      "remove"
     )
   );
 };
@@ -211,7 +221,7 @@ var AddOptions = function (_React$Component2) {
   }
 
   _createClass(AddOptions, [{
-    key: 'handleAddOption',
+    key: "handleAddOption",
     value: function handleAddOption(e) {
       e.preventDefault();
 
@@ -227,24 +237,24 @@ var AddOptions = function (_React$Component2) {
       });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         this.state.error && React.createElement(
-          'p',
+          "p",
           null,
           this.state.error
         ),
         React.createElement(
-          'form',
+          "form",
           { onSubmit: this.handleAddOption },
-          React.createElement('input', { type: 'text', name: 'option' }),
+          React.createElement("input", { type: "text", name: "option" }),
           React.createElement(
-            'button',
+            "button",
             null,
-            'Add Option '
+            "Add Option "
           )
         )
       );
