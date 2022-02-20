@@ -17,13 +17,14 @@ class IndecisionApp extends React.Component{
       options:props.options
     }
   }
-  // these three  are the lifecyecle methods you can learn more by googling react componet lifecycle 
+  // these three  are the lifecyecle methods you can learn more by googling react componet lifecycle
   //https://reactjs.org/docs/react-component.html
+  //  safe and fetch data using local storage 
   componentDidMount() {
-    console.log('comoponentDidMount!')
+    console.log('fetching data')
   }
-  componentDidUpdate() {
-    console.log('componentDidUpdate!')
+  componentDidUpdate(prevProps,prevState) {
+    console.log('saving data')
   }
   //ReactDOM.render(React.createElement('p'),document.getElementById('app'))
 

@@ -32,19 +32,20 @@ var IndecisionApp = function (_React$Component) {
     };
     return _this;
   }
-  // these three  are the lifecyecle methods you can learn more by googling react componet lifecycle 
+  // these three  are the lifecyecle methods you can learn more by googling react componet lifecycle
   //https://reactjs.org/docs/react-component.html
+  //  safe and fetch data using local storage 
 
 
   _createClass(IndecisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('comoponentDidMount!');
+      console.log('fetching data');
     }
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      console.log('componentDidUpdate!');
+    value: function componentDidUpdate(prevProps, prevState) {
+      console.log('saving data');
     }
     //ReactDOM.render(React.createElement('p'),document.getElementById('app'))
 
