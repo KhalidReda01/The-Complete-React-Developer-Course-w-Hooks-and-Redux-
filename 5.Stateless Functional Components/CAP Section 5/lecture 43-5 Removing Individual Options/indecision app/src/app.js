@@ -51,13 +51,18 @@ class IndecisionApp extends React.Component{
    * So now the problem wihhin hidden part 
    * 
    */
-  handleDeleteOption(option) {
+  handleDeleteOption(optionToRemove) {
     this.setState((prevState) => ({
-      options: prevState.options.filter((option) => {
-        return false
-      })
+      options: prevState.options.filter((option) => optionToRemove !== option)
     }));
   }
+  // OMG not again this was typiny mistake optionToReomve  you wrote it like that at retrun but the right was as argument 
+  //so you deserve that erro app.js: 81 Uncaught ReferenceError: optionToReomve is not defined
+  // handleDeleteOption(optionToRemove) {
+  //   this.setState((prevState) => ({
+  //     options: prevState.options.filter((option) => optionToRemove !== option)
+  //   }));
+  // }
   /**
    * Challenge Time
    * Your Challenge  is going to be to convert the other to this data set state calls 
