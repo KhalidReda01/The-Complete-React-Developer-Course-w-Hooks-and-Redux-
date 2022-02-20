@@ -51,9 +51,18 @@ var IndecisionApp = function (_React$Component) {
     }
   }, {
     key: "handleDeleteOption",
-    value: function handleDeleteOption(option) {
-      // yes this part isn't woring 
-      console.log("No way It's working now  ", option);
+    value: function handleDeleteOption(optionToRemove) {
+      // yes this part isn't woring
+      // console.log("No way It's working now  ",option)
+      // need to fully understand the filter method false false working and return the arry without the filtered one 
+      this.setState(function (prevState) {
+        return {
+          // options:prevState.options.filter((option)=> optionToRemove!==option)
+          options: prevState.options.filter(function (option) {
+            return optionToRemove !== option;
+          })
+        };
+      });
     }
   }, {
     key: "handlePick",

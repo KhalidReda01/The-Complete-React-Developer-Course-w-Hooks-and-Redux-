@@ -29,9 +29,14 @@ class IndecisionApp extends React.Component{
      
     )
   }
-  handleDeleteOption(option) {
-// yes this part isn't woring 
-    console.log("No way It's working now  ",option)
+  handleDeleteOption(optionToRemove) {
+// yes this part isn't woring
+    // console.log("No way It's working now  ",option)
+    // need to fully understand the filter method false false working and return the arry without the filtered one 
+    this.setState((prevState) => ({
+      // options:prevState.options.filter((option)=> optionToRemove!==option)
+      options:prevState.options.filter((option)=> optionToRemove!==option)
+    }))
   }
   handlePick() {
     this.setState(() => {
