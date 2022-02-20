@@ -1,6 +1,7 @@
 
 /**
  * 44.6 Lifecycle Methods  
+ * POC 
  */
 class IndecisionApp extends React.Component{
   constructor(props) {
@@ -16,6 +17,21 @@ class IndecisionApp extends React.Component{
       options:props.options
     }
   }
+  // these three  are the lifecyecle methods you can learn more by googling react componet lifecycle 
+  //https://reactjs.org/docs/react-component.html
+  componentDidMount() {
+    console.log('comoponentDidMount!')
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate!')
+  }
+  //ReactDOM.render(React.createElement('p'),document.getElementById('app'))
+
+  componentWillUnmount() {
+    console.log('ComponentWilUnmout')
+    
+  }
+  
   handleDeleteOptions() {
    
     this.setState(() => ({options:[] } ) )
