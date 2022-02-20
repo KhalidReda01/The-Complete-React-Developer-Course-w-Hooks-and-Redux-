@@ -18,12 +18,16 @@ class IndecisionApp extends React.Component{
     // repalce this with a shortand
     // this.setState(() => {
     //   return {
-    //     options:[]
+    //     options:[]`
     //   }
     // })
     
     this.setState(() => ({options:[] } ) )
   }
+  /**
+   * Challenge Time
+   * Your Challenge  is going to be to convert the other to this data set state calls 
+   */
   handlePick() {
     this.setState(() => {
       const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -40,7 +44,8 @@ class IndecisionApp extends React.Component{
       return "This Option already exists"
     }
 
-    console.log("what is this ",option )
+    console.log("what is this ", option)
+    // one state to convert 
     this.setState((prevState) => {
       return {
         
@@ -142,6 +147,7 @@ class AddOptions extends React.Component{
       const option = e.target.elements.option.value.trim();
       console.log(option)
       const error = this.props.handleAddOption(option);
+      // another one to convert 
       this.setState(() => {
         return {
           error: error

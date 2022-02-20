@@ -36,7 +36,7 @@ var IndecisionApp = function (_React$Component) {
       // repalce this with a shortand
       // this.setState(() => {
       //   return {
-      //     options:[]
+      //     options:[]`
       //   }
       // })
 
@@ -44,6 +44,11 @@ var IndecisionApp = function (_React$Component) {
         return { options: [] };
       });
     }
+    /**
+     * Challenge Time
+     * Your Challenge  is going to be to convert the other to this data set state calls 
+     */
+
   }, {
     key: "handlePick",
     value: function handlePick() {
@@ -66,6 +71,7 @@ var IndecisionApp = function (_React$Component) {
       }
 
       console.log("what is this ", option);
+      // one state to convert 
       this.setState(function (prevState) {
         return {
 
@@ -195,6 +201,7 @@ var AddOptions = function (_React$Component2) {
       var option = e.target.elements.option.value.trim();
       console.log(option);
       var error = this.props.handleAddOption(option);
+      // another one to convert 
       this.setState(function () {
         return {
           error: error
