@@ -24,8 +24,27 @@ class IndecisionApp extends React.Component{
     
     this.setState(() => ({options:[] } ) )
   }
+  /**
+   * there is an error at this this.state isn't a function
+   *   this.setState((prevState) => ({
+      options: prevState.options.filter((option) => {
+        return true
+      })
+    }))
+   *
+   */
   handleDeleteOption(option) {
     console.log('hdo',option )
+    // this.setState((prevState) => ({
+      // options: prevState.options.filter((option) => {
+      //   return true
+      // })
+    // }));
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => {
+      return true
+      })
+    }))
   }
   /**
    * Challenge Time

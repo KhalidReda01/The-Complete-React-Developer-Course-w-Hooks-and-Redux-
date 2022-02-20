@@ -44,10 +44,32 @@ var IndecisionApp = function (_React$Component) {
         return { options: [] };
       });
     }
+    /**
+     * there is an error at this this.state isn't a function
+     *   this.setState((prevState) => ({
+        options: prevState.options.filter((option) => {
+          return true
+        })
+      }))
+     *
+     */
+
   }, {
     key: 'handleDeleteOption',
     value: function handleDeleteOption(option) {
       console.log('hdo', option);
+      // this.setState((prevState) => ({
+      // options: prevState.options.filter((option) => {
+      //   return true
+      // })
+      // }));
+      this.setState(function (prevState) {
+        return {
+          options: prevState.options.filter(function (option) {
+            return true;
+          })
+        };
+      });
     }
     /**
      * Challenge Time
