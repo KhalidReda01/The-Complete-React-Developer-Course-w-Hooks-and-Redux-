@@ -46,7 +46,7 @@ class IndecisionApp extends React.Component{
   }
   
   /**
-   * POC2-1-1
+   * POC2-1-1 CAP 
    *  componentDidMount() {
     console.log('fetching data')
     const json = localStorage.getItem('options');
@@ -56,11 +56,14 @@ class IndecisionApp extends React.Component{
    browser console -> localStorage.clear()
    */
   componentDidMount() {
+    const json = localStorage.getItem('options');
+    const options = JSON.parse(json);
+    this.setState(()=>({options:options}))
     console.log('fetching data')
   }
 
   /**
- * POC2-1
+ * POC2-1 CAP Done 
  *  componentDidUpdate(prevProps,prevState) {
     if(prevState.options.length !==this.options.length){
     const json = JSON.stringify(this.state.options)
@@ -72,8 +75,33 @@ class IndecisionApp extends React.Component{
  * 
  */
   
-  componentDidUpdate(prevProps,prevState) {
-    console.log('saving data')
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      console.log(json) // this print the exactly same as this.state.options //Done 
+      localStorage.setItem('options', json)
+     // localStorage.getItem('options') //'["thing one ","thing two ","a"]' // print the same 
+      console.log('saving data')
+      // console.log(this.state.options.length)
+      // console.log(this.state.options) // this print what you see right now 
+      // console.log(prevState) this print the old condition before change I think I got it now
+     }
+       
+
+   
+    /**
+     *    console.log(prevProps)// prevProps always give me the previous array
+     * {
+    "options": [
+        "thing one ",
+        "thing two ",
+        "thing three"
+    ]
+}
+    console.log(prevState)//preState give me an array but before the change happen 
+
+     */
+
   }
 
   componentWillUnmount() {
@@ -141,7 +169,7 @@ class IndecisionApp extends React.Component{
  
 }
 IndecisionApp.defaultProps = {
-  options:["three"]
+  options:["thing one ","thing two ", "thing three"]
  }
 
 

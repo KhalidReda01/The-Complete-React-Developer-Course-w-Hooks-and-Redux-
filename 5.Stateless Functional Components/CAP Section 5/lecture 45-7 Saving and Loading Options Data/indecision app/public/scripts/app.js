@@ -61,7 +61,7 @@ var IndecisionApp = function (_React$Component) {
   }
 
   /**
-   * POC2-1-1
+   * POC2-1-1 CAP 
    *  componentDidMount() {
     console.log('fetching data')
     const json = localStorage.getItem('options');
@@ -75,11 +75,16 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var json = localStorage.getItem('options');
+      var options = JSON.parse(json);
+      this.setState(function () {
+        return { options: options };
+      });
       console.log('fetching data');
     }
 
     /**
-    * POC2-1
+    * POC2-1 CAP Done 
     *  componentDidUpdate(prevProps,prevState) {
       if(prevState.options.length !==this.options.length){
       const json = JSON.stringify(this.state.options)
@@ -93,7 +98,28 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      console.log('saving data');
+      if (prevState.options.length !== this.state.options.length) {
+        var json = JSON.stringify(this.state.options);
+        console.log(json); // this print the exactly same as this.state.options //Done 
+        localStorage.setItem('options', json);
+        // localStorage.getItem('options') //'["thing one ","thing two ","a"]' // print the same 
+        console.log('saving data');
+        // console.log(this.state.options.length)
+        // console.log(this.state.options) // this print what you see right now 
+        // console.log(prevState) this print the old condition before change I think I got it now
+      }
+
+      /**
+       *    console.log(prevProps)// prevProps always give me the previous array
+       * {
+      "options": [
+          "thing one ",
+          "thing two ",
+          "thing three"
+      ]
+      }
+      console.log(prevState)//preState give me an array but before the change happen 
+         */
     }
   }, {
     key: 'componentWillUnmount',
@@ -174,7 +200,7 @@ var IndecisionApp = function (_React$Component) {
 }(React.Component);
 
 IndecisionApp.defaultProps = {
-  options: ["three"]
+  options: ["thing one ", "thing two ", "thing three"]
 };
 
 var Header = function Header(props) {
