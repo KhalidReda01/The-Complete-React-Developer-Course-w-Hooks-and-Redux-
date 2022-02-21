@@ -1,4 +1,4 @@
-//45/7 Saving and Loading Option Data CFSC
+//46/8 Saving and Loading Count CFSC
 
 class IndecisionApp extends React.Component{
   constructor(props) {
@@ -13,8 +13,9 @@ class IndecisionApp extends React.Component{
       options:props.options
     }
   }
-  // first  life cycle method
-  //POC2
+  
+ 
+
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
