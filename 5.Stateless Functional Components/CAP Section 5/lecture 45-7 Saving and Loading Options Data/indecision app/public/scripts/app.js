@@ -8,9 +8,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// /**
+//  * 45.7 Saving and Loading Options Data
+//  * POC
+//  */
+
+
 /**
- * 45.7 Saving and Loading Options Data 
- * POC 
+ * Want to see  why is this even I'm sure that I did nothing   all this happen after try and catch 
+ * 
  */
 /**
  * POC 1
@@ -20,35 +26,50 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * localStorage.removeItem('name') // undefined
  * localStorage.getItem('name')// null
  * localStorage.setItem('age',26)//undefined
- * localStorage.getItem('age') //"26"// local storage only works with string data 
- * // that's why we will use json data 
+ * localStorage.getItem('age') //"26"// local storage only works with string data
+ * // that's why we will use json data
  * JSON.stringify
- * JSON.parse 
+ * JSON.parse
  * JSON.stringify({age:26})//{"age":26}
  * const json =JSON.stringify({age:23})//undefined
  * json print at the console  '{"age":23}'
- * JSON.parse(json) //Object  {age:23}  
- * JSON.parse(json).age // 23 
- * 
+ * JSON.parse(json) //Object  {age:23}
+ * JSON.parse(json).age // 23
+ *
  */
 
 /**
- * POC1-3 Done 
- * WVI : I take the notes Now Go ahead 
+ * POC1-3 Done
+ * WVI : I take the notes Now Go ahead
  * No need to write the notes again here the paper is more than enough no one gonna read this but you only
- * So do what ever you want this account is yours and you are learning no one gonna judge the way you are learning Okay 
- * So feel free to do what ever you want and commit what you want That's it 
- * 
+ * So do what ever you want this account is yours and you are learning no one gonna judge the way you are learning Okay
+ * So feel free to do what ever you want and commit what you want That's it
+ *
  */
+/**
+ * POC3
+ * localStorage.clear()
+ * localStorage.getItem('options') //null
+ * JSON.parse(null) //null
+ * if(options){
+ * }
+ */
+
 /**
  * POC3 
  * localStorage.clear()
  * localStorage.getItem('options') //null
  * JSON.parse(null) //null 
  * if(options){
+ *   this.setState(()=>({options:{options}}))
  * }
+ * JSON.parse('[12})
+ * try {
+ * }catch(e){
+ * }
+ * 
+ * // here faced the error that I don't want to bug it or even try because I don't understand what happeed after localStorage clear 
  */
-
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
@@ -62,83 +83,48 @@ var IndecisionApp = function (_React$Component) {
     _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
     _this.state = {
-
       options: props.options
     };
     return _this;
   }
-
   /**
-   * POC2-1-1 CAP Done WVI
-   *  componentDidMount() {
-    console.log('fetching data')
-    const json = localStorage.getItem('options');
-    const otions=JSON.parse(jsoon)
-    this.setState(()=>({options:options}))
-  }
-   browser console -> localStorage.clear()
-   
+   *   // componentDidMount() {
+  //   try {
+  //     const json = localStorage.getItem('options');
+  //     const options = JSON.parse(json);
+   //     if (options) {
+  //       this.setState(() => ({ options }));
+  //     }
+  //   } catch (e) {
+  //     // Do nothing at all
+  //   }
+  // }
+   * 
+   * 
    */
 
 
   _createClass(IndecisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var json = localStorage.getItem('options');
-      var options = JSON.parse(json);
-      this.setState(function () {
-        return { options: { options: options } };
-      });
-      console.log('fetching data');
+      console.log("fetching data");
     }
-
-    /**
-    * POC2-1 CAP Done  WVI 
-    *  componentDidUpdate(prevProps,prevState) {
-      if(prevState.options.length !==this.options.length){
-      const json = JSON.stringify(this.state.options)
-      localStorage.setItem('options',json)
-          console.log('saving data')
-        }
-    }
-    * 
-    */
-
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevState.options.length !== this.state.options.length) {
         var json = JSON.stringify(this.state.options);
-        console.log(json); // this print the exactly same as this.state.options //Done 
         localStorage.setItem('options', json);
-        // localStorage.getItem('options') //'["thing one ","thing two ","a"]' // print the same 
-        console.log('saving data');
-        // console.log(this.state.options.length)
-        // console.log(this.state.options) // this print what you see right now 
-        // console.log(prevState) this print the old condition before change I think I got it now
       }
-
-      /**
-       *    console.log(prevProps)// prevProps always give me the previous array
-       * {
-      "options": [
-          "thing one ",
-          "thing two ",
-          "thing three"
-      ]
-      }
-      console.log(prevState)//preState give me an array but before the change happen 
-         */
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      console.log('ComponentWilUnmout');
+      console.log('componentWillUnmount');
     }
   }, {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
-
       this.setState(function () {
         return { options: [] };
       });
@@ -157,40 +143,36 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: 'handlePick',
     value: function handlePick() {
-      var _this2 = this;
-
-      this.setState(function () {
-        var randomNum = Math.floor(Math.random() * _this2.state.options.length);
-        var option = _this2.state.options[randomNum];
-        alert(option);
-      });
+      var randomNum = Math.floor(Math.random() * this.state.options.length);
+      var option = this.state.options[randomNum];
+      alert(option);
     }
   }, {
     key: 'handleAddOption',
     value: function handleAddOption(option) {
-
       if (!option) {
-        return 'Enter Valid value to add item';
+        return 'Enter valid value to add item';
       } else if (this.state.options.indexOf(option) > -1) {
-        return "This Option already exists";
+        return 'This option already exists';
       }
 
-      console.log("what is this ", option);
-
       this.setState(function (prevState) {
-        return { options: prevState.options.concat(option) };
+        return {
+          options: prevState.options.concat(option)
+        };
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var subtitle = "Put your Life in the hand of a computer";
+      var subtitle = 'Put your life in the hands of a computer';
+
       return React.createElement(
         'div',
         null,
         React.createElement(Header, { subtitle: subtitle }),
-        React.createElement(Action, { hasOptions: this.state.options.length > 0,
-
+        React.createElement(Action, {
+          hasOptions: this.state.options.length > 0,
           handlePick: this.handlePick
         }),
         React.createElement(Options, {
@@ -198,7 +180,7 @@ var IndecisionApp = function (_React$Component) {
           handleDeleteOptions: this.handleDeleteOptions,
           handleDeleteOption: this.handleDeleteOption
         }),
-        React.createElement(AddOptions, {
+        React.createElement(AddOption, {
           handleAddOption: this.handleAddOption
         })
       );
@@ -209,7 +191,7 @@ var IndecisionApp = function (_React$Component) {
 }(React.Component);
 
 IndecisionApp.defaultProps = {
-  options: ["thing one ", "thing two ", "thing three"]
+  options: []
 };
 
 var Header = function Header(props) {
@@ -228,9 +210,9 @@ var Header = function Header(props) {
     )
   );
 };
+
 Header.defaultProps = {
   title: 'Indecision'
-
 };
 
 var Action = function Action(props) {
@@ -239,10 +221,11 @@ var Action = function Action(props) {
     null,
     React.createElement(
       'button',
-      { onClick: props.handlePick,
+      {
+        onClick: props.handlePick,
         disabled: !props.hasOptions
       },
-      'What should I do ?'
+      'What should I do?'
     )
   );
 };
@@ -252,14 +235,14 @@ var Options = function Options(props) {
     'div',
     null,
     React.createElement(
-      'p',
-      null,
-      'Here are your options'
-    ),
-    React.createElement(
       'button',
       { onClick: props.handleDeleteOptions },
-      'RemoveAll'
+      'Remove All'
+    ),
+    props.options.length === 0 && React.createElement(
+      'p',
+      null,
+      'Please add an option to get started!'
     ),
     props.options.map(function (option) {
       return React.createElement(Option, {
@@ -275,12 +258,7 @@ var Option = function Option(props) {
   return React.createElement(
     'div',
     null,
-    React.createElement(
-      'p',
-      null,
-      'Option:',
-      props.optionText
-    ),
+    props.optionText,
     React.createElement(
       'button',
       {
@@ -293,33 +271,37 @@ var Option = function Option(props) {
   );
 };
 
-var AddOptions = function (_React$Component2) {
-  _inherits(AddOptions, _React$Component2);
+var AddOption = function (_React$Component2) {
+  _inherits(AddOption, _React$Component2);
 
-  function AddOptions(props) {
-    _classCallCheck(this, AddOptions);
+  function AddOption(props) {
+    _classCallCheck(this, AddOption);
 
-    var _this3 = _possibleConstructorReturn(this, (AddOptions.__proto__ || Object.getPrototypeOf(AddOptions)).call(this, props));
+    var _this2 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
 
-    _this3.handleAddOption = _this3.handleAddOption.bind(_this3);
-    _this3.state = {
+    _this2.handleAddOption = _this2.handleAddOption.bind(_this2);
+    _this2.state = {
       error: undefined
     };
-    return _this3;
+    return _this2;
   }
 
-  _createClass(AddOptions, [{
+  _createClass(AddOption, [{
     key: 'handleAddOption',
     value: function handleAddOption(e) {
       e.preventDefault();
 
       var option = e.target.elements.option.value.trim();
-      console.log(option);
       var error = this.props.handleAddOption(option);
 
       this.setState(function () {
         return { error: error };
       });
+      //Don't fully get him review this lecture is a must 
+      // Yes I don't see any difference at the UI It's the same 
+      if (!error) {
+        e.target.elements.option.value = '';
+      }
     }
   }, {
     key: 'render',
@@ -339,14 +321,14 @@ var AddOptions = function (_React$Component2) {
           React.createElement(
             'button',
             null,
-            'Add Option '
+            'Add Option'
           )
         )
       );
     }
   }]);
 
-  return AddOptions;
+  return AddOption;
 }(React.Component);
 
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
