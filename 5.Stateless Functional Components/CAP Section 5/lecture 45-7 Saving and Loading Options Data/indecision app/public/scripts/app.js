@@ -33,8 +33,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  */
 
 /**
+ * POC1-3 Done 
+ * WVI : I take the notes Now Go ahead 
+ * No need to write the notes again here the paper is more than enough no one gonna read this but you only
+ * So do what ever you want this account is yours and you are learning no one gonna judge the way you are learning Okay 
+ * So feel free to do what ever you want and commit what you want That's it 
  * 
  */
+
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
@@ -54,11 +60,36 @@ var IndecisionApp = function (_React$Component) {
     return _this;
   }
 
+  /**
+   * POC2-1-1
+   *  componentDidMount() {
+    console.log('fetching data')
+    const json = localStorage.getItem('options');
+    const otions=JSON.parse(jsoon)
+    this.setState(()=>({options:options}))
+  }
+   browser console -> localStorage.clear()
+   */
+
+
   _createClass(IndecisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       console.log('fetching data');
     }
+
+    /**
+    * POC2-1
+    *  componentDidUpdate(prevProps,prevState) {
+      if(prevState.options.length !==this.options.length){
+      const json = JSON.stringify(this.state.options)
+      localStorage.setItem('options',json)
+          console.log('saving data')
+        }
+    }
+    * 
+    */
+
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {

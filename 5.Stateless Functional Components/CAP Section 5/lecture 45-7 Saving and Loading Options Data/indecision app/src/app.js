@@ -24,8 +24,14 @@
  */
 
 /**
+ * POC1-3 Done 
+ * WVI : I take the notes Now Go ahead 
+ * No need to write the notes again here the paper is more than enough no one gonna read this but you only
+ * So do what ever you want this account is yours and you are learning no one gonna judge the way you are learning Okay 
+ * So feel free to do what ever you want and commit what you want That's it 
  * 
  */
+
 class IndecisionApp extends React.Component{
   constructor(props) {
     super(props);
@@ -39,9 +45,33 @@ class IndecisionApp extends React.Component{
     }
   }
   
+  /**
+   * POC2-1-1
+   *  componentDidMount() {
+    console.log('fetching data')
+    const json = localStorage.getItem('options');
+    const otions=JSON.parse(jsoon)
+    this.setState(()=>({options:options}))
+  }
+   browser console -> localStorage.clear()
+   */
   componentDidMount() {
     console.log('fetching data')
   }
+
+  /**
+ * POC2-1
+ *  componentDidUpdate(prevProps,prevState) {
+    if(prevState.options.length !==this.options.length){
+    const json = JSON.stringify(this.state.options)
+    localStorage.setItem('options',json)
+        console.log('saving data')
+
+    }
+  }
+ * 
+ */
+  
   componentDidUpdate(prevProps,prevState) {
     console.log('saving data')
   }
