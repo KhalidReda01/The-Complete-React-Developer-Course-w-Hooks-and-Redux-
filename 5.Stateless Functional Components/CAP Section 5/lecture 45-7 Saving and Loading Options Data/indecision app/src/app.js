@@ -6,18 +6,20 @@
 /**
  * POC 1
  * try at the console
- * localStorage.setItem('name','Khalid')
- * localStorage.getItem('name');
- * localStorage.removeItem('name')
- * localStorage.setItem('age',26)
- * localStorage.getItem('age')
+ * localStorage.setItem('name','Khalid')// undefined
+ * localStorage.getItem('name'); khalid
+ * localStorage.removeItem('name') // undefined
+ * localStorage.getItem('name')// null
+ * localStorage.setItem('age',26)//undefined
+ * localStorage.getItem('age') //"26"// local storage only works with string data 
+ * // that's why we will use json data 
  * JSON.stringify
  * JSON.parse 
- * JSON.stringify({age:26})
- * const json =JSON.stringify({age:23})
- * json //"{"age":26"}"
- * JSON.parse(json)//Object {age:23}
- * JSON.parse(json).age
+ * JSON.stringify({age:26})//{"age":26}
+ * const json =JSON.stringify({age:23})//undefined
+ * json print at the console  '{"age":23}'
+ * JSON.parse(json) //Object  {age:23}  
+ * JSON.parse(json).age // 23 
  * 
  */
 
