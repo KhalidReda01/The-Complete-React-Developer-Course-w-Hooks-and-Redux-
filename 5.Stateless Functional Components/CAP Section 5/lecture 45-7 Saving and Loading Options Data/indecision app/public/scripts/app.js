@@ -12,6 +12,27 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * 45.7 Saving and Loading Options Data 
  * POC 
  */
+/**
+ * POC 1
+ * try at the console
+ * localStorage.setItem('name','Khalid')
+ * localStorage.getItem('name');
+ * localStorage.removeItem('name')
+ * localStorage.setItem('age',26)
+ * localStorage.getItem('age')
+ * JSON.stringify
+ * JSON.parse 
+ * JSON.stringify({age:26})
+ * const json =JSON.stringify({age:23})
+ * json //"{"age":26"}"
+ * JSON.parse(json)//Object {age:23}
+ * JSON.parse(json).age
+ * 
+ */
+
+/**
+ * 
+ */
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
