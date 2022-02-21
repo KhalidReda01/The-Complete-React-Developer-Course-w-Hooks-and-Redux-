@@ -1,4 +1,4 @@
-//44/6 LifeCycle Methods  CFSC
+//45/7 Saving and Loading Option Data CFSC
 
 class IndecisionApp extends React.Component{
   constructor(props) {
@@ -14,12 +14,31 @@ class IndecisionApp extends React.Component{
     }
   }
   // first  life cycle method
+  //POC2
   componentDidMount() {
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+      if (options) {
+           this.setState(() => ({options:options}))
+      }
+   
+
+    } catch (error) {
+      
+    }
+    
     console.log('fetching data')
   }
   // second lifecycel method
-  componentDidUpdate() {
-    console.log('saving data')
+  //POC1
+  componentDidUpdate(prevProps,prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem('options', json)
+      console.log('saving data')
+    }
+    
   }
   // thid one
   // to see ths working ReactDOM.render(react.createElement('p'),document.getElementById('app'))
@@ -162,6 +181,7 @@ const Options = (props) => {
       <p>Here are your options</p>
       
       <button onClick={props.handleDeleteOptions}>RemoveAll</button>
+      {props.options.length===0&& <p>Please add an option  to get Started!</p>}
       {
         props.options.map((option) => <Option
           key={option}
@@ -206,7 +226,7 @@ class AddOptions extends React.Component{
     e.preventDefault();
 
       const option = e.target.elements.option.value.trim();
-      console.log(option)
+      // console.log(option)
       const error = this.props.handleAddOption(option);
       //third one 
       this.setState(() => ({
@@ -215,7 +235,12 @@ class AddOptions extends React.Component{
         })
          
       )
-
+      if (!error) {
+        // I think if there is not error then made the input value clean 
+        // e.target.elements.option.value = 'OMG I got it '
+        e.target.elements.option.value = 'Add another option '
+        // console.log('what is this part I dont get it '+e.target.elements.option.value)
+   }
     
   }
   render() {

@@ -8,7 +8,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//44/6 LifeCycle Methods  CFSC
+//45/7 Saving and Loading Option Data CFSC
 
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
@@ -30,19 +30,35 @@ var IndecisionApp = function (_React$Component) {
     return _this;
   }
   // first  life cycle method
+  //POC2
 
 
   _createClass(IndecisionApp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      try {
+        var json = localStorage.getItem('options');
+        var options = JSON.parse(json);
+        if (options) {
+          this.setState(function () {
+            return { options: options };
+          });
+        }
+      } catch (error) {}
+
       console.log('fetching data');
     }
     // second lifecycel method
+    //POC1
 
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      console.log('saving data');
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.options.length !== this.state.options.length) {
+        var json = JSON.stringify(this.state.options);
+        localStorage.setItem('options', json);
+        console.log('saving data');
+      }
     }
     // thid one
     // to see ths working ReactDOM.render(react.createElement('p'),document.getElementById('app'))
@@ -221,6 +237,11 @@ var Options = function Options(props) {
       { onClick: props.handleDeleteOptions },
       'RemoveAll'
     ),
+    props.options.length === 0 && React.createElement(
+      'p',
+      null,
+      'Please add an option  to get Started!'
+    ),
     props.options.map(function (option) {
       return React.createElement(Option, {
         key: option,
@@ -278,7 +299,7 @@ var AddOptions = function (_React$Component2) {
       e.preventDefault();
 
       var option = e.target.elements.option.value.trim();
-      console.log(option);
+      // console.log(option)
       var error = this.props.handleAddOption(option);
       //third one 
       this.setState(function () {
@@ -287,6 +308,12 @@ var AddOptions = function (_React$Component2) {
 
         };
       });
+      if (!error) {
+        // I think if there is not error then made the input value clean 
+        // e.target.elements.option.value = 'OMG I got it '
+        e.target.elements.option.value = 'Add another option ';
+        // console.log('what is this part I dont get it '+e.target.elements.option.value)
+      }
     }
   }, {
     key: 'render',
