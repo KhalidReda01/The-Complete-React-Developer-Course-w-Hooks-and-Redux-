@@ -40,6 +40,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * So feel free to do what ever you want and commit what you want That's it 
  * 
  */
+/**
+ * POC3 
+ * localStorage.clear()
+ * localStorage.getItem('options') //null
+ * JSON.parse(null) //null 
+ * if(options){
+ * }
+ */
 
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
@@ -61,7 +69,7 @@ var IndecisionApp = function (_React$Component) {
   }
 
   /**
-   * POC2-1-1 CAP 
+   * POC2-1-1 CAP Done WVI
    *  componentDidMount() {
     console.log('fetching data')
     const json = localStorage.getItem('options');
@@ -69,6 +77,7 @@ var IndecisionApp = function (_React$Component) {
     this.setState(()=>({options:options}))
   }
    browser console -> localStorage.clear()
+   
    */
 
 
@@ -78,13 +87,13 @@ var IndecisionApp = function (_React$Component) {
       var json = localStorage.getItem('options');
       var options = JSON.parse(json);
       this.setState(function () {
-        return { options: options };
+        return { options: { options: options } };
       });
       console.log('fetching data');
     }
 
     /**
-    * POC2-1 CAP Done 
+    * POC2-1 CAP Done  WVI 
     *  componentDidUpdate(prevProps,prevState) {
       if(prevState.options.length !==this.options.length){
       const json = JSON.stringify(this.state.options)

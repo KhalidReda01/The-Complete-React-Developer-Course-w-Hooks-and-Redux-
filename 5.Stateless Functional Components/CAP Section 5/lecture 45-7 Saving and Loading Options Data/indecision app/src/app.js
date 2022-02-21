@@ -31,6 +31,14 @@
  * So feel free to do what ever you want and commit what you want That's it 
  * 
  */
+/**
+ * POC3 
+ * localStorage.clear()
+ * localStorage.getItem('options') //null
+ * JSON.parse(null) //null 
+ * if(options){
+ * }
+ */
 
 class IndecisionApp extends React.Component{
   constructor(props) {
@@ -46,7 +54,7 @@ class IndecisionApp extends React.Component{
   }
   
   /**
-   * POC2-1-1 CAP 
+   * POC2-1-1 CAP Done WVI
    *  componentDidMount() {
     console.log('fetching data')
     const json = localStorage.getItem('options');
@@ -54,16 +62,17 @@ class IndecisionApp extends React.Component{
     this.setState(()=>({options:options}))
   }
    browser console -> localStorage.clear()
+   
    */
   componentDidMount() {
     const json = localStorage.getItem('options');
     const options = JSON.parse(json);
-    this.setState(()=>({options:options}))
+    this.setState(()=>({options:{options}}))
     console.log('fetching data')
   }
 
   /**
- * POC2-1 CAP Done 
+ * POC2-1 CAP Done  WVI 
  *  componentDidUpdate(prevProps,prevState) {
     if(prevState.options.length !==this.options.length){
     const json = JSON.stringify(this.state.options)
