@@ -6,8 +6,14 @@
  * so if the prop is passed in great we'll use that one as the starting state
  * if it's not we'll default to 0 and we 'll have the exact same functionailty
  */
-// count -setup default prop value to 0 
+// count -setup default prop value to 0
 
+/**
+ * switch babel done
+ * set up componentDidMount componentDidUpdate
+ * use localStorage
+ * test your work 
+ */
 class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +22,28 @@ class Counter extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.state = {
       // props.count instead of 0
-      count: props.count
+      // count: props.count
+      count: 0
     };
+  }
+  componentDidMount() {
+    const count =  parseInt(localStorage.getItem('count'), 10)
+
+    if (!isNaN(count)) {
+      this.setState(()=>({count:count}))
+    }
+    console.log(typeof count)
+    console.log("print",count)
+    console.log('fetching data')
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.count !== this.state.count) {
+      localStorage.setItem('count',this.state.count)
+      console.log(this.state.count)
+
+      console.log('saving Data')
+    }
+    
   }
   handleAddOne() {
     this.setState((prevState) => {
@@ -61,9 +87,9 @@ class Counter extends React.Component {
 }
 
 // solution 1 
-Counter.defaultProps = {
-  count:0
-}
+// Counter.defaultProps = {
+//   count:0
+// }
 ReactDOM.render(<Counter />, document.getElementById('app'));
 // Solution 2
 // ReactDOM.render(<Counter count={20} />, document.getElementById('app'));

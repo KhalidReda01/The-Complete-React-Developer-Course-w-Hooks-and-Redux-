@@ -70,27 +70,39 @@
     this.handleAddOption = this.handleAddOption.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
     this.state = {
-      options: props.options
+      // options: props.options
+      options: []
     };
    }
    /**
     *   // componentDidMount() {
-  //   try {
-  //     const json = localStorage.getItem('options');
-  //     const options = JSON.parse(json);
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
 
-  //     if (options) {
-  //       this.setState(() => ({ options }));
-  //     }
-  //   } catch (e) {
-  //     // Do nothing at all
-  //   }
+      if (options) {
+        this.setState(() => ({ options }));
+      }
+    } catch (e) {
+      // Do nothing at all
+    }
   // }
     * 
     * 
     */
    componentDidMount() {
-  console.log("fetching data")
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+
+      if (options) {
+        this.setState(() => ({ options }));
+      }
+    } catch (e) {
+      // Do nothing at all
+    }
+     console.log("fetching data")
+     
 }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.options.length !== this.state.options.length) {
@@ -148,9 +160,9 @@
   }
 }
 
-IndecisionApp.defaultProps = {
-  options: []
-};
+// IndecisionApp.defaultProps = {
+//   options: []
+// };
 
 const Header = (props) => {
   return (
