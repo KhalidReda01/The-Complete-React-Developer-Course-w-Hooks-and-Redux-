@@ -2,6 +2,8 @@
 // Grab React from the react npm module
 // add(2, 4)
 // I will try to understand why my older code doesn't work after I uninstall the live-server and babel-cli globally 
+// It's working so well here so where is the error there I need to discover that but now you are learning so Keep going 
+
 
 
 class IndecisionApp extends React.Component {
@@ -168,7 +170,7 @@ class AddOption extends React.Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddOption}>
           <input type="text" name="option" />
-          <button>Add Option</button>
+          <button>Add Option </button>
         </form>
       </div>
     );

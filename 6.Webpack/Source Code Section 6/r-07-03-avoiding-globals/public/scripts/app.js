@@ -11,6 +11,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // Grab the add function from the add.js file in the utils folder
 // Grab React from the react npm module
 // add(2, 4)
+// I will try to understand why my older code doesn't work after I uninstall the live-server and babel-cli globally 
+// It's working so well here so where is the error there I need to discover that but now you are learning so Keep going 
+
 
 var IndecisionApp = function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
@@ -253,7 +256,7 @@ var AddOption = function (_React$Component2) {
           React.createElement(
             'button',
             null,
-            'Add Option'
+            'Add Option '
           )
         )
       );
