@@ -1,6 +1,8 @@
 // Grab the add function from the add.js file in the utils folder
 // Grab React from the react npm module
 // add(2, 4)
+// I will try to understand why my older code doesn't work after I uninstall the live-server and babel-cli globally 
+
 
 class IndecisionApp extends React.Component {
   constructor(props) {
