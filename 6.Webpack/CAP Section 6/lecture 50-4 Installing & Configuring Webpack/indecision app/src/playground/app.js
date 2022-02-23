@@ -49,6 +49,10 @@ error Command failed with exit code 1.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
  */
 
+/**
+ * now after the bundle.js cerated  you can delete the scripts directory 
+ * and inside index.html you can remve all the scrpts tag 
+ */
 
 class IndecisionApp extends React.Component {
   constructor(props) {
