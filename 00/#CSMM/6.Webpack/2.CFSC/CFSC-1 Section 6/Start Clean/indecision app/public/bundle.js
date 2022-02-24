@@ -65,9 +65,34 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
+// CFSC  ES6 import export
+// import './utils.js'
 
 console.log("this time from SC")
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* square */](4))
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](4,5))
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
+console.log('utils.js is running heello')
+const square = (x) => {
+  return x*x
+}
+const add = (a, b) => {
+  return a+b
+}
+
 
 /***/ })
 /******/ ]);
