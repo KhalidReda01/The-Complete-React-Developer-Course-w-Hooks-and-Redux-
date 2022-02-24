@@ -69,79 +69,53 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(2);
 // import './utils.js'
+// import { square,add } from './utils'
 
-
-console.log('app.js is runing !!!')
+// console.log('app.js is runing !!!')
 /**
  * CAP first this is the most imortant step of CSMM 
  * CL
  * add new file utils.js -> contains some utility function 
  * 
  */
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](100))
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](100, 100))
+// console.log(square(100))
+// console.log(add(100, 100))
+// challenge Time
+
+//person.js
+// namex export isAdult(18) - true if adult ,otherwise false
+// named export canDrink(18) - true if 21 and over , otherwise false
+// import isAdult and canDrink
+//use both printing result to the console  
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* isAdult */](15))
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](22))
+
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return square; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
-// I'm using the live-server now use webpack
-//Always try to implement the new  things that you are learning
-
-
-
-/**
- * $ yarn run build 
-yarn run v1.22.5
-$ webpack --watch
-
-Webpack is watching the files…
-
-Hash: 2dab3f67fbc8800a16d8
-Version: webpack 3.1.0
-Time: 50ms
-    Asset     Size  Chunks             Chunk Names
-bundle.js  2.65 kB       0  [emitted]  main
-   [0] ./src/app.js 172 bytes {0} [built]
-Hash: 7e92d647f512b723a36c
-Version: webpack 3.1.0
-Time: 31ms
-    Asset    Size  Chunks             Chunk Names
-bundle.js  3.2 kB       0  [emitted]  main
-   [0] ./src/app.js 195 bytes {0} [built]
-   [1] ./src/utils.js 145 bytes {0} [built]
- */
-
-
-
-console.log('utils.js is runing')
-// Now It's working
-
-// create a function here and use it at app.js
-/**
- * the other way to export 
- * export const square = (x) => {
- return  x*x
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+const isAdult = (age) => {
+  if (age >= 18) {
+   console.log(true) 
+  }else{
+console.log(false)
+  }
 }
- export const add = (a, b) => {
-  
-return a+b
-}} x 
- *
- */
-const square = (x) => {
- return  x*x
+const canDrink = (age) => {
+  if (age >= 21) {
+   console.log(true) 
+  } else {
+    console.log(false)
+  }
 }
-const add = (a, b) => {
-  
-return a+b
-}
-// exports - default export 
 
 
 /***/ })
