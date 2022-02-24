@@ -69,28 +69,57 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__6_Webpack_CAP_Section_6_lecture_51_5_Es6_import_export_indecision_app_src_person__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person__ = __webpack_require__(2);
 // CFSC  ES6 import export
 // import './utils.js'
+// import {square,add }from'./utils.js'
+// console.log("this time from SC")
+// console.log(square(4))
+// console.log(add(4,5))
 
-console.log("this time from SC")
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* square */](4))
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](4,5))
+
+console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* isAdult */](14))
+console.log(__WEBPACK_IMPORTED_MODULE_0__6_Webpack_CAP_Section_6_lecture_51_5_Es6_import_export_indecision_app_src_person__["a" /* canDrink */](21))
 
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return square; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
-console.log('utils.js is running heello')
-const square = (x) => {
-  return x*x
+// const isAdult = (age) => age >= 18;
+// const canDrink = (age) => age >= 21;
+const isAdult = (age) => age >= 18;
+/* harmony export (immutable) */ __webpack_exports__["a"] = isAdult;
+
+ const canDrink = (age) => age >= 21;
+/* unused harmony export canDrink */
+
+// export {isAdult,canDrink}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export isAdult */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+const isAdult = (age) => {
+  if (age >= 18) {
+   console.log(true) 
+  }else{
+console.log(false)
+  }
 }
-const add = (a, b) => {
-  return a+b
+const canDrink = (age) => {
+  if (age >= 21) {
+   console.log(true) 
+  } else {
+    console.log(false)
+  }
 }
 
 
