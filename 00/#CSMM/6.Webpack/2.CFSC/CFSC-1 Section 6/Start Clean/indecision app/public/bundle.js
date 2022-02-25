@@ -69,7 +69,7 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(1);
 // CFSC  ES6 import export
 // import './utils.js'
 // import {square,add }from'./utils.js'
@@ -80,39 +80,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import the function that we export from the person.j 
 // import subtract,{ isAdult,canDrink } from './person'
 
+// import { add,square } from './utils'
 // console.log(isAdult(14))
 // console.log(canDrink(21))
 // use it here
 // Yes I know hah that I'm using silly comments but that's the point I want to get used to that to became to understand that later and remember it Okay you are studing and this is part of your learning process and you are alone at this just you and the course so who care 
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* default */](5, 4))// 1 Okay Its's working let's do the challenge one too 
+// console.log(subtract(5, 4))// 1 Okay Its's working let's do the challenge one too
+
+// print the console result for the challenge
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* default */](70))
 
 
 
 
 /***/ }),
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export square */
-/* unused harmony export add */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return subtract; });
-console.log('utils.js is running heello')
-const square = (x) => {
-  return x*x
-}
-const add = (a, b) => {
-  return a+b
-}
+// const isAdult = (age) => age >= 18;
+// const canDrink = (age) => age >= 21;
+const isAdult = (age) => age >= 18;
+/* unused harmony export isAdult */
 
-// lecture Default Exports
-// recap what you did here and repeat it Okay so let's do it
-// first I have to create a new function called subtract and export it as default one using different ways as you did to with  named exports so let's do that first 
-const  subtract =(a,b)=> a-b
-// export { square, add }
-// first way to export 
+ const canDrink = (age) => age >= 21;
+/* unused harmony export canDrink */
 
+// export {isAdult,canDrink}
+
+// Now recap what you did for the challenge time
+// first I declare a function called isSenior then I export it as default then I import it at app.js from here person.js then I printed it to the console
+// okay now did that again I know easy Swear I know khalid ahahhah you are talking to yourself and try to explain to yourself even good for improve your typing
+const isSenior = (age) => `$ this is for challenge so is this person a senior ${age > 65}`;
+/* harmony default export */ __webpack_exports__["a"] = (isSenior);
+// the challenge working so let's WVI and afer that go to the next lecture don't hurry quality not qunantity okay so keep it slowly as you can 
 
 
 /***/ })
