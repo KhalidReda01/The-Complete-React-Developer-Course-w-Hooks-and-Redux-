@@ -65,72 +65,18 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(1);
-/**
- * 52/6 Default Exports 
- */
-// import './utils.js'
-// import  subtract,{ square,add } from './utils'
-// import  anything,{ square,add } from './utils'
-// import  subtract from './utils'
-
-console.log('app.js is runing !!!')
-
-// console.log(square(100))
-// console.log(add(100, 100))
-// console.log(subtract(100,81))
-// console.log(anything(100,81))
-
-//person.js
-// namex export isAdult(18) - true if adult ,otherwise false
-// named export canDrink(18) - true if 21 and over , otherwise false
-// import isAdult and canDrink
-//use both printing result to the console
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["c" /* isAdult */](15))
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](22))
-// Challenge time 
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* default */](65));
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* default */](40));
-//setting the default export and function 
-// Grab te default and call it 
+/***/ (function(module, exports) {
 
 
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+//Import npm moduels
+// install ->import -> use
+// npm validator
+//https://www.npmjs.com/package/validator
+// yarn add validator@8.0.0
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isAdult; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
-const isAdult = (age) => {
-  if (age >= 18) {
-   console.log(true) 
-  }else{
-console.log(false)
-  }
-}
-const canDrink = (age) => {
-  if (age >= 21) {
-   console.log(true) 
-  } else {
-    console.log(false)
-  }
-}
-console.log('person.js is running')
-const isSenior = (age) => ` Is this person a senior ${age >= 65}`;
-
-// export{isAdult,canDrink,isSenior as default}
-
-// other way
-/* harmony default export */ __webpack_exports__["b"] = (isSenior); 
-// export default (age)=> age>65 
-// third way
- // you cause just put the the function after the export default because you can't put if infront of variabale unlike named export 
+// import validator from "validator";
+// console.log(validator.isEmail('test@gmail.com'))
+// Why you are distracting yourself Close anything and just Focus for some time the world will be the same don't worry hahahahah Now keep going welcome back
 
 
 /***/ })

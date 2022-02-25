@@ -1,28 +1,10 @@
-/**
- * 52/6 Default Exports 
- */
-// import './utils.js'
-// import  subtract,{ square,add } from './utils'
-// import  anything,{ square,add } from './utils'
-// import  subtract from './utils'
 
-console.log('app.js is runing !!!')
+//Import npm moduels
+// install ->import -> use
+// npm validator
+//https://www.npmjs.com/package/validator
+// yarn add validator@8.0.0
 
-// console.log(square(100))
-// console.log(add(100, 100))
-// console.log(subtract(100,81))
-// console.log(anything(100,81))
-
-//person.js
-// namex export isAdult(18) - true if adult ,otherwise false
-// named export canDrink(18) - true if 21 and over , otherwise false
-// import isAdult and canDrink
-//use both printing result to the console
-import isSenior, { isAdult, canDrink } from "./person";
-console.log(isAdult(15))
-console.log(canDrink(22))
-// Challenge time 
-console.log(isSenior(65));
-console.log(isSenior(40));
-//setting the default export and function 
-// Grab te default and call it 
+// import validator from "validator";
+// console.log(validator.isEmail('test@gmail.com'))
+// Why you are distracting yourself Close anything and just Focus for some time the world will be the same don't worry hahahahah Now keep going welcome back
