@@ -69,8 +69,7 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__6_Webpack_CAP_Section_6_lecture_51_5_Es6_import_export_indecision_app_src_person__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(2);
 // CFSC  ES6 import export
 // import './utils.js'
 // import {square,add }from'./utils.js'
@@ -78,9 +77,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // console.log(square(4))
 // console.log(add(4,5))
 
+// import the function that we export from the person.j 
+// import subtract,{ isAdult,canDrink } from './person'
 
-console.log(__WEBPACK_IMPORTED_MODULE_1__person__["a" /* isAdult */](14))
-console.log(__WEBPACK_IMPORTED_MODULE_0__6_Webpack_CAP_Section_6_lecture_51_5_Es6_import_export_indecision_app_src_person__["a" /* canDrink */](21))
+// console.log(isAdult(14))
+// console.log(canDrink(21))
+// use it here
+// Yes I know hah that I'm using silly comments but that's the point I want to get used to that to became to understand that later and remember it Okay you are studing and this is part of your learning process and you are alone at this just you and the course so who care 
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* default */](5, 4))// 1 Okay Its's working let's do the challenge one too 
+
+
 
 
 /***/ }),
@@ -89,38 +95,24 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__6_Webpack_CAP_Section_6_lecture_51_5_Es
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// const isAdult = (age) => age >= 18;
-// const canDrink = (age) => age >= 21;
-const isAdult = (age) => age >= 18;
-/* harmony export (immutable) */ __webpack_exports__["a"] = isAdult;
-
- const canDrink = (age) => age >= 21;
-/* unused harmony export canDrink */
-
-// export {isAdult,canDrink}
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export isAdult */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
-const isAdult = (age) => {
-  if (age >= 18) {
-   console.log(true) 
-  }else{
-console.log(false)
-  }
+/* unused harmony export square */
+/* unused harmony export add */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return subtract; });
+console.log('utils.js is running heello')
+const square = (x) => {
+  return x*x
 }
-const canDrink = (age) => {
-  if (age >= 21) {
-   console.log(true) 
-  } else {
-    console.log(false)
-  }
+const add = (a, b) => {
+  return a+b
 }
+
+// lecture Default Exports
+// recap what you did here and repeat it Okay so let's do it
+// first I have to create a new function called subtract and export it as default one using different ways as you did to with  named exports so let's do that first 
+const  subtract =(a,b)=> a-b
+// export { square, add }
+// first way to export 
+
 
 
 /***/ })
