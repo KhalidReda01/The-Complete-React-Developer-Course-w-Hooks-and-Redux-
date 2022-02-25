@@ -33,8 +33,41 @@ import React from "react";
 // import ReactDOM from "react"; // here as show in the eorr you missed the -dom 
 import ReactDOM from "react-dom";
 // then use it
-// const template = <p> Hello React </p> this is not working I know this gonna work the next lecture conver jsx to regular js using babel but not babel cli I think he used babel core we will see don't worry 
-// talking to yourself is gooda and even imagine that you are explaing this to your self isn't bad 
-const template = React.createElement('p', {},"Hello React")
+// const template = <p> Hello React </p> this is not working I know this gonna work the next lecture conver jsx to regular js using babel but not babel cli I think he used babel core we will see don't worry
+// talking to yourself is gooda and even imagine that you are explaing this to your self isn't bad
+/**
+ * CFSC setting up babel wit wepack 
+ * first I installed babel-core and babel-loader using this command
+ * yarn add babel-core@6.25.0 babel-loader@7.1.1
+ * then at the webpack.config.js  module 
+ * module: [{
+    loader: 'babel-loader',
+    test: /.\.js$/,
+    exculde:/node_modules/
+  }]
+  after htat you will need to tell babel the to use the env and rect presets 
+ */
+// const template = React.createElement('p', {},"Hello React") // now after we sethup babel with wepback
+/**
+ * $ yarn run build
+yarn run v1.22.5
+$ webpack  --watch
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+ - configuration.module should be an object.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+ */
+/** the error was here at webpack config file
+ * 
+ *  module: [{
+    loader: 'babel-loader',
+    test: /.\.js$/,
+    exculde:/node_modules/
+  }]
+  this is the right you need  to split this and understand why every thing exist 
+  
+ */
+const template = <p>Hello React with webpack</p>;
+
 ReactDOM.render(template, document.getElementById('app'))
 // I solved it Good now hello React successfull renderd to the screen 
