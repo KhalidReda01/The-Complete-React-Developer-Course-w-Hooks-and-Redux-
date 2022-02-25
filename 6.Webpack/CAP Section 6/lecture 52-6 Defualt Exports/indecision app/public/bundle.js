@@ -89,10 +89,11 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* default */](100,81))
 // namex export isAdult(18) - true if adult ,otherwise false
 // named export canDrink(18) - true if 21 and over , otherwise false
 // import isAdult and canDrink
-//use both printing result to the console  
+//use both printing result to the console
 // import { isAdult, canDrink } from "./person";
 // console.log(isAdult(15))
 // console.log(canDrink(22))
+
 
 
 /***/ }),
@@ -103,7 +104,6 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* default */](100,81))
 "use strict";
 /* unused harmony export square */
 /* unused harmony export add */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return subtract; });
 
 
 
@@ -117,11 +117,19 @@ const add = (a, b) => {
 return a+b
 }
 const subtract = (a, b) => {
-    return a - b;
+    return a - b ;
 }
 // exports - default export 
+// export { square, add,subtract as default }
 
+// export default  (a,b)=> `hello ${a-b}`
+/* harmony default export */ __webpack_exports__["a"] = ((a,b)=> a-b);
 
+// export default can't come before varialble decalartion 
+/**
+ * with name exports we have two ways to get this job done
+ * 
+ */
 
 /***/ })
 /******/ ]);

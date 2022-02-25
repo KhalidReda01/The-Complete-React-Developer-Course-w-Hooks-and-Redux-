@@ -17,7 +17,8 @@ console.log(subtract(100,81))
 // namex export isAdult(18) - true if adult ,otherwise false
 // named export canDrink(18) - true if 21 and over , otherwise false
 // import isAdult and canDrink
-//use both printing result to the console  
+//use both printing result to the console
 // import { isAdult, canDrink } from "./person";
 // console.log(isAdult(15))
 // console.log(canDrink(22))
+
