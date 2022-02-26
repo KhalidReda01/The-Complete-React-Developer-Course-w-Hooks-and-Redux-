@@ -1,4 +1,8 @@
-// // CFSC  One Component per file
+// // CFSC  Souce Maps with wepback 
+/**
+ * I got from this lecture that souce maps help us debug our code now let's test that
+ * 
+ */
 /**
  * Here all what I do at this CFSC is so simple I will just split  our Indecision app into mulitple component and make sure that the project is working fine
  * let's how  you will do that 
