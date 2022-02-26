@@ -6,7 +6,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AddOption from './components/AddOptions';
 import Option from './components/Option';
-// Challenge time 
+import Header from './components/Header';
+import Action from './components/Action';
+// Challenge time
+// convert the header component and the action component 
+// creae the file , copy the code , setup import/export
+
 
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -87,31 +92,13 @@ class IndecisionApp extends React.Component {
   }
 }
 
-const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.title}</h1>
-      {props.subtitle && <h2>{props.subtitle}</h2>}
-    </div>
-  );
-};
+
 
 Header.defaultProps = {
-  title: 'Indecision'
+  title: 'Indecision app'
 };
 
-const Action = (props) => {
-  return (
-    <div>
-      <button
-        onClick={props.handlePick}
-        disabled={!props.hasOptions}
-      >
-        What should I do?
-      </button>
-    </div>
-  );
-};
+
 
 const Options = (props) => {
   return (
