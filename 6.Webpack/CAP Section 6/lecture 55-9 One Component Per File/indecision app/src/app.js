@@ -5,14 +5,21 @@ console.log('app.js is runing')
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AddOption from './components/AddOptions';
-import Option from './components/Option';
+// import Option from './components/Option';
 import Header from './components/Header';
 import Action from './components/Action';
+import Options from './components/Options';
 // Challenge time
-// convert the header component and the action component 
+// convert the header component and the action component
 // creae the file , copy the code , setup import/export
+// see It's so normal you didn't miss to import Options but he did so Its okay Don't be perfectionaist but I think you will be good developer just keep going and time will pass anyway
+// The most important thing time managment and dont' get distracted Finish this amazing Course
 
 
+// Second Challenge Time 
+// Moving the Component code
+// Setup import /export
+// Move the imports to that new files and setup an import here 
 class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
@@ -99,24 +106,6 @@ Header.defaultProps = {
 };
 
 
-
-const Options = (props) => {
-  return (
-    <div>
-      <button onClick={props.handleDeleteOptions}>Remove All</button>
-      {props.options.length === 0 && <p>Please add an option to get started!</p>}
-      {
-        props.options.map((option) => (
-          <Option
-            key={option}
-            optionText={option}
-            handleDeleteOption={props.handleDeleteOption}
-          />
-        ))
-      }
-    </div>
-  );
-};
 
 
 
