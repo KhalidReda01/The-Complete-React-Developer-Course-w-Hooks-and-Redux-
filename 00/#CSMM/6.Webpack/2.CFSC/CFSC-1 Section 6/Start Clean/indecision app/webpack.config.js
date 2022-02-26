@@ -11,7 +11,10 @@ module.exports = {
     test: /.\.js$/,
     exclude:/node_modules/
     }]
-  }
+  },
+  devtool:'cheap-module-eval-source-map'
+
+  
 }
 /*
 when I rewrite it it working fine 
