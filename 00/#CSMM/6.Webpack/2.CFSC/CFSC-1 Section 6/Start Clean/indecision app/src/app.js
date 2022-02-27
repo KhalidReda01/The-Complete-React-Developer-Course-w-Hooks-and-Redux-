@@ -1,4 +1,9 @@
 // // CFSC  Souce Maps with wepback 
+/**  
+ * CFSC webpack Dev Server 
+ * Recap what I did here 
+ * I installed webpack-dev-server then adjut my webpack.config.js file add the devServer object and add a path to the content path then adjust the package.json script and delete the babel command and adjust the webpack --watch deleted it and add new script to run our server and now I will rewatch the lecture and take notes to remember that later 
+*/
 /**
  * I got from this lecture that souce maps help us debug our code now let's test that
  * 
