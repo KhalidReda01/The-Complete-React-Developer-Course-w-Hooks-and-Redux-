@@ -22,7 +22,8 @@ const Layout = (props) => {
   return (
     <div>
       <p>Header</p>
-      {props.content}
+      {/* {props.content} */}
+      {props.children}
       <p>Footer</p>
     </div>
   )
@@ -46,5 +47,6 @@ const template = (
 )
 // ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
 // ReactDOM.render(<Layout content={template} name="Khalid" />, document.getElementById('app'));
-ReactDOM.render(<Layout content={template} />, document.getElementById('app'));
+// ReactDOM.render(<Layout content={template} />, document.getElementById('app'));
+ReactDOM.render(<Layout><p>Hello React</p></Layout>, document.getElementById('app'));
 
