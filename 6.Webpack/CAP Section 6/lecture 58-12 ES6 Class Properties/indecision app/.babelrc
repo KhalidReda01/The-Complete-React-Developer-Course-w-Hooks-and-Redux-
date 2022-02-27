@@ -1,4 +1,9 @@
 {
   "presets":["env",
-  "react"] 
+  "react"] ,
+  "plugins":[
+    "transform-class-properties"]
 }
+//https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
+// I think even tis step is old now you dont'  have but I will test it first 
+// yarn add babel-plugin-transform-class-properties@6.24.1 

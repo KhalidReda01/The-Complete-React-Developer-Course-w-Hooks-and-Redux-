@@ -1,9 +1,4 @@
 import React from 'react';
-// import AddOption from './components/AddOptions';
-// // import Option from './components/Option';
-// import Header from './components/Header';
-// import Action from './components/Action';
-// import Options from './components/Options';
 import AddOption from './AddOptions';
 import Header from './Header';
 import Action from './Action';
