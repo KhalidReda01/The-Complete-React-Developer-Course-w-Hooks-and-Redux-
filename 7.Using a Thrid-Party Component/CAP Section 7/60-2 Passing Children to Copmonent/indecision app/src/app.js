@@ -10,19 +10,29 @@ import IndecisionApp from './components/IndecisionApp'
 const Layout = (props) => {
   return (
     <div>
-      <p>Header</p>
-      {props.content}
+      <p>Header </p>
+      {/* cool other way but even this you will not gonna use it like that but at least know that you can do that  */}
+      {props.children}
       <p>Footer</p>
     </div>
   )
 }
 
-const template = (
+// const template = (
+//   <div>
+//     <h1>Page Title</h1>
+//     <p>This is my page</p>
+//   </div>
+// )
+
+// ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+// ReactDOM.render(<Layout > <p>This is inline hello</p></Layout>, document.getElementById('app'));
+/**
+ * Now It's important to understand this technique because we're going to see it used when we work third party component
+ */
+ReactDOM.render((<Layout >
   <div>
     <h1>Page Title</h1>
     <p>This is my page</p>
   </div>
-)
-
-// ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
-ReactDOM.render(<Layout content={template} />, document.getElementById('app'));
+</Layout>), document.getElementById('app'));
