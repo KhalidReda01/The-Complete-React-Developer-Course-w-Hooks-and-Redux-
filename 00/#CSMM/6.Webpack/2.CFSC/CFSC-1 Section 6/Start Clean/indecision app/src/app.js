@@ -38,30 +38,30 @@ import ReactDOM from "react-dom";
 // Now you have to transfere all this and adjust the location to work done then import indecision app here
 import IndecisionApp from './components/IndecisionApp'
 // Now works fine and CFSC done work well 
-class OldSyntax{
-  constructor() {
-    this.name = "Khalid"
-    this.getGreeting=this.getGreeting.bind(this)
-  }
-  getGreeting() {
-    return `Hi . My name is ${this.name}`
-  }
-}
-const oldSyntax = new OldSyntax();
-const getGreeting = oldSyntax.getGreeting;
-console.log(getGreeting())
+// class OldSyntax{
+//   constructor() {
+//     this.name = "Khalid"
+//     this.getGreeting=this.getGreeting.bind(this)
+//   }
+//   getGreeting() {
+//     return `Hi . My name is ${this.name}`
+//   }
+// }
+// const oldSyntax = new OldSyntax();
+// const getGreeting = oldSyntax.getGreeting;
+// console.log(getGreeting())
 
 
-class NewSyntax {
-  name = "loda"
-  getGreeting = () => {
-    return `Hi . My name is ${this.name}`
-  }
- }
+// class NewSyntax {
+//   name = "loda"
+//   getGreeting = () => {
+//     return `Hi . My name is ${this.name}`
+//   }
+//  }
   
-const newSyntax = new NewSyntax()
-const newGetGreeting = newSyntax.getGreeting
-  console.log(newGetGreeting())
+// const newSyntax = new NewSyntax()
+// const newGetGreeting = newSyntax.getGreeting
+//   console.log(newGetGreeting())
   
   
 ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
