@@ -1,4 +1,5 @@
 // // CFSC  Souce Maps with wepback 
+// CFSC End the secion 6 Webpack lecture 58/12 Es6 class properties 
 /**  
  * CFSC webpack Dev Server 
  * Recap what I did here 
