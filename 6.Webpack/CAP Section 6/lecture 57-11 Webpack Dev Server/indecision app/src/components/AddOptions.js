@@ -10,7 +10,7 @@ class AddOption extends React.Component {
   handleAddOption(e) {
     e.preventDefault();
     // use devtool
-   console.log(testing)
+  //  console.log(testing)// you are still here OMG
     const option = e.target.elements.option.value.trim();
     const error = this.props.handleAddOption(option);
 

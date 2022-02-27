@@ -14,7 +14,10 @@ module.exports = {
       exclude:/node_modules/
     }]
   },
-  devtool:'cheap-module-eval-source-map '
+  devtool: 'cheap-module-eval-source-map ',
+  devServer: {
+    contentBase:path.join(__dirname,'public')
+  }
  
 }
 // loader
