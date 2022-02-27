@@ -3,17 +3,26 @@ import AddOption from './AddOptions';
 import Header from './Header';
 import Action from './Action';
 import Options from './Options';
+// Challenge time
+// pull the state out of constructor
+// convert all 4 event handlers to calss prperties (arrow functions )
+// delete the constructor completely
+// start with class properites and end with methods 
 class IndecisionApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-    this.state = {
-      options: []
-    };
+  state = {
+    options:[]
   }
+  // constructor(props) {
+  //   super(props);
+  //   // this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+  //   // this.handlePick = this.handlePick.bind(this);
+  //   // this.handleAddOption = this.handleAddOption.bind(this);
+  //   // this.handleDeleteOption = this.handleDeleteOption.bind(this);
+  //   // first POC
+  //   // this.state = {
+  //   //   options: []
+  //   // };
+  // }
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
@@ -35,20 +44,23 @@ class IndecisionApp extends React.Component {
   componentWillUnmount() {
     console.log('componentWillUnmount');
   }
-  handleDeleteOptions() {
+  // second 
+  handleDeleteOptions =()=> {
     this.setState(() => ({ options: [] }));
   }
-  handleDeleteOption(optionToRemove) {
+  //third
+  handleDeleteOption =(optionToRemove)=> {
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => optionToRemove !== option)
     }));
-  }
-  handlePick() {
+  }//Foruth
+  handlePick=() =>{
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
     alert(option);
   }
-  handleAddOption(option) {
+  //Fifth
+  handleAddOption =(option)=> {
     if (!option) {
       return 'Enter valid value to add item';
     } else if (this.state.options.indexOf(option) > -1) {
