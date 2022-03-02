@@ -3,6 +3,7 @@ import AddOption from './AddOptions';
 import Header from './Header';
 import Action from './Action';
 import Options from './Options';
+import OptionModal from './OptionModal';
 // Challenge time
 // pull the state out of constructor
 // convert all 4 event handlers to calss prperties (arrow functions )
@@ -89,6 +90,7 @@ class IndecisionApp extends React.Component {
         <AddOption
           handleAddOption={this.handleAddOption}
         />
+        <OptionModal/>
       </div>
     );
   }
