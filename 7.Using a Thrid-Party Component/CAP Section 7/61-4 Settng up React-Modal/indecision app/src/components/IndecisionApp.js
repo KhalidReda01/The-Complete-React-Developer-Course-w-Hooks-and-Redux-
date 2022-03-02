@@ -86,10 +86,10 @@ class IndecisionApp extends React.Component {
     );
   }
 }
-
-export default IndecisionApp;
-
 Header.defaultProps = {
   title: 'Indecision app'
 };
+
+export default IndecisionApp;
+
 

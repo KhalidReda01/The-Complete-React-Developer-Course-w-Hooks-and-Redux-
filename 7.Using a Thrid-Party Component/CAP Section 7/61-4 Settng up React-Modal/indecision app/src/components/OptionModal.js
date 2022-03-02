@@ -6,8 +6,18 @@ const OptionModal = (props) => (
     contentLabel="Selectted Option"
   >
     <h3>Selected Option </h3>
+    {props.selectedOption && <p>{props.selectedOption}</p>}
+    {/* Challenge Time
+     1. Create  new event handle in IndecisionApp that cleart selectedOption state
+     2. Pass that into OptionModal
+     3. Call it on button click
+    
+     */}
+    <button>Okay</button>
+
  </Modal>
 );
+
 /**
  * !! this techniqe
  * undefined // undefined
