@@ -4,26 +4,13 @@ import Header from './Header';
 import Action from './Action';
 import Options from './Options';
 import OptionModal from './OptionModal';
-// Challenge time
-// pull the state out of constructor
-// convert all 4 event handlers to calss prperties (arrow functions )
-// delete the constructor completely
-// start with class properites and end with methods 
+
 class IndecisionApp extends React.Component {
   state = {
-    options:[]
+    options: [],
+    selectedOption: undefined
   }
-  // constructor(props) {
-  //   super(props);
-  //   // this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-  //   // this.handlePick = this.handlePick.bind(this);
-  //   // this.handleAddOption = this.handleAddOption.bind(this);
-  //   // this.handleDeleteOption = this.handleDeleteOption.bind(this);
-  //   // first POC
-  //   // this.state = {
-  //   //   options: []
-  //   // };
-  // }
+ 
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
@@ -45,20 +32,20 @@ class IndecisionApp extends React.Component {
   componentWillUnmount() {
     console.log('componentWillUnmount');
   }
-  // second 
   handleDeleteOptions =()=> {
     this.setState(() => ({ options: [] }));
   }
-  //third
   handleDeleteOption =(optionToRemove)=> {
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => optionToRemove !== option)
     }));
-  }//Foruth
+  }
   handlePick=() =>{
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    // alert(option);
+    // Challenge time 
+    // use setState to set selectedOption
   }
   //Fifth
   handleAddOption =(option)=> {
@@ -90,7 +77,7 @@ class IndecisionApp extends React.Component {
         <AddOption
           handleAddOption={this.handleAddOption}
         />
-        <OptionModal/>
+        <OptionModal selectedOption={this.state.selectedOption }/ >
       </div>
     );
   }
@@ -101,5 +88,3 @@ class IndecisionApp extends React.Component {
 Header.defaultProps = {
   title: 'Indecision app'
 };
-// Focus first you didn't export this then the compoent at the import you dont' need it you  already at the same folder component 
-export default IndecisionApp
