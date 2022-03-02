@@ -13,7 +13,8 @@ const OptionModal = (props) => (
      3. Call it on button click
     
      */}
-    <button>Okay</button>
+    {/* third Call it on button click */}
+    <button onClick={props.handleSelectedOption}>Okay</button>
 
  </Modal>
 );

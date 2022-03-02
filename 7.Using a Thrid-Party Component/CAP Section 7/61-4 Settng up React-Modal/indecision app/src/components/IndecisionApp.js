@@ -50,6 +50,12 @@ class IndecisionApp extends React.Component {
       selectedOption:option
     }))
   }
+  handleSelectedOption = () => {
+    // first Create  new event handle in IndecisionApp that clear selectedOption state
+    this.setState(() => ({
+      selectedOption:undefined
+    }))
+  }
   // the 2 parethenis because It was undefined it was an empty array Remeber with the short hand 
   //Fifth
   handleAddOption =(option)=> {
@@ -81,7 +87,11 @@ class IndecisionApp extends React.Component {
         <AddOption
           handleAddOption={this.handleAddOption}
         />
-        <OptionModal selectedOption={this.state.selectedOption }/ >
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          // second Pass that into OptionModal
+          handleSelectedOption={this.handleSelectedOption}
+        />
       </div>
     );
   }
