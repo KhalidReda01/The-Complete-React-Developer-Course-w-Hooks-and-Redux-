@@ -1,4 +1,6 @@
-//CfSC 60/2 Passing Children to Component 
+//CfSC 60/2 Passing Children to Component
+// CFSC 61/3 setting up React Modal ->> CFSC Bonus Refactoring other Statless functional Components 
+
 console.log("app.js CFSC is runing")
  
 import React from "react";
@@ -39,14 +41,14 @@ const Layout = (props) => {
 /**Okay the problem was at this part template 
  * OMG I got the eror this is not a function you above declared an arrow function see that the important of review the lecture to fully understand it Good not bad 
  */
-const template = (
-  <div>
-    <h1>Page Title</h1>
-    <p>This is my page</p>
-  </div>
-)
-// ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
+// const template = (
+//   <div>
+//     <h1>Page Title</h1>
+//     <p>This is my page</p>
+//   </div>
+// )
+ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
 // ReactDOM.render(<Layout content={template} name="Khalid" />, document.getElementById('app'));
 // ReactDOM.render(<Layout content={template} />, document.getElementById('app'));
-ReactDOM.render(<Layout><p>Hello React</p></Layout>, document.getElementById('app'));
+// ReactDOM.render(<Layout><p>Hello React</p></Layout>, document.getElementById('app'));
 
