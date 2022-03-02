@@ -46,7 +46,11 @@ class IndecisionApp extends React.Component {
     // alert(option);
     // Challenge time 
     // use setState to set selectedOption
+    this.setState(() => ({
+      selectedOption:option
+    }))
   }
+  // the 2 parethenis because It was undefined it was an empty array Remeber with the short hand 
   //Fifth
   handleAddOption =(option)=> {
     if (!option) {
@@ -83,8 +87,9 @@ class IndecisionApp extends React.Component {
   }
 }
 
-
+export default IndecisionApp;
 
 Header.defaultProps = {
   title: 'Indecision app'
 };
+
