@@ -12,6 +12,13 @@ module.exports = {
       loader: 'babel-loader',
       test: /.\.js$/,
       exclude:/node_modules/
+    }, {
+      test: /\.css$/,
+      use: [
+        // 'sytle-loader' typing error ,
+        'style-loader',
+        'css-loader'
+      ]
     }]
   },
   devtool: 'cheap-module-eval-source-map ',
