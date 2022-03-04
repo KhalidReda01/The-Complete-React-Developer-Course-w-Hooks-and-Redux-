@@ -17,7 +17,8 @@ module.exports = {
       use: [
         // 'sytle-loader' typing error ,
         'style-loader',
-        'css-loader'
+        'css-loader',
+        'sass-loader'
       ]
     }]
   },
