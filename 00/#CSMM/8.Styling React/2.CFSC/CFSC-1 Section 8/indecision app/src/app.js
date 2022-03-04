@@ -9,46 +9,7 @@ import ReactDOM from "react-dom";
 
 
 import IndecisionApp from './components/IndecisionApp'
-// const Layout = (props) => {
-//   return (
-//     <div>
-//       <p>Header</p>
-//       {props.content}
-//       {/* {why this not working now} */}
+import './styles/styless.css'
 
-//       <p>Footer</p>
-//     </div>
-//   )
-// }
-const Layout = (props) => {
-  return (
-    <div>
-      <p>Header</p>
-      {/* {props.content} */}
-      {props.children}
-      <p>Footer</p>
-    </div>
-  )
-}
-// const template = () => {
-//   return (
-//     <div>
-//       <h1>Page Title</h1>
-//       <p>This is y page</p>
-//     </div>
-//   )
-// }
-/**Okay the problem was at this part template 
- * OMG I got the eror this is not a function you above declared an arrow function see that the important of review the lecture to fully understand it Good not bad 
- */
-// const template = (
-//   <div>
-//     <h1>Page Title</h1>
-//     <p>This is my page</p>
-//   </div>
-// )
+
 ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
-// ReactDOM.render(<Layout content={template} name="Khalid" />, document.getElementById('app'));
-// ReactDOM.render(<Layout content={template} />, document.getElementById('app'));
-// ReactDOM.render(<Layout><p>Hello React</p></Layout>, document.getElementById('app'));
-
