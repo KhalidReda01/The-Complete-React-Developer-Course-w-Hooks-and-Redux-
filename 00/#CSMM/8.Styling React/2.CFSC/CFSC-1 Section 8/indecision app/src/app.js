@@ -9,7 +9,7 @@ import ReactDOM from "react-dom";
 
 
 import IndecisionApp from './components/IndecisionApp'
-import './styles/styless.css'
+import './styles/styless.scss'
 
 
 ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
