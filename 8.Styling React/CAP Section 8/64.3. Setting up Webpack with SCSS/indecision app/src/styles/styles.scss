@@ -1,0 +1,52 @@
+/**
+You may need an appropriate loader to handle this file type. this is like babel to make the browser to understand our jsx and complie it to normal javascript browser can undersand 
+one is equlivent to babel loader and ond is equlivent to babel core 
+yarn add sass-loader@6.0.6 node-sass@4.5.3
+*/
+$brand-color:blue;
+
+*{
+  color:$brand-color;
+}
+/* 
+npmjs.com/package/css-loader
+https://www.npmjs.com/package/css-loader
+npmjs.com/package/style-loader
+https://www.npmjs.com/package/style-loader
+
+yarn add sytle-loader@0.18.2 css-loader@0.28.4
+ */
+ /*
+ https://sass-lang.com/
+
+
+ normal css 
+ body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+______________/_________________/
+ scss vs sass 
+ this is scss 
+ $font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+_____________/_______________________________/
+this is sass  same but without semicolons  and currly braces 
+$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+ 
+  ____
+  _____
+  ________/
+  we're gonna use Scss 
+  // install two tools new loader 
+ */

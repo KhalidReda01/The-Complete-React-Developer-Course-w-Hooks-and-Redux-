@@ -13,7 +13,7 @@ module.exports = {
       test: /.\.js$/,
       exclude:/node_modules/
     }, {
-      test: /\.css$/,
+      test: /\.scss$/,
       use: [
         // 'sytle-loader' typing error ,
         'style-loader',
