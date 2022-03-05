@@ -1,0 +1,32 @@
+
+ // partial start with _ underscore 
+ // px 
+
+/*
+rem the one advanate is that they have better support for accessiblity 
+that can allow users to customise */
+
+html{
+  font-size:62.5%;
+}
+// 16 px * 0.625=10
+//2.2 rem = 22 px 
+body{
+  font-family: Helvetica,Arial, Helvetica, sans-serif;
+  font-size:1.6rem;
+}
+// h1{
+//   font-size: 2.2rem;
+// }
+
+/**
+Recap what we did
+ we learned how to break up our styles into mulitple files and we started by
+ creating a base partial 
+ here we define  some big stuff like our globla font family and our font size structure 
+ bla bla I think It will be better to write it instead at paper to review them later but I think IT's nothig we are still 
+ didnt' finish the section so keep going 
+*/
+
+
+// getbem  naming convention 
