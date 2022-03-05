@@ -1,0 +1,20 @@
+
+ // partial start with _ underscore 
+ // px 
+
+/*
+rem the one advanate is that they have better support for accessiblity 
+that can allow users to customise */
+
+html{
+  font-size:62.5%;
+}
+// 16 px * 0.625=10
+//2.2 rem = 22 px 
+body{
+  font-family: Helvetica,Arial, Helvetica, sans-serif;
+  font-size:1.6rem;
+}
+// h1{
+//   font-size: 2.2rem;
+// }

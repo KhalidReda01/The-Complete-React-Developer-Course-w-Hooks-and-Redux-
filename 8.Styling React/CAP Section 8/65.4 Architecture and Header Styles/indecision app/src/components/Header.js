@@ -1,6 +1,6 @@
 import React from 'react'
 const Header = (props) =>(
-  <div>
+  <div className="header">
     <h1>{props.title}</h1>
     {props.subtitle && <h2>{props.subtitle}</h2>}
   </div>
