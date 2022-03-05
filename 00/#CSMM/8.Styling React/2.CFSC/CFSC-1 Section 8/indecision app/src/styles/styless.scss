@@ -1,5 +1,7 @@
-$brand-color:blue;
+// $brand-color:blue;
 
-*{
-  color:$brand-color;
-}
+// *{
+//   color:$brand-color;
+// }
+@import './base/base';
+@import './components/header'
