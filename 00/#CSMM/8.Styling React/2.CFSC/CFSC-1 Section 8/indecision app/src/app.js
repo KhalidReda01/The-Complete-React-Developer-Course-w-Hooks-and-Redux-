@@ -1,6 +1,5 @@
-//CfSC 60/2 Passing Children to Component
-// CFSC 61/3 setting up React Modal ->> CFSC Bonus Refactoring other Statless functional Components
-// CFSC 66/4 Reset That $#!*
+//CFSC lecture 67/5 Theming with Variables 
+
 
 
 console.log("app.js CFSC is runing")
