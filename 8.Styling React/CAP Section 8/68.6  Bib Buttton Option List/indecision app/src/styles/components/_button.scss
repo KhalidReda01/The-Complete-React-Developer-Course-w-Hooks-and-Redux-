@@ -1,0 +1,8 @@
+.big-button {
+  background: $purple;
+  border:none;
+  border-bottom: .6rem solid darken($color: $purple, $amount: 10%)
+
+}
+// sass reference function 
+//https://www.rubydoc.info/gems/sass/Sass/Script/Functions
