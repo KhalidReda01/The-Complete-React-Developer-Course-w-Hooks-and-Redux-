@@ -27,7 +27,13 @@ printWarning @ warning.js?6327:33
 // center the text using - text-align : center;
 // set the bottom border to a 1 px sold border ligted version of $light-blue 10%
 // Widget Header
-.widget--message{
+/*
+https://sparkbox.com/foundry/bem_by_example
+here again he used undrescore instead of hyphen Okay 
+BEM by Example
+
+*/
+.widget__message{
   color:$off-white;
   margin:0;
   padding:$l-size;
