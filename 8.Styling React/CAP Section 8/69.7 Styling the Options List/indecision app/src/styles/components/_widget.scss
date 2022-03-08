@@ -1,3 +1,24 @@
+// widget 
+/**
+Warning: Invalid DOM property `class`. Did you mean `className`?
+    in button (created by AddOption)
+    in form (created by AddOption)
+    in div (created by AddOption)
+    in AddOption (created by IndecisionApp)
+    in div (created by IndecisionApp)
+    in div (created by IndecisionApp)
+    in div (created by IndecisionApp)
+    in IndecisionApp
+printWarning @ warning.js?6327:33
+ Why source maps doesn't show here where exactly is the error 
+ 
+
+*/
+.widget {
+  background: $light-blue;
+  margin-bottom:$xl-size;
+
+}
 // Widget Header
 .widget-header {
   background:$blue;
