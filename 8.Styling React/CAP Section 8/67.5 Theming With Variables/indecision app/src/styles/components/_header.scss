@@ -1,7 +1,7 @@
 .header {
   background:$off-black;
   color:white;
-  margin-bottom:4.8rem;
+  margin-bottom:$xl-size;
   padding:$m-size 0 ;
   /*
 the problem with this is that we get into a situation where we have
@@ -15,7 +15,7 @@ is something we want to avoid inside our styles
 //naming convention
 // BEM Block elment modifier
 .header__title {
-  font-size:3.2rem;
+  font-size:$l-size;
   margin:0;
 
 }
