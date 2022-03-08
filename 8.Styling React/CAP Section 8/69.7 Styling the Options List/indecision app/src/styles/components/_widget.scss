@@ -11,7 +11,7 @@ Warning: Invalid DOM property `class`. Did you mean `className`?
     in IndecisionApp
 printWarning @ warning.js?6327:33
  Why source maps doesn't show here where exactly is the error 
- 
+
 
 */
 .widget {
@@ -19,6 +19,13 @@ printWarning @ warning.js?6327:33
   margin-bottom:$xl-size;
 
 }
+// Challenge time 
+// Create a widget element selector (message) = use it on the p tag
+// off-white colr 
+// no margin 
+// l-size padding on all sides 
+// center the text using - text-align : center;
+// set the bottom border to a 1 px sold border ligted version of $light-blue 10%
 // Widget Header
 .widget-header {
   background:$blue;
