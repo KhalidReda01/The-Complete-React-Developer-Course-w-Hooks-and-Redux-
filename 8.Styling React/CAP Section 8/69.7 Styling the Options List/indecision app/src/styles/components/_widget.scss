@@ -1,3 +1,7 @@
+// Widget 
+.widget {
+  background:$light-blue;
+}
 // Widget Header
 .widget-header {
   background:$blue;
@@ -15,3 +19,8 @@
 .widget-header__title {
   margin:0;
 }
+/**
+because I used hyphen insted of underscore so I need to understand Bem naming convertion 
+BEM by Example
+https://sparkbox.com/foundry/bem_by_example
+/*

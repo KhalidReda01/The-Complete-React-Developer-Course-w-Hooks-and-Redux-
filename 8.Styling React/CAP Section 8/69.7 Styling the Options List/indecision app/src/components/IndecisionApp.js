@@ -75,7 +75,8 @@ class IndecisionApp extends React.Component {
         <Action
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
-        />
+          />
+          <div className=""></div>
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
