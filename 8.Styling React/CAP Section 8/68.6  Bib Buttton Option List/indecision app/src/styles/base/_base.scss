@@ -33,3 +33,10 @@ Recap what we did
 
 
 // getbem  naming convention 
+
+button {
+  cursor:pointer
+}
+button:disabled{
+  cursor:default
+}
