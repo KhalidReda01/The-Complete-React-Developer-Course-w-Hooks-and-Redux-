@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/7860751/git-fatal-unable-to-create-path-my-project-git-index-lock-file-exists
+https://www.pluralsight.com/guides/understanding-and-using-git's-index.lock-file
