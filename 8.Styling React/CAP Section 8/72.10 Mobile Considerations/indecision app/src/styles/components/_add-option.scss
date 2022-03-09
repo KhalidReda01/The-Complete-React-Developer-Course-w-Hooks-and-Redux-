@@ -23,9 +23,9 @@
   padding:$s-size;
 }
 @media (min-width:$desktop-breakpoint){
-*{
-  color:red;
-}
+// *{
+//   color:red;
+// }
 .add-option {
   flex-direction: row ;
 }

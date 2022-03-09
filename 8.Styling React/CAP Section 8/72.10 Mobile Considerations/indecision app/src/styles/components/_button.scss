@@ -6,7 +6,7 @@
   color:white;
   font-weight:bold;
   font-size:$l-size;
-  margin-bottom:$xl-size;
+  margin-bottom:$s-size;
   padding:2.4rem;
   width:100%;
 
@@ -34,3 +34,9 @@ padding:$s-size;
 }
 // bem
 //  modifierw instead of two underscors we use two hyphens 
+@media (min-width:$desktop-breakpoint){
+  .big-button{
+    
+   margin-bottom:$xl-size
+  } 
+ }
