@@ -2,7 +2,7 @@ import React from 'react'
 // export default (pros)=>{ } // unknown 
 const Option = (props) => (
   <div className="option">
-    <p>{props.count} .{props.optionText} </p>
+    <p className="option__text">{props.count} .{props.optionText} </p>
     
     <button
       className="button button--link"
