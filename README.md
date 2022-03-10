@@ -1,8 +1,7 @@
 # The Complete React Developer Course (w/ Hooks and Redux)
 Learn how to build and launch React web applications using React, Redux, Webpack, React-Router, and more!
-Created by Andrew Mead
-English
-What you'll learn
+by ***Andrew Mead***
+ ## What you'll learn
 -	Build, test, and launch React apps
 -	Use cutting-edge ES6/ES7 JavaScript
 -	Setup authentication and user accounts
