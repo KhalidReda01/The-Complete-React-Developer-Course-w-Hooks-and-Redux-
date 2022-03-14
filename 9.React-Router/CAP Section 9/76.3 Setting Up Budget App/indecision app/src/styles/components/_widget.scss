@@ -1,0 +1,58 @@
+// widget 
+/**
+Warning: Invalid DOM property `class`. Did you mean `className`?
+    in button (created by AddOption)
+    in form (created by AddOption)
+    in div (created by AddOption)
+    in AddOption (created by IndecisionApp)
+    in div (created by IndecisionApp)
+    in div (created by IndecisionApp)
+    in div (created by IndecisionApp)
+    in IndecisionApp
+printWarning @ warning.js?6327:33
+ Why source maps doesn't show here where exactly is the error 
+
+
+*/
+.widget {
+  background: $light-blue;
+  margin-bottom:$xl-size;
+
+}
+// Challenge time 
+// Create a widget element selector (message) = use it on the p tag
+// off-white colr 
+// no margin 
+// l-size padding on all sides 
+// center the text using - text-align : center;
+// set the bottom border to a 1 px sold border ligted version of $light-blue 10%
+// Widget Header
+/*
+https://sparkbox.com/foundry/bem_by_example
+here again he used undrescore instead of hyphen Okay 
+BEM by Example
+
+*/
+.widget__message{
+  color:$off-white;
+  margin:0;
+  padding:$l-size;
+  text-align:center;
+  border-bottom: 1px solid lighten($color:$light-blue, $amount:10%)
+}
+.widget-header {
+  background:$blue;
+  color:$off-white;
+  display:flex;
+  justify-content: space-between;
+  padding:$m-size;
+
+}
+
+// Challenge time 
+// setup an element Selector for widget-header
+// set margin
+// use the class 
+.widget-header__title {
+  margin:0;
+}
