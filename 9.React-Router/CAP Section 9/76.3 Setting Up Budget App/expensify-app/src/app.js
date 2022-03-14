@@ -1,7 +1,4 @@
-/**
- * 67/5 Theming with variables 
- * CAP
- */
+
 
 import React from 'react';
 import ReactDOM from 'react-dom';
