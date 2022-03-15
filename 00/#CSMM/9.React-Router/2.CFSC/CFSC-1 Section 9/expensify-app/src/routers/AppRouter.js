@@ -7,9 +7,6 @@ import HelpPage from "../components/HelpPage";
 import NotFoundPage from "../components/NotFoundPage";
 import Header from "../components/Header";
 
-/**
- *  The Error exist at the header component  
- */
 const AppRouter = () => (
   <BrowserRouter>
     <div>
