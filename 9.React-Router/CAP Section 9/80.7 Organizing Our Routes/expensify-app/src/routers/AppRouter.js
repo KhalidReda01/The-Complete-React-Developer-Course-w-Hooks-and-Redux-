@@ -1,30 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
+import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
+import AddExpensePage from '../components/AddExpensePage';
+import EditExpensePage from '../components/EditExpensePage';
+import HelpPage from '../components/HelpPage';
+import NotFoundPage from '../components/NotFoundPage';
 // Challenge time
 // Create 6 new files for the 6 componets
 // setup imports , component , default export 
 // import into AppRouter so they can be used 
 
-const ExpenseDashboardPage = () => (
-  <div>
-    This is from my dashboard component
-  </div>
-);
-const AddExpensePage = () => (
-  <div>
-    This is from my add expense component
-  </div>
-)
-const EditExpensePage = () => (
-  <div>
-    This is from my Edit Expense component
-  </div>
-)
-const HelpPage = () => (
-  <div>
-    This is from my Help Page component
-  </div>
-)
+
+
+
+
 const NotFoundPage = () => (
   <div>
     404! -<Link to ="/">Go home</Link>
