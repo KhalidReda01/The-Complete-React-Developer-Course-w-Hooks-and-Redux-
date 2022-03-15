@@ -51,5 +51,6 @@ const routes = (
  * third I created a routes template that have the BrowserRouter and inside of it use the Dummy componet like explaied above and ofcourse I render it 
  * and Nice as I git that we use the exact attribute to prevent render the root compoent witht the other compoent and be exactly the path that we wite
  * Any way keep going and dont' forget to CFSC this is so important for me 
+ * and ofcourse to prevent the server side routeing Cannot GET /rootname GET http://localhost:8080/help 404 (Not Found) use the historyApiFallback: true at the webcofing file and for more details WVI for this lecture later if you want but keep going now 
  */
 ReactDOM.render(routes, document.getElementById('app'));
