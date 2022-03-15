@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import {BrowserRouter,Route,Switch,Link} from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const ExpenseDashboardPage = () => (
@@ -29,12 +29,21 @@ const HelpPage = () => (
 )
 const NotFoundPage = () => (
   <div>
-    404!
+    {/* 404! -<a href="/">Go home</a> */}
+    404! -<Link to ="/">Go home</Link>
   </div>
+)
+const Header = () => (
+  <header>
+    <h1>Expensify</h1>
+  </header>
 )
 
 const routes = (
   <BrowserRouter>
+    <div>
+      <Header/>
+    </div>
     <Switch>
       <Route path="/" component={ExpenseDashboardPage} exact={true} />
       <Route path="/create" component={AddExpensePage} />
