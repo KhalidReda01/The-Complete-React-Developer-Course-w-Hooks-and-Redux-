@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,Route} from 'react-router-dom'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const ExpenseDashboardPage = () => (
@@ -35,14 +35,18 @@ const NotFoundPage = () => (
 
 const routes = (
   <BrowserRouter>
-    <div>
+    <Switch>
       <Route path="/" component={ExpenseDashboardPage} exact={true} />
       <Route path="/create" component={AddExpensePage} />
       <Route path="/edit" component={EditExpensePage} />
       <Route path="/help" component={HelpPage} />
       <Route component={NotFoundPage} />
-    </div>      
+    </Switch>      
   </BrowserRouter>
 )
-
+/**
+ * Recap what I did
+ * Here I only import the Switch "It just means that whenever a route's path matches the url path, the router will render the route's component"
+ * then I made new route for 404! page compoent that's it for this lecture but CfSc and keep going 
+ */
 ReactDOM.render(routes, document.getElementById('app'));
