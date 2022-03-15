@@ -44,5 +44,12 @@ const routes = (
     </div>      
   </BrowserRouter>
 )
-
+/**
+ * Recap for what I did for this lecture as you understand it 
+ * first I installed the react-router-dom library version 4.2.2
+ * second I import the BrowserRoter,Route from it 
+ * third I created a routes template that have the BrowserRouter and inside of it use the Dummy componet like explaied above and ofcourse I render it 
+ * and Nice as I git that we use the exact attribute to prevent render the root compoent witht the other compoent and be exactly the path that we wite
+ * Any way keep going and dont' forget to CFSC this is so important for me 
+ */
 ReactDOM.render(routes, document.getElementById('app'));
