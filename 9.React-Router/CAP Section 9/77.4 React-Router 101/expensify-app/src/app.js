@@ -21,6 +21,9 @@ const AddExpensePage = () => (
     This is from my add expense component
   </div>
 )
+// Challenge time
+// /edit  EditExpensePage
+// /help HelpPage
 const routes = (
   <BrowserRouter>
     <div>
