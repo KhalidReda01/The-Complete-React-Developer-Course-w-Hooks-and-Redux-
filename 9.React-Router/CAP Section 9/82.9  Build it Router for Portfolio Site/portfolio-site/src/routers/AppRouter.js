@@ -2,6 +2,25 @@ import React from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
+import HomePage from '../components/HomePage';
+import ContactPage from '../components/ContactPage';
+import PortfolioPage from '../components/PortfolioPage';
+
+const AppRouter = () => (
+   <BrowserRouter>
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/" component={HomePage} /> 
+        <Route path="/contact" component={ContactPage}/>
+        <Route path="/Portfolio" component={PortfolioPage}/>        
+        <Route component={NotFoundPage} />
+    </Switch> 
+    </div>
+         
+  </BrowserRouter>
+)
+export default AppRouter;
 /**Build it Router for Portfolio Site
  * Challenge Time
  * Portfolio Router 
@@ -12,15 +31,3 @@ import Header from '../components/Header';
  * /contact -> Contact Page (in nav)
  */
 // Welcome Back Let's start the Challenge let's finish this section and Eat Redux 
-const AppRouter = () => (
-   <BrowserRouter>
-    <div>
-      <Header />
-      <Switch>    
-      <Route component={NotFoundPage} />
-    </Switch> 
-    </div>
-         
-  </BrowserRouter>
-)
-export default AppRouter;
