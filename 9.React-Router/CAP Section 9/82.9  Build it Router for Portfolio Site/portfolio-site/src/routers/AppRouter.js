@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import HomePage from '../components/HomePage';
 import ContactPage from '../components/ContactPage';
 import PortfolioPage from '../components/PortfolioPage';
+import PortfolioItemPage from '../components/PortfoliItemPage';
 
 const AppRouter = () => (
    <BrowserRouter>
@@ -14,6 +15,7 @@ const AppRouter = () => (
         <Route path="/" component={HomePage} exact={true} /> 
         <Route path="/contact" component={ContactPage}/>
         <Route path="/Portfolio" component={PortfolioPage}/>        
+        <Route path="/Portfolio/:id" component={PortfolioItemPage}/>        
         <Route component={NotFoundPage} />
     </Switch> 
     </div>
