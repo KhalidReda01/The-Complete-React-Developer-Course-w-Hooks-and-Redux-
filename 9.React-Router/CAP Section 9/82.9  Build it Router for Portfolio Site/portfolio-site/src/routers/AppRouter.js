@@ -11,7 +11,7 @@ import Header from '../components/Header';
  * /portfolio/123 -> Individual portfolio item page that shows the ID
  * /contact -> Contact Page (in nav)
  */
-
+// Welcome Back Let's start the Challenge let's finish this section and Eat Redux 
 const AppRouter = () => (
    <BrowserRouter>
     <div>
