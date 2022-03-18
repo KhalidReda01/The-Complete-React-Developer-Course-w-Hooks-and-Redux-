@@ -21,8 +21,15 @@ const decrementCount = ({decrementBy=1}={}) => ({
 })
 // Challenge Time
 // setCount
-
+const setCount = ({count=101 }={}) =>({
+  type: 'SET', 
+  count
+}) 
 // resetCount 
+const resetCount = ({count}=0) => ({
+  type: 'RESET',
+  count
+})
 
 const store = createStore((state = { count: 0 }, action) => {
   switch (action.type) {
@@ -63,15 +70,8 @@ store.dispatch(
 
 store.dispatch(incrementCount({incrementBy:5}))
 store.dispatch(incrementCount())
-store.dispatch(
-  {
-    type:'RESET'
-  }
-)
-store.dispatch(decrementCount())
-store.dispatch(decrementCount({decrementBy:10}))
+store.dispatch(resetCount())
+// store.dispatch(decrementCount())
+// store.dispatch(decrementCount({decrementBy:10}))
 
-store.dispatch({
-  type: 'SET',
-  count:101
-})
+// store.dispatch(setCount({count:101}))
