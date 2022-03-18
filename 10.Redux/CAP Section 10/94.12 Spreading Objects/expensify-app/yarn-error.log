@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add redux@3.7.2
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add babel-plugin-transform-object-reet-spread@6.23.0
 
 PATH: 
   C:\Users\khalid\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\khalid\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Calibre2;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Perforce;C:\Users\khalid\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\khalid\AppData\Local\Programs\Python\Python310;C:\Users\khalid\AppData\Local\Microsoft\WindowsApps;C:\Users\khalid\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\khalid\AppData\Local\GitHubDesktop\bin;C:\Users\khalid\AppData\Roaming\npm;C:\Users\khalid\AppData\Local\Yarn\bin;C:\Users\khalid\AppData\Local\gitkraken\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,16 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/redux: ESOCKETTIMEDOUT
-      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141376:19)
+  Error: https://registry.yarnpkg.com/babel-plugin-transform-object-reet-spread: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:375:28)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:375:28)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
       at Object.onceWrapper (events.js:481:28)
-      at ClientRequest.emit (events.js:375:28)
-      at TLSSocket.emitRequestTimeout (_http_client.js:790:9)
-      at Object.onceWrapper (events.js:481:28)
-      at TLSSocket.emit (events.js:387:35)
-      at TLSSocket.Socket._onTimeout (net.js:484:8)
-      at listOnTimeout (internal/timers.js:557:17)
-      at processTimers (internal/timers.js:500:7)
+      at IncomingMessage.emit (events.js:387:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -52,8 +53,10 @@ npm manifest:
       "react-dom": "16.0.0",
       "react-modal": "2.2.2",
       "react-router-dom": "4.2.2",
+      "redux": "3.7.2",
       "sass-loader": "6.0.6",
       "style-loader": "0.18.2",
+      "uuid": "3.1.0",
       "validator": "8.0.0",
       "webpack": "3.1.0",
       "webpack-dev-server": "2.5.1"
@@ -3991,6 +3994,11 @@ Lockfile:
     dependencies:
       p-locate "^4.1.0"
   
+  lodash-es@^4.2.1:
+    version "4.17.21"
+    resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+    integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+  
   lodash.camelcase@^4.3.0:
     version "4.3.0"
     resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
@@ -4011,7 +4019,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
     integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
   
-  lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.2, lodash@~4.17.10:
+  lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.2, lodash@^4.2.1, lodash@~4.17.10:
     version "4.17.21"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
     integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -5736,6 +5744,16 @@ Lockfile:
     dependencies:
       balanced-match "^1.0.0"
   
+  redux@3.7.2:
+    version "3.7.2"
+    resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
+    integrity sha512-pNqnf9q1hI5HHZRBkj3bAngGZW/JMCmexDlOxw4XagXY2o1327nHH54LoTjiPJ0gizoqPDRqWyX/00g0hD6w+A==
+    dependencies:
+      lodash "^4.2.1"
+      lodash-es "^4.2.1"
+      loose-envify "^1.1.0"
+      symbol-observable "^1.0.3"
+  
   regenerate@^1.2.1:
     version "1.3.2"
     resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.2.tgz#d1941c67bad437e1be76433add5b385f95b19260"
@@ -6587,6 +6605,11 @@ Lockfile:
       sax "~1.2.1"
       whet.extend "~0.9.9"
   
+  symbol-observable@^1.0.3:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+    integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+  
   tapable@^0.2.7, tapable@~0.2.5:
     version "0.2.9"
     resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.9.tgz#af2d8bbc9b04f74ee17af2b4d9048f807acd18a8"
@@ -6937,14 +6960,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
     integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
   
+  uuid@3.1.0, uuid@^3.0.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
+  
   uuid@^2.0.2:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
     integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
-  
-  uuid@^3.0.0:
-    version "3.1.0"
-    resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
   
   uuid@^3.3.2:
     version "3.4.0"

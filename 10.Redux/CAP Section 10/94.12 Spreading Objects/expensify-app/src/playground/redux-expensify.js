@@ -39,7 +39,7 @@ const expensesReducer = (state=expensesReducersDefaultState, action) => {
         action.expense
       ];
     case 'REMOVE_EXPENSE':
-      return state.filter(({ id }) => id!==action.id );
+      return state.filter(({ id }) => id!== action.id );
     
     default:
       return state;
@@ -74,7 +74,9 @@ console.log(store.getState())
 const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100}))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
 // Challenge Time
-store.dispatch(removeExpense({id:expenseOne.expense.id}))
+
+// store.dispatch(removeExpense({ id: expenseOne.expense.id }))
+console.log("DEES")
 console.log(expenseOne)
 const demoState = {
   expenses: [{
@@ -91,3 +93,17 @@ const demoState = {
     endDate:undefined
   }
 }
+
+const user = {
+  name: 'Khalid',
+  age: 23
+};
+console.log({
+  ...user,
+  location:'Mansura'
+})
+/**
+ * babel object spread operator 
+ * yarn add babel-plugin-transform-object-rest-spread@6.23.0
+ * 
+ */
