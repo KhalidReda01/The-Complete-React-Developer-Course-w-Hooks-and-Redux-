@@ -34,7 +34,13 @@ const setTextFilter = (text = '') => ({
   text
 })
 // SORT_BY_AMOUNT
+const sortByAmount = () => ({
+  type:'SORT_BY_AMOUNT'
+})
 // SET_SART_DATE
+const sortByDate = () => ({
+  type:'SORT_BY_DATE'
+})
 // SET_END_DATE
 
 // Expenses Reducer
@@ -78,6 +84,16 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
       return {
         ...state,
         text: action.text
+      };
+    case 'SORT_BY_AMOUNT':
+      return {
+        ...state,
+        sortBy: 'amount'
+      };
+    case 'SORT_BY_DATE':
+      return {
+        ...state,
+        sortBy:'date'
       }
     default:
       return state;
@@ -104,9 +120,13 @@ console.log(expenseOne)
 store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }))
 // Challenge Time 
 store.dispatch(setTextFilter('rent'))
-store.dispatch(setTextFilter();
-store.dispatch(sortByAmount());
-store.dispatch(sortByDate())
+// store.dispatch(setTextFilter());
+// store.dispatch(sortByAmount());
+// store.dispatch(sortByDate())
+store.dispatch(setStartDate(125)) // startDate 125
+store.dispatch(setStartDate())    // startDate undefined
+store.dispatch(setEndDate(1250))  // endDate 1250
+const demoState={
   expenses: [{
     id: 'pdfdfasdf',
     description: 'January Rent',
