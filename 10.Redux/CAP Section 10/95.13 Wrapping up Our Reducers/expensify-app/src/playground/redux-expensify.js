@@ -104,7 +104,9 @@ console.log(expenseOne)
 store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }))
 // Challenge Time 
 store.dispatch(setTextFilter('rent'))
-const demoState = {
+store.dispatch(setTextFilter();
+store.dispatch(sortByAmount());
+store.dispatch(sortByDate())
   expenses: [{
     id: 'pdfdfasdf',
     description: 'January Rent',
