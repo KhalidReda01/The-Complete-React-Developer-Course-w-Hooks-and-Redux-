@@ -9,3 +9,7 @@ import './styles/styles.scss'
 
 
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
+/**
+ * Now we have basic reducer in place we want to dispatching some action 
+ * acgtually handle those ACTION in the properate reducer 
+ */

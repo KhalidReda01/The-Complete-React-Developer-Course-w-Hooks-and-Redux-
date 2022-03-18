@@ -1,6 +1,26 @@
 import { createStore, combineReducers } from "redux";
-
+import uuid from 'uuid';
+/**
+ *npm uuid 
+ yarn  add uuid@3.1.0
+ * 
+ */
 // ADD_EXPENSE
+const addExpense = (
+  { description = '',
+    note = '',
+    amount = 0,
+    createdAt = 0
+  } = {}) => ({
+  type: 'ADD_EXPENSE',
+  expense: {
+    id: uuid(),
+    description,
+    note,
+    amount,
+    createdAt
+  }
+})
 // REMOVE_EXPENSE
 // EDIT_EXPENSE
 // SET_TEXT_FILTER
@@ -38,7 +58,12 @@ const store = createStore(
     filters:filterReducer
   })
 )
+store.subscribe(() => {
+  console.log(store.getState())
+})
 console.log(store.getState())
+store.dispatch(addExpense({description:'Rent',amount:100}))
+
 const demoState = {
   expenses: [{
     id: 'pdfdfasdf',
