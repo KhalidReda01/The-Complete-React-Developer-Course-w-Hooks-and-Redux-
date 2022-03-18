@@ -23,6 +23,11 @@ const removeExpense = ({id } = {}) => ({
   id
 })
 // EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+  type: 'EDIT_EXPENSE',
+  id,
+  updates
+})
 // SET_TEXT_FILTER
 // SORT_BY_AMOUNT
 // SET_SART_DATE
@@ -40,7 +45,17 @@ const expensesReducer = (state=expensesReducersDefaultState, action) => {
       ];
     case 'REMOVE_EXPENSE':
       return state.filter(({ id }) => id!== action.id );
-    
+    case 'EDIT_EXPENSE':
+      return state.map((expense) => {
+        if (expense.id === action.id) {
+          return {
+            ...expense,
+            ...action.updates
+          }
+        } else {
+          return expense
+        }
+      })
     default:
       return state;
   }
@@ -78,6 +93,7 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 30
 store.dispatch(removeExpense({ id: expenseOne.expense.id }))
 console.log("DEES")
 console.log(expenseOne)
+store.dispatch(editExpense(expenseTwo.expense.id,{ amount:500}))
 const demoState = {
   expenses: [{
     id: 'pdfdfasdf',
@@ -94,14 +110,15 @@ const demoState = {
   }
 }
 
-const user = {
-  name: 'Khalid',
-  age: 23
-};
-console.log({
-  ...user,
-  location:'Mansura'
-})
+// const user = {
+//   name: 'Khalid',
+//   age: 23
+// };
+// console.log({
+//   age:23,
+//   ...user,
+//   location:'Mansura'
+// })
 /**
  * babel object spread operator 
  * yarn add babel-plugin-transform-object-rest-spread@6.23.0
