@@ -25,5 +25,6 @@ const books = {
     name:"penguin"
   }
 }
-
+const { name:publisherName='Self-published' } = books.publisher
+// console.log(name)
 console.log(publisherName);// pernguin , Self-published
