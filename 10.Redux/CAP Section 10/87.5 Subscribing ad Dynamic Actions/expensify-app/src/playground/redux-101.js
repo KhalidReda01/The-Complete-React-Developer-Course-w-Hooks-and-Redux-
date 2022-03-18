@@ -49,3 +49,10 @@ store.dispatch(
     type:'DECREMENT'
   }
 )
+store.dispatch(
+  {
+    type:'DECREMENT'
+  }
+)
+// Challenge Time
+// decrement by 10
