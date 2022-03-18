@@ -19,6 +19,10 @@ const decrementCount = ({decrementBy=1}={}) => ({
   type: 'DECREMENT',
   decrementBy
 })
+// Challenge Time
+// setCount
+
+// resetCount 
 
 const store = createStore((state = { count: 0 }, action) => {
   switch (action.type) {
@@ -56,12 +60,7 @@ store.dispatch(
     incrementBy:5
   }
 )
-// unsubscribe();
-// store.dispatch(
-//   {
-//     type:'INCREMENT'
-//   }
-// )
+
 store.dispatch(incrementCount({incrementBy:5}))
 store.dispatch(incrementCount())
 store.dispatch(
@@ -71,9 +70,7 @@ store.dispatch(
 )
 store.dispatch(decrementCount())
 store.dispatch(decrementCount({decrementBy:10}))
-// Challenge Time
-// decrement by 10
-// challenge done
+
 store.dispatch({
   type: 'SET',
   count:101
