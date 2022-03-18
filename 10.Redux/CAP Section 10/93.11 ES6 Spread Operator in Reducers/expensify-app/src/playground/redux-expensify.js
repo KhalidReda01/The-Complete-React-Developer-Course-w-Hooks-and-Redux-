@@ -48,7 +48,10 @@ const expensesReducer = (state=expensesReducersDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
       // state.push(action.expense)
-     return state.concat(action.expense)
+      return [
+        ...state,
+        action.expense
+     ]
     default:
       return state;
   }
@@ -79,8 +82,11 @@ store.subscribe(() => {
   console.log(store.getState())
 })
 console.log(store.getState())
-store.dispatch(addExpense({description:'Rent',amount:100}))
-
+const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100}))
+const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+// Challenge Time
+store.dispatch(removeExpense({id:expenseOne.expense.id}))
+console.log(expenseOne)
 const demoState = {
   expenses: [{
     id: 'pdfdfasdf',
