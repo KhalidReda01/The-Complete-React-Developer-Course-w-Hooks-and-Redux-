@@ -93,7 +93,9 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 30
 store.dispatch(removeExpense({ id: expenseOne.expense.id }))
 console.log("DEES")
 console.log(expenseOne)
-store.dispatch(editExpense(expenseTwo.expense.id,{ amount:500}))
+store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }))
+// Challenge Time 
+store.dispatch(setTextFilter('rent'))
 const demoState = {
   expenses: [{
     id: 'pdfdfasdf',
