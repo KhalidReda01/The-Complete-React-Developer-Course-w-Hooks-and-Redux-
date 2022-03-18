@@ -8,6 +8,9 @@ const demoState = {
     createdAt:0
   }],
   filters: {
-    text:'rent'
+    text: 'rent',
+    sortBy: 'amout',// date or amount 
+    startDate: undefined,
+    endDate:undefined
   }
 }
