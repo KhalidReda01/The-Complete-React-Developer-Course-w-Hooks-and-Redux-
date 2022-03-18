@@ -1,5 +1,5 @@
 /**
- * 87 Subscribing and Dynamic Actions
+ * 88 ES6 Object Destructuring
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
