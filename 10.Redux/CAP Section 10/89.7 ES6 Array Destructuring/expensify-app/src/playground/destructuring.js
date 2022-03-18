@@ -49,4 +49,6 @@
 // Challenge Time
 const item = ['Coffee(hot)', "$2.00", "$2.50", "$2.75"]
 // grab first and third items using array destructuring 
-console.log(`A meduim Coffe (hot) costs $2.50`)
+const [coffee,,price,,]= item
+console.log(`A meduim ${item[0]} costs ${item[2]}`)
+console.log(`A meduim ${coffee} costs ${price}`)
