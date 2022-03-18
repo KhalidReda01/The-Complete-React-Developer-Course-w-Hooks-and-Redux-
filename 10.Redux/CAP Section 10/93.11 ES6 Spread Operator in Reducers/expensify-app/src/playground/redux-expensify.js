@@ -36,6 +36,10 @@ const addExpense = (
   }
 })
 // REMOVE_EXPENSE
+const removeExpense = ({ } = {}) => ({
+  type: 'REMOVE_Expense',
+  id
+})
 // EDIT_EXPENSE
 // SET_TEXT_FILTER
 // SORT_BY_AMOUNT
@@ -51,7 +55,10 @@ const expensesReducer = (state=expensesReducersDefaultState, action) => {
       return [
         ...state,
         action.expense
-     ]
+      ];
+    case 'REMOVE_EXPENSE':
+      return state.filter(({ id }) => id!==action.id );
+    
     default:
       return state;
   }
