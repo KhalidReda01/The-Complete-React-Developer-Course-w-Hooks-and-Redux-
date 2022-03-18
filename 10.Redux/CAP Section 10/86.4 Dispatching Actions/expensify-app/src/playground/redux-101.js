@@ -8,7 +8,11 @@ const store = createStore((state = { count: 0 }, action) => {
       };
     case 'DECREMENT':
       return {
-        count:state.count -1
+        count: state.count - 1
+      };
+    case 'RESET':
+      return {
+        count:0
       }
     default:
       return state;
@@ -36,6 +40,11 @@ store.dispatch(
 
 // Challenge Time
 // Reset - set the cout equal to zero 
+store.dispatch(
+  {
+    type:'RESET'
+  }
+)
 store.dispatch(
   {
     type:'DECREMENT'
