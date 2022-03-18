@@ -1,4 +1,11 @@
 import { createStore } from 'redux';
+// Action generators
+
+const incrementCount = (payload={}) => ({
+  type: 'INCREMENT',
+  incrementBy:typeof payload.incrementBy==='number'? payload.incrementBy:1
+})
+
 const store = createStore((state = { count: 0 }, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -38,13 +45,13 @@ store.dispatch(
   }
 )
 // unsubscribe();
-store.dispatch(
-  {
-    type:'INCREMENT'
-  }
-)
-
-
+// store.dispatch(
+//   {
+//     type:'INCREMENT'
+//   }
+// )
+store.dispatch(incrementCount({incrementBy:5}))
+store.dispatch(incrementCount())
 store.dispatch(
   {
     type:'RESET'
