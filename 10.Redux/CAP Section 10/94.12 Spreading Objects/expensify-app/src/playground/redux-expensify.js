@@ -18,7 +18,7 @@ const addExpense = (
   }
 })
 // REMOVE_EXPENSE
-const removeExpense = ({ } = {}) => ({
+const removeExpense = ({id } = {}) => ({
   type: 'REMOVE_Expense',
   id
 })
@@ -75,7 +75,7 @@ const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100}))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
 // Challenge Time
 
-// store.dispatch(removeExpense({ id: expenseOne.expense.id }))
+store.dispatch(removeExpense({ id: expenseOne.expense.id }))
 console.log("DEES")
 console.log(expenseOne)
 const demoState = {
