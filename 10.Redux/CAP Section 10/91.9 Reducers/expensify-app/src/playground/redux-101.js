@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-// Action generators
+// Action generators - functions that return action objects 
 
 // const incrementCount = (payload = {}) => {
 //   console.log(payload)
@@ -30,8 +30,17 @@ const resetCount = () => ({
   type: 'RESET'
   
 })
-
-const store = createStore((state = { count: 0 }, action) => {
+// Reducers
+/**
+ * 1. Reducer are pure functions 
+ * 2. Never change state or action 
+ */
+// let result;
+// let a = 10;
+// const add = (a,b) => {
+//   result= a + b;
+// }
+const countReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return {
@@ -55,7 +64,8 @@ const store = createStore((state = { count: 0 }, action) => {
       return state;
   }
 
-});
+}
+const store = createStore(countReducer);
 const unsubscribe = store.subscribe(() => {
   console.log(store.getState())
 
