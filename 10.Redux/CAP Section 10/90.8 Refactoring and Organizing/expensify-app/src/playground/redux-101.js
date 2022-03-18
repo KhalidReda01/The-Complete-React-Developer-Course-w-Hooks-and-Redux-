@@ -26,9 +26,9 @@ const setCount = ({count=101 }={}) =>({
   count
 }) 
 // resetCount 
-const resetCount = ({count}=0) => ({
-  type: 'RESET',
-  count
+const resetCount = () => ({
+  type: 'RESET'
+  
 })
 
 const store = createStore((state = { count: 0 }, action) => {
@@ -71,7 +71,7 @@ store.dispatch(
 store.dispatch(incrementCount({incrementBy:5}))
 store.dispatch(incrementCount())
 store.dispatch(resetCount())
-// store.dispatch(decrementCount())
-// store.dispatch(decrementCount({decrementBy:10}))
+store.dispatch(decrementCount())
+store.dispatch(decrementCount({decrementBy:10}))
 
-// store.dispatch(setCount({count:101}))
+store.dispatch(setCount({count:-100}))
