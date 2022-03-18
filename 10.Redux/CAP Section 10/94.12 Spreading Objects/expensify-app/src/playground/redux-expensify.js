@@ -29,6 +29,10 @@ const editExpense = (id, updates) => ({
   updates
 })
 // SET_TEXT_FILTER
+const setTextFilter = (text = '') => ({
+  type: 'SET_TEXT_FILTER',
+  text
+})
 // SORT_BY_AMOUNT
 // SET_SART_DATE
 // SET_END_DATE
@@ -70,6 +74,11 @@ const filterReducerDefaultState = {
 }
 const filterReducer = (state=filterReducerDefaultState,action) => {
   switch (action.type) {
+    case 'SET_TEXT_FILTER':
+      return {
+        ...state,
+        text: action.text
+      }
     default:
       return state;
   }
