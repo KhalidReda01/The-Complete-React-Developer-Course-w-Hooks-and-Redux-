@@ -1,4 +1,24 @@
-import { createStore ,combineReducers } from "redux";
+import { createStore, combineReducers } from "redux";
+
+// ADD_EXPENSE
+// REMOVE_EXPENSE
+// EDIT_EXPENSE
+// SET_TEXT_FILTER
+// SORT_BY_AMOUNT
+// SET_SART_DATE
+// SET_END_DATE
+
+// Expenses Reducer
+const expensesReducersDefaultState =[];
+const expensesReducer = (state=expensesReducersDefaultState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+// Store creation
+const store = createStore(expensesReducer)
+console.log(store.getState())
 const demoState = {
   expenses: [{
     id: 'pdfdfasdf',
