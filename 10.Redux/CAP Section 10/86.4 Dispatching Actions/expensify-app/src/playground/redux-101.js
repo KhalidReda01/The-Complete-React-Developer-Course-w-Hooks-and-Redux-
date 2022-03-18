@@ -54,3 +54,8 @@ store.dispatch(
 // I'd like to reset the count to zero
 console.log(store.getState())
 
+/**
+ * Recap what I did as you understand from this first time don't worry I will came back later to fully master 
+ * Mastery comes from practice practice parctice Okay Keep the spirit I will come back with the repo commits and CFSC WVI MB
+ * 
+ */
