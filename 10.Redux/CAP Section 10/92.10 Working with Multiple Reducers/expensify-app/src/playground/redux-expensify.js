@@ -16,8 +16,15 @@ const expensesReducer = (state=expensesReducersDefaultState, action) => {
       return state;
   }
 }
+// Filter Reducer
+// Challenge Time
+// text => '', sortBy => 'date', startDAte => undefined, endDate => undefined 
 // Store creation
-const store = createStore(expensesReducer)
+const store = createStore(
+  combineReducers({
+    expenses: expensesReducer,
+  })
+)
 console.log(store.getState())
 const demoState = {
   expenses: [{
