@@ -52,3 +52,4 @@ const item = ['Coffee(hot)', "$2.00", "$2.50", "$2.75"]
 const [coffee,,price,,]= item
 console.log(`A meduim ${item[0]} costs ${item[2]}`)
 console.log(`A meduim ${coffee} costs ${price}`)
+//Andrea one is the same but just used the itemName and meduimPrice instead as variable names keep going 
