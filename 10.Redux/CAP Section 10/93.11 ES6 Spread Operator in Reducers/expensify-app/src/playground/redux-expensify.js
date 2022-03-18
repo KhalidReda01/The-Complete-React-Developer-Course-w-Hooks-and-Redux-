@@ -3,7 +3,21 @@ import uuid from 'uuid';
 /**
  *npm uuid 
  yarn  add uuid@3.1.0
- * 
+ * const names =["khalid","Reda"]
+undefined
+names.push('jen')
+3
+names
+(3) ['khalid', 'Reda', 'jen']
+names.concat("loda")
+(4) ['khalid', 'Reda', 'jen', 'loda']
+names
+(3) ['khalid', 'Reda', 'jen']
+[...names]
+(3) ['khalid', 'Reda', 'jen']
+[...names,"mike"]
+['Adam',...names,"Mike"]
+
  */
 // ADD_EXPENSE
 const addExpense = (
@@ -32,6 +46,9 @@ const addExpense = (
 const expensesReducersDefaultState =[];
 const expensesReducer = (state=expensesReducersDefaultState, action) => {
   switch (action.type) {
+    case 'ADD_EXPENSE':
+      // state.push(action.expense)
+     return state.concat(action.expense)
     default:
       return state;
   }
