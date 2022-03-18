@@ -39,7 +39,14 @@
 // Array destructruing
 //
 
-const address = ['15 Imam street ', 'markez minia Elnasr', 'Mansura', '213432']
+// const address = ['15 Imam street ', 'markez minia Elnasr', 'Mansura', '213432']
+
+// const [,city,state='Dakhalia',] = address;
+
+// console.log(`You are in ${city} ${state}`)
 
 
-console.log(`You are in ${address[1]} ${address[2]}`)
+// Challenge Time
+const item = ['Coffee(hot)', "$2.00", "$2.50", "$2.75"]
+// grab first and third items using array destructuring 
+console.log(`A meduim Coffe (hot) costs $2.50`)
