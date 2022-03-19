@@ -7,7 +7,9 @@ const store = createStore((state = { count: 0 }, actions) => {
       };
     
     default:
-      return { state }
+      return  state 
+      //return { state } .state. count:NAN
+    
       
   }
 
