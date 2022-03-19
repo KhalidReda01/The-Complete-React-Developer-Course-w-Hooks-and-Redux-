@@ -3,17 +3,37 @@
 
 import { createStore } from 'redux';
 
-const store = createStore((state={count:10}) => {
+const store = createStore((state = { count: 10 }, action) => {
+  if (action.type === 'INCREMENT') {
+    console.log('runing from here too')
+    return {
+      count:state.count +1
+    }
+  } else {
+     console.log('runing')
   return state;
+  }
+ 
 })
+/**
+ * 
+ */
 //getState()
 //Returns the current state tree of your application. It is equal to the last value returned by the store's reducer
-// 
+console.log(store.getState());
+
+// Actions
+// I'd like to increment the count 
+store.dispatch({
+  type:'INCREMENT'
+})
+store.dispatch({
+  type:'INCREMENT'
+})
+
+// I'd like to reset the cout to zero 
 console.log(store.getState());
 /**
  * Recap 
- * 1st
- * I import the createStore function from Redux the I used it and 
- * I add parm of state then I used the getState method from the createStore to bring the current state back
- * for create store we have to pass function in 
+ * 
  */ 
