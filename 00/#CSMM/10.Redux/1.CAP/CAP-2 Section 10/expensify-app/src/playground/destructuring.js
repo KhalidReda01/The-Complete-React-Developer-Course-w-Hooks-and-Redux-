@@ -32,6 +32,9 @@ const [,city,state='New York'] = address;
 console.log(`you are in ${city} ${state}`);
 // console.log(`you are in ${address[1]} ${address[2]}`);
 
-const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75'];
+const item = ['Coffee (hot)', '$2.00', '$2.55', '$2.75'];
+const [itemName,,meduimPrice] = item;
 // Grab first and third items using array destructuring 
-console.log(`A meduim Coffe (hot) costs $2.50`);
+
+// console.log(`A meduim Coffe (hot) costs $2.50`);
+console.log(`${itemName} costs ${meduimPrice}`);
