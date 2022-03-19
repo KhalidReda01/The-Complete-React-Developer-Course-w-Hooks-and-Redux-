@@ -22,4 +22,5 @@ const book = {
     name:'Penguin'
   }
 }
+const {name:publisherName="Self-Publshed"}=book.publisher
 console.log(publisherName);//  Penguin , Self-Published
