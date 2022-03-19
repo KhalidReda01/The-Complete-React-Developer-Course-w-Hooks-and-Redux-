@@ -13,6 +13,10 @@ const store = createStore((state = { count: 10 }, action) => {
       return {
         count:state.count -1
       }
+    case 'RESET':
+      return {
+        count:0
+      }
     default:
       return state;
   }
@@ -35,6 +39,9 @@ console.log(store.getState());
 // RESET - set the cout equal to zero 
 store.dispatch({
   type:'DECREMENT'
+})
+store.dispatch({
+  type:'RESET'
 })
 
 // I'd like to reset the cout to zero 
