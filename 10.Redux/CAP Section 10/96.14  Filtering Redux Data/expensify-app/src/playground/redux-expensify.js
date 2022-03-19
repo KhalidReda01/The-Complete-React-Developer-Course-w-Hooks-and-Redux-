@@ -118,12 +118,16 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
       return state;
   }
 }
+// timestamps(millisecnods)
+// January 1st 1970 (unix epoch)
+// 33400, 10, -203
+
 // Get Visible Expenses 
 const getVisibleExpenses = (expenses,{text,sortBy,starDate,endDate}) => {
   return expenses.filter((expense) => {
-    const startDateMatch ;
-    const endDateMatch ;
-    const textMatch ;
+    const startDateMatch=typeof starDate !=='number' || expense.createdAt >=startDate ;
+    const endDateMatch=typeof endDate !== 'number' || expense.createdAt<=endDate ;
+    const textMatch=true ;
     return startDateMatch && endDateMatch && textMatch;
   });
 }
@@ -141,8 +145,8 @@ store.subscribe(() => {
   console.log(visibleExpenses)
 })
 console.log(store.getState())
-const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100}))
-const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100,createdAt:1000}))
+const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 ,createdAt:-1000}))
 // Challenge Time
 
 store.dispatch(removeExpense({ id: expenseOne.expense.id }))
@@ -155,9 +159,9 @@ store.dispatch(setTextFilter('rent'))
 // store.dispatch(sortByAmount());
 // store.dispatch(sortByDate())
 console.log('show results')
-// store.dispatch(setStartDate(125)) // startDate 125
+store.dispatch(setStartDate(125)) // startDate 125
 // store.dispatch(setStartDate())    // startDate undefined
-// store.dispatch(setEndDate(1250))  // endDate 1250
+store.dispatch(setEndDate(1250))  // endDate 1250
 const demoState={
   expenses: [{
     id: 'pdfdfasdf',
