@@ -123,17 +123,24 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
 // 33400, 10, -203
 
 // Get Visible Expenses 
-const getVisibleExpenses = (expenses,{text,sortBy,starDate,endDate}) => {
+const getVisibleExpenses = (expenses,{text,sortBy,startDate,endDate}) => {
   return expenses.filter((expense) => {
-    const startDateMatch=typeof starDate !=='number' || expense.createdAt >=startDate ;
+    const startDateMatch=typeof starDate !=='number' || expense.createdAt >= startDate ;
     const endDateMatch=typeof endDate !== 'number' || expense.createdAt<=endDate ;
     const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
     // figure out if expenses.description as the text variable string inside of it
     // includes 
     // convert both strings to lower case 
     return startDateMatch && endDateMatch && textMatch;
-  });
+  }).sort((a,b) => {
+    if (sortBy === 'date') {
+      return a.createdAt < b.createdAt? 1:-1
+    }
+  })
 }
+// Challenge Time
+// sortBy => amount
+// put the ones with a greater amount first 
 // Store creation
 const store = createStore(
   combineReducers({
@@ -148,7 +155,7 @@ store.subscribe(() => {
   console.log(visibleExpenses)
 })
 console.log(store.getState())
-const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100,createdAt:1000}))
+const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100,createdAt:-21000}))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 ,createdAt:-1000}))
 // Challenge Time
 
@@ -157,9 +164,9 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 30
 // console.log(expenseOne)
 // store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }))
 // Challenge Time 
-store.dispatch(setTextFilter('rent'))
+// store.dispatch(setTextFilter('rent'))
 // store.dispatch(setTextFilter());
-// store.dispatch(sortByAmount());
+store.dispatch(sortByAmount());
 // store.dispatch(sortByDate())
 // console.log('show results')
 // store.dispatch(setStartDate(125)) // startDate 125
