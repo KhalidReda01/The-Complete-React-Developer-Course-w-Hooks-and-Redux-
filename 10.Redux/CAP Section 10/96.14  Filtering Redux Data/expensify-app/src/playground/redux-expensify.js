@@ -119,8 +119,13 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
   }
 }
 // Get Visible Expenses 
-const getVisibleExpenses = (expenses, filters) => {
-  return expenses;
+const getVisibleExpenses = (expenses,{text,sortBy,starDate,endDate}) => {
+  return expenses.filter((expense) => {
+    const startDateMatch ;
+    const endDateMatch ;
+    const textMatch ;
+    return startDateMatch && endDateMatch && textMatch;
+  });
 }
 // Store creation
 const store = createStore(
