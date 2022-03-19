@@ -118,6 +118,10 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
       return state;
   }
 }
+// Get Visible Expenses 
+const getVisibleExpenses = (expenses, filters) => {
+  return expenses;
+}
 // Store creation
 const store = createStore(
   combineReducers({
@@ -126,7 +130,10 @@ const store = createStore(
   })
 )
 store.subscribe(() => {
-  console.log(store.getState())
+  const state = store.getState();
+  const visibleExpenses = getVisibleExpenses(state.expenses,state.filters)
+  // console.log(store.getState())
+  console.log(visibleExpenses)
 })
 console.log(store.getState())
 const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100}))
@@ -143,9 +150,9 @@ store.dispatch(setTextFilter('rent'))
 // store.dispatch(sortByAmount());
 // store.dispatch(sortByDate())
 console.log('show results')
-store.dispatch(setStartDate(125)) // startDate 125
-store.dispatch(setStartDate())    // startDate undefined
-store.dispatch(setEndDate(1250))  // endDate 1250
+// store.dispatch(setStartDate(125)) // startDate 125
+// store.dispatch(setStartDate())    // startDate undefined
+// store.dispatch(setEndDate(1250))  // endDate 1250
 const demoState={
   expenses: [{
     id: 'pdfdfasdf',
