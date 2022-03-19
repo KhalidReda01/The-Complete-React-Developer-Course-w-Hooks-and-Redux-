@@ -127,7 +127,7 @@ const getVisibleExpenses = (expenses,{text,sortBy,starDate,endDate}) => {
   return expenses.filter((expense) => {
     const startDateMatch=typeof starDate !=='number' || expense.createdAt >=startDate ;
     const endDateMatch=typeof endDate !== 'number' || expense.createdAt<=endDate ;
-    const textMatch = expenses.description.includes(text);
+    const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
     // figure out if expenses.description as the text variable string inside of it
     // includes 
     // convert both strings to lower case 
