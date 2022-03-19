@@ -18,7 +18,14 @@ const decrementCount = ({decrementBy=1}={}) => ({
 })
 //Challenge Time
 //setCount
+const setCount = ({count}={}) => ({
+  type: 'SET',
+  count
+})
 //resetCount
+const resetCount = () => ({
+  type:'RESET',
+})
 const store = createStore((state = { count: 0 }, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -62,23 +69,12 @@ store.dispatch(incrementCount({incrementBy:5}))
 store.dispatch(incrementCount())
 
 
-store.dispatch({
-  type:'RESET'
-})
+store.dispatch(resetCount())
 
 store.dispatch(decrementCount())
 store.dispatch(decrementCount({decrementBy:10}))
-store.dispatch({
-  type: 'SET',
-  count:101
-})
+store.dispatch(setCount({count:101}))
 
 
-/**
- * Recap what I did lecture subscribing and Dynamic Actions
- * first up I leant how to  watch for changes to the store by using the subsribe method and pass the functinon that will call every time the store changed I got it  
- * even the return function from this store is unsubscribe function  you can call it 
- * the other thing is learnt about pass dynamic information along inside the action object the store Any way keep going now I fully absorved this lecture but Hey never miss CFSC-CFM 
- * 
- */
+
 
