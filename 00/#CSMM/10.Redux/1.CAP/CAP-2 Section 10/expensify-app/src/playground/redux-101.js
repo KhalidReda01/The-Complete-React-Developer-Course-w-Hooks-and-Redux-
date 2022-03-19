@@ -4,15 +4,19 @@
 import { createStore } from 'redux';
 
 const store = createStore((state = { count: 10 }, action) => {
-  if (action.type === 'INCREMENT') {
-    console.log('runing from here too')
-    return {
-      count:state.count +1
-    }
-  } else {
-     console.log('runing')
-  return state;
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        count: state.count + 1
+      };
+    case 'DECREMENT':
+      return {
+        count:state.count -1
+      }
+    default:
+      return state;
   }
+ 
  
 })
 /**
@@ -27,8 +31,10 @@ console.log(store.getState());
 store.dispatch({
   type:'INCREMENT'
 })
+console.log(store.getState());
+// RESET - set the cout equal to zero 
 store.dispatch({
-  type:'INCREMENT'
+  type:'DECREMENT'
 })
 
 // I'd like to reset the cout to zero 
