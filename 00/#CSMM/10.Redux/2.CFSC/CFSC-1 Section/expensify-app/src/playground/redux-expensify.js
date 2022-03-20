@@ -28,6 +28,10 @@ const editExpense = (id, updates) => ({
   updates
 })
 //SET_TEXT_FILTER
+const setTextFilter = (text = '') => ({
+  type: 'SET_TEXT_FILTER',
+  text
+})
 //SORT_BY_AMOUNT
 //SET_START_DATE
 //SET_END_DATE
@@ -65,6 +69,11 @@ const filterReducerDefaultState = {
 }
 const filterReducer=(state = filterReducerDefaultState,action)=> {
   switch (action.type) {
+    case 'SET_TEXT_FILTER':
+      return {
+        ...state,
+        text:action.text
+      }
     default:
       return state
   }
@@ -83,7 +92,9 @@ store.subscribe(() => {
 const expenseOne=store.dispatch(addExpense({description:'Rent',amount:100}))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
 store.dispatch(removeExpense({ id: expenseOne.expense.id }))
-store.dispatch(editExpense(expenseTwo.expense.id,{amount:500}))
+store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }))
+store.dispatch(setTextFilter('rent'))
+store.dispatch(setTextFilter())
 const demoState = {
   expenses: [{
     id: 'adfadfd',
