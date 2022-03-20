@@ -24,8 +24,10 @@ const resetCount = () => ({
   
 })
 
-
-const store = createStore((state = { count: 0 }, actions) => {
+// Reducers
+//1. Reducers are pure functions
+//2  Never change state or action 
+const countReducer=(state = { count: 0 }, actions) => {
   switch (actions.type) {
     case 'INCREMENT':
       console.log(actions)
@@ -54,7 +56,8 @@ const store = createStore((state = { count: 0 }, actions) => {
       
   }
 
-})
+}
+const store = createStore(countReducer)
 
  const unsubsribe=store.subscribe(() => {
   console.log(store.getState())
