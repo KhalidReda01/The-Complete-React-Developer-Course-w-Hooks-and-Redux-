@@ -58,23 +58,35 @@ const expensesReducer=(state = expensesReducerDefaultState, action)=>{
     ]
     }
     case 'EDIT_EXPENSE':
-      return state.map((expense) => {
-        console.log('Okay')
+      case 'EDIT_EXPENSE':
+        return state.map((expense) => {
+          if (expense.id === action.id) {
+            console.log(expense)
+            return {
+              ...expense,
+              ...action.updates
+            };
+          } else {
+            return expense;
+          };
+        });
+      // return state.map((expense) => {
+      //   console.log('Okay')
 
-        if (expense.id === action.id) {
-          console.log(expense)
-          console.log('There is a hidden error ')
-          return {
-            ...expense,
-            ...action.updates
-          }
-        } else {
-          console.log('is it working')
-          console.log(expense)
-          return expense
-        }
+      //   if (expense.id === action.id) {
+      //     console.log(expense)
+      //     console.log('There is a hidden error ')
+      //     return {
+      //       ...expense,
+      //       ...action.updates
+      //     }
+      //   } else {
+      //     console.log('is it working')
+      //     console.log(expense)
+      //     return expense
+      //   }
         
-      })
+      // })
     default:     
       return state;
   }
