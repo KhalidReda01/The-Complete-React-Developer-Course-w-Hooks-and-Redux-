@@ -45,7 +45,7 @@ const expensesReducer=(state = expensesReducerDefaultState, action)=>{
     case 'REMOVE_EXPENSE': {
 
      const result= state.filter((pros) => {
-        return pros.id === action.id
+        return pros.id !== action.id
         
      })
      return [
