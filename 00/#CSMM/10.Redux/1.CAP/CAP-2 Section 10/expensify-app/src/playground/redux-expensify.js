@@ -23,12 +23,12 @@ const removeExpense = ({ id }) => ({
   type: 'REMOVE_EXPENSE',
   id
 })
-// EDIT_EXPENSE
-const editExpense=(id, updates) => ({
+
+const editExpense = (id, updates) => ({
   type: 'EDIT_EXPENSE',
   id,
   updates
-})
+});
 // SET_TEXT-FILTER
 // SORT_BY_DATE
 // SORT_BY_AMOUNT
@@ -53,40 +53,30 @@ const expensesReducer=(state = expensesReducerDefaultState, action)=>{
         return pros.id !== action.id
         
      })
-     return [
-      result
-    ]
+    //  return [ // OMG briliant I got the Error finally
+    //   result
+    // ]
     }
     case 'EDIT_EXPENSE':
-      case 'EDIT_EXPENSE':
-        return state.map((expense) => {
-          if (expense.id === action.id) {
-            console.log(expense)
-            return {
-              ...expense,
-              ...action.updates
-            };
-          } else {
-            return expense;
-          };
-        });
-      // return state.map((expense) => {
-      //   console.log('Okay')
-
-      //   if (expense.id === action.id) {
-      //     console.log(expense)
-      //     console.log('There is a hidden error ')
-      //     return {
-      //       ...expense,
-      //       ...action.updates
-      //     }
-      //   } else {
-      //     console.log('is it working')
-      //     console.log(expense)
-      //     return expense
-      //   }
+      
+      return state.map((expense) => {
+        console.log(expense)
         
-      // })
+
+        // if (expense.id === action.id) {
+          console.log(expense)
+          console.log('There is a hidden error ')
+          return {
+            ...expense,
+            ...action.updates
+          }
+        // } else {
+        //   console.log('is it working')
+        //   console.log(expense)
+        //   return expense
+        // }
+        
+      })
     default:     
       return state;
   }
@@ -123,7 +113,9 @@ const expenseOne= store.dispatch(addExpense({description:'Rent',amount:100}))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
 store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // console.log(expenseOne.expense.id)
-store.dispatch(editExpense(expenseTwo.expense.id,{amount:500}))
+// store.dispatch(editExpense(expenseTwo.expense.id,{amount:5000}))
+store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
+
 const demoState = {
   expenses: [{
     id: 'afdafd',
