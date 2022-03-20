@@ -1,5 +1,20 @@
 import { combineReducers, createStore } from "redux";
 //ADD_EXPENSE
+const addExpense = (
+  { description = '',
+    note = '',
+    amount = 0,
+    createdAt = 0 }
+) => ({
+  type: 'ADD_EXPENSE',
+  expense: {
+    id: uuid(),
+    description,
+    note,
+    amount,
+    createdAt
+  }
+})
 //REMOVE_EXPENSE
 //EDIT_EXPENSE
 //SET_TEXT_FILTER
@@ -35,15 +50,18 @@ const store = createStore(
     filters:filterReducer
       }
   
-))
-console.log(store.getState())
+  ))
+store.subscribe(() => {
+  console.log(store.getState())
+})
+// store.dispatch(addExpense({description:'Rent',amount:100}))
 const demoState = {
   expenses: [{
     id: 'adfadfd',
     description: 'January Rent',
     note: 'This was the final for that address',
     amount: 54500,
-    createAt:0
+    createdAt:0
   }],
   filters: {
     text: 'rent',
