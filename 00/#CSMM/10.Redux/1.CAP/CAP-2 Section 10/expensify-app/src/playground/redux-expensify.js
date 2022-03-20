@@ -59,12 +59,18 @@ const expensesReducer=(state = expensesReducerDefaultState, action)=>{
     }
     case 'EDIT_EXPENSE':
       return state.map((expense) => {
+        console.log('Okay')
+
         if (expense.id === action.id) {
+          console.log(expense)
+          console.log('There is a hidden error ')
           return {
             ...expense,
             ...action.updates
           }
         } else {
+          console.log('is it working')
+          console.log(expense)
           return expense
         }
         
@@ -122,3 +128,14 @@ const demoState = {
   }
 }
  
+/**
+ * [
+    {
+        "id": "630d04ec-2b0b-414f-94c8-4f494a169a1b",
+        "description": "Coffee",
+        "note": "",
+        "amount": 300,
+        "createdAt": 0
+    }
+]
+ */
