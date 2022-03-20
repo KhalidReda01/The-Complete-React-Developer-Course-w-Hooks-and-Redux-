@@ -49,7 +49,7 @@ const expensesReducer=(state = expensesReducerDefaultState, action)=>{
     }
     case 'REMOVE_EXPENSE': {
 
-     const result= state.filter((pros) => {
+    return state.filter((pros) => {
         return pros.id !== action.id
         
      })
@@ -60,21 +60,14 @@ const expensesReducer=(state = expensesReducerDefaultState, action)=>{
     case 'EDIT_EXPENSE':
       
       return state.map((expense) => {
-        console.log(expense)
-        
-
-        // if (expense.id === action.id) {
-          console.log(expense)
-          console.log('There is a hidden error ')
+        if (expense.id === action.id) {
           return {
             ...expense,
             ...action.updates
           }
-        // } else {
-        //   console.log('is it working')
-        //   console.log(expense)
-        //   return expense
-        // }
+        } else {
+          return expense
+        }
         
       })
     default:     
@@ -115,6 +108,10 @@ store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // console.log(expenseOne.expense.id)
 // store.dispatch(editExpense(expenseTwo.expense.id,{amount:5000}))
 store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
+// Challenge time
+store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter());
+
 
 const demoState = {
   expenses: [{
