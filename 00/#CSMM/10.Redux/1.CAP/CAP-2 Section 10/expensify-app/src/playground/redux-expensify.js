@@ -143,12 +143,33 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
 // timestatps
 // 33400,10,-203 these are all valid time staps
 // count in milliseconds
-// 0 -January 1st 1970 unix epch 
-// we're going to be using timestams extensively in this course as a way to store time zone independent 
+// 0 -January 1st 1970 unix epch
+// we're going to be using timestams extensively in this course as a way to store time zone independent
 // Get Visible Expenses
+/**
+ * Only start Date is a number -> want to actually filter expenses out here 
+ * expense.createdAt >= startDate
+ * startDate !=='number' // true undefined !== number //true  
+ * this will get set to true so StartDateMatce won't be filtered 
+ * startDate is 2 
+ * createAt is 1 
+ * https://www.udemy.com/course/react-2nd-edition/learn/lecture/7900050#questions/3039562
+ * https://www.udemy.com/course/react-2nd-edition/learn/lecture/7900050#questions/16399534
+ * if the type of state is not equal to a number  startDate !=='number' this is always gonna to be true 
+ * if startDate is undefiend not take it into account when it comes to actually filtering 
+ * That means that will alwasy be true for non number and we're not actually ever get into a situation
+ * whether or not an expense is visivle 
+ * 
+ * Only Start DAte is a number we actaully filter out expese out here 
+ * 
+ */
 const getVisibleExpenses = (expenses, {text,sortBy,startDate,endDate}) => {
   console.log('print expense')
+  console.log(expenses)
   return expenses.filter((expense) => {
+    console.log('Understanding')
+    console.log(endDate)
+    console.log(typeof endDate !=='number')
     const startDateMatch=typeof startDate !=='number'|| expense.createdAt>=startDate;
     const endDateMatch=typeof endDate!=='number'||expense.createdAt<=endDate;
     const textMatch=true;
@@ -170,7 +191,7 @@ store.subscribe(() => {
 
 })
 const expenseOne= store.dispatch(addExpense({description:'Rent',amount:100,createdAt:1000}))
-const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 ,created:-1000}))
+const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300 ,created:-1000}))
 // store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // // console.log(expenseOne.expense.id)
 // // store.dispatch(editExpense(expenseTwo.expense.id,{amount:5000}))
