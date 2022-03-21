@@ -183,6 +183,8 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
   }).sort((a, b) => {
     if (sortBy === 'date') {
       return a.createAt<b.createAt?1:-1
+    } else if (sortBy==='amount') {
+      return a.amount<b.amount?1:-1
     }
   })
 }
@@ -220,7 +222,7 @@ store.dispatch(setTextFilter('coffee'));
 // // store.dispatch(sortByAmount()); //amount
 // store.dispatch(sortByDate())// date
 // store.dispatch(sortByDate())// date
-// store.dispatch(sortByDate())// date
+store.dispatch(sortByDate())// date
 // // store.dispatch(sortByAmount()); //amount
 // store.dispatch(setStartDate(0)) // startDate 125 
 // // store.dispatch(setStartDate(0)) // startDate 125 
