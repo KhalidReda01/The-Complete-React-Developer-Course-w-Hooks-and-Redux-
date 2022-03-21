@@ -32,6 +32,10 @@ const setTextFilter = (text = '') => ({
   type: 'SET_TEXT_FILTER',
   text
 })
+/**
+ * CFSC  Wrapping up our Reducer 
+ */
+//SORT_BY_DATE
 //SORT_BY_AMOUNT
 //SET_START_DATE
 //SET_END_DATE
