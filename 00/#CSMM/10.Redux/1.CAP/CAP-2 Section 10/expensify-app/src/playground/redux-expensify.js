@@ -193,7 +193,7 @@ store.subscribe(() => {
 
 const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: 1000 }))
 // Found the bug here 
-const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300 ,created:-1000}))
+const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300 ,createdAt:-1000}))
 // store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // // console.log(expenseOne.expense.id)
 // // store.dispatch(editExpense(expenseTwo.expense.id,{amount:5000}))
