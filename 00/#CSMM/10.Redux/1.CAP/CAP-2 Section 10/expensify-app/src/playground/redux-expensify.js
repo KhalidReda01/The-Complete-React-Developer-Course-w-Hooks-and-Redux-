@@ -140,9 +140,20 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
       return state;
   }
 }
+// timestatps
+// 33400,10,-203 these are all valid time staps
+// count in milliseconds
+// 0 -January 1st 1970 unix epch 
+// we're going to be using timestams extensively in this course as a way to store time zone independent 
 // Get Visible Expenses
-const getVisibleExpenses = (expenses, filters) => {
-  return expenses
+const getVisibleExpenses = (expenses, {text,sortBy,startDate,endDate}) => {
+  console.log('print expense')
+  return expenses.filter((expense) => {
+    const startDateMatch=typeof startDate !=='number'|| expense.createdAt>=startDate;
+    const endDateMatch=typeof endDate!=='number'||expense.createdAt<=endDate;
+    const textMatch=true;
+    return startDateMatch && endDateMatch && textMatch;
+  })
 }
 // Store Creation
 const store = createStore(
