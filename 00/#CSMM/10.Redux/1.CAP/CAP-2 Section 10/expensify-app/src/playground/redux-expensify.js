@@ -106,11 +106,17 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
         ...state,
         text:action.text
       }
-    case 'SORT_BY_DATE':
+    case 'SORT_BY_AMOUNT':
+      console.log(action.sortBy)
       return {
         ...state,
         sortBy:action.sortBy
       }
+    // case 'SORT_BY_DATE':
+    //   return {
+    //     ...state,
+    //     sortBy:action.sortBy
+    //   }
     default:
       return state;
   }
@@ -137,7 +143,11 @@ store.dispatch(setTextFilter('rent'));
 store.dispatch(setTextFilter());
 
 store.dispatch(sortByAmount()); //amount
-store.dispatch(sortByDate())// date
+store.dispatch(sortByAmount()); //amount
+store.dispatch(sortByAmount()); //amount
+// store.dispatch(sortByAmount()); //amount
+// store.dispatch(sortByAmount()); //amount
+// store.dispatch(sortByDate())// date
 const demoState = {
   expenses: [{
     id: 'afdafd',
