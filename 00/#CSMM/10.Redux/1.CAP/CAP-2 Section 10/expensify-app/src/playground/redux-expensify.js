@@ -169,14 +169,14 @@ store.subscribe(() => {
   // console.log(store.getState())
 
 })
-const expenseOne= store.dispatch(addExpense({description:'Rent',amount:100}))
-const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+const expenseOne= store.dispatch(addExpense({description:'Rent',amount:100,createdAt:1000}))
+const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 ,created:-1000}))
 // store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // // console.log(expenseOne.expense.id)
 // // store.dispatch(editExpense(expenseTwo.expense.id,{amount:5000}))
 // store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 // // Challenge time
-store.dispatch(setTextFilter('rent'));
+// store.dispatch(setTextFilter('rent'));
 // store.dispatch(setTextFilter());
 
 // store.dispatch(sortByAmount()); //amount
@@ -188,9 +188,9 @@ store.dispatch(setTextFilter('rent'));
 // store.dispatch(sortByDate())// date
 // store.dispatch(sortByDate())// date
 // // store.dispatch(sortByAmount()); //amount
-// store.dispatch(setStartDate(125)) // startDate 125 
+store.dispatch(setStartDate(0)) // startDate 125 
 // store.dispatch(setStartDate())// startDate undefind
-// store.dispatch(setEndDate(1250))// endate 1250
+store.dispatch(setEndDate(1250))// endate 1250
 
 
 const demoState = {
