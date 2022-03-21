@@ -41,7 +41,7 @@ const sortByDate = () => ({
 })
 // SORT_BY_AMOUNT
 const sortByAmount = () => ({
-  type: 'SORT_BY_DATE',
+  type: 'SORT_BY_AMOUNT',
   sortBy:'Amount'
 })
 // SET_START_DATE
@@ -112,11 +112,11 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
         ...state,
         sortBy:action.sortBy
       }
-    // case 'SORT_BY_DATE':
-    //   return {
-    //     ...state,
-    //     sortBy:action.sortBy
-    //   }
+    case 'SORT_BY_DATE':
+      return {
+        ...state,
+        sortBy:action.sortBy
+      }
     default:
       return state;
   }
@@ -147,7 +147,11 @@ store.dispatch(sortByAmount()); //amount
 store.dispatch(sortByAmount()); //amount
 // store.dispatch(sortByAmount()); //amount
 // store.dispatch(sortByAmount()); //amount
-// store.dispatch(sortByDate())// date
+store.dispatch(sortByDate())// date
+store.dispatch(sortByDate())// date
+store.dispatch(sortByDate())// date
+// store.dispatch(sortByAmount()); //amount
+
 const demoState = {
   expenses: [{
     id: 'afdafd',
