@@ -190,15 +190,8 @@ const demoState = {
     endDate:undefined
   }
 }
- 
-/**
- * [
-    {
-        "id": "630d04ec-2b0b-414f-94c8-4f494a169a1b",
-        "description": "Coffee",
-        "note": "",
-        "amount": 300,
-        "createdAt": 0
-    }
-]
- */
+ /**
+  * Recap what I did here 
+  * The expense Reducer is already complete so here I finished the filers reducer firtup need the ablity
+  * to change sortB and this is done via two actions SORT_BY_DATE and SORT_BY_AMOUNT ....etc
+  */
