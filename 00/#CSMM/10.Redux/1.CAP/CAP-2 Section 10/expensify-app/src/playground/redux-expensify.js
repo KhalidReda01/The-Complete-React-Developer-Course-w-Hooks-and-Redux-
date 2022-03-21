@@ -163,17 +163,18 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
  * Only Start DAte is a number we actaully filter out expese out here 
  * 
  */
-const getVisibleExpenses = (expenses, {text,sortBy,startDate,endDate}) => {
+const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
+  // console.log(text)
   // console.log('print expense')
   // console.log(expenses)
   return expenses.filter((expense) => {
     // console.log('Understanding')
     // console.log(endDate)
     // console.log(typeof endDate !=='number')
-    
+    // console.log(expense.description.includes(text))
     const startDateMatch=typeof startDate !=='number'|| expense.createdAt>=startDate;
     const endDateMatch=typeof endDate!=='number'||expense.createdAt<=endDate;
-    const textMatch = true;
+    const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
     // Challenge time
     // figure out if  expenses.description has the text variable string inside of it 
     // includes 
