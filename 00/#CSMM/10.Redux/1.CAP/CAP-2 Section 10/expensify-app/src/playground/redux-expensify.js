@@ -170,9 +170,14 @@ const getVisibleExpenses = (expenses, {text,sortBy,startDate,endDate}) => {
     // console.log('Understanding')
     // console.log(endDate)
     // console.log(typeof endDate !=='number')
+    
     const startDateMatch=typeof startDate !=='number'|| expense.createdAt>=startDate;
     const endDateMatch=typeof endDate!=='number'||expense.createdAt<=endDate;
-    const textMatch=true;
+    const textMatch = true;
+    // Challenge time
+    // figure out if  expenses.description has the text variable string inside of it 
+    // includes 
+    // convert both strings to lower case 
     return startDateMatch && endDateMatch && textMatch;
   })
 }
@@ -199,7 +204,7 @@ const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300
 // // store.dispatch(editExpense(expenseTwo.expense.id,{amount:5000}))
 // store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 // // Challenge time
-// store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter('rent'));
 // store.dispatch(setTextFilter());
 
 // store.dispatch(sortByAmount()); //amount
@@ -211,9 +216,12 @@ const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300
 // store.dispatch(sortByDate())// date
 // store.dispatch(sortByDate())// date
 // // store.dispatch(sortByAmount()); //amount
-store.dispatch(setStartDate(0)) // startDate 125 
-// store.dispatch(setStartDate())// startDate undefind
+// store.dispatch(setStartDate(0)) // startDate 125 
+// // store.dispatch(setStartDate(0)) // startDate 125 
+// // // store.dispatch(setStartDate())// startDate undefind
 // store.dispatch(setEndDate(999))// endate 1250
+// Sorting by date working really well now Congrats I fully got it 
+// but come back again to parctice again parctice never end 
 
 
 const demoState = {
