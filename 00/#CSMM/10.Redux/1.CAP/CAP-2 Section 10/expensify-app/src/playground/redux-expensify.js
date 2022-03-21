@@ -164,12 +164,12 @@ const filterReducer = (state=filterReducerDefaultState,action) => {
  * 
  */
 const getVisibleExpenses = (expenses, {text,sortBy,startDate,endDate}) => {
-  console.log('print expense')
-  console.log(expenses)
+  // console.log('print expense')
+  // console.log(expenses)
   return expenses.filter((expense) => {
-    console.log('Understanding')
-    console.log(endDate)
-    console.log(typeof endDate !=='number')
+    // console.log('Understanding')
+    // console.log(endDate)
+    // console.log(typeof endDate !=='number')
     const startDateMatch=typeof startDate !=='number'|| expense.createdAt>=startDate;
     const endDateMatch=typeof endDate!=='number'||expense.createdAt<=endDate;
     const textMatch=true;
@@ -190,7 +190,9 @@ store.subscribe(() => {
   // console.log(store.getState())
 
 })
-const expenseOne= store.dispatch(addExpense({description:'Rent',amount:100,createdAt:1000}))
+
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: 1000 }))
+// Found the bug here 
 const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300 ,created:-1000}))
 // store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // // console.log(expenseOne.expense.id)
@@ -211,7 +213,7 @@ const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 300
 // // store.dispatch(sortByAmount()); //amount
 store.dispatch(setStartDate(0)) // startDate 125 
 // store.dispatch(setStartDate())// startDate undefind
-store.dispatch(setEndDate(999))// endate 1250
+// store.dispatch(setEndDate(999))// endate 1250
 
 
 const demoState = {
