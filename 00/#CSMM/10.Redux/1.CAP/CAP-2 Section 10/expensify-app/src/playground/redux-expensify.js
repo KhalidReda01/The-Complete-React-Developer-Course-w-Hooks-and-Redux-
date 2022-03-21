@@ -180,6 +180,10 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
     // includes 
     // convert both strings to lower case 
     return startDateMatch && endDateMatch && textMatch;
+  }).sort((a, b) => {
+    if (sortBy === 'date') {
+      return a.createAt<b.createAt?1:-1
+    }
   })
 }
 // Store Creation
