@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
@@ -24,5 +25,9 @@ const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
 console.log(visibleExpenses)
 console.log(store.getState());
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
 
+ReactDOM.render(<AppRouter />, document.getElementById('app'));
+/**
+ * React-Redux
+ * yarn add react-redux@5.0.5
+ */
