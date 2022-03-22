@@ -25,8 +25,13 @@ const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
 console.log(visibleExpenses)
 console.log(store.getState());
 
-
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+const jsx = (
+  <Provider>
+    <AppRouter store={store} />
+  </Provider>
+ 
+)
+ReactDOM.render(jsx, document.getElementById('app'));
 /**
  * React-Redux
  * yarn add react-redux@5.0.5
