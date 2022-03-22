@@ -1,8 +1,12 @@
 import React from 'react';
-// state = {
-//   description:''
-// }
 export default class Expense extends React.Component{
+  state = {
+    description:''
+  }
+  onDescriptionChange = (e) => {
+    const description = e.target.value;
+    this.setState(()=>({description}))
+  }
   render() {
     return (
       <div>
