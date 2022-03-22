@@ -1,5 +1,7 @@
 import React from 'react';
-
+// state = {
+//   description:''
+// }
 export default class Expense extends React.Component{
   render() {
     return (
@@ -18,9 +20,10 @@ export default class Expense extends React.Component{
           <textarea
             placeholder="Add a note for your expense (optional)"
           >
-          <button>Add Expense</button>
 
           </textarea>
+          <button>Add Expense</button>
+
         </form>
       </div>
     )
