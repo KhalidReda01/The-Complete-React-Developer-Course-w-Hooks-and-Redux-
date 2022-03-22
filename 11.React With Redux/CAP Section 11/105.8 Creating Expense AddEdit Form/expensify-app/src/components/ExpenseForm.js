@@ -1,4 +1,7 @@
 import React from 'react';
+
+// Challenge Time
+// setup onChange and value for textarea
 export default class Expense extends React.Component{
   state = {
     description:''
