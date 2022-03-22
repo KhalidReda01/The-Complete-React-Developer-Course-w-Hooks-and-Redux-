@@ -17,10 +17,13 @@ export default class Expense extends React.Component{
     e.persist()
     this.setState(()=>({note:e.target.value}))
   }
-  
+  //regex101.com
+  /**^\d*(\.\d{0,2}$)?
+   * 
+   */
   onAmountChange = (e) => {
     const amount = e.target.value;
-    if () {
+    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
       this.setState(()=>({amount}))
     }
   }
