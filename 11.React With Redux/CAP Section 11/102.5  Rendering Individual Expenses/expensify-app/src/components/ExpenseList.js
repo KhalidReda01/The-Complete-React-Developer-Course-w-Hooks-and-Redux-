@@ -4,10 +4,10 @@ import ExpenseListItem from './ExpenseListItem';
 const ExpenseList = (props) => (
   <div>
     <h1>Expense List</h1>
-    {props.expenses.map(() => {
-      {/* return <ExpenseListItem expense={expense }/> */}
-      return <ExpenseListItem expense={...expense }/>
-    })}
+    
+    {/* {props.expenses.map((expense) => {
+      return <ExpenseListItem key ={expense.id} expense={...expense }/>
+    })} */}
   </div>
 )
 const mapStateToProps=(state) => {
