@@ -23,6 +23,7 @@
     "node-sass": "^7.0.1",
     "normalize.css": "7.0.0",
     "react": "16.0.0",
+    "react-addons-shallow-compare": "15.6.0",
     "react-dates": "12.7.0",
     "react-dom": "16.0.0",
     "react-modal": "2.2.2",

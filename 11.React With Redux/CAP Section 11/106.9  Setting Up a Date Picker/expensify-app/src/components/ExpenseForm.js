@@ -1,7 +1,8 @@
 import React from 'react';
-
-// Challenge Time
-// setup onChange and value for textarea
+import moment from 'moment';
+// const date = new Date();
+const now = moment();
+console.log(now)
 export default class Expense extends React.Component{
   state = {
     description: '',
@@ -17,10 +18,7 @@ export default class Expense extends React.Component{
     e.persist()
     this.setState(()=>({note:e.target.value}))
   }
-  //regex101.com
-  /**^\d*(\.\d{0,2}$)?
-   * 
-   */
+ 
   onAmountChange = (e) => {
     const amount = e.target.value;
     if (amount.match(/^\d*(\.\d{0,2})?$/)) {

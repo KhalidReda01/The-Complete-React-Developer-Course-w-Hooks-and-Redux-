@@ -34,16 +34,5 @@ ReactDOM.render(jsx, document.getElementById('app'));
  * momentjs.com
  * airbnb react-dates
  * yarn add moment@2.18.1 react-dates@12.7.0
- */
-/**
- * This course is oudtated but I will complete it ther is not other option otherwise wasted the time and effort that I do with this course untill now
- * yarn add v1.22.5
-[1/4] Resolving packages...
-Couldn't find any versions for "react-date" that matches "12.7.0"
-? Please choose a version of "react-date" from this list: (Use arrow keys)
-> 2.0.0
-  1.0.2
-  1.0.1
-  1.0.0
-  It's a type there is not date It's dates 
+ * yarn add react-addons-shallow-compare@15.6.0
  */
