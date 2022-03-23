@@ -1,8 +1,9 @@
 import React from 'react';
 import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
 // const date = new Date();
 const now = moment();
-console.log(now)
+console.log(now.format('MMM Do ,YYYY'))
 export default class Expense extends React.Component{
   state = {
     description: '',
