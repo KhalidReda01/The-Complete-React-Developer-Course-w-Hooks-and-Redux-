@@ -32,6 +32,9 @@ export default class Expense extends React.Component{
   onDateChange = (createdAt) => {
     this.setState(()=>({createdAt}))
   }
+  onFocusChange = ({ focused }) => {
+    this.setState(()=>({calenderFocused:focused}))
+  }
   render() {
     return (
       <div>
@@ -55,6 +58,7 @@ export default class Expense extends React.Component{
             onDateChange
             focused={this.state.calenderFocused}
             onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
           />
           <textarea
             placeholder="Add a note for your expense (optional)"
