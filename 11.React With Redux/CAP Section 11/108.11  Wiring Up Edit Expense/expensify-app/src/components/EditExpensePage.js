@@ -17,11 +17,14 @@ const EditExpensePage = (props) => {
           props.history.push('./')
           console.log('updated',expense)
         }}
+        
       />
       {/* Editing the expense with id of {props.match.params.id} */}
     </div>
   );
 };
+// Challenge Time
+//Remove expense via dispatch and then redirect to dashboard 
 const mapStateToProps = (state,props) => {
   return {
     expense: state.expenses.find(() => {
