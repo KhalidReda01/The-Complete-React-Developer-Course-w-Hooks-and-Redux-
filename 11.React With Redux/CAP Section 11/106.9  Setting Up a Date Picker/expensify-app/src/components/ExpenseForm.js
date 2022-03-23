@@ -75,3 +75,6 @@ export default class Expense extends React.Component{
     )
   }
 }
+/*
+put this at your mind you at this  moment are attending the section so you can study it tomrrow easily that's it so Take it easy 
+*/
