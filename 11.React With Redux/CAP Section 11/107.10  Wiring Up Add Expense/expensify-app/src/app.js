@@ -3,9 +3,7 @@
  * 107/10 Wiring Up Add Expense 
  * 
  */
-/**
- * I was right Even Andrew code have the same effect the picker is not working that's why I don't prefer  the outdated course 
- */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
