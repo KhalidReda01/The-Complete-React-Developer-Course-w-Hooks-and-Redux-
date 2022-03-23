@@ -9,6 +9,10 @@ const EditExpensePage = (props) => {
       <ExpenseForm
         expense={props.expense}
         onSubmit={(expense) => {
+          //Challenge Time
+          //Dispatch the action to edit the expense 
+          //Redirect to the dashboard 
+        
           console.log('updated',expense)
         }}
       />
