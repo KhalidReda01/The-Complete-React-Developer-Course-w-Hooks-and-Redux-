@@ -42,7 +42,7 @@ import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
-
+import getVisibleExpense from './selectors/expenses'
 import configureStore from './store/configureStore';
 
 import 'normalize.css/normalize.css'
@@ -57,5 +57,6 @@ const store = configureStore()
 //  store.dispatch(setTextFilter({text:'bill'}))// yes correct print 2 items 
  store.dispatch(setTextFilter({text:'Water '}))
  // getVisibleExpense -> print visible one to sreen 
+ getVisibleExpense()
 console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
