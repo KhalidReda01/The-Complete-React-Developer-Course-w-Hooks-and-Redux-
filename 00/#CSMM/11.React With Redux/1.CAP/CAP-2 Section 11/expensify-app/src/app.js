@@ -5,7 +5,7 @@
  * 
 98. Section Intro: Connecting React and Redux 
 
-99. Organizing Redux
+99. Organizing Redux Done Challenge Done 
 
 100. The Higher Order Component
 
@@ -54,15 +54,15 @@ const store = configureStore()
  store.dispatch(setTextFilter('water'))
  store.dispatch(setTextFilter('bill'))
 const state=store.getState()
-// const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
-// console.log(visibleExpense)
-store.subscribe(() => 
-{
-  const state=store.getState()
-  const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
+const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
+console.log(visibleExpense)
+// store.subscribe(() => 
+// {
+//   const state=store.getState()
+//   const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
 
-  console.log(visibleExpense)
+//   console.log(visibleExpense)
 
-})
+// })
 
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
