@@ -44,6 +44,11 @@ import configureStore from './store/configureStore';
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
- const store=configureStore()
+const store = configureStore()
+ // Challenge Time 
+ // addExpense -> Water bill 
+ // addExpense -> Gas bill 
+ // setTextFilter ->bill  (2 times)-> water (1 item)
+ // getVisibleExpense -> print visible one to sreen 
 console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
