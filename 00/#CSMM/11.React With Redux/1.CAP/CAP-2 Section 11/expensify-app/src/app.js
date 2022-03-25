@@ -39,7 +39,7 @@ import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses'
-// okay even now state is not defined 
+
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const store = configureStore()
