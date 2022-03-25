@@ -59,7 +59,7 @@ const store = configureStore()
  // getVisibleExpense -> print visible one to sreen 
 // getVisibleExpense()/// this part this function It's what bring those together
 const state=store.getState()
-const visibleExpense = getVisibleExpenses(state.expenses,state.fiters)
+const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
  console.log(visibleExpense)
 console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
