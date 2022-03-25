@@ -56,13 +56,6 @@ const store = configureStore()
 const state=store.getState()
 const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
 console.log(visibleExpense)
-// store.subscribe(() => 
-// {
-//   const state=store.getState()
-//   const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
 
-//   console.log(visibleExpense)
-
-// })
 
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
