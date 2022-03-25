@@ -6,4 +6,14 @@ const Info = (props) => (
     <p>The info is :{props.info }</p>
   </div>
 )
-ReactDOM.render(<Info info="These are the details" />,document.getElementById('app'))
+const withAdminWarning = (WrappedComponent) => {
+  return (props)=> (
+    <div>
+      <p>This is private info. Pleae don't share !</p>
+      <WrappedComponent {...props }/>
+    </div>
+  )
+}
+const AdminInfo=withAdminWarning(Info)
+// ReactDOM.render(<Info info="These are the details" />,document.getElementById('app'))
+ReactDOM.render(<AdminInfo info="These are the details" />,document.getElementById('app'))
