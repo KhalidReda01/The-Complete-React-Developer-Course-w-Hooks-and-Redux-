@@ -48,18 +48,19 @@ import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const store = configureStore()
- // Challenge Time
- // addExpense -> Water bill 
  store.dispatch(addExpense({description:'Water bill '}))
- // addExpense -> Gas bill 
  store.dispatch(addExpense({description:'Gas bill'}))
- // setTextFilter ->bill  (2 itmes)-> water (1 item)
- store.dispatch(setTextFilter('bill'))// yes correct print 2 items 
-//  store.dispatch(setTextFilter('Water'))
- // getVisibleExpense -> print visible one to sreen 
-// getVisibleExpense()/// this part this function It's what bring those together
-const state=store.getState()
-const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
- console.log(visibleExpense)
-console.log(store.getState())
+ store.dispatch(setTextFilter('water'))
+ store.dispatch(setTextFilter('water'))
+ store.dispatch(setTextFilter('water'))
+// const state=store.getState()
+// const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
+// console.log(visibleExpense)
+store.subscribe(() => {
+  const state = store.getState();
+  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
+  console.log(visibleExpenses)
+
+})
+ 
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
