@@ -54,9 +54,11 @@ const store = configureStore()
  // addExpense -> Gas bill 
  store.dispatch(addExpense({description:'Gas bill'}))
  // setTextFilter ->bill  (2 itmes)-> water (1 item)
-//  store.dispatch(setTextFilter({text:'bill'}))// yes correct print 2 items 
- store.dispatch(setTextFilter({text:'Water '}))
+ store.dispatch(setTextFilter('bill'))// yes correct print 2 items 
+//  store.dispatch(setTextFilter('Water'))
  // getVisibleExpense -> print visible one to sreen 
- getVisibleExpense()
-console.log(store.getState())
+// getVisibleExpense()/// this part this function It's what bring those together
+const visibleExpense = getVisibleExpense(state.expenses, state.filters)
+ console.log(visibleExpense)
+// console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
