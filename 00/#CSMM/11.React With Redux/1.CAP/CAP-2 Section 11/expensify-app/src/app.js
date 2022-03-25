@@ -40,15 +40,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
+import { addExpense } from './actions/expenses';
+import { setTextFilter } from './actions/filters';
+
 import configureStore from './store/configureStore';
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const store = configureStore()
- // Challenge Time 
+ // Challenge Time
  // addExpense -> Water bill 
+ store.dispatch(addExpense({description:'Water bill '}))
  // addExpense -> Gas bill 
- // setTextFilter ->bill  (2 times)-> water (1 item)
+ store.dispatch(addExpense({description:'Gas bill'}))
+ // setTextFilter ->bill  (2 itmes)-> water (1 item)
+//  store.dispatch(setTextFilter({text:'bill'}))// yes correct print 2 items 
+ store.dispatch(setTextFilter({text:'Water '}))
  // getVisibleExpense -> print visible one to sreen 
 console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
