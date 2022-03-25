@@ -29,6 +29,11 @@ const withAdminWarning = (WrappedComponent) => {
     </div>
   )
 }
-const AdminInfo=withAdminWarning(Info)
+// Challenge Time
+// requireAuthentication
 
-ReactDOM.render(<AdminInfo isAdmin={true} info="These are the deaitls"/>,document.getElementById('app'))
+const AdminInfo = withAdminWarning(Info)
+const AuthInfo=requireAuthentication 
+
+// ReactDOM.render(<AdminInfo isAdmin={true} info="These are the deaitls"/>,document.getElementById('app'))
+ReactDOM.render(<AuthInfo isAuthenticated={true} info="These are the deaitls"/>,document.getElementById('app'))
