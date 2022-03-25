@@ -7,7 +7,7 @@
 
 99. Organizing Redux Done Challenge Done 
 
-100. The Higher Order Component
+100. The Higher Order Component 
 
 101. Connecting Store and Component with React-Redux
 
@@ -31,12 +31,7 @@
 
 
  */
-/**
- * 99/2 Organizing Redux 
- *  Write all my notes at paper untill now so no need to write anything here Okay keep goina and you can make mix but I think I fully understand what I'm doing but just notes to remember later and actually master Redux 
- * 
- * 
- */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
