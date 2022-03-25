@@ -3,7 +3,7 @@
  * CAP 2nd time Section 11 React With Redux 
  * 
  * 
-98. Section Intro: Connecting React and Redux
+98. Section Intro: Connecting React and Redux 
 
 99. Organizing Redux
 
@@ -30,6 +30,11 @@
 110. Filtering by Dates
 
 
+ */
+/**
+ * 99/2 Organizing Redux 
+ *  
+ * 
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
