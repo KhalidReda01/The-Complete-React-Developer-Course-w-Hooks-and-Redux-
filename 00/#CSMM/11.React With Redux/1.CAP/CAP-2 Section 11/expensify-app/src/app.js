@@ -58,7 +58,8 @@ const store = configureStore()
 //  store.dispatch(setTextFilter('Water'))
  // getVisibleExpense -> print visible one to sreen 
 // getVisibleExpense()/// this part this function It's what bring those together
-const visibleExpense = getVisibleExpenses(state.expenses, state.filters)
+const state=store.getState()
+const visibleExpense = getVisibleExpenses(state.expenses,state.fiters)
  console.log(visibleExpense)
 console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
