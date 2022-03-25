@@ -24,8 +24,8 @@ const Info = (props) => (
 const withAdminWarning = (WrappedComponent) => {
   return (props) => (
     <div>
-     {props.isAdmin&&<p> This is Private info. Please don't share !</p>} 
-      <WrappedComponent {...props}/>
+     {props.isAdmin?<p> This is Private info. Please don't share !</p>:<WrappedComponent {...props}/>} 
+      
     </div>
   )
 }
