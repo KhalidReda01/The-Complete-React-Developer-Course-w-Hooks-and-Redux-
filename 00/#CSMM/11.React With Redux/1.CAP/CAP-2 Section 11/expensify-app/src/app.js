@@ -40,11 +40,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
+import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
-import getVisibleExpense from './selectors/expenses'
-import configureStore from './store/configureStore';
-
+import getVisibleExpenses from './selectors/expenses'
+// okay even now state is not defined 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const store = configureStore()
@@ -58,7 +58,7 @@ const store = configureStore()
 //  store.dispatch(setTextFilter('Water'))
  // getVisibleExpense -> print visible one to sreen 
 // getVisibleExpense()/// this part this function It's what bring those together
-const visibleExpense = getVisibleExpense(state.expenses, state.filters)
+const visibleExpense = getVisibleExpenses(state.expenses, state.filters)
  console.log(visibleExpense)
-// console.log(store.getState())
+console.log(store.getState())
 ReactDOM.render(<AppRouter/>, document.getElementById('app'));
