@@ -7,9 +7,9 @@
 
 99. Organizing Redux Done Challenge Done 
 
-100. The Higher Order Component 
+100. The Higher Order Component  Done Challenge Done
 
-101. Connecting Store and Component with React-Redux
+101. Connecting Store and Component with React-Redux 
 
 102. Rendering Individual Expenses
 
