@@ -56,7 +56,9 @@ store.subscribe(() => {
  store.dispatch(setTextFilter('water'))
 store.dispatch(setTextFilter('bill'))
 store.dispatch(setTextFilter('water'))
-
+setTimeout(() => {
+  store.dispatch(setTextFilter('rent'))
+})
 const jsx = (
   <Provider store={store}>
     <AppRouter/>
