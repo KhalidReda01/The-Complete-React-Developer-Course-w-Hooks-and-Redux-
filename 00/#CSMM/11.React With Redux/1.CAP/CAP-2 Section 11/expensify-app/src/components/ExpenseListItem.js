@@ -1,8 +1,8 @@
 import React from "react";
-const ExpenseListItem = ({ description,amount,createAt}) => (
+const ExpenseListItem = (props) => (
   <div>
-    <h3>{description}</h3>
-    <p>{amount}-{createAt}</p>
+    <h3>{props.description}</h3>
+    <p>{props.amount}-{props.createAt}</p>
   </div>
 )
 export default ExpenseListItem
