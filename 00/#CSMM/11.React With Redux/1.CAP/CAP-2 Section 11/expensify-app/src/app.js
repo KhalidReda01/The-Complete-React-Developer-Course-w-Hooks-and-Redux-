@@ -9,9 +9,9 @@
 
 100. The Higher Order Component  Done Challenge Done
 
-101. Connecting Store and Component with React-Redux 
+101. Connecting Store and Component with React-Redux Done No Challenge Exist
 
-102. Rendering Individual Expenses
+102. Rendering Individual Expenses Start
 
 103. Controlled Inputs for Filters
 
@@ -23,7 +23,7 @@
 
 107. Wiring up Add Expense
 
-108. Wiring up Edit Expense
+108. Wiring up Edit Expense 
 
 109. Redux Dev Tools
 
