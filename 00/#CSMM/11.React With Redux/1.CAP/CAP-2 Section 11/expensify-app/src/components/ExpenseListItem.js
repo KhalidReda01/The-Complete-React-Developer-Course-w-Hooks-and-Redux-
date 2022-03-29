@@ -8,7 +8,3 @@ const ExpenseListItem = ({ description, amount, createdAt }) => (
 
 export default ExpenseListItem;
 
-// export default ExpenseListItem;
-/**
- * Okay here my code is identical to the source Code 
- */

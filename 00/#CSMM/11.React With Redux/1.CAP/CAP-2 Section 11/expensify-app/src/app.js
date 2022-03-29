@@ -44,7 +44,7 @@ import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 const store = configureStore()
- store.dispatch(addExpense({description:'Water bill '}))
+store.dispatch(addExpense({description:'Water bill',amount:4500}))
 store.dispatch(addExpense({ description: 'Gas bill' }))
 store.subscribe(() => {
   const state=store.getState()
@@ -56,9 +56,9 @@ store.subscribe(() => {
  store.dispatch(setTextFilter('water'))
 store.dispatch(setTextFilter('bill'))
 store.dispatch(setTextFilter('water'))
-// setTimeout(() => {
-//   store.dispatch(setTextFilter('rent'))
-// },2000)
+setTimeout(() => {
+  store.dispatch(setTextFilter('bill'))
+},2000)
 const jsx = (
   <Provider store={store}>
     <AppRouter/>
