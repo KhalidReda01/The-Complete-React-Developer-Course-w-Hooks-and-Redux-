@@ -21,6 +21,7 @@ store.dispatch(addExpense({ description: 'Gas bill' }));
 store.dispatch(setTextFilter('water'));
 store.dispatch(setTextFilter('bill'));
 store.dispatch(setTextFilter('water'));
+store.dispatch(setTextFilter('bill'));
 console.log(store.getState());
 
 // const state = store.getState();
@@ -33,7 +34,7 @@ console.log(store.getState());
 //     console.log(visibleExpenses);
 //   });
 setTimeout(() => {
-  store.dispatch(setTextFilter('bill'));
+  store.dispatch(setTextFilter('water'));
 }, 3000);
 const jsx = (
   <Provider store={store}>
