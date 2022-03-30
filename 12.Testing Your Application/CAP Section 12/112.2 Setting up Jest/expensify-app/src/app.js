@@ -26,3 +26,9 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById('app'));
+/**
+ *   112.2 Setting up jest
+ * yarn add jest@20.0.4
+ * yarn run test 
+ * yarn test 
+ */
