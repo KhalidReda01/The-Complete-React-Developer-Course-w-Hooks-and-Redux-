@@ -31,4 +31,5 @@ ReactDOM.render(jsx, document.getElementById('app'));
  * yarn add jest@20.0.4
  * yarn run test 
  * yarn test 
+ * https://jestjs.io/docs/api
  */
