@@ -1,6 +1,6 @@
 const add = (a, b) => a + b;
 // Challenge Time 
-const generateGreeting = (name) => `Hello ${name}!`;
+const generateGreeting = (name='Anonymous') => `Hello ${name}!`;
 
 test('Should add two numbers', () => {
   const result = add(3, 4);
@@ -8,6 +8,11 @@ test('Should add two numbers', () => {
 }) 
 
 test('Should generate greeting from name', () => {
-  const result = generateGreeting(`Khalid`);
+  const result = generateGreeting('Khalid');
   expect(result).toBe('Hello Khalid!')
+})
+
+test('Sould generate greeting for no name', () => {
+  const result = generateGreeting();
+  expect(result).toBe('Hello Anonymous!')
 })
