@@ -32,5 +32,6 @@ ReactDOM.render(jsx, document.getElementById('app'));
  * yarn run test 
  * yarn test 
  * https://jestjs.io/docs/api
- * 
+ * yarn test --watch
+ * yarn test -- --watch // old versin this course is outdated 
  */
