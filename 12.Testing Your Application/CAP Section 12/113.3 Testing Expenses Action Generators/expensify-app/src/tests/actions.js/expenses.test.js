@@ -36,10 +36,18 @@ test('should setup add expense action object with provided values', () => {
     }
   })
 })
-//Challenge Time 2nd
-//Call addExpense with not data
-//Assert the value of the return object
-test('should setup add expense action object with default values', () => {
 
+test('should setup add expense action object with default values', () => {
+  const action = addExpense();
+  expect(action).toEqual({
+    type: 'ADD_EXPENSE',
+    expense: {
+      id: expect.any(String),
+      description: '',
+      note : '',
+      amount : 0,
+      createdAt : 0
+    }
+  })
   
 })
