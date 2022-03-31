@@ -28,5 +28,9 @@ const jsx = (
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
  *   113.3 Testing Expenses Action Generators 
- * 
+ * console
+ * {}==={} // false 
+ * []===[]//false
+ * so instead we need to do instead check the propertires on those objects and see if they're all equal 
+ * toEqual method -> go over array or object and assert that all of the properties are the same 
  */
