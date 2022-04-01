@@ -28,5 +28,7 @@ const jsx = (
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
  *   114.4 Testing Filters Action Generators 
+ *   Okay you can keep going Break the barrier 
+ *   Find the time tomrrow early this is marthon not sprint 
  *
  */
