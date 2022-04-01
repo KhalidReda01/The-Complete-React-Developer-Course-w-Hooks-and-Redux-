@@ -13,7 +13,7 @@ by ***Andrew Mead***
 19 sections • 200 lectures • 39h 11m total length
 
 ### Section 1: Welcome
-0 / 2 | 10min
+2 / 2 | 10min
 •	 
 1. Welcome & Asking Good Questions
 5min
@@ -21,7 +21,7 @@ by ***Andrew Mead***
 2. "Why should I learn React?"
 5min
 ### Section 2: Setting up Your Environment
-0 / 3 | 7min
+3 / 3 | 7min
 •	 
 3. Section Intro: Setting up Your Environment
 1min
@@ -33,7 +33,7 @@ by ***Andrew Mead***
 4min
 
 ### Section 3: Hello React
-0 / 16 | 3hr 45min
+16 / 16 | 3hr 45min
 •	 
 6. Section Intro: Hello React
 2min
@@ -98,7 +98,7 @@ by ***Andrew Mead***
 9min
 
 ### Section 4: React Components
-0 / 17 | 3hr
+17 / 17 | 3hr
 •	 
 22. Section Intro: React Components
 1min
@@ -164,7 +164,7 @@ by ***Andrew Mead***
 38. Summary: Props vs. State
 4min
 ### Section 5: Stateless Functional Components
-0 / 8 | 1hr 23min
+8 / 8 | 1hr 23min
 •	 
 39. Section Intro: Stateless Functional Components
 1min
@@ -199,7 +199,7 @@ by ***Andrew Mead***
 
 
 ### Section 6: Webpack
-0 / 12 | 2hr 16min
+12 / 12 | 2hr 16min
 •	 
 47. Section Intro: Webpack
 1min
@@ -247,7 +247,7 @@ by ***Andrew Mead***
 18min
 
 ### Section 7: Using a Third-Party Component
-0 / 4 | 29min
+4 / 4 | 29min
 •	 
 59. Section Intro: Using a Third-Party Component
 1min
@@ -264,7 +264,7 @@ by ***Andrew Mead***
 2min
 
 ### Section 8: Styling React
-0 / 11 | 2hr 8min
+11 / 11 | 2hr 8min
 •	 
 63. Section Intro: Styling React
 1min
@@ -309,7 +309,7 @@ by ***Andrew Mead***
 3min
 
 ### Section 9: React-Router
-0 / 9 | 1hr 35min
+9 / 9 | 1hr 35min
 •	 
 74. Section Intro: React Router
 3min
@@ -345,7 +345,7 @@ by ***Andrew Mead***
 18min
 
 ### Section 10: Redux
-0 / 15 | 3hr
+6 / 15 | 3hr
 •	 
 83. Section Intro: Redux
 2min
