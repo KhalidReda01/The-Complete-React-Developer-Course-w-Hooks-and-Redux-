@@ -4,6 +4,7 @@ import ExpenseDashboardPage from "../components/ExpenseDashboardPage";
 import AddExpensePage from "../components/AddExpensePage";
 import EditExpensePage from "../components/EditExpensePage";
 import HelpPage from "../components/HelpPage";
+import NotFoundPage from "../components/NotFoundPage";
 /**
  * Challenge Time
  * create 6 new files for the 6 components 
@@ -14,12 +15,7 @@ import HelpPage from "../components/HelpPage";
 
 
 
-const NotFoundPage = () => (
-  <div>
-    404!
-    <Link to="/">Go Home</Link>
-  </div>
-)
+
 
 const Header = () => (
   <header>
