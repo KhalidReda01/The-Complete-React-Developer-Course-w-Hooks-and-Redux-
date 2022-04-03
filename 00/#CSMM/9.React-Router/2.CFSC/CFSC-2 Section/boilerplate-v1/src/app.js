@@ -33,13 +33,13 @@ const NotFoundPage = () => (
 )
 const routes = (
   <BrowserRouter>
-    <switch>
+    <Switch>
       <Route path="/" component={ExpenseDashboardPage} exact={true} />
       <Route path="/create" component={AddExpensePage} />
       <Route path="/edit" component={EditExpensePage} />
       <Route path="/help" component={HelpPage} />
       <Route component={NotFoundPage}/>
-    </switch>
+    </Switch>
   </BrowserRouter>
 )
 ReactDOM.render(routes, document.getElementById('app'));
