@@ -39,7 +39,8 @@ const Header = () => (
 )
 const routes = (
   <BrowserRouter>
-    <Header/>
+    <div>
+       <Header/>
     <Switch>
       <Route path="/" component={ExpenseDashboardPage} exact={true} />
       <Route path="/create" component={AddExpensePage} />
@@ -47,6 +48,8 @@ const routes = (
       <Route path="/help" component={HelpPage} />
       <Route component={NotFoundPage}/>
     </Switch>
+    </div>
+   
   </BrowserRouter>
 )
 ReactDOM.render(routes, document.getElementById('app'));
