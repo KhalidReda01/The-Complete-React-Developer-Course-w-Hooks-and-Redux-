@@ -32,6 +32,13 @@ const NotFoundPage = () => (
     <Link to="/">Go Home</Link>
   </div>
 )
+/**
+ * Challenge Time 
+ * Link to home page 
+ * Link to the create Expense Page 
+ * Link to the edit page 
+ * Link to the help page  * 
+ */
 const Header = () => (
   <header>
     <h1>Expensify</h1>
