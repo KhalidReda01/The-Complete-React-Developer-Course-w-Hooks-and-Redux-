@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
 import ExpenseDashboardPage from "../components/ExpenseDashboardPage";
 import AddExpensePage from "../components/AddExpensePage";
 import EditExpensePage from "../components/EditExpensePage";
+import HelpPage from "../components/HelpPage";
 /**
  * Challenge Time
  * create 6 new files for the 6 components 
@@ -12,11 +13,7 @@ import EditExpensePage from "../components/EditExpensePage";
 
 
 
-const HelpPage = () => (
-  <div>
-    This is my Help Page
-  </div>
-)
+
 const NotFoundPage = () => (
   <div>
     404!
