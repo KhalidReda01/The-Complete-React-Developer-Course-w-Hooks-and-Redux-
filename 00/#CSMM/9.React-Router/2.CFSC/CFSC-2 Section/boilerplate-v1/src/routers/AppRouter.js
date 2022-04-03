@@ -1,16 +1,13 @@
 import React from "react";
-import { BrowserRouter,Route,Switch,Link,NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
+import ExpenseDashboardPage from "../components/ExpenseDashboardPage";
 /**
  * Challenge Time
  * create 6 new files for the 6 components 
  * setup imports , component default export 
  * import into the AppRouter so they can be used 
  */
-const ExpenseDashboardPage = () => (
-  <div>
-    This is from my dashboard component
-  </div>
-)
+
 const AddExpensePage = () => (
   <div>
     This is from my add expense component
