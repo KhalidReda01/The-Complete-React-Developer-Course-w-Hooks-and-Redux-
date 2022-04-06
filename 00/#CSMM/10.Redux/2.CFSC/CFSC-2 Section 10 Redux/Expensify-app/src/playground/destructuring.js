@@ -13,12 +13,15 @@
 // if (city && temp) {
 //   console.log(`It's ${temp} in ${city}`)
 // }
-const books = {
-  title: 'Ego is the Enemy',
-  author: 'Ryan Holiday',
-  publisher: {
-    name:'Penguin'
-  }
-}
-const {name:publisherName='Self-published' }=books.publisher
-console.log(publisherName)
+// const books = {
+//   title: 'Ego is the Enemy',
+//   author: 'Ryan Holiday',
+//   publisher: {
+//     name:'Penguin'
+//   }
+// }
+// const {name:publisherName='Self-published' }=books.publisher
+// console.log(publisherName)
+/**
+ * 89 ES6 Array Destructuring 
+ */
