@@ -1,5 +1,5 @@
 /**
- * 87 Subsribing and Dynamic Actions
+ * 88 ES6 Object Destructuring 
  */
 import { createStore } from "redux";
 const store = createStore((state = { count: 0 }, action) => {
