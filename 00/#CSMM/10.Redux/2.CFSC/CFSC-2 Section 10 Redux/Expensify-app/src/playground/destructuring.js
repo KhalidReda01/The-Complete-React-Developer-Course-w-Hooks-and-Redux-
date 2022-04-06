@@ -29,5 +29,7 @@
 // console.log(`You are in ${address[1]} ${address[2]}`)
 // const [, city,state ,] = address;
 // console.log(`You are in ${city} ${state}`)
-const item = ['Coffee(not)', '$2.00', '$2.50', '$2.75']
+const item = ['Coffe (hot)', '$2.00', '$2.50', '$2.75']
+const [itemName,,itemPrice] = item;
 console.log(`A meduim Coffe (hot) costs $2.50`)
+console.log(`A meduim ${itemName} costs ${itemPrice}`)
