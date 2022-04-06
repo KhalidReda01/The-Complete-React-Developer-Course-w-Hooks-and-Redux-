@@ -27,3 +27,5 @@
  */
 const address = ['15 Imam street', 'Markez minia Elnasr', 'Mansura', '23435356']
 console.log(`You are in ${address[1]} ${address[2]}`)
+const [, city,state ,] = address;
+console.log(`You are in ${city} ${state}`)
