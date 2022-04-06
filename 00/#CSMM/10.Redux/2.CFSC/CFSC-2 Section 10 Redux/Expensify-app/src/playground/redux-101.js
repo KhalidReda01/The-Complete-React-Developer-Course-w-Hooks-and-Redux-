@@ -24,7 +24,7 @@ const store = createStore((state = { count: 0 }, action) => {
 
   
 })
-store.subscribe(() => {
+const unsubscribe=store.subscribe(() => {
   console.log(store.getState())
 })
 //Increment the count by 1
@@ -35,6 +35,7 @@ store.dispatch({
 store.dispatch({
   type:'INCREMENT'
 })
+unsubscribe()
 // console.log(store.getState())
 //Decrement the count by 1 
 store.dispatch({
