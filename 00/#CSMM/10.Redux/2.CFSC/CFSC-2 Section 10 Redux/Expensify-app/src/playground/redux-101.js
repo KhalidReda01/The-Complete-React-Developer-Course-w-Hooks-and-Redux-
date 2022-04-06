@@ -1,5 +1,5 @@
 /**
- * 86 Dispatching Actions 
+ * 87 Subsribing and Dynamic Actions
  */
 import { createStore } from "redux";
 const store = createStore((state = { count: 0 }, action) => {
@@ -24,22 +24,25 @@ const store = createStore((state = { count: 0 }, action) => {
 
   
 })
+store.subscribe(() => {
+  console.log(store.getState())
+})
 //Increment the count by 1
 store.dispatch({
   type:'INCREMENT'
 })
-console.log(store.getState())
+// console.log(store.getState())
 store.dispatch({
   type:'INCREMENT'
 })
-console.log(store.getState())
+// console.log(store.getState())
 //Decrement the count by 1 
 store.dispatch({
   type:'DECREMENT'
 })
-console.log(store.getState())
+// console.log(store.getState())
 //Reset the cout to zero
 store.dispatch({
   type:'RESET'
 }) 
-console.log(store.getState())
+// console.log(store.getState())
