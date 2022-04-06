@@ -25,7 +25,9 @@
 /**
  * 89 ES6 Array Destructuring 
  */
-const address = ['15 Imam street', 'Markez minia Elnasr', 'Mansura', '23435356']
-console.log(`You are in ${address[1]} ${address[2]}`)
-const [, city,state ,] = address;
-console.log(`You are in ${city} ${state}`)
+// const address = ['15 Imam street', 'Markez minia Elnasr', 'Mansura', '23435356']
+// console.log(`You are in ${address[1]} ${address[2]}`)
+// const [, city,state ,] = address;
+// console.log(`You are in ${city} ${state}`)
+const item = ['Coffee(not)', '$2.00', '$2.50', '$2.75']
+console.log(`A meduim Coffe (hot) costs $2.50`)
