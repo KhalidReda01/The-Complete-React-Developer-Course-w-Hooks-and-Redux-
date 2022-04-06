@@ -25,3 +25,5 @@
 /**
  * 89 ES6 Array Destructuring 
  */
+const address = ['15 Imam street', 'Markez minia Elnasr', 'Mansura', '23435356']
+console.log(`You are in ${address[1]} ${address[2]}`)
