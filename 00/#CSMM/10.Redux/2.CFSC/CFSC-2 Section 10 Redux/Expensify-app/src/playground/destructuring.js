@@ -6,7 +6,10 @@ const Person = {
     temp:15
   }
 }
-const name = Person.name;
-const age = Person.age;
-console.log(`${Person.name} is ${Person.age}`)
+const { name, age } = Person
+const {city,temp}=Person.location
 console.log(`${name} is ${age}`)
+
+if (city && temp) {
+  console.log(`It's ${temp} in ${city}`)
+}
