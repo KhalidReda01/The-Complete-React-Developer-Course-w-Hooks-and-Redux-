@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import uuid from 'uuid'
 //ADD_EXPENSE
+// Not bad
 const addExpense = ({description='',note='',amount=0,createdAt=0}={})=> ({
   type: 'ADD_EXPENSE',
   id: uuid(),
@@ -22,6 +23,7 @@ const expenseReducerDefaultState = [];
 const expensesReducer = (state = expenseReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
+      console.log(action)
       return state.concat(action.expense)
     default:
       return state;
