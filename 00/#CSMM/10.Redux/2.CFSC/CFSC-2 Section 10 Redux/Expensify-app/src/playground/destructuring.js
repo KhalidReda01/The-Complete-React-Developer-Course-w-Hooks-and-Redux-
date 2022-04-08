@@ -23,13 +23,13 @@
 // const {name:publisherName='Self-published' }=books.publisher
 // console.log(publisherName)
 /**
- * 89 ES6 Array Destructuring 
+ * 90 Refactoring and Organizing
  */
 // const address = ['15 Imam street', 'Markez minia Elnasr', 'Mansura', '23435356']
 // console.log(`You are in ${address[1]} ${address[2]}`)
 // const [, city,state ,] = address;
-// console.log(`You are in ${city} ${state}`)
-const item = ['Coffe (hot)', '$2.00', '$2.50', '$2.75']
-const [itemName,,itemPrice] = item;
-console.log(`A meduim Coffe (hot) costs $2.50`)
-console.log(`A meduim ${itemName} costs ${itemPrice}`)
+// // console.log(`You are in ${city} ${state}`)
+// const item = ['Coffe (hot)', '$2.00', '$2.50', '$2.75']
+// const [itemName,,itemPrice] = item;
+// console.log(`A meduim Coffe (hot) costs $2.50`)
+// console.log(`A meduim ${itemName} costs ${itemPrice}`)
