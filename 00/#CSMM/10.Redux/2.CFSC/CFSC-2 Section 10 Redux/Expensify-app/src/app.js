@@ -1,5 +1,5 @@
 
-//90 Refactoring and Organizing
+//92 Working with Multiple Reducers RSC B
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
