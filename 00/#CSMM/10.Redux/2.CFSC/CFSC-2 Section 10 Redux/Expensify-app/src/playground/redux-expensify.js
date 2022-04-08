@@ -13,6 +13,11 @@ const addExpense = ({description='',note='',amount=0,createdAt=0}={})=> ({
 }
 })
 //REMOVE_EXPENSE
+const removeExpense = (() => ({
+   type:'REMOVE_EXPENSE'
+}
+ 
+))
 //EDIT_EXPENSE
 //SET_TEXT_FILTER
 //SORT_BY_AMOUNT
@@ -26,7 +31,10 @@ const expensesReducer = (state = expenseReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
       console.log(action)
-      return [...state,action.expense]
+      return [...state, action.expense]
+    case 'REMOVE_EXPENSE':
+      console.log(action)
+      return 
     default:
       return state;
   }
@@ -58,8 +66,10 @@ store.subscribe(() => {
 
 const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+// Challenge Area
+store.dispatch(removeExpense({id:expenseOne.expense.id}))
 //console.log(store.dispatch({type:'Hello'})) the returned values is the action same as it 
-console.log(expenseOne)
+// console.log(expenseOne)
 const demoState = {
   expenses: [{
     id: 'hafdw',
@@ -75,4 +85,4 @@ const demoState = {
     endDate:undefined
   }
 }
-console.log(demoState)
+// console.log(demoState)
