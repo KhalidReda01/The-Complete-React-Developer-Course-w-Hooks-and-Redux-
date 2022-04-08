@@ -26,7 +26,7 @@ const expensesReducer = (state = expenseReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
       console.log(action)
-      return state.concat(action.expense)
+      return [...state,action.expense]
     default:
       return state;
   }
@@ -56,7 +56,10 @@ store.subscribe(() => {
 })
 // console.log(store.getState()) 
 
-store.dispatch(addExpense({description:'Rent',amount:100}))
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }))
+const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+//console.log(store.dispatch({type:'Hello'})) the returned values is the action same as it 
+console.log(expenseOne)
 const demoState = {
   expenses: [{
     id: 'hafdw',
