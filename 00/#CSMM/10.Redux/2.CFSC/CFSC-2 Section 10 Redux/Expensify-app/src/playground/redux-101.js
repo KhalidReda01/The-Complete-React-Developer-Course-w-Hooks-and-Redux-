@@ -6,6 +6,10 @@ const incrementCount = ({incrementBy=1} = {}) => ({
   type: 'INCREMENT',
   incrementBy
 })
+const decrementCount = ({ decrementBy = 1 } = {}) => ({
+  type: 'DECREMENT',
+  decrementBy
+})
 const store = createStore((state = { count: 0 }, action) => {
  
   switch (action.type) {
@@ -51,12 +55,13 @@ const unsubscribe=store.subscribe(() => {
 /**
  * Using the Action Generators
  */
-store.dispatch(incrementCount({incrementBy:5}))
+store.dispatch(incrementCount({ incrementBy: 5 }))
+store.dispatch(decrementCount({decrementBy:10}))
 //Decrement the count by 1 
-store.dispatch({
-  type: 'DECREMENT',
-  decrementBy:10
-})
+// store.dispatch({
+//   type: 'DECREMENT',
+//   decrementBy:10
+// })
 // console.log(store.getState())
 //Reset the cout to zero
 store.dispatch({
