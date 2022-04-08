@@ -33,8 +33,13 @@ const expensesReducer = (state = expenseReducerDefaultState, action) => {
       console.log(action)
       return [...state, action.expense]
     case 'REMOVE_EXPENSE':
-      console.log(action)
-      return 
+     console.log(action)
+      return state.filter((props) => {
+        console.log('test')
+        return props.id !==action.id
+      })
+      // console.log(action.expense.filter(expense => expense.id!==action.expense.id))
+      return state
     default:
       return state;
   }
