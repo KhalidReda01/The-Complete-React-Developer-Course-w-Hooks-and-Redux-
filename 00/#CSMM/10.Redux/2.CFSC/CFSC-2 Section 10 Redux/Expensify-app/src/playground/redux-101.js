@@ -1,8 +1,8 @@
 
 import { createStore } from "redux";
 //Action generators
-const add =(data)=>{
-  return data.a+data.b
+const add =({a,b})=>{
+  return a+b
 }
 console.log(add({a:1,b:12}))
 const incrementCount = (payload = {}) => ({
