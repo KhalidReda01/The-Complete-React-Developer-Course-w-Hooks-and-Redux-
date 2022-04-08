@@ -1,23 +1,7 @@
 
 import { createStore } from "redux";
 //Action generators
-
-const incrementCount = ({incrementBy=1} = {}) => ({
-  type: 'INCREMENT',
-  incrementBy
-})
-const decrementCount = ({ decrementBy = 1 } = {}) => ({
-  type: 'DECREMENT',
-  decrementBy
-})
-const setCount = ({count}={}) => ({
-  type: 'SET',
-  count
-})
-const resetCount = () => ({
-  type: 'RESET'
-})
-const store = createStore((state = { count: 0 }, action) => {
+const countReducer=(state = { count: 0 }, action) => {
  
   switch (action.type) {
     case 'INCREMENT':
@@ -44,7 +28,23 @@ const store = createStore((state = { count: 0 }, action) => {
   }
 
   
+}
+const incrementCount = ({incrementBy=1} = {}) => ({
+  type: 'INCREMENT',
+  incrementBy
 })
+const decrementCount = ({ decrementBy = 1 } = {}) => ({
+  type: 'DECREMENT',
+  decrementBy
+})
+const setCount = ({count}={}) => ({
+  type: 'SET',
+  count
+})
+const resetCount = () => ({
+  type: 'RESET'
+})
+const store = createStore(countReducer)
 const unsubscribe=store.subscribe(() => {
   console.log(store.getState())
 })
