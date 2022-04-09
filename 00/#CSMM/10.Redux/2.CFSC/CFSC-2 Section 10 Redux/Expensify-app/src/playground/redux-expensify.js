@@ -106,6 +106,10 @@ store.dispatch(removeExpense({id:expenseOne.expense.id}))
 //console.log(store.dispatch({type:'Hello'})) the returned values is the action same as it
 // console.log(expenseOne)
 store.dispatch(setTextFilter('rent'))
+// Challenge Time 
+store.dispatch(setTextFilter())
+store.dispatch(sortByAmount())
+store.dispatch(sortByDate())
 const demoState = {
   expenses: [{
     id: 'hafdw',
