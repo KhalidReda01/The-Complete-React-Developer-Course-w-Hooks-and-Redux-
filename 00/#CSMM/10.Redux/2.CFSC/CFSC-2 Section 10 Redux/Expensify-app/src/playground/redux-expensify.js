@@ -65,7 +65,7 @@ const expensesReducer = (state = expenseReducerDefaultState, action) => {
       // console.log(action.expense.filter(expense => expense.id!==action.expense.id))
     case 'EDIT_EXPENSE':
       return state.map((expense) => {
-        console.log("test")
+        // console.log("test")
         if (expense.id===action.id) {
           return {
             ...expense,
@@ -89,7 +89,7 @@ const filterReducerDefaultSate = {
 const filtersReducer = (state = filterReducerDefaultSate, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
-      console.log(state)
+      // console.log(state)
       return {
         ...state,
         text:action.text
@@ -119,6 +119,10 @@ const filtersReducer = (state = filterReducerDefaultSate, action) => {
   }
 }
 
+// Get Visible Expenses
+const getVisibleExpenses = (expenses, filters) => {
+  return expenses
+}
 //Store Creation
 const store = createStore(
   combineReducers({
@@ -127,7 +131,11 @@ const store = createStore(
   })
 )
 store.subscribe(() => {
- console.log(store.getState()) 
+  const state = store.getState();
+
+  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
+  console.log(visibleExpenses)
+//  console.log(store.getState()) 
 })
 // console.log(store.getState()) 
 
@@ -138,15 +146,15 @@ store.dispatch(editExpense(expenseTwo.expense.id,{amount:2200}))
 store.dispatch(removeExpense({id:expenseOne.expense.id}))
 //console.log(store.dispatch({type:'Hello'})) the returned values is the action same as it
 // console.log(expenseOne)
-store.dispatch(setTextFilter('rent'))
+// store.dispatch(setTextFilter('rent'))
 // Challenge Time
 // store.dispatch(setTextFilter())
 // store.dispatch(sortByAmount())
 // store.dispatch(sortByDate())
 // 2nd Challenge Time
-store.dispatch(setStartDate(125))
-store.dispatch(setStartDate())
-store.dispatch(setEndDate(1025))
+// store.dispatch(setStartDate(125))
+// store.dispatch(setStartDate())
+// store.dispatch(setEndDate(1025))
 const demoState = {
   expenses: [{
     id: 'hafdw',
