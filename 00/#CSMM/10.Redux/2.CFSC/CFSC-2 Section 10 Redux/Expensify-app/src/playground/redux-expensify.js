@@ -77,7 +77,10 @@ const filtersReducer = (state = filterReducerDefaultSate, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
       console.log(action)
-      return state
+      return {
+        ...state,
+        text:action.text
+      }
     default:
       return state;
   }
