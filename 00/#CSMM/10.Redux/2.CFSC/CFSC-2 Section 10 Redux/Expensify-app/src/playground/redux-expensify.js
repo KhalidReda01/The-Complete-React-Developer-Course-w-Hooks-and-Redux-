@@ -31,6 +31,7 @@ const setTextFilter = (text) => ({
   text
 })
 //SORT_BY_AMOUNT
+
 //SORT_BY_DATE
 //SET_START_DATE
 //SET_END_DATE
@@ -76,7 +77,7 @@ const filterReducerDefaultSate = {
 const filtersReducer = (state = filterReducerDefaultSate, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
-      console.log(action)
+      console.log(state)
       return {
         ...state,
         text:action.text

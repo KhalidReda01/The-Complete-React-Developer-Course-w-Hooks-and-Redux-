@@ -1,5 +1,5 @@
 
-//94 Spreading Objects RSC B
+//95 Wrapping up Our Reducers RSC B
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
