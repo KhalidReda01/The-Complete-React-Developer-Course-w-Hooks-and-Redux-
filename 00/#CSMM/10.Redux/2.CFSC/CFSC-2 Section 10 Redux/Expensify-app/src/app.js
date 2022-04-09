@@ -1,5 +1,5 @@
 
-//95 Wrapping up Our Reducers RSC B
+//96 Filtering Redux Data RSC B
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';

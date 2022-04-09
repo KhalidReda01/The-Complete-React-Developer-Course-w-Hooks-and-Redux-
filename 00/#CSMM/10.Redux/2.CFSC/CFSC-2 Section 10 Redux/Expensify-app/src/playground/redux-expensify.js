@@ -118,6 +118,7 @@ const filtersReducer = (state = filterReducerDefaultSate, action) => {
       return state;
   }
 }
+
 //Store Creation
 const store = createStore(
   combineReducers({
