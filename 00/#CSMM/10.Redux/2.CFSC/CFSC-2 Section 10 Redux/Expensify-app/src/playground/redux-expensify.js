@@ -39,8 +39,15 @@ const sortByDate = () => ({
   type:'SORT_BY_DATE'
 })
 //SET_START_DATE
+const setStartDate = (startDate) => ({
+  type: 'SET_START_DATE',
+  startDate
+})
 //SET_END_DATE
-
+const setEndDate = (endDate) => ({
+  type: 'SET_END_DATE',
+  endDate
+})
 //Expenses Reducer
 const expenseReducerDefaultState = [];
 const expensesReducer = (state = expenseReducerDefaultState, action) => {
@@ -97,6 +104,16 @@ const filtersReducer = (state = filterReducerDefaultSate, action) => {
         ...state,
         sortBy:'date'
       }
+    case 'SET_START_DATE':
+      return {
+        ...state,
+        startDate:action.startDate
+      }
+    case 'SET_END_DATE':
+      return {
+        ...state,
+        endDate:action.endDate
+      }
     default:
       return state;
   }
@@ -121,10 +138,14 @@ store.dispatch(removeExpense({id:expenseOne.expense.id}))
 //console.log(store.dispatch({type:'Hello'})) the returned values is the action same as it
 // console.log(expenseOne)
 store.dispatch(setTextFilter('rent'))
-// Challenge Time 
-store.dispatch(setTextFilter())
-store.dispatch(sortByAmount())
-store.dispatch(sortByDate())
+// Challenge Time
+// store.dispatch(setTextFilter())
+// store.dispatch(sortByAmount())
+// store.dispatch(sortByDate())
+// 2nd Challenge Time
+store.dispatch(setStartDate(125))
+store.dispatch(setStartDate())
+store.dispatch(setEndDate(1025))
 const demoState = {
   expenses: [{
     id: 'hafdw',
