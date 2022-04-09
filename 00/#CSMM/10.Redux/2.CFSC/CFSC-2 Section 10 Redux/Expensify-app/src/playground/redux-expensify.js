@@ -93,3 +93,11 @@ const demoState = {
   }
 }
 // console.log(demoState)
+// Spreading objects works well at the console of the browser but I know It will not work here that's why you have to add the plugin
+const user = {
+  name: 'Khalid',
+  age:23
+}
+console.log({
+  ...user,
+location:'Mansura'})
