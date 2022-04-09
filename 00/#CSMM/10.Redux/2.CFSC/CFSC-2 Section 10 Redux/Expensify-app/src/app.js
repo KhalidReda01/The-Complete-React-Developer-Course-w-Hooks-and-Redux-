@@ -1,5 +1,5 @@
 
-//93 ES6 Spread Operator in Reducers RSC B
+//94 Spreading Objects RSC B
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
