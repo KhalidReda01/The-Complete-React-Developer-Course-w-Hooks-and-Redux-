@@ -3,6 +3,6 @@
   "react"] ,
   "plugins":[
     "transform-class-properties" ,
-    "transfrom-object-rest-spread"
+    "transform-object-rest-spread"
   ]
 }
