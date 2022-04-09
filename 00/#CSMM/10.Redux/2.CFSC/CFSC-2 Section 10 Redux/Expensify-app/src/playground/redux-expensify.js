@@ -20,6 +20,11 @@ const removeExpense = (({id }={}) => ({
  
 ))
 //EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+  type: 'EDIT_EXPENSE',
+  id,
+  updates
+})
 //SET_TEXT_FILTER
 //SORT_BY_AMOUNT
 //SORT_BY_DATE
@@ -31,18 +36,29 @@ const expenseReducerDefaultState = [];
 const expensesReducer = (state = expenseReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_EXPENSE':
-      console.log(action)
+      // console.log(action)
       return [...state, action.expense]
     case 'REMOVE_EXPENSE':
-     console.log(state)
+    //  console.log(state)
       return state.filter((props) => {
-        console.log(props)
-        console.log('test')
+        // console.log(props)
+        // console.log('test')
         return props.id !==action.id
       })
       // console.log(action.expense.filter(expense => expense.id!==action.expense.id))
-      return state
-    default:
+    case 'EDIT_EXPENSE':
+      return state.map((expense) => {
+        console.log("test")
+        if (expense.id===action.id) {
+          return {
+            ...expense,
+            ...action.updates
+          }
+        } else {
+          return expense
+        }
+      })
+     default:
       return state;
   }
 }
@@ -73,6 +89,7 @@ store.subscribe(() => {
 
 const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }))
 const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+store.dispatch(editExpense(expenseTwo.expense.id,{amount:2200}))
 // Challenge Area
 store.dispatch(removeExpense({id:expenseOne.expense.id}))
 //console.log(store.dispatch({type:'Hello'})) the returned values is the action same as it 
@@ -94,10 +111,3 @@ const demoState = {
 }
 // console.log(demoState)
 // Spreading objects works well at the console of the browser but I know It will not work here that's why you have to add the plugin
-const user = {
-  name: 'Khalid',
-  age:23
-}
-console.log({
-  ...user,
-location:'Mansura'})
