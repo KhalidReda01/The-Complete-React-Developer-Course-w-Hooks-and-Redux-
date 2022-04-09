@@ -120,8 +120,13 @@ const filtersReducer = (state = filterReducerDefaultSate, action) => {
 }
 
 // Get Visible Expenses
-const getVisibleExpenses = (expenses, filters) => {
-  return expenses
+const getVisibleExpenses = (expenses, {text,sortBy,startDate,endDate}) => {
+  return expenses.filter((expense) => {
+    const startDateMatch = typeof startDate !=='number'||expense.createdAt>=startDate;
+    const endDateMatch =  typeof startDate !=='number'||expense.createdAt>=startDate;
+    const textMatch = true;
+    return startDateMatch && endDateMatch && textMatch;
+  })
 }
 //Store Creation
 const store = createStore(
@@ -139,8 +144,8 @@ store.subscribe(() => {
 })
 // console.log(store.getState()) 
 
-const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }))
-const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300 }))
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 ,createdAt:1000}))
+const expenseTwo = store.dispatch(addExpense({ description: 'Coffee', amount: 300,createdAt:-1000 }))
 store.dispatch(editExpense(expenseTwo.expense.id,{amount:2200}))
 // Challenge Area
 store.dispatch(removeExpense({id:expenseOne.expense.id}))
@@ -152,9 +157,9 @@ store.dispatch(removeExpense({id:expenseOne.expense.id}))
 // store.dispatch(sortByAmount())
 // store.dispatch(sortByDate())
 // 2nd Challenge Time
-// store.dispatch(setStartDate(125))
+// store.dispatch(setStartDate(0))
 // store.dispatch(setStartDate())
-// store.dispatch(setEndDate(1025))
+store.dispatch(setEndDate(1025))
 const demoState = {
   expenses: [{
     id: 'hafdw',
