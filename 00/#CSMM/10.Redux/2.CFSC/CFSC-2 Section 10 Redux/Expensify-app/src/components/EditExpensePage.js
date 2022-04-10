@@ -1,59 +1,12 @@
-import React from "react";
-const EditExpensePage = (props) => {
-console.log(props)
-  return (
-  <div>
-    Editing the expense with id of {props.match.params.id}
-  </div>
-)
-} 
-export default EditExpensePage;
-/**
- * http://localhost:8080/edit?query=rent&sort=date
- * {
-    "match": {
-        "path": "/edit",
-        "url": "/edit",
-        "isExact": true,
-        "params": {}
-    },
-    "location": {
-        "pathname": "/edit",
-        "search": "?query=rent&sort=date",
-        "hash": ""
-    },
-    "history": {
-        "length": 5,
-        "action": "POP",
-        "location": {
-            "pathname": "/edit",
-            "search": "?query=rent&sort=date",
-            "hash": ""
-        }
-    }
-}
+import React from 'react';
 
-// http://localhost:8080/edit#contact-us
-{
-    "match": {
-        "path": "/edit",
-        "url": "/edit",
-        "isExact": true,
-        "params": {}
-    },
-    "location": {
-        "pathname": "/edit",
-        "search": "",
-        "hash": "#contact-us"
-    },
-    "history": {
-        "length": 6,
-        "action": "POP",
-        "location": {
-            "pathname": "/edit",
-            "search": "",
-            "hash": "#contact-us"
-        }
-    }
-}
- */
+const EditExpensePage = (props) => {
+  console.log(props);
+  return (
+    <div>
+      Editing the expense with id of {props.match.params.id}
+    </div>
+  );
+};
+
+export default EditExpensePage;
