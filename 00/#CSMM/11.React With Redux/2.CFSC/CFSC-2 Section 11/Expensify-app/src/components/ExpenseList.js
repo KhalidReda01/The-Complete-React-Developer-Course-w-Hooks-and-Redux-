@@ -9,11 +9,11 @@ const ExpenseList = (props) => (
     {props.filters.text}
   </div>
 )
-const ConnectedExpenseList = connect((state) => {
-  console.log(state)
+const mapStateToProps = (state) => {
   return {
     expenses: state.expenses,
-    filters:state.filters
+    filters: state.filters
   }
-})(ExpenseList)
+}
+const ConnectedExpenseList = connect(mapStateToProps)(ExpenseList)
 export default ConnectedExpenseList;
