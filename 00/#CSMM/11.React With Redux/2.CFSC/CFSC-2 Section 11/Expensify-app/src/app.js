@@ -1,9 +1,10 @@
 /**
  * Review Section 11 React With Redux 
- * 100.3 The Higher Order Component
+ * 101.4 Connecting Store and Component with React-Redux
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
@@ -19,4 +20,9 @@ store.dispatch(addExpense({ description: 'Gas bill' }))
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
 console.log(visibleExpenses)
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+const jsx = (
+  <Provider store={store}>
+    <AppRouter/>
+  </Provider>
+)
+ReactDOM.render(jsx, document.getElementById('app'));
