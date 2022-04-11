@@ -1,3 +1,7 @@
+/**
+ * Review Section 11 React With Redux 
+ * 99.2 Organizing Redux 
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
