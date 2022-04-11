@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import expenses from '../reducers/expenses';
 
 const ExpenseList = (props) => (
   <div>
