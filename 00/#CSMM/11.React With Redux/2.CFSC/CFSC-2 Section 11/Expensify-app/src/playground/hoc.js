@@ -12,12 +12,14 @@ const Info = (props) => (
   </div>
 )
 const withAdminWarning = (WrappedComponent) => {
-  return () => (
+  return (props) => (
     <div>
-      <p>This is private info. please don't share</p>
-      <WrappedComponent/>
+     {props.isAdmin&&<p>This is private info. please don't share</p>} 
+      <WrappedComponent {...props}/>
     </div>
   )
 }
+// Challenge time 
+//requireAuthentication 
 const AdminInfo=withAdminWarning(Info)
-ReactDOM.render(<AdminInfo info='There are the details'/> ,document.getElementById('app'))
+ReactDOM.render(<AdminInfo isAdmin={true} info='There are the details'/> ,document.getElementById('app'))
