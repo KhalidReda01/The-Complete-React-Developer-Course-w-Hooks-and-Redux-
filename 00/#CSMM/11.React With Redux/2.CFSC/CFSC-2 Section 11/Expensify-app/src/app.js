@@ -1,6 +1,6 @@
 /**
  * Review Section 11 React With Redux 
- * 101.4 Connecting Store and Component with React-Redux
+ * 102.5 Rendering Individual Expenses
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
