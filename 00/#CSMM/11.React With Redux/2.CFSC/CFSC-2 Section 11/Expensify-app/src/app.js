@@ -1,6 +1,6 @@
 /**
  * Review Section 11 React With Redux 
- * 99.2 Organizing Redux 
+ * 100.3 The Higher Order Component
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
