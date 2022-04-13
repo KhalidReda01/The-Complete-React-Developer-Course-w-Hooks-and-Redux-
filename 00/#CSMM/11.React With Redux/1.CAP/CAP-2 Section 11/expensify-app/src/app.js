@@ -11,9 +11,9 @@
 
 101. Connecting Store and Component with React-Redux Done No Challenge Exist
 
-102. Rendering Individual Expenses Start
+102. Rendering Individual Expenses Done Challenge Done
 
-103. Controlled Inputs for Filters
+103. Controlled Inputs for Filters Welcome back to new lectures WVI CAP-2nd
 
 104. Dropdown for Picking SortBy   
 
@@ -57,7 +57,7 @@ store.subscribe(() => {
 store.dispatch(setTextFilter('bill'))
 store.dispatch(setTextFilter('water'))
 setTimeout(() => {
-  store.dispatch(setTextFilter('bill'))
+  store.dispatch(setTextFilter('water'))
 },2000)
 const jsx = (
   <Provider store={store}>
