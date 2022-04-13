@@ -13,8 +13,15 @@ const ExpenseListFilters = (props) => (
   </div>
 )
 const mapStateToProps = (state) => {
+  console.log('this is HOCC')
+  console.log(state)
   return {
     filters:state.filters
   }
 }
 export default connect(mapStateToProps)(ExpenseListFilters);
+/**
+ * Read this article to fully understand it 
+ * https://react-redux.js.org/using-react-redux/connect-mapdispatch
+ * Connect: Dispatching Actions with mapDispatchToProps
+ */
