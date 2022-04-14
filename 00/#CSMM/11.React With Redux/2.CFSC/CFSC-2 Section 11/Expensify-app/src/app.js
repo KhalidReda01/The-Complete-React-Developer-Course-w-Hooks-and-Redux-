@@ -1,6 +1,6 @@
 /**
  * Review Section 11 React With Redux 
- * 102.5 Rendering Individual Expenses
+ * 103.6 Controlled Inputs for Filters
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
