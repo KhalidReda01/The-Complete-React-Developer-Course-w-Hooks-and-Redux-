@@ -1,7 +1,9 @@
 import React from 'react'; 
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css'
+// import 'react-dates/lib/css/_datepicker.css'
+import 'react-dates/lib/css/_datepicker.css';
+
 const now = moment();
 console.log(now.format('MM Do ,YYYY'))
 export default class Expense extends React.Component {
@@ -29,6 +31,11 @@ export default class Expense extends React.Component {
       this.setState(() => ({ amount }));
     }
   }
+  onFocusChange = ({ focused }) => {
+    this.setState(() => ({
+      calenderFocused:focused
+    }))
+  }
   render() {
     return (
       <div>
@@ -40,6 +47,8 @@ export default class Expense extends React.Component {
             onDateChange
             focused={this.state.calenderFocused}
             onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={(day)=>false}
           />
           <textarea placeholder='Add a note for your expense (otional)' value={this.state.note} onChange={this.onNoteChange}>
           
