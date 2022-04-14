@@ -31,6 +31,9 @@ export default class Expense extends React.Component {
       this.setState(() => ({ amount }));
     }
   }
+  onDateChange = (createdAt) => {
+    this.setState(()=>({createdAt}))
+  }
   onFocusChange = ({ focused }) => {
     this.setState(() => ({
       calenderFocused:focused
@@ -44,7 +47,7 @@ export default class Expense extends React.Component {
           <input type='number' placeholder='Amount' value={this.state.amount} onChange={this.onAmountChange} />
           <SingleDatePicker 
             date={this.state.createdAt}
-            onDateChange
+            onDateChange={this.onDateChange}
             focused={this.state.calenderFocused}
             onFocusChange={this.onFocusChange}
             numberOfMonths={1}
