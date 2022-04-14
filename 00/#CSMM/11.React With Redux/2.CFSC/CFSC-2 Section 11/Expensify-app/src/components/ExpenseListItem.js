@@ -14,3 +14,7 @@ const ExpenseListItem = ({dispatch,id,description,amount,createdAt}) => (
   </div>
 )
 export default connect()(ExpenseListItem);
+/**
+ * Okay after I seey the pros I didn't find the dispatch like the other pross so where did it come from HOCC 
+ * 
+ */
