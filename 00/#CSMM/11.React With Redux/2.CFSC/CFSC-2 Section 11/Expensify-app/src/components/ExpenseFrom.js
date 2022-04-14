@@ -1,12 +1,16 @@
 import React from 'react'; 
 import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css'
 const now = moment();
 console.log(now.format('MM Do ,YYYY'))
 export default class Expense extends React.Component {
   state = {
     description: '',
     note: '',
-    amount:''
+    amount: '',
+    createdAt: moment(),
+    calenderFocused:false
   }
   onDescriptionChange = (e) => {
     const description = e.target.value 
@@ -30,7 +34,13 @@ export default class Expense extends React.Component {
       <div>
         <form>
           <input type='text' placeholder='Description' autoFocus value={this.state.description} onChange={this.onDescriptionChange} />
-          <input type='number' placeholder='Amount' value={this.state.amount} onChange={this.onAmountChange }/>
+          <input type='number' placeholder='Amount' value={this.state.amount} onChange={this.onAmountChange} />
+          <SingleDatePicker 
+            date={this.state.createdAt}
+            onDateChange
+            focused={this.state.calenderFocused}
+            onFocusChange={this.onFocusChange}
+          />
           <textarea placeholder='Add a note for your expense (otional)' value={this.state.note} onChange={this.onNoteChange}>
           
           </textarea>
