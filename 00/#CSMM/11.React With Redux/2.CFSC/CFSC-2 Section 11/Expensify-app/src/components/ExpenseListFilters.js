@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-const ExpenseListFilters = () => (
+const ExpenseListFilters = (props) => (
   <div>
     <input type='text' value={props.filters.text} />
     
