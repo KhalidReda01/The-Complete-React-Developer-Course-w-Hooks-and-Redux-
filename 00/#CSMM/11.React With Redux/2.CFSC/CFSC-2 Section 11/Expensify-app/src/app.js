@@ -1,6 +1,6 @@
 /**
  * Review Section 11 React With Redux 
- * 103.6 Controlled Inputs for Filters
+ * 104.7 Dropdown for Picking SortBy
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
