@@ -1,7 +1,7 @@
 import React from 'react'; 
 import moment from 'moment';
 const now = moment();
-console.log(now)
+console.log(now.format('MM Do ,YYYY'))
 export default class Expense extends React.Component {
   state = {
     description: '',
