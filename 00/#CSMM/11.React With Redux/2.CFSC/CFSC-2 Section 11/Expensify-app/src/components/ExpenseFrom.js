@@ -28,7 +28,7 @@ export default class Expense extends React.Component {
         <form>
           <input type='text' placeholder='Description' autoFocus value={this.state.description} onChange={this.onDescriptionChange} />
           <input type='number' placeholder='Amount' value={this.state.amount} onChange={this.onAmountChange }/>
-          <textarea placeholder='Add a note for your expense (otional)' value={this.state.note}>
+          <textarea placeholder='Add a note for your expense (otional)' value={this.state.note} onChange={this.onNoteChange}>
           
           </textarea>
           <button>Add Expense</button>

@@ -1,6 +1,6 @@
 /**
  * Review Section 11 React With Redux 
- * 105.8 Creating Expense Add/Edit Form
+ * 106.9 Setting up a Date Picker
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
