@@ -8,12 +8,13 @@ const Info = (props) => (
   </div>
 )
 const withAdminWarning = (WrappedComponent) => {
-  return () => (
+  return (props) => (
     <div>
-    <p>This is private info . Please don't share !</p>
-      <WrappedComponent />
+      {console.log(props)}
+   {props.isAdmin&&<p>This is private info . Please don't share !</p>} 
+      <WrappedComponent {...props} />
     </div>
   )
 }
 const AdminInfo=withAdminWarning(Info)
-ReactDOM.render(<AdminInfo info="There are the datails"/>,document.getElementById('app'))
+ReactDOM.render(<AdminInfo isAdmin={true} info="There are the datails"/>,document.getElementById('app'))
