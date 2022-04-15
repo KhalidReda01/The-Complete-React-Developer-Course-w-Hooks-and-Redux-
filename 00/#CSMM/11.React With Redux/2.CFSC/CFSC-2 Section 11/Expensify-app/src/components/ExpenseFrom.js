@@ -50,7 +50,13 @@ export default class Expense extends React.Component {
       this.setState(()=>{error:'Please Provide description and amount'})
     } else {
       // Clear the error
-      this.setState(()=>({error:''}))
+      this.setState(() => ({ error: '' }))
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note:this.state.note
+      })
       console.log('submited')
     }
   }
