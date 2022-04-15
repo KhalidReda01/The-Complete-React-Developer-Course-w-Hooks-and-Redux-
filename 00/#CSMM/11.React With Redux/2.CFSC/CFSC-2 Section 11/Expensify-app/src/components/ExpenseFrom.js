@@ -47,8 +47,10 @@ export default class Expense extends React.Component {
     e.preventDefault()
     if (!this.state.description || !this.state.amount) {
       // Set Error state equal to "Please Provide describtion and amount"
+      this.setState(()=>{error:'Please Provide description and amount'})
     } else {
       // Clear the error
+      this.setState(()=>({error:''}))
       console.log('submited')
     }
   }
