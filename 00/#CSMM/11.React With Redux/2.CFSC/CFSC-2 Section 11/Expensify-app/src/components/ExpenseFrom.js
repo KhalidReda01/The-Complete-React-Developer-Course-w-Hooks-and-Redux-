@@ -12,7 +12,8 @@ export default class Expense extends React.Component {
     note: '',
     amount: '',
     createdAt: moment(),
-    calenderFocused:false
+    calenderFocused: false,
+    error:''
   }
   onDescriptionChange = (e) => {
     const description = e.target.value 
@@ -27,22 +28,35 @@ export default class Expense extends React.Component {
     // if (amount.match(/^\d*(\.\d{0,2}?$/)){
     //   this.setState(()=>({amount}));
     // }
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!amount||amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => ({ amount }));
     }
   }
   onDateChange = (createdAt) => {
-    this.setState(()=>({createdAt}))
+    if (createdAt) {
+      this.setState(()=>({createdAt}))
+    }
+    
   }
   onFocusChange = ({ focused }) => {
     this.setState(() => ({
       calenderFocused:focused
     }))
   }
+  onSubmit = (e) => {
+    e.preventDefault()
+    if (!this.state.description || !this.state.amount) {
+      // Set Error state equal to "Please Provide describtion and amount"
+    } else {
+      // Clear the error
+      console.log('submited')
+    }
+  }
   render() {
     return (
       <div>
-        <form>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
           <input type='text' placeholder='Description' autoFocus value={this.state.description} onChange={this.onDescriptionChange} />
           <input type='number' placeholder='Amount' value={this.state.amount} onChange={this.onAmountChange} />
           <SingleDatePicker 
