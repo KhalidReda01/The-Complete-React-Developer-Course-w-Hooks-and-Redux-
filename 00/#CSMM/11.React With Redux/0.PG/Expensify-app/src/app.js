@@ -10,7 +10,12 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-
+store.subscribe(() => {
+  const state=store.getState()
+  const visibleExpense = getVisibleExpenses(state.expenses,state.filters)
+  console.log(visibleExpense)
+  
+   })
 store.dispatch(addExpense({ description: 'Water bill',amount:4500 }));
 store.dispatch(addExpense({ description: 'Gas bill' ,amount:23434,created:3}));
 store.dispatch(addExpense({ description: 'Internet bill' }));
@@ -24,9 +29,9 @@ setTimeout((() => {
 setTimeout((() => {
   store.dispatch(setTextFilter('Internet'))
 }),6000)
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+// console.log(visibleExpenses);
 const jsx = (
   <Provider store={store}>
    <AppRouter/>
