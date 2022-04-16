@@ -3,18 +3,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 const Info = (props) => (
   <div>
-    {console.log(props.props.info)}
+    
     <h1>Info</h1>
-    <p>The info is :{props.props.info}</p>
+    <p>The info is :{props.info}</p>
   </div>
 )
 const withAdminWarning = (WrappedComponet) => {
   return (props) => (
     <div>
-      <p>This is private info . please don't share</p>
-      <WrappedComponet props={props }/>
+     {props.isAdmin&&<p>This is private info . please don't share</p>} 
+      <WrappedComponet {...props }/>
     </div>
   )
 }
 const AdminInfo=withAdminWarning(Info)
-ReactDOM.render(<AdminInfo info="There are the deatils"/>,document.getElementById('app'))
+ReactDOM.render(<AdminInfo isAdmin={true} info="There are the deatils"/>,document.getElementById('app'))
