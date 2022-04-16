@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 const Info = (props) => (
   <div>
-    {console.log('test')}
-    {console.log(props)}
+    
     <h1>Info</h1>
     <p>The info is :{props.info}</p>
   </div>
