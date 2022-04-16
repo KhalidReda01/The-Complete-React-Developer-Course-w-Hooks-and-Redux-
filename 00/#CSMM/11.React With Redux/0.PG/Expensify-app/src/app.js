@@ -12,7 +12,10 @@ import './styles/styles.scss';
 const store = configureStore();
 
 store.dispatch(addExpense({ description: 'Water bill',amount:4500 }));
-store.dispatch(addExpense({ description: 'Gas bill' }));
+store.dispatch(addExpense({ description: 'Gas bill' ,amount:23434,created:3}));
+store.dispatch(addExpense({ description: 'Internet bill' }));
+store.dispatch(addExpense({ description: 'Electercity bill' }));
+store.dispatch(addExpense({ description: 'Rent bill' }));
 store.dispatch(setTextFilter('water'));
 setTimeout((() => {
   store.dispatch(setTextFilter('rent'))
