@@ -28,5 +28,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * Review 101/4 Connecting store and component with react-redux
+ * Review 102/5 Rendering Individual Expenses
  */
