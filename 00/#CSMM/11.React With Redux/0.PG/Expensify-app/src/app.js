@@ -40,5 +40,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * Review 102/5 Rendering Individual Expenses
+ * Review 102/5 Rendering Individual Expenses 
  */
