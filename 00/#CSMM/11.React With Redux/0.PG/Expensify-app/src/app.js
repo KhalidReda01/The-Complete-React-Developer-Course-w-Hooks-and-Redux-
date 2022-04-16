@@ -24,7 +24,7 @@ const jsx = (
   </Provider>
 )
 
-ReactDOM.render(<AppRouter/>, document.getElementById('app'));
+ReactDOM.render(jsx, document.getElementById('app'));
 /**
  * Review 101/4 Connecting store and component with react-redux
  */
