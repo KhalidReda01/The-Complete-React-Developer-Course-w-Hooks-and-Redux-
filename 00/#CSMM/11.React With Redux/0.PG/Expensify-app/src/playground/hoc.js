@@ -3,16 +3,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 const Info = (props) => (
   <div>
-    
+    {console.log(props.props.info)}
     <h1>Info</h1>
-    <p>The info is :{props.info}</p>
+    <p>The info is :{props.props.info}</p>
   </div>
 )
 const withAdminWarning = (WrappedComponet) => {
-  return () => (
+  return (props) => (
     <div>
       <p>This is private info . please don't share</p>
-      <WrappedComponet {...props}/>
+      <WrappedComponet props={props }/>
     </div>
   )
 }
