@@ -19,4 +19,6 @@ const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 console.log(visibleExpenses);
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'));
-/**Review this section the finshed one from The Organizing Redux */
+/**
+ * Review 101/4 Connecting store and component with react-redux
+ */
