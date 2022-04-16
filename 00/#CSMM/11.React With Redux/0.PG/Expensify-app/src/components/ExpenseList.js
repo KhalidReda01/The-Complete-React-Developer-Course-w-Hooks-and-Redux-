@@ -8,11 +8,12 @@ const ExpenseList = (props) => (
     {console.log(props)}
   </div>
 )
-const ConnectedExpenseList = connect((state) => {
+const mapStateToProps=(state) => {
   console.log(state)
   return {
     expenses: state.expenses,
     filters:state.filters
   }
-})(ExpenseList)
-export default ConnectedExpenseList
+}
+
+export default connect(mapStateToProps)(ExpenseList)
