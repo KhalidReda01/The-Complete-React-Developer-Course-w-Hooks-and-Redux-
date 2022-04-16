@@ -1,7 +1,17 @@
 import React from 'react';
-const ExpenseListFilters = () => (
+import { connect } from 'react-redux';
+import { setTextFilter } from '../actions/filters';
+const ExpenseListFilters = (props) => (
   <div>
-    <input type='test'/>
+    <input type='text' value={props.filters.text} onChange={(e) => {
+      props.dispatch(setTextFilter(e.target.value))
+      console.log(e.target.value)
+    } }/>
   </div>
 )
-export default ExpenseListFilters;
+const mapStateToProps = (state) => {
+  return {
+    filters:state.filters
+  }
+}
+export default connect(mapStateToProps)(ExpenseListFilters);
