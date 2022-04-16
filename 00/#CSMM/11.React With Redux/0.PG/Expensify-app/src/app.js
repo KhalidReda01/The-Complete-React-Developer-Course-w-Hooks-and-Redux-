@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
@@ -18,16 +17,9 @@ store.dispatch(setTextFilter('water'));
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 console.log(visibleExpenses);
-setTimeout((() => {
-  store.dispatch(setTextFilter('rent'))
-}),3000)
-const jsx = (
-  <Provider store={store}>
-    <AppRouter/>
-  </Provider>
-)
 
-ReactDOM.render(jsx, document.getElementById('app'));
+
+ReactDOM.render(<AppRouter/>, document.getElementById('app'));
 /**
  * Review 101/4 Connecting store and component with react-redux
  */
