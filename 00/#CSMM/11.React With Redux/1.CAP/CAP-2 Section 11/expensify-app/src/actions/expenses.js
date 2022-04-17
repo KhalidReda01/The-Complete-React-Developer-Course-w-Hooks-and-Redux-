@@ -1,5 +1,6 @@
-import uuid from 'uuid'
-//set up all these as named exports 
+import uuid from 'uuid';
+
+// ADD_EXPENSE
 export const addExpense = (
   {
     description = '',

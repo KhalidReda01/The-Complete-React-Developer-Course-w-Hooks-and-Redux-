@@ -1,6 +1,5 @@
-import React from "react";
-import { NavLink } from 'react-router-dom';// this is wrong and this is what cause the error 
-
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <header>
@@ -9,5 +8,6 @@ const Header = () => (
     <NavLink to="/create" activeClassName="is-active">Create Expense</NavLink>
     <NavLink to="/help" activeClassName="is-active">Help</NavLink>
   </header>
-)
-export default Header
+);
+
+export default Header;
