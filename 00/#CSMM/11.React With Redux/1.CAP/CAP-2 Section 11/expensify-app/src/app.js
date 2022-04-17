@@ -34,5 +34,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * CAP-2nd 105/8 Creating Expense Add/Edit form 
+ * CAP-2nd 106/9 Setting up a Date Picker
  */
