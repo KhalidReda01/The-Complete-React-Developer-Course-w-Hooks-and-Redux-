@@ -34,5 +34,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * Review 102/5 Rendering Individual Expenses 
+ * CAP-2nd 105/8 Creating Expense Add/Edit form 
  */
