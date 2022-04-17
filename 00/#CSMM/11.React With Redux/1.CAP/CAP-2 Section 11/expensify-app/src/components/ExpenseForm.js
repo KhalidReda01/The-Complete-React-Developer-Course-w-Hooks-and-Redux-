@@ -1,5 +1,16 @@
 import React from 'react';
+//Challenge time
+// setup note state
+// setup onChange and value for textArea
 export default class ExpenseForm extends React.Component{
+  state = {
+    description: ''
+
+  };
+  onDescriptionChange = (e) => {
+    const description = e.target.value;
+    this.setState(()=>({description}))
+  }
   render() {
     return (
       <div>
@@ -7,7 +18,9 @@ export default class ExpenseForm extends React.Component{
           <input
             type='text'
             placeholder='Description'
-            autoFocus           
+            autoFocus  
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
 
           />
           <input
@@ -19,6 +32,7 @@ export default class ExpenseForm extends React.Component{
           > 
            
           </textarea>
+          <button>Add Expense</button>
         </form>
       </div>
     )
