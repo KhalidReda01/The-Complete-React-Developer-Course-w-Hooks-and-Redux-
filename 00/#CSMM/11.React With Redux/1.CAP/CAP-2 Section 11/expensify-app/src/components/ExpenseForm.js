@@ -4,12 +4,19 @@ import React from 'react';
 // setup onChange and value for textArea
 export default class ExpenseForm extends React.Component{
   state = {
-    description: ''
+    description: '',
+    note: ''
 
   };
   onDescriptionChange = (e) => {
     const description = e.target.value;
     this.setState(()=>({description}))
+  }
+  onNoteChange = (e) => {
+    const note = e.target.value;
+    // e.persist()
+    // this.setState(()=>({note:e.target.value}))
+    this.setState(()=>({note}))
   }
   render() {
     return (
@@ -28,7 +35,9 @@ export default class ExpenseForm extends React.Component{
            placeholder='Amount' 
 
           />
-          <textarea placeholder='Add a not for your expense(Optional)'
+          <textarea placeholder='Add a note for your expense(Optional)'
+            value={this.state.note}
+            onChange={this.onNoteChange}
           > 
            
           </textarea>
