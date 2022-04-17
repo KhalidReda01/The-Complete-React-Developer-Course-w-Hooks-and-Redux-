@@ -11,7 +11,8 @@ export default class ExpenseForm extends React.Component{
     note: '',
     amount: '',
     createdAt: moment(),
-    calenderFocused:false
+    calenderFocused: false,
+    error:''
 
   };
   onDescriptionChange = (e) => {
@@ -42,8 +43,10 @@ export default class ExpenseForm extends React.Component{
     e.preventDefault();
     if (!this.state.description||!this.state.amount) {
       // Set error state equal to 'Please Provide description and amount'
+      this.setState(()=>({error:"Please provide description and amount"}))
     } else {
       // Clear the error
+      this.setState(()=>({error:''}))
       console.log('Submitted!')
     }
   }
