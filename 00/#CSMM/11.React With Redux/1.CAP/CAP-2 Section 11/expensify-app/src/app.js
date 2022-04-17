@@ -17,18 +17,12 @@ store.subscribe(() => {
   
    })
 store.dispatch(addExpense({ description: 'Water bill',amount:4500 }));
-store.dispatch(addExpense({ description: 'Gas bill' ,amount:23434,created:3}));
+store.dispatch(addExpense({ description: 'Gas bill' ,amount:23434,created:1000}));
 store.dispatch(addExpense({ description: 'Internet bill' }));
 store.dispatch(addExpense({ description: 'Electercity bill' }));
-store.dispatch(addExpense({ description: 'Rent bill' }));
-store.dispatch(setTextFilter('water'));
-store.dispatch(setTextFilter('bill'));
-setTimeout((() => {
-  store.dispatch(setTextFilter('rent'))
-}),3000)
-setTimeout((() => {
-  store.dispatch(setTextFilter('Internet'))
-}),6000)
+store.dispatch(addExpense({ description: 'Rent bill',amount:109500 }));
+
+
 // const state = store.getState();
 // const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 // console.log(visibleExpenses);
