@@ -6,9 +6,11 @@ const EditExpensePage = (props) => {
   return (
     <div>
       <ExpenseForm
+        expense={props.expense}
         onSubmit={(expense) => {
           console.log('updated',expense)
         }}
+
       />
     </div>
   );
