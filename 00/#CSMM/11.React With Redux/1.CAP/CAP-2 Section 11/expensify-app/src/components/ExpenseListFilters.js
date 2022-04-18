@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
-import { setTextFilter,sortByDate,sortByAmount } from '../actions/filters';
+import { setTextFilter,sortByDate,sortByAmount,setStartDate,setEndDate } from '../actions/filters';
 
 class ExpenseListFilters extends React.Component{
   state = {
     calenderFocused:null
+  }
+  onDateChange = (startDate,endDate) => {
+    this.props.dispatch(setStartDate(startDate))
+    this.props.dispatch(setEndDate(endDate))
   }
   render() {
     return (
@@ -29,6 +33,8 @@ class ExpenseListFilters extends React.Component{
         </select>
         <DateRangePicker 
           startDate={this.props.filters.startDate}
+          endDate={this.props.filters.endDate}
+          onDateChange={this.onDateChange}
       />
       </div>
     )
