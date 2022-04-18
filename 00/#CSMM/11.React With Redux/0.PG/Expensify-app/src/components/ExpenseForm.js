@@ -50,6 +50,3 @@ export default class ExpenseForm extends React.Component{
   }
 }
 
-/**
- * Do I need to repeat I fully aborb it now 
- */

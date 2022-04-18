@@ -40,5 +40,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * Review 105/8 Creating Expense Add/Edit form
+ * Review 106/9 Setting up a Date Picker 
  */
