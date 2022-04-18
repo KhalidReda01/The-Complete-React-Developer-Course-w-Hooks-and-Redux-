@@ -34,5 +34,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * CAP-2nd 107/10 Wiring up Add Expense
+ * CAP-2nd 108/11 Wiring up Edit Expense
  */
