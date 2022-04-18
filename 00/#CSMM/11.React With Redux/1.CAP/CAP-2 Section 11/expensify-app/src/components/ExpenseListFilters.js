@@ -7,7 +7,7 @@ class ExpenseListFilters extends React.Component{
   state = {
     calenderFocused:null
   }
-  onDateChange = (startDate,endDate) => {
+  onDatesChange = (startDate,endDate) => {
     this.props.dispatch(setStartDate(startDate))
     this.props.dispatch(setEndDate(endDate))
   }
@@ -37,7 +37,7 @@ class ExpenseListFilters extends React.Component{
         <DateRangePicker 
           startDate={this.props.filters.startDate}
           endDate={this.props.filters.endDate}
-          onDateChange={this.onDateChange}
+          onDatesChange={this.onDatesChange}
           focusedInput={this.state.calenderFocused}
           onFocusChange={this.onFocusChange}
       />
