@@ -34,5 +34,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * CAP-2nd 109/12 Redux devTools
+ * CAP-2nd 110/13 Filtering by dates
  */
