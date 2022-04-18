@@ -6,7 +6,7 @@ const EditExpensePage = (props) => {
   return (
     <div>
       <ExpenseForm
-        onSummit={(expense) => {
+        onSubmit={(expense) => {
           console.log('updated',expense)
         }}
       />
