@@ -34,5 +34,5 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('app'));
 /**
- * CAP-2nd 108/11 Wiring up Edit Expense
+ * CAP-2nd 109/12 Redux devTools
  */
