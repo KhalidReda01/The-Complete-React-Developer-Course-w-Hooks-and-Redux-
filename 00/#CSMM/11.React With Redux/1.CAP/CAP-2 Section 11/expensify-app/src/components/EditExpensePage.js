@@ -20,9 +20,9 @@ const EditExpensePage = (props) => {
       
       />
       <button onClick={() => {
-        console.log(props.match.params.id)
-        const id =props.match.params.id
-        props.dispatch(removeExpense({ id }))
+        // console.log(props.match.params.id)
+        // const id =props.match.params.id
+        props.dispatch(removeExpense({ id:props.expense.id }))
         props.history.push('/')
     }}>Remove</button>
     </div>
