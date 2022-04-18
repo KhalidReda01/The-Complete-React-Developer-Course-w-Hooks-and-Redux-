@@ -11,7 +11,9 @@ const EditExpensePage = (props) => {
 };
 const mapStateToProps = (state,props) => {
   return {
-    expense:state.expenses.find
+    expense: state.expenses.find((expense) => {
+      return expense.id===props.match.params.id
+    })
   }
 }
-export default connect()(EditExpensePage) ;
+export default connect(mapStateToProps)(EditExpensePage) ;
