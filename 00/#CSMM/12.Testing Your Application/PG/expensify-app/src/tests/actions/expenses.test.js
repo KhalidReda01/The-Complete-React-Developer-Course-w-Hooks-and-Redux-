@@ -36,6 +36,9 @@ test('should setup add expense action object with provided values', () => {
   })
 })
 
+// Challenge time
+// Call addExpense with not data
+// Assert the value of the return object 
 test('should setup add expense action object with default values', () => {
   
 })
