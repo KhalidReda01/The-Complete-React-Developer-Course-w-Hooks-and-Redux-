@@ -15,6 +15,8 @@ test('should setup edit expense action object', () => {
   expect(action).toEqual({
     type: 'EDIT_EXPENSE',
     id: '123abc',
-    note:'New note value'
+    updates: {
+      note:'New note value'
+    }    
   })
 })
