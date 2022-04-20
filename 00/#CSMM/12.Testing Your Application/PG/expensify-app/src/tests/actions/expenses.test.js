@@ -7,3 +7,6 @@ test('should setup remove expense action object', () => {
     id:'123abc'
   })
 })
+//Challenge Time
+//setup test case {note:'New note value'}
+//make an assertion
