@@ -41,3 +41,7 @@ test('should filter by startDAte', () => {
   const result = selectExpenses(expenses, filters);
   expect(result).toEqual([expenses[2],expenses[0]])
 })
+// Challenge time
+// should filter by endDate
+// should sort by date
+// should sort by amount
