@@ -10,3 +10,11 @@ test('should setup remove expense action object', () => {
 //Challenge Time
 //setup test case {note:'New note value'}
 //make an assertion
+test('should setup edit expense action object', () => {
+  const action = editExpense('123abc', { note: 'New note value' });
+  expect(action).toEqual({
+    type: 'EDIT_EXPENSE',
+    id: '123abc',
+    note:'New note value'
+  })
+})
