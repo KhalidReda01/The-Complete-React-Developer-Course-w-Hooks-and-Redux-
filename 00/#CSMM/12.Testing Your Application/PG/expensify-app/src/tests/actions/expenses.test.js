@@ -7,9 +7,7 @@ test('should setup remove expense action object', () => {
     id:'123abc'
   })
 })
-//Challenge Time
-//setup test case {note:'New note value'}
-//make an assertion
+
 test('should setup edit expense action object', () => {
   const action = editExpense('123abc', { note: 'New note value' });
   expect(action).toEqual({
@@ -19,4 +17,25 @@ test('should setup edit expense action object', () => {
       note:'New note value'
     }    
   })
+})
+
+test('should setup add expense action object with provided values', () => {
+  const expenseData = {
+    description: 'Rent',
+    amount: 109500,
+    createdAt: 1000,
+    note:'This was lat months rent'
+  }
+  const action = addExpense(expenseData);
+  expect(action).toEqual({
+    type: 'ADD_EXPENSE',
+    expense: {
+      ...expenseData,
+      id:expect.any(String)
+    }
+  })
+})
+
+test('should setup add expense action object with default values', () => {
+  
 })
