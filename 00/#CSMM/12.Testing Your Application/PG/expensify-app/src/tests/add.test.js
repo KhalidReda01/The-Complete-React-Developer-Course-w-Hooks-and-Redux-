@@ -6,3 +6,8 @@ test('should add two numbers',()=> {
   expect(result).toBe(7)
 
 })
+
+test('Shoud generate Greeting ', () => {
+  const result = generateGreeting('Khalid')
+  expect(result).toBe("Hello Khalid!")
+})
