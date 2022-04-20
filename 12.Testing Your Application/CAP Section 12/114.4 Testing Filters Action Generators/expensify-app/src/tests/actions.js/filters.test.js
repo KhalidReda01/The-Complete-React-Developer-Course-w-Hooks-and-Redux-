@@ -26,6 +26,13 @@ test('should generate set text filter action object with provided text value', (
   
 })
 
+test('should generate set text filter action object with default value', () => {
+  const action = setTextFilter();
+  expect(action).toEqual({
+    type: 'SET_TEXT_FILTER',
+    text:''
+  })
+})
 
 test('should  generate sort by date action object', () => {
   const action = sortByDate();
