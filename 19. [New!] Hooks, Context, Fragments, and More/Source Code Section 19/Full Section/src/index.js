@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 const NoteApp = () => {
-    const notesData = JSON.parse(localStorage.getItem('notes'))
-    const [notes, setNotes] = useState(notesData || [])
+    const [notes, setNotes] = useState([])
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
 
@@ -23,8 +22,16 @@ const NoteApp = () => {
     }
 
     useEffect(() => {
+        const notesData = JSON.parse(localStorage.getItem('notes'))
+
+        if (notesData) {
+            setNotes(notesData)
+        }
+    }, [])
+
+    useEffect(() => {
         localStorage.setItem('notes', JSON.stringify(notes))
-    })
+    }, [notes])
 
     return (
         <div>
@@ -51,9 +58,13 @@ const App = (props) => {
     const [text, setText] = useState('')
 
     useEffect(() => {
+        console.log('This should only run once!')
+    }, [])
+
+    useEffect(() => {
         console.log('useEffect ran')
         document.title = count
-    })
+    }, [count])
 
     return (
         <div>
