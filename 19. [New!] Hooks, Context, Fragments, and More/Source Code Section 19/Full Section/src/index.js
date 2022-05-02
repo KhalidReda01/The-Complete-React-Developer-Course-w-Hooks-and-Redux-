@@ -2,26 +2,39 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-//
-// Goal: Add -1 and reset button to component
-//
-// 1. Allow initial count to be configured using a count prop (default to 0)
-// 2. Add "-1" button to reduce count by 1
-// 3. Add "reset" button to reset count
-// 4. Test your work!
-
 const App = (props) => {
-    const [count, setCount] = useState(props.count)
+    // const [count, setCount] = useState(props.count)
+    // const [text, setText] = useState('')
+    const [state, setState] = useState({
+        count: props.count,
+        text: ''
+    })
 
     return (
         <div>
-            <p>The current count is {count}</p>
-            <button onClick={() => setCount(count - 1)}>-1</button>
-            <button onClick={() => setCount(props.count)}>reset</button>
-            <button onClick={() => setCount(count + 1)}>+1</button>
+            <p>The current {state.text || 'count'} is {state.count}</p>
+            <button onClick={() => setState({ count: state.count - 1 })}>-1</button>
+            <button onClick={() => setState({ count: props.count })}>reset</button>
+            <button onClick={() => setState({ count: state.count + 1 })}>+1</button>
+            <input value={state.text} onChange={(e) => setState({ text: e.target.value })} />
         </div>
     )
 }
+
+// const App = (props) => {
+//     const [count, setCount] = useState(props.count)
+//     const [text, setText] = useState('')
+
+//     return (
+//         <div>
+//             <p>The current {text || 'count'} is {count}</p>
+//             <button onClick={() => setCount(count - 1)}>-1</button>
+//             <button onClick={() => setCount(props.count)}>reset</button>
+//             <button onClick={() => setCount(count + 1)}>+1</button>
+//             <input value={text} onChange={(e) => setText(e.target.value)}/>
+//         </div>
+//     )
+// }
 
 App.defaultProps = {
     count: 0
